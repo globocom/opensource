@@ -1,0 +1,15 @@
+server {
+  listen 80;
+  server_name _;
+  <% if node[:env] == "prod" %>
+  access_log  off;
+  <% end %>
+
+  location / {
+    root /var/www/gcom-opensource/current;
+    index index.html index.html;
+  }
+
+}
+
+# vim: set filetype=nginx:
