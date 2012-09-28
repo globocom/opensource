@@ -1,12 +1,13 @@
 server {
   listen 80;
   server_name _;
+  server_tokens off;
   <% if node[:env] == "prod" %>
   access_log  off;
   <% end %>
 
   location / {
-    root /var/www/gcom-opensource/current;
+    root /var/www/gcom-opensource/current/website;
     index index.html index.html;
   }
 

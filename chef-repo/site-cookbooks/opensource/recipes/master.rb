@@ -12,9 +12,12 @@ deploy_revision "/var/www/gcom-opensource" do
   revision "master"
   enable_submodules false
   migrate false
+  purge_before_symlink([])
+  create_dirs_before_symlink([])
+  symlinks({})
   symlink_before_migrate.clear
   shallow_clone false
-  action :deploy
+  action :force_deploy
 end
 
 template "#{node[:nginx][:dir]}/sites-available/gcom-opensource" do
