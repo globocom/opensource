@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,78 +8,16 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="./assets/css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-    </style>
-    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="./assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
 
-    <style type="text/css">
-    body {
-		background-image: url('./assets/img/bg2.jpg');
-    }
-/*	.glb-cabecalho {
-	}
-*/	.glb-logo {
-		background: url('./assets/img/globo.png') 0 0 repeat-x;
-		display: block;
-		height: 100px;
-		width: 128px;
-	}
-    .span4{
-	    background-color: #F2F2F2;
-		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpiOHfu3H8gYGAEESAAEGAAbXQJZTSbcasAAAAASUVORK5CYII=") fixed repeat 0 0;
-		position: relative;
-		height: 200px;
-		/*margin-top: 6px;*/
-		margin-bottom: 20px;
-    }
-	.container-inner {
-		background: white;
-		margin: 6px;
-		height: 168px;
-		padding: 10px;
-	}
-	.countdown-break {
-		background-color: #0074CC;
-		top: 25px;
-		height: 18px;
-		left: 0;
-		overflow: hidden;
-		position: absolute;
-		width: 6px;
-	}
-	.icon {
-		background: url("./assets/img/github.png") no-repeat scroll 0 0 transparent;
-		background-size: 20px 20px;
-		display: block;
-		height: 20px;
-		width: 20px;
-	}
-	.hero-unit {
-		position: relative;
-	}
-	.btns {
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
-    </style>
   </head>
 
   <body class="glb-cabecalho">
@@ -109,58 +46,9 @@
     </div> <!-- /container -->
 
     <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
-    <script src="./assets/js/bootstrap.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/main.js"></script>
 
-    <script type="text/javascript">
-    (function ($, undefined) {
-
-    var uri = "https://api.github.com/orgs/globocom/repos?callback=?"
-        + "&per_page=100"
-        + "&page=1";
-
-    var TEMPLATE = '<div class="span4">' +
-			       '	<div class="container-inner">' +
-				   '      <h2>#{title}</h2>' +
-				   '       <p>#{description}</p>' +
-				   '      <p>' +
-				   '      	<a class="btn" href="#{html_url}">View details &raquo;</a>' +
-				   '      </p>' +
-			       '  	</div>' +
-			       '	<div class="countdown-break"></div>' +
-			       '</div>';
-
-
-	$.getJSON(uri, function (result) {
-	  if (result.data && result.data.length > 0) {
-
-	  	var repos = "", item = "";
-
-	  	for ( var i = 0; i < result.data.length ; i++ ) {
-
-	  		repos += TEMPLATE.replace("#{title}", result.data[i].name)
-                         .replace("#{description}", result.data[i].description)
-	  						         .replace("#{html_url}", result.data[i].html_url);
-
-			// repos += ( i % 3 === 0 && i > 1 ) ? '<br class="clear">' : '';
-	  	}
-
-	  	$(".repos").append(repos);
-	  }
-	  else {
-	  }
-	});
-
-      // $.getJSON("https://api.github.com/orgs/twitter/members?callback=?", function (result) {
-      //   var members = result.data;
-
-      //   $(function () {
-      //     $("#num-members").text(members.length);
-      //   });
-      // });
-      // }
-
-    })(jQuery);
-    </script>
     </script>
 
   </body>
