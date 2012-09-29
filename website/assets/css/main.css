@@ -1,7 +1,7 @@
 body {
   background-image: url('../img/bg2.jpg');
-  padding-top: 60px;
   padding-bottom: 40px;
+  padding-top: 60px;
 }
 .glb-logo {
   background: url('../img/globo.png') 0 0 repeat-x;
@@ -10,25 +10,25 @@ body {
   width: 128px;
 }
 .span4 {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpiOHfu3H8gYGAEESAAEGAAbXQJZTSbcasAAAAASUVORK5CYII=");
   background-color: #F2F2F2;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpiOHfu3H8gYGAEESAAEGAAbXQJZTSbcasAAAAASUVORK5CYII=") fixed repeat 0 0;
-  position: relative;
   height: 200px;
   margin-bottom: 20px;
+  position: relative;
 }
 .container-inner {
   background: white;
-  margin: 6px;
   height: 168px;
+  margin: 6px;
   padding: 10px;
 }
 .countdown-break {
   background-color: #0074CC;
-  top: 25px;
   height: 18px;
   left: 0;
   overflow: hidden;
   position: absolute;
+  top: 25px;
   width: 6px;
 }
 .icon {
@@ -40,9 +40,19 @@ body {
 }
 .hero-unit {
   position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
-.btns {
+.hero-unit .btn {
+  float: right;
+  margin-left: 10px;
+}
+.project .description {
+  height: 94px;
+  overflow: hidden;
+}
+.project .btn {
+  bottom: 20px;
   position: absolute;
-  top: 0;
-  right: 0;
+  right: 20px;
 }
