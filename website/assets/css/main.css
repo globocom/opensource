@@ -18,9 +18,35 @@ body {
   float: right;
   margin-left: 10px;
 }
-.repos .loading {
+.hide {
+  display: none;
+}
+.repos .loading,
+.members .loading {
   display: block;
   margin: auto;
+}
+.members {
+  overflow: hidden;
+}
+.members .member {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.members .photo {
+  border-radius: 4px;
+  float: left;
+}
+.members .url {
+  display: block;
+  float: right;
+  padding-top: 17px;
+  width: 111px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: lowercase;
 }
 .project {
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpiOHfu3H8gYGAEESAAEGAAbXQJZTSbcasAAAAASUVORK5CYII=") #f2f2f2;
@@ -51,4 +77,19 @@ body {
   bottom: 20px;
   position: absolute;
   right: 20px;
+}
+.title {
+  border-bottom: 1px solid #DEDEDE;
+  margin-bottom: 20px;
+  padding: 15px 0;
+  position: relative;
+  text-transform: uppercase;
+}
+.title .detail {
+  background-color: #4F65BF;
+  bottom: 0;
+  height: 6px;
+  left: 0;
+  position: absolute;
+  width: 60px;
 }

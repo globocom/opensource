@@ -25,14 +25,47 @@ body
     margin-left: 10px;
   }
 }
-
+.hide {
+  display: none;
+}
 //repos
-.repos {
+.repos,
+.members {
 
   .loading {
       display: block;
       margin: auto;
   }
+}
+
+//members
+.members {
+
+  overflow: hidden;
+
+  .member{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .photo {
+    border-radius: 4px;
+    float: left;
+  }
+
+  .url {
+    display: block;
+    float: right;
+    padding-top: 17px;
+    width: 111px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: lowercase;
+  }
+
+
 }
 
 //project item
@@ -67,5 +100,22 @@ body
     bottom: 20px;
     position: absolute;
     right: 20px;
+  }
+}
+
+.title {
+  border-bottom: 1px solid #DEDEDE;
+  margin-bottom: 20px;
+  padding: 15px 0;
+  position: relative;
+  text-transform: uppercase;
+
+  .detail {
+    background-color: #4F65BF;
+    bottom: 0;
+    height: 6px;
+    left: 0;
+    position: absolute;
+    width: 60px;
   }
 }
