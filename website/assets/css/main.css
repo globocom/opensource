@@ -1,6 +1,8 @@
 body {
-  background-image: url('../img/bg2.jpg');
-  padding: 60px 0 40px 0;
+  padding: 40px 0;
+}
+.hide {
+  display: none;
 }
 .header {
   margin-bottom: 10px;
@@ -17,9 +19,6 @@ body {
 .header .btns {
   float: right;
   margin-left: 10px;
-}
-.hide {
-  display: none;
 }
 .repos .loading,
 .members .loading {
@@ -84,6 +83,9 @@ body {
   padding: 15px 0;
   position: relative;
   text-transform: uppercase;
+  font-weight: normal;
+  font-size: 33px;
+  letter-spacing: -1px;
 }
 .title .detail {
   background-color: #4F65BF;
