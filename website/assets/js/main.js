@@ -27,7 +27,7 @@
 
 	  	}
 
-	  	$(".repos").append(repos);
+	  	$(".repos").empty().append(repos);
 	  }
 	  else {
 	  }
