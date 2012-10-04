@@ -1,8 +1,9 @@
 (function ($, undefined) {
 
-    var uri = "https://api.github.com/orgs/globocom/repos?callback=?"
+    var uri = "https://api.github.com/users/globocom/repos?callback=?"
         + "&per_page=100"
-        + "&page=1";
+        + "&page=1"
+        + "&sort=pushed";
 
     var PROJECT = '<div class="span4 project hide">' +
 			       '	<div class="container-inner">' +
