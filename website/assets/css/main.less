@@ -124,9 +124,25 @@ body
     width: 60px;
   }
 
-  .fb-like {
+  .social {
     position: absolute;
     right: 0;
-    bottom: 15px;
+    bottom: 0;
+    height: 44px;
+    overflow: hidden;
+    width: 230px;
+
+    .item {
+      font-size: 0;
+      display: block;
+      height: 20px;
+      margin: 2px 0;
+      text-align: right;
+      width: 110px;
+      float: right;
+    }
+    .item:first-child {
+      margin-left: 10px;
+    }
   }
 }

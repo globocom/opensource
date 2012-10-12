@@ -96,8 +96,23 @@ body {
   position: absolute;
   width: 60px;
 }
-.title .fb-like {
+.title .social {
   position: absolute;
   right: 0;
-  bottom: 15px;
+  bottom: 0;
+  height: 44px;
+  overflow: hidden;
+  width: 230px;
+}
+.title .social .item {
+  font-size: 0;
+  display: block;
+  height: 20px;
+  margin: 2px 0;
+  text-align: right;
+  width: 110px;
+  float: right;
+}
+.title .social .item:first-child {
+  margin-left: 10px;
 }
