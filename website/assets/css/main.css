@@ -21,7 +21,8 @@ body {
   margin-left: 10px;
 }
 .repos .loading,
-.members .loading {
+.members .loading,
+.talks .loading {
   display: block;
   margin: auto;
 }
