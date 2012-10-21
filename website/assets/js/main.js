@@ -38,8 +38,8 @@
 	  }
 	});
 
-	$.getJSON("https://api.github.com/orgs/globocom/members?callback=?", function (result) {
-	    if (result.data && result.data.length > 0) {
+	$.getJSON("https://api.github.com/orgs/globocom/public_members?callback=?", function (result) {
+	  	if (result.data && result.data.length > 0) {
 
 		  	var members = "", item = "";
 
