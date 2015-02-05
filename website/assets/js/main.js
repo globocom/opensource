@@ -46,10 +46,10 @@
             for ( var i = 0; i < result.data.length ; i++ ) {
 
                 members += MEMBER.replace("#{url}", result.data[i].avatar_url)
-                                 .replace("#{login}", result.data[i].login)
-                                 .replace("#{url}", result.data[i].url
-                                                                  .replace("api.", "")
-                                                                  .replace("users/", ""));
+                                  .replace("#{login}", result.data[i].login)
+                                  .replace("#{url}", result.data[i].url
+                                  .replace("api.", "")
+                                  .replace("users/", ""));
 
             }
 
