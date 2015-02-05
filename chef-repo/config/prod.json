@@ -1,5 +1,0 @@
-{
-  "instance_role": "master",
-  "run_list": ["role[default]", "role[prod]"],
-  "env" : "prod"
-}
