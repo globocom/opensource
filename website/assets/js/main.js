@@ -34,7 +34,7 @@
         (a.stargazers_count > b.stargazers_count) ? -1 : 0; });
 
       for ( i = 0; i < repos.length; i++ ) {
-        if (repos[i] !== "IWantToWorkAtGloboCom") {
+        if (repos[i].name !== "IWantToWorkAtGloboCom") {
           rendered_repos += PROJECT.replace("#{title}", repos[i].name)
                           .replace("#{description}", repos[i].description)
                           .replace("#{html_url}", repos[i].html_url);
