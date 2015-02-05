@@ -1,9 +1,7 @@
 (function ($, undefined) {
 
-    var uri = "https://api.github.com/users/globocom/repos?callback=?"
-        + "&per_page=100"
-        + "&page=1"
-        + "&sort=pushed";
+    var URL = "https://api.github.com/orgs/#{org}/repos?callback=?&per_page=100&page=1";
+    var organizations = ["globocom", "clappr", "thumbor", "tsuru"];
 
     var PROJECT = '<div class="span4 project hide">' +
                    '    <div class="container-inner">' +
@@ -19,23 +17,41 @@
                    '    <a class="url" href="#{url}">@#{login}</a>' +
                    '</li>';
 
+    var AJAX = [];
 
-    $.getJSON(uri, function (result) {
-      if (result.data && result.data.length > 0) {
+    for ( var i = 0; i < organizations.length ; i++ ) {
 
-        var repos = "", item = "";
+      var uri = URL.replace("#{org}", organizations[i]);
+      AJAX.push($.getJSON(uri));
 
-        for ( var i = 0; i < result.data.length ; i++ ) {
+    }
 
-            repos += PROJECT.replace("#{title}", result.data[i].name)
-                            .replace("#{description}", result.data[i].description)
-                            .replace("#{html_url}", result.data[i].html_url);
+    $.when.apply( $, AJAX ).done( function() {
 
+      var repos = [];
+      var rendered_repos = "";
+
+      for ( var i = 0, len = arguments.length; i < len; i++ ) {
+        if (arguments[i][0].data && arguments[i][0].data.length > 0 && arguments[i][1] === "success") {
+          repos = repos.concat(arguments[i][0].data);
         }
-
-        $(".repos").empty().append(repos);
-        $(".project").fadeIn(1000);
       }
+
+      repos.sort(function (a, b) { return (a.stargazers_count < b.stargazers_count)? 1 :
+        (a.stargazers_count > b.stargazers_count) ? -1 : 0; });
+
+      for ( i = 0; i < repos.length; i++ ) {
+
+        rendered_repos += PROJECT.replace("#{title}", repos[i].name)
+                        .replace("#{description}", repos[i].description)
+                        .replace("#{html_url}", repos[i].html_url);
+
+      }
+
+      $(".repos").empty();
+      $(".repos").append(rendered_repos);
+      $(".project").fadeIn(1000);
+
     });
 
     $.getJSON("https://api.github.com/orgs/globocom/public_members?page=1&per_page=100&callback=?", function (result) {
