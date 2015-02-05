@@ -116,3 +116,7 @@ body {
 .title .social .item:first-child {
   margin-left: 10px;
 }
+
+.fb-like span {
+  vertical-align: top !important;
+}
