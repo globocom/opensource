@@ -1,6 +1,6 @@
 (function ($, undefined) {
     var URL = "https://api.github.com/orgs/#{org}/repos?callback=?&per_page=100&page=1";
-    var organizations = ["globocom", "clappr", "thumbor", "tsuru"];
+    var organizations = ["globocom", "clappr", "thumbor", "tsuru", "galeb"];
     var PROJECT = '<div class="span4 project hide">' +
                    '    <div class="container-inner">' +
                    '      <h2>#{title}</h2>' +
