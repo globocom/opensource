@@ -25,6 +25,18 @@
       });
     };
 
+    var parseLinkNext = function(xhr) {
+      var links = xhr.getResponseHeader("Link");
+      if (!links) {
+        return null;
+      }
+      var nextMatch = links.match(/<(.*?)>; rel="next"/);
+      if (nextMatch && nextMatch[1]) {
+        return nextMatch[1];
+      }
+      return null;
+    };
+
     for (var i = 0; i < organizations.length; i++) {
       var uri = URL.replace("#{org}", organizations[i]);
       AJAX.push(ajaxWithURI(uri));
@@ -57,13 +69,9 @@
           continue;
         }
         repos = repos.concat(githubObj);
-        var links = xhr.getResponseHeader("Link");
-        if (!links) {
-          continue;
-        }
-        var nextMatch = links.match(/<(.*?)>; rel="next"/);
-        if (nextMatch && nextMatch[1]) {
-          AJAX.push(ajaxWithURI(nextMatch[1]));
+        var next = parseLinkNext(xhr);
+        if (next) {
+          AJAX.push(ajaxWithURI(next));
         }
       }
 
@@ -72,8 +80,7 @@
         return;
       }
 
-      repos.sort(function (a, b) { return (a.stargazers_count < b.stargazers_count)? 1 :
-        (a.stargazers_count > b.stargazers_count) ? -1 : 0; });
+      repos.sort(function (a, b) { return b.stargazers_count - a.stargazers_count; });
 
       for ( i = 0; i < repos.length; i++ ) {
         if (repos[i].name !== "IWantToWorkAtGloboCom") {
@@ -90,20 +97,39 @@
 
     $.when.apply($, AJAX).always(onRepos);
 
-    $.getJSON("https://api.github.com/orgs/globocom/public_members?page=1&per_page=100&callback=?", function(result) {
-        if (result.data && result.data.length > 0) {
-            var members = "", item = "";
+    var members = [];
+    var onMembers = function(githubData, status, xhr) {
+      if (status !== "success") {
+        xhr = githubData;
+        if (console && console.log) {
+          console.log("Failed to fetch " + xhr.uri + ", ignoring.");
+        }
+        return;
+      }
+      if (!githubData || githubData.length === 0) {
+        return;
+      }
+      members = members.concat(githubData);
 
-            for (var i = 0; i < result.data.length; i++) {
-                members += MEMBER.replace("#{url}", result.data[i].avatar_url)
-                                  .replace("#{login}", result.data[i].login)
-                                  .replace("#{url}", result.data[i].url
-                                  .replace("api.", "")
-                                  .replace("users/", ""));
-            }
+      var next = parseLinkNext(xhr);
+      if (next) {
+        ajaxWithURI(next).always(onMembers);
+        return;
+      }
 
-            $(".members").empty().append(members);
-            $(".member").fadeIn(1000);
-          }
-    });
+      members.sort(function (a, b) { return a.login.localeCompare(b.login); });
+
+      var membersRendered = "";
+      for (var i = 0; i < members.length; i++) {
+          membersRendered += MEMBER.replace("#{url}", members[i].avatar_url)
+                                   .replace("#{login}", members[i].login)
+                                   .replace("#{url}", members[i].url
+                                   .replace("api.", "")
+                                   .replace("users/", ""));
+      }
+      $(".members").empty().append(membersRendered);
+      $(".member").fadeIn(1000);
+    };
+
+    ajaxWithURI("https://api.github.com/orgs/globocom/public_members?page=1&per_page=100").always(onMembers);
 })(jQuery);
