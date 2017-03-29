@@ -1,5 +1,5 @@
 (function ($, undefined) {
-    var URL = "https://api.github.com/orgs/#{org}/repos?callback=?&per_page=100&page=1";
+    var URL = "https://api.github.com/orgs/#{org}/repos?per_page=100&page=1";
     var organizations = ["globocom", "clappr", "thumbor", "tsuru", "galeb"];
     var PROJECT = '<div class="span4 project hide">' +
                    '    <div class="container-inner">' +
@@ -15,19 +15,61 @@
                    '</li>';
     var AJAX = [];
 
+    var ajaxWithURI = function(uri) {
+      return $.ajax({
+        dataType: "json",
+        url: uri,
+        beforeSend: function(xhr) {
+          xhr.uri = uri;
+        }
+      });
+    };
+
     for (var i = 0; i < organizations.length; i++) {
       var uri = URL.replace("#{org}", organizations[i]);
-      AJAX.push($.getJSON(uri));
+      AJAX.push(ajaxWithURI(uri));
     }
 
-    $.when.apply($, AJAX).done( function() {
-      var repos = [];
+    var repos = [];
+    var onRepos = function() {
       var rendered_repos = "";
+      var args = arguments;
+      var i;
 
-      for ( var i = 0, len = arguments.length; i < len; i++ ) {
-        if (arguments[i][0].data && arguments[i][0].data.length > 0 && arguments[i][1] === "success") {
-          repos = repos.concat(arguments[i][0].data);
+      AJAX = [];
+
+      if (!$.isArray(args[0][0])) {
+        args = [args];
+      }
+
+      for ( i = 0, len = args.length; i < len; i++ ) {
+        var githubObj = args[i][0],
+            status = args[i][1],
+            xhr = args[i][2];
+        if (status !== "success") {
+          xhr = args[i][0];
+          if (console && console.log) {
+            console.log("Failed to fetch " + xhr.uri + ", ignoring.");
+          }
+          continue;
         }
+        if (!githubObj || githubObj.length === 0) {
+          continue;
+        }
+        repos = repos.concat(githubObj);
+        var links = xhr.getResponseHeader("Link");
+        if (!links) {
+          continue;
+        }
+        var nextMatch = links.match(/<(.*?)>; rel="next"/);
+        if (nextMatch && nextMatch[1]) {
+          AJAX.push(ajaxWithURI(nextMatch[1]));
+        }
+      }
+
+      if (AJAX.length > 0) {
+        $.when.apply($, AJAX).always(onRepos);
+        return;
       }
 
       repos.sort(function (a, b) { return (a.stargazers_count < b.stargazers_count)? 1 :
@@ -44,7 +86,9 @@
       $(".repos").empty();
       $(".repos").append(rendered_repos);
       $(".project").fadeIn(1000);
-    });
+    };
+
+    $.when.apply($, AJAX).always(onRepos);
 
     $.getJSON("https://api.github.com/orgs/globocom/public_members?page=1&per_page=100&callback=?", function(result) {
         if (result.data && result.data.length > 0) {
