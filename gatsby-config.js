@@ -1,10 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: 'Globo.com - Por que ❤️ Open Source?',
+    title: 'Globo.com - Open Source',
+    description: 'Globo.com - Por que ❤️ Open Source?',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: `src/utils/typography.js`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
