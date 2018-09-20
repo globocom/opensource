@@ -4,7 +4,28 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
-import './layout.css'
+
+const MetaData = ({ siteMetadata }) => {
+  const meta = [
+    {
+      name: 'description',
+      content: siteMetadata.description,
+    },
+    {
+      name: 'keywords',
+      content: 'opensource, community, globocom, gcom',
+    },
+  ]
+  return (
+    <Helmet title={siteMetadata.title} meta={meta}>
+      <html lang="pt" />
+    </Helmet>
+  )
+}
+
+MetaData.propTypes = {
+  siteMetadata: PropTypes.object.isRequired,
+}
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -13,21 +34,14 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            description
           }
         }
       }
     `}
     render={data => (
       <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
+        <MetaData siteMetadata={data.site.siteMetadata} />
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
