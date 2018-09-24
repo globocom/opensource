@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import styles from './footer.module.css'
 
@@ -11,6 +10,7 @@ const Footer = () => (
         <a
           className={styles.menuItem}
           target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/globocom/"
         >
           GITHUB
@@ -18,6 +18,7 @@ const Footer = () => (
         <a
           className={styles.menuItem}
           target="_blank"
+          rel="noopener noreferrer"
           href="https://talentos.globo.com"
         >
           TALENTOS
