@@ -3,8 +3,8 @@ import Layout from '../components/layout'
 
 const IndexPage = () => (
   <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
+    <h1>LandingPage</h1>
+    <p>Welcome to Globo.com Open source.</p>
   </Layout>
 )
 

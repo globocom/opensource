@@ -1,6 +1,13 @@
-.container {
+.layout {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gridContainer {
   max-width: 85rem;
   margin: 0 auto;
-  -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+}
+
+.main {
+  padding-top: 24px;
 }

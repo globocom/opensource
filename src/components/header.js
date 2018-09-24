@@ -12,33 +12,35 @@ const isMenuItemActive = ({ isCurrent }) => {
   return { className: classNames.join(' ') }
 }
 
-const Header = props => (
+const Header = () => (
   <header className={styles.header}>
-    <div className={styles.brand}>
-      <Link to="/">
-        <img className={styles.logo} src={logo} alt="Globo.com" />
-      </Link>
-      <span className={styles.brandName}>Open Source</span>
+    <div className={styles.headerContent}>
+      <div className={styles.brand}>
+        <Link to="/">
+          <img className={styles.logo} src={logo} alt="Globo.com" />
+        </Link>
+        <span className={styles.brandName}>Open Source</span>
+      </div>
+      <nav>
+        <ul className={styles.menu}>
+          <li className={styles.menuItem}>
+            <Link getProps={isMenuItemActive} to="/projetos/">
+              Projetos
+            </Link>
+          </li>
+          <li className={styles.menuItem}>
+            <Link getProps={isMenuItemActive} to="/nosso-time/">
+              Nosso time
+            </Link>
+          </li>
+          <li className={styles.menuItem}>
+            <Link getProps={isMenuItemActive} to="/hacktober/">
+              Hacktober
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul className={styles.menu}>
-        <li className={styles.menuItem}>
-          <Link getProps={isMenuItemActive} to="/projetos/">
-            Projetos
-          </Link>
-        </li>
-        <li className={styles.menuItem}>
-          <Link getProps={isMenuItemActive} to="/nosso-time/">
-            Nosso time
-          </Link>
-        </li>
-        <li className={styles.menuItem}>
-          <Link getProps={isMenuItemActive} to="/hacktober/">
-            Hacktober
-          </Link>
-        </li>
-      </ul>
-    </nav>
   </header>
 )
 
