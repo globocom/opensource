@@ -31,43 +31,42 @@
   list-style: none;
   height: 100%;
   margin: 0;
-  line-height: 14px;
 }
 
 .menuItem {
   margin: 0;
   margin-left: 40px;
   display: inline;
-  font-size: 14px;
-  font-weight: 600;
 }
 
 .menuItem:first-child {
   margin-left: 0;
 }
 
-.menuItem a,
-.menuItem a:active,
-.menuItem a:visited {
+.menuLink {
+  line-height: 14px;
+  font-size: 14px;
+  font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.menuLink,
+.menuLink:active,
+.menuLink:visited {
   color: rgb(162, 193, 236);
 }
 
-.menuItem a:hover {
+.menuLink:hover {
   color: rgb(19, 173, 254);
 }
 
-.menuItemActive {
-  composes: menuItem;
-}
-
-.menuItemActive a,
-.menuItemActive a:active,
-.menuItemActive a:visited {
+.menuLinkActive,
+.menuLinkActive:active,
+.menuLinkActive:visited {
   color: rgb(19, 173, 254);
 }
 
-.menuItemActive a:hover {
+.menuLinkActive:hover {
   color: rgb(19, 173, 254);
 }
