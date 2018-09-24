@@ -51,6 +51,57 @@
   margin-bottom: 60px;
 }
 
+.sectionButton {
+  margin-top: 64px;
+}
+
+.sectionBottom {
+  background-color: white;
+}
+
+.sectionBottomContent {
+  composes: container from '../styles/grid.module.css';
+  background: url('https://s2.glbimg.com/8sUBtA9e1-S3OuGKKX6PaZ-Sxng=/0x0:1048x699/fit-in/1280x720/https://i.s3.glbimg.com/v1/AUTH_08e5bccd3b324f9a8498d007715105ad/internal_photos/bs/2017/Z/v/NnOZElTyylAJQSbEQurA/hackday-50.jpg') no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 530px;
+  position: relative;
+  padding: 140px 40px 170px;
+  color: white;
+}
+
+.sectionBottomContent::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  background-color: rgb(16, 32, 55);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.sectionBottomData {
+  z-index: 2;
+  position: relative;
+  color: white;
+}
+
+.sectionBottomTitle {
+  font-weight: 300;
+  font-size: 30px;
+  letter-spacing: -1.7px;
+}
+
+.sectionBottomSubTitle {
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: -0.6px;
+  margin-top: 56px;
+}
+
 @media small {
   .heroSection {
     height: 484px;
