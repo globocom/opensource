@@ -45,13 +45,11 @@ const Layout = ({ children }) => (
   <StaticQuery
     query={siteQuery}
     render={data => (
-      <div>
+      <div className={styles.layout}>
         <MetaData siteMetadata={data.site.siteMetadata} />
-        <div className={styles.container}>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </div>
+        <Header />
+        <main className={styles.main}>{children}</main>
+        <Footer />
       </div>
     )}
   />

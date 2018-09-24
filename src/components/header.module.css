@@ -1,9 +1,14 @@
 .header {
+  height: 60px;
+  background-color: rgb(16, 32, 55);
+}
+
+.headerContent {
+  composes: gridContainer from './layout.module.css';
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
-  background-color: rgb(16, 32, 55);
 }
 
 .brand {
