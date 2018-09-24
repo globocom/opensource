@@ -1,0 +1,43 @@
+.featuredProjects {
+  display: flex;
+  align-items: flex-start;
+}
+
+.project {
+  flex: 1;
+  margin-left: 50px;
+}
+
+.project:first-child {
+  margin-left: 0;
+}
+
+.projectLogo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 70px;
+  margin-bottom: 28px;
+}
+
+.projectLogoImage {
+  margin: 0;
+}
+
+.projectDescription {
+  text-align: left;
+  margin-bottom: 6px;
+  line-height: 24px;
+  font-size: 14px;
+  letter-spacing: -0.8px;
+  color: rgb(102, 102, 102);
+}
+
+.projectLink {
+  font-family: 'Open Sans', serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.8px;
+  color: rgb(74, 144, 226);
+  text-decoration: none;
+}
