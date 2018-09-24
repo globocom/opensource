@@ -1,0 +1,19 @@
+
+.section {
+  background-color: white;
+  margin-top: 700px;
+  padding: 75px 0 100px;
+}
+
+.sectionContent {
+  composes: container from '../styles/grid.module.css';
+}
+
+.sectionTitle {
+  font-family: 'Open Sans', serif;
+  font-weight: 300;
+  font-size: 30px;
+  letter-spacing: -1.7px;
+  color: black;
+  margin-bottom: 60px;
+}
