@@ -7,8 +7,15 @@ import styles from './index.module.css'
 
 const IndexPage = () => (
   <Layout>
-    {/* <h1>LandingPage</h1>
-    <p>Welcome to Globo.com Open source.</p> */}
+    <section className={styles.heroSection}>
+      <div>
+        <h1 className={styles.heroSectionCall}>Addicted Developers</h1>
+        <h2 className={styles.heroSectionSubCall}>Unidos pelo código.</h2>
+        <a className={styles.heroSectionLink} href="">
+          Let's code
+        </a>
+      </div>
+    </section>
     <section className={styles.section}>
       <div className={styles.sectionContent}>
         <h2 className={styles.sectionTitle}>Nossos projetos</h2>

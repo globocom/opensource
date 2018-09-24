@@ -1,3 +1,5 @@
+@value small from "../styles/breakpoints.module.css";
+
 .layout {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,5 +16,12 @@
 
 .main {
   flex: 1;
-  padding-top: 24px;
+}
+
+@media small {
+  .layout {
+    background-image: url(../images/landing-bg-mobile.svg);
+    background-size: 100%;
+    background-color: white;
+  }
 }
