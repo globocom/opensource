@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import Footer from './footer'
 
 import styles from './layout.module.css'
 
@@ -29,24 +30,27 @@ MetaData.propTypes = {
   siteMetadata: PropTypes.object.isRequired,
 }
 
+const siteQuery = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  }
+`
+
 const Layout = ({ children }) => (
   <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-            description
-          }
-        }
-      }
-    `}
+    query={siteQuery}
     render={data => (
       <div>
         <MetaData siteMetadata={data.site.siteMetadata} />
         <div className={styles.container}>
           <Header />
           <main>{children}</main>
+          <Footer />
         </div>
       </div>
     )}
