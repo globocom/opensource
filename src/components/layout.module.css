@@ -1,6 +1,9 @@
 .layout {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .gridContainer {
@@ -9,5 +12,6 @@
 }
 
 .main {
+  flex: 1;
   padding-top: 24px;
 }
