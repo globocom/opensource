@@ -1,0 +1,46 @@
+.footer {
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(16, 32, 55);
+  color: white;
+  font-family: 'Open Sans', serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: -0.4px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  font-weight: 700;
+  margin-right: 40px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menuItem,
+.menuItem:active,
+.menuItem:visited {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  color: rgb(238, 238, 238);
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+.menuItem:first-child {
+  margin-left: 0;
+}
+
+.menuItem:hover {
+  color: rgb(19, 173, 254);
+}
