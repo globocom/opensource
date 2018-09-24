@@ -1,7 +1,40 @@
+@value small from "../styles/breakpoints.module.css";
+
+.heroSection {
+  composes: container from '../styles/grid.module.css';
+  height: 660px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.heroSectionCall {
+  font-family: 'Open Sans', serif;
+  font-weight: 700;
+  font-size: 48px;
+}
+
+.heroSectionSubCall {
+  font-size: 24px;
+  line-height: 40px;
+}
+
+.heroSectionLink {
+  font-family: 'Open Sans', serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 24px;
+  letter-spacing: -1px;
+  line-height: 40px;
+  color: rgb(74, 144, 226);
+  text-decoration: none;
+  margin-top: 50px;
+  display: block;
+}
 
 .section {
   background-color: white;
-  margin-top: 700px;
+  margin-top: 70px;
   padding: 75px 0 100px;
 }
 
@@ -16,4 +49,38 @@
   letter-spacing: -1.7px;
   color: black;
   margin-bottom: 60px;
+}
+
+@media small {
+  .heroSection {
+    height: 484px;
+  }
+
+  .heroSectionCall {
+    font-size: 30px;
+    width: 170px;
+    line-height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .heroSectionSubCall {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+
+  .heroSectionLink {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 25px;
+  }
+
+  .section {
+    margin-top: 30px;
+    padding: 24px 0;
+  }
+
+  .sectionTitle {
+    margin-bottom: 40px;
+  }
 }

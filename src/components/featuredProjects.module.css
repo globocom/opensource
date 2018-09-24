@@ -1,3 +1,5 @@
+@value small from "../styles/breakpoints.module.css";
+
 .featuredProjects {
   display: flex;
   align-items: flex-start;
@@ -40,4 +42,19 @@
   letter-spacing: -0.8px;
   color: rgb(74, 144, 226);
   text-decoration: none;
+}
+
+@media small {
+  .featuredProjects {
+    width: 230px;
+    flex-direction: column;
+  }
+
+  .project {
+    margin-left: 0;
+  }
+
+  .projectLogo {
+    justify-content: flex-start;
+  }
 }
