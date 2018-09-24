@@ -1,0 +1,12 @@
+@value small from "./breakpoints.module.css";
+
+.container {
+  max-width: 85rem;
+  margin: 0 auto;
+}
+
+@media small {
+  .container {
+    padding: 0 24px;
+  }
+}

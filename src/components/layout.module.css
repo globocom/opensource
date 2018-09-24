@@ -6,11 +6,6 @@
   min-height: 100vh;
 }
 
-.gridContainer {
-  max-width: 85rem;
-  margin: 0 auto;
-}
-
 .main {
   flex: 1;
   padding-top: 24px;
