@@ -1,33 +1,29 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+import logo from '../images/logo.svg'
+import styles from './header.module.css'
+
+const Header = () => (
+  <header className={styles.header}>
+    <div className={styles.brand}>
+      <img className={styles.logo} src={logo} />
+      <span className={styles.brandName}>Open Source</span>
     </div>
-  </div>
+    <nav>
+      <ul className={styles.menu}>
+        <li className={styles.menuItemActive}>
+          <Link to="/projetos/">Projetos</Link>
+        </li>
+        <li className={styles.menuItem}>
+          <Link to="/nosso-time/">Nosso time</Link>
+        </li>
+        <li className={styles.menuItem}>
+          <Link to="/hacktober/">Hacktober</Link>
+        </li>
+      </ul>
+    </nav>
+  </header>
 )
 
 export default Header

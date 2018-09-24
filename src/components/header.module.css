@@ -1,0 +1,73 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  background-color: rgb(16, 32, 55);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: 'Open Sans', serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: -0.4px;
+}
+
+.brandName {
+  margin-bottom: 2px;
+}
+
+.logo {
+  margin: 0;
+  margin-right: 8px;
+  height: 20px;
+}
+
+.menu {
+  list-style: none;
+  height: 100%;
+  margin: 0;
+  line-height: 14px;
+}
+
+.menuItem {
+  margin: 0;
+  margin-left: 40px;
+  display: inline;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.menuItem:first-child {
+  margin-left: 0;
+}
+
+.menuItem a,
+.menuItem a:active,
+.menuItem a:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(162, 193, 236);
+}
+
+.menuItem a:hover {
+  color: rgb(19, 173, 254);
+}
+
+.menuItemActive {
+  composes: menuItem;
+}
+
+.menuItemActive a,
+.menuItemActive a:active,
+.menuItemActive a:visited {
+  color: rgb(19, 173, 254);
+}
+
+.menuItemActive a:hover {
+  color: rgb(19, 173, 254);
+}
