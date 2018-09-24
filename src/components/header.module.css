@@ -1,10 +1,12 @@
+@value small from "../styles/breakpoints.module.css";
+
 .header {
   height: 60px;
   background-color: rgb(16, 32, 55);
 }
 
 .headerContent {
-  composes: gridContainer from './layout.module.css';
+  composes: container from '../styles/grid.module.css';
   height: 100%;
   display: flex;
   align-items: center;
@@ -14,25 +16,32 @@
 .brand {
   display: flex;
   align-items: center;
+}
+
+.brandLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brandLogo {
+  margin: 0;
+  height: 20px;
+}
+
+.brandName {
+  margin-left: 8px;
+  margin-bottom: 2px;
   color: white;
   font-family: 'Open Sans', serif;
   font-weight: 300;
   font-size: 16px;
-  line-height: 16px;
   letter-spacing: -0.4px;
 }
 
-.brandName {
-  margin-bottom: 2px;
-}
-
-.logo {
-  margin: 0;
-  margin-right: 8px;
-  height: 20px;
-}
-
 .menu {
+  display: flex;
+  align-items: center;
   list-style: none;
   height: 100%;
   margin: 0;
@@ -41,7 +50,6 @@
 .menuItem {
   margin: 0;
   margin-left: 40px;
-  display: inline;
 }
 
 .menuItem:first-child {
@@ -49,7 +57,7 @@
 }
 
 .menuLink {
-  line-height: 14px;
+  display: block;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -74,4 +82,25 @@
 
 .menuLinkActive:hover {
   color: rgb(19, 173, 254);
+}
+
+
+@media small {
+  .menuItem {
+    margin-left: 8px;
+  }
+
+  .menuLink {
+    font-size: 10px;
+  }
+
+  .brandLogo {
+    height: 12px;
+  }
+
+  .brandName {
+    font-size: 12px;
+    margin-bottom: 0;
+    margin-left: 3px;
+  }
 }

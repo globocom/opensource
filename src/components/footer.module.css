@@ -1,3 +1,5 @@
+@value small from "../styles/breakpoints.module.css";
+
 .footer {
   height: 64px;
   background-color: rgb(16, 32, 55);
@@ -9,7 +11,7 @@
 }
 
 .footerContent {
-  composes: gridContainer from './layout.module.css';
+  composes: container from '../styles/grid.module.css';
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -22,11 +24,13 @@
 }
 
 .brand {
+  text-decoration: none;
+  color: white;
   font-weight: 700;
-  margin-right: 40px;
 }
 
 .menu {
+  margin-left: 40px;
   display: flex;
   align-items: center;
 }
@@ -48,4 +52,23 @@
 
 .menuItem:hover {
   color: rgb(19, 173, 254);
+}
+
+@media small {
+  .footer {
+    font-size: 10px;
+  }
+
+  .menu {
+    margin-left: 12px;
+  }
+
+  .menuItem {
+    font-size: 9px;
+    margin-left: 12px;
+  }
+
+  .brand {
+    font-size: 12px;
+  }
 }
