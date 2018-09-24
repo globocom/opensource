@@ -7,7 +7,7 @@ import styles from './header.module.css'
 const Header = () => (
   <header className={styles.header}>
     <div className={styles.brand}>
-      <img className={styles.logo} src={logo} />
+      <img className={styles.logo} src={logo} alt="Globo.com" />
       <span className={styles.brandName}>Open Source</span>
     </div>
     <nav>
