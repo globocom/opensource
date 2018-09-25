@@ -9,6 +9,13 @@ import githubIcon from '../images/logo-github.svg'
 
 const IndexPage = () => (
   <Layout>
+    <div className={styles.landingBg}>
+      <div className={styles.landingBgCornerTop} />
+      <div className={styles.landingBgCornerBottom} />
+      <div className={styles.landingBgMask}>
+        <div className={styles.landingBgAstronaut} />
+      </div>
+    </div>
     <section className={styles.heroSection}>
       <div>
         <h1 className={styles.heroSectionCall}>Addicted Developers</h1>
