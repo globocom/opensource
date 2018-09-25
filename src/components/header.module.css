@@ -1,4 +1,4 @@
-@value small from "../styles/breakpoints.module.css";
+@value small, xsmall from "../styles/breakpoints.module.css";
 
 .header {
   height: 120px;
@@ -107,5 +107,11 @@
     font-size: 12px;
     margin-bottom: 0;
     margin-left: 3px;
+  }
+}
+
+@media xsmall {
+  .brandLink {
+    flex-direction: column;
   }
 }
