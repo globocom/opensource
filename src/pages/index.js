@@ -8,26 +8,33 @@ import styles from './index.module.css'
 import githubIcon from '../images/logo-github.svg'
 
 const IndexPage = () => (
-  <Layout>
-    <div className={styles.landingBg}>
-      <div className={styles.landingBgCornerTop} />
-      <div className={styles.landingBgCornerBottom} />
-      <div className={styles.landingBgMask}>
-        <div className={styles.landingBgAstronaut} />
-      </div>
-    </div>
-    <section className={styles.heroSection}>
-      <div>
-        <h1 className={styles.heroSectionCall}>Addicted Developers</h1>
-        <h2 className={styles.heroSectionSubCall}>Unidos pelo código.</h2>
-        <a
-          className={styles.heroSectionLink}
-          href="https://github.com/globocom/opensource"
-        >
-          Let's code
-        </a>
-      </div>
-    </section>
+  <Layout
+    topClassName={styles.topBg}
+    renderTop={() => (
+      <section className={styles.heroSection}>
+        <div className={styles.landingBgCornerTop} />
+        <div className={styles.landingBgCornerBottom} />
+        <div className={styles.heroSectionContent}>
+          <div className={styles.moon} />
+          <div className={styles.saturn} />
+          <div className={styles.asteroid} />
+          <div className={styles.venus} />
+          <div className={styles.rocket} />
+          <div className={styles.astronaut} />
+          <div>
+            <h1 className={styles.heroSectionCall}>Addicted Developers</h1>
+            <h2 className={styles.heroSectionSubCall}>Unidos pelo código.</h2>
+            <a
+              className={styles.heroSectionLink}
+              href="https://github.com/globocom/opensource"
+            >
+              Let's code
+            </a>
+          </div>
+        </div>
+      </section>
+    )}
+  >
     <section className={styles.section}>
       <div className={styles.sectionContent}>
         <h2 className={styles.sectionTitle}>Nossos projetos</h2>

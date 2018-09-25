@@ -41,13 +41,16 @@ const siteQuery = graphql`
   }
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ renderTop, children }) => (
   <StaticQuery
     query={siteQuery}
     render={data => (
       <div className={styles.layout}>
         <MetaData siteMetadata={data.site.siteMetadata} />
-        <Header />
+        <div className={styles.layoutTop}>
+          <Header />
+          {renderTop && renderTop()}
+        </div>
         <main className={styles.main}>{children}</main>
         <Footer />
       </div>

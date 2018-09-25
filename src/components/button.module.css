@@ -28,4 +28,9 @@
 }
 
 @media small {
+  .button {
+    font-size: 10px;
+    letter-spacing: 0.6px;
+    padding: 10px 12px;
+  }
 }
