@@ -1,11 +1,13 @@
-@value small from "./breakpoints.module.css";
+@value small, medium from "./breakpoints.module.css";
+@value maxWidth: 75rem;
 
 .container {
-  max-width: 85rem;
+  max-width: maxWidth;
   margin: 0 auto;
 }
 
-@media small {
+
+@media screen and (max-width: maxWidth) {
   .container {
     padding: 0 24px;
   }

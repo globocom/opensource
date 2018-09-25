@@ -7,15 +7,12 @@
   flex-direction: column;
   min-height: 100vh;
   background-color: rgb(16, 32, 55);
-
-  background-image: url(../images/landing-bg.svg);
-  background-repeat: no-repeat;
-  background-size: 1360px;
-  background-position: top center;
+  position: relative;
 }
 
 .main {
   flex: 1;
+  background-color: white;
 }
 
 @media small {

@@ -1,7 +1,9 @@
 @value small from "../styles/breakpoints.module.css";
 
 .header {
-  height: 60px;
+  height: 120px;
+  position: relative;
+  z-index: 2;
 }
 
 .headerContent {
@@ -85,6 +87,10 @@
 
 
 @media small {
+  .header {
+    height: 60px;
+  }
+
   .menuItem {
     margin-left: 8px;
   }
