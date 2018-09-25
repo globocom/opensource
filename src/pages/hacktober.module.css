@@ -1,3 +1,5 @@
+@value small, mediumOnly from "../styles/breakpoints.module.css";
+
 .bgCornerTop {
   background-image: url(../images/hacktober-bg-corner-top.svg);
   background-repeat: no-repeat;
@@ -48,7 +50,8 @@
   composes: container from '../styles/grid.module.css';
   position: relative;
   z-index: 1;
-  padding: 150px 0;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
 .sectionTitle {
@@ -119,4 +122,58 @@
 
 .eventRepositoryButton {
   margin-top: 40px;
+}
+
+@media mediumOnly {
+  .astronautRocket {
+    width: 300px;
+    height: 383px;
+    top: 140px;
+  }
+}
+
+@media small {
+  .section,
+  .event {
+    max-width: 300px;
+  }
+
+  .sectionTitle {
+    font-size: 30px;
+  }
+
+  .sectionSubTitle {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 25px;
+  }
+
+  .sectionSubscriptionInfo {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+
+  .eventCall {
+    font-size: 24px;
+    letter-spacing: -1.3px;
+  }
+
+  .eventDescription,
+  .eventDate,
+  .eventRepository {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.8px;
+  }
+
+  .saturn {
+    display: none;
+  }
+
+  .astronautRocket {
+    width: 166px;
+    height: 211px;
+    top: 245px;
+    right: -38px;
+  }
 }
