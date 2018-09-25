@@ -1,13 +1,17 @@
-@value small from "../styles/breakpoints.module.css";
+@value small, medium, mediumOnly from "../styles/breakpoints.module.css";
 
 .heroSection {
-  composes: container from '../styles/grid.module.css';
   height: 580px;
+}
+
+.heroSectionContent {
+  composes: container from '../styles/grid.module.css';
+  color: white;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
-  color: white;
   position: relative;
-  z-index: 2;
 }
 
 .heroSectionCall {
@@ -103,17 +107,6 @@
   margin-top: 56px;
 }
 
-.landingBg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgb(16, 32, 55);
-  background-image: url(../images/landing-bg.svg);
-  background-repeat: repeat;
-  width: 100%;
-  height: 700px;
-}
-
 .landingBgCornerBottom {
   position: absolute;
   bottom: 0;
@@ -121,7 +114,7 @@
   background-image: url(../images/landing-bg-corner-bottom.svg);
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: top center;
+  background-position: bottom center;
   width: 507px;
   height: 167px;
 }
@@ -138,36 +131,92 @@
   height: 238px;
 }
 
-.landingBgMask {
-  composes: container from '../styles/grid.module.css';
-  background-image: url(../images/landing-bg-mask.svg);
+.saturn {
+  background-image: url(../images/saturn.svg);
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position: bottom left;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  position: relative;
+  width: 220px;
+  height: 220px;
+  position: absolute;
+  bottom: -145px;
+  left: 280px;
 }
 
-.landingBgAstronaut {
+.asteroid {
+  background-image: url(../images/asteroid.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 52px;
+  height: 51px;
   position: absolute;
-  bottom: -64px;
-  right: 0;
-  background-image: url(../images/landing-bg-astronaut.svg);
+  bottom: 85px;
+  left: 0px;
+}
+
+.moon {
+  background-image: url(../images/moon.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 132px;
+  height: 132px;
+  position: absolute;
+  top: -35px;
+  left: 175px;
+}
+
+.venus {
+  background-image: url(../images/venus.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 509px;
+  height: 509px;
+  position: absolute;
+  bottom: -362px;
+  right: -445px;
+}
+
+.rocket {
+  background-image: url(../images/rocket.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 133px;
+  height: 154px;
+  position: absolute;
+  top: 7px;
+  right: 450px;
+}
+
+.astronaut {
+  background-image: url(../images/astronaut.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
   width: 563px;
   height: 627px;
+  bottom: -67px;
+  right: 0;
+  z-index: 2;
 }
 
-@media small {
+@media mediumOnly {
+  .astronaut {
+    width: 434px;
+    height: 483px;
+    top: 148px;
+    right: -47px;
+  }
+}
+
+@media medium {
   .heroSection {
-    height: 484px;
+    height: 480px;
   }
 
   .heroSectionCall {
     font-size: 30px;
     width: 170px;
     line-height: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   .heroSectionSubCall {
@@ -183,11 +232,53 @@
   }
 
   .section {
-    margin-top: 30px;
-    padding: 24px 0;
+    padding: 55px 0;
   }
 
   .sectionTitle {
     margin-bottom: 40px;
+    font-size: 24px;
+    letter-spacing: -1.3px;
+  }
+
+  .landingBgCornerTop {
+    width: 214px;
+  }
+
+  .landingBgCornerBottom {
+    width: 232px;
+  }
+
+  .asteroid {
+    width: 22px;
+    height: 21px;
+    top: 30px;
+    left: 76px;
+  }
+
+  .astronaut {
+    width: 312px;
+    height: 347px;
+    top: 175px;
+    right: -47px;
+  }
+
+  .saturn {
+    width: 70px;
+    height: 70px;
+    bottom: -29px;
+    left: 24px;
+  }
+
+  .rocket {
+    top: 98px;
+    left: 190px;
+    width: 45px;
+    height: 52px;
+  }
+
+  .moon,
+  .venus {
+    display: none;
   }
 }
