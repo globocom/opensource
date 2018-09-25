@@ -1,0 +1,122 @@
+.bgCornerTop {
+  background-image: url(../images/hacktober-bg-corner-top.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top center;
+  width: 453px;
+  height: 236px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bgCornerBottom {
+  background-image: url(../images/hacktober-bg-corner-bottom.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.saturn {
+  background-image: url(../images/saturn-small.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 112px;
+  height: 100px;
+  position: absolute;
+  top: 100px;
+  left: 280px;
+}
+
+.astronautRocket {
+  background-image: url(../images/astronaut-rocket.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 440px;
+  height: 561px;
+  position: absolute;
+  top: 100px;
+  right: 0;
+}
+
+.pageContent {
+  composes: container from '../styles/grid.module.css';
+  position: relative;
+  z-index: 1;
+  padding: 150px 0;
+}
+
+.sectionTitle {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.sectionTitleLight {
+  font-weight: 300;
+}
+
+.sectionSubTitle {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 40px;
+  margin-bottom: 50px;
+}
+
+.sectionSubscribe {
+  display: flex;
+  align-items: center;
+}
+
+.sectionSubscriptionInfo {
+  font-size: 18px;
+  font-weight: 300;
+  margin-left: 20px;
+}
+
+.event {
+  max-width: 535px;
+  margin-top: 90px;
+}
+
+.eventCall {
+  font-weight: 300;
+  font-size: 30px;
+  letter-spacing: -1.7px;
+  margin-bottom: 65px;
+}
+
+.eventDescription {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 29px;
+  margin-bottom: 32px;
+}
+
+.eventDate {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+}
+
+.eventRepository {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 29px;
+  margin-top: 10px;
+}
+
+.eventRepositoryLink {
+  color: rgb(74, 144, 226);
+  text-decoration: none;
+}
+
+.eventRepositoryButton {
+  margin-top: 40px;
+}

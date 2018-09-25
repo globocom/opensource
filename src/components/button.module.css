@@ -13,6 +13,7 @@
   padding: 14px 16px;
   display: inline-flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .buttonIcon {
@@ -25,6 +26,10 @@
 .transparent {
   color: white;
   border-color: white;
+}
+
+.transparent .buttonIcon {
+  fill: white;
 }
 
 @media small {

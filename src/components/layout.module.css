@@ -20,6 +20,13 @@
   flex: 1;
   z-index: 1;
   background-color: white;
+  position: relative;
+}
+
+.mainTransparent {
+  composes: main;
+  background-color: transparent;
+  color: white;
 }
 
 .mainSection {

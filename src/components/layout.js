@@ -41,22 +41,25 @@ const siteQuery = graphql`
   }
 `
 
-const Layout = ({ renderTop, children }) => (
-  <StaticQuery
-    query={siteQuery}
-    render={data => (
-      <div className={styles.layout}>
-        <MetaData siteMetadata={data.site.siteMetadata} />
-        <div className={styles.layoutTop}>
-          <Header />
-          {renderTop && renderTop()}
+const Layout = ({ renderTop, children, mainTransparent = false }) => {
+  const mainClassName = mainTransparent ? styles.mainTransparent : styles.main
+  return (
+    <StaticQuery
+      query={siteQuery}
+      render={data => (
+        <div className={styles.layout}>
+          <MetaData siteMetadata={data.site.siteMetadata} />
+          <div className={styles.layoutTop}>
+            <Header />
+            {renderTop && renderTop()}
+          </div>
+          <div className={mainClassName}>{children}</div>
+          <Footer />
         </div>
-        <main className={styles.main}>{children}</main>
-        <Footer />
-      </div>
-    )}
-  />
-)
+      )}
+    />
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
