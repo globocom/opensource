@@ -21,8 +21,7 @@ const HacktoberPage = () => (
           Hacktober <span className={styles.sectionTitleLight}>Globo.com</span>
         </h1>
         <h2 className={styles.sectionSubTitle}>
-          Contribua e ganhe uma camisa <br />
-          exclusiva
+          Contribua e ganhe uma camisa exclusiva
         </h2>
         <div className={styles.sectionSubscribe}>
           <Button label="participe" transparent={true} />
