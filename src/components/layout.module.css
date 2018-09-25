@@ -19,6 +19,13 @@
 .main {
   flex: 1;
   z-index: 1;
+  background-color: white;
+}
+
+.mainSection {
+  composes: container from '../styles/grid.module.css';
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 @media small {
