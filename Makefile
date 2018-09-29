@@ -1,3 +1,9 @@
+setup:
+	yarn install
+
+start:
+	yarn develop
+
 build:
 	yarn build
 
