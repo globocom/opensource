@@ -16,15 +16,16 @@
     "type": "git",
     "url": "https://github.com/globocom/opensource"
   },
-  "engines" : {
-    "node" : ">= 8.9.0",
+  "engines": {
+    "node": ">= 8.9.0",
     "yarn": ">= 1.0.0"
   },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "pretty-quick --staged"
   },
   "dependencies": {
     "gatsby": "^2.0.0",
@@ -39,6 +40,8 @@
     "typography": "^0.16.17"
   },
   "devDependencies": {
-    "prettier": "^1.14.2"
+    "husky": "^1.0.1",
+    "prettier": "^1.14.2",
+    "pretty-quick": "^1.7.0"
   }
 }
