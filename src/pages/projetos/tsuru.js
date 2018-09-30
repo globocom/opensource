@@ -4,7 +4,7 @@ import TopBackground from '../../components/topBackground'
 import Button from '../../components/button'
 
 import styles from './projects.module.css'
-import projectLogo from '../../images/logos/logo_megadraft.svg'
+import projectLogo from '../../images/logos/logo_tsuru.svg'
 
 const ProjectPage = () => (
   <Layout
@@ -18,11 +18,7 @@ const ProjectPage = () => (
     <section className={styles.section}>
       <div>
         <div className={styles.projectInfoTop}>
-          <img
-            className={styles.projectLogo}
-            src={projectLogo}
-            alt="Megadraft"
-          />
+          <img className={styles.projectLogo} src={projectLogo} alt="Tsuru" />
           <div className={styles.projectRepoInfo}>
             <div>
               <span className={styles.projectStars}>429</span>
@@ -40,12 +36,15 @@ const ProjectPage = () => (
           </div>
         </div>
         <p className={styles.projectDescription}>
-          Megradraft is a Rich Text editor built on top of Facebook’s Draft.JS
-          featuring a nice default base of components and extensibility. Good
-          usability, nice default base of plugins and extensibility.
+          Tsuru is an extensible and open source Platform as a Service (PaaS)
+          that makes application deployments faster and easier. With tsuru, you
+          don’t need to think about servers at all. As an application developer,
+          you can: Back apps with add-on resources such as SQL and NoSQL
+          databases Manage apps using the tsuru command-line tool Deploy apps
+          using Git, tsuru app-deploy or using docker images directly
         </p>
-        <a className={styles.projectLink} href="http://megadraft.io/">
-          http://megadraft.io/
+        <a className={styles.projectLink} href="http://tsuru.io/">
+          http://tsuru.io/
         </a>
       </div>
     </section>

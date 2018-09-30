@@ -4,7 +4,7 @@ import TopBackground from '../../components/topBackground'
 import Button from '../../components/button'
 
 import styles from './projects.module.css'
-import projectLogo from '../../images/logos/logo_megadraft.svg'
+import projectLogo from '../../images/logos/logo_clappr.svg'
 
 const ProjectPage = () => (
   <Layout
@@ -18,11 +18,7 @@ const ProjectPage = () => (
     <section className={styles.section}>
       <div>
         <div className={styles.projectInfoTop}>
-          <img
-            className={styles.projectLogo}
-            src={projectLogo}
-            alt="Megadraft"
-          />
+          <img className={styles.projectLogo} src={projectLogo} alt="Clappr" />
           <div className={styles.projectRepoInfo}>
             <div>
               <span className={styles.projectStars}>429</span>
@@ -42,10 +38,10 @@ const ProjectPage = () => (
         <p className={styles.projectDescription}>
           Megradraft is a Rich Text editor built on top of Facebook’s Draft.JS
           featuring a nice default base of components and extensibility. Good
-          usability, nice default base of plugins and extensibility.
+          usability A nice default base of plugins Extensibility
         </p>
-        <a className={styles.projectLink} href="http://megadraft.io/">
-          http://megadraft.io/
+        <a className={styles.projectLink} href="http://clappr.github.io/">
+          http://clappr.github.io/
         </a>
       </div>
     </section>
