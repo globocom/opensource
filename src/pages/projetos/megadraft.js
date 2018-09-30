@@ -7,7 +7,14 @@ import styles from './projects.module.css'
 import megadraftLogo from '../../images/logos/logo_megadraft.svg'
 
 const MegadraftPage = () => (
-  <Layout renderTop={() => <TopBackground skyObject="rocket" />}>
+  <Layout
+    renderTop={() => <TopBackground skyObject="rocket" />}
+    renderBottom={() => (
+      <div className={styles.sectionBottom}>
+        <div className={styles.astronaut} />
+      </div>
+    )}
+  >
     <section className={styles.section}>
       <div>
         <div className={styles.projectInfoTop}>
@@ -42,7 +49,6 @@ const MegadraftPage = () => (
         </a>
       </div>
     </section>
-    <div className={styles.astronaut} />
   </Layout>
 )
 
