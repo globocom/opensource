@@ -4,7 +4,7 @@ import TopBackground from '../../components/topBackground'
 import Button from '../../components/button'
 
 import styles from './projects.module.css'
-import projectLogo from '../../images/logos/logo_megadraft.svg'
+import projectLogo from '../../images/logos/logo_thumbor.svg'
 
 const ProjectPage = () => (
   <Layout
@@ -18,11 +18,7 @@ const ProjectPage = () => (
     <section className={styles.section}>
       <div>
         <div className={styles.projectInfoTop}>
-          <img
-            className={styles.projectLogo}
-            src={projectLogo}
-            alt="Megadraft"
-          />
+          <img className={styles.projectLogo} src={projectLogo} alt="Thumbor" />
           <div className={styles.projectRepoInfo}>
             <div>
               <span className={styles.projectStars}>429</span>
@@ -40,12 +36,15 @@ const ProjectPage = () => (
           </div>
         </div>
         <p className={styles.projectDescription}>
-          Megradraft is a Rich Text editor built on top of Facebook’s Draft.JS
-          featuring a nice default base of components and extensibility. Good
-          usability, nice default base of plugins and extensibility.
+          Thumbor is a smart imaging service. It enables on-demand crop,
+          resizing and flipping of images. It features a very smart detection of
+          important points in the image for better cropping and resizing, using
+          state-of-the-art face and feature detection algorithms (more on that
+          in Detection Algorithms). Save time and money in your company with
+          Thumbor.
         </p>
-        <a className={styles.projectLink} href="http://megadraft.io/">
-          http://megadraft.io/
+        <a className={styles.projectLink} href="http://thumbor.org/">
+          http://thumbor.org/
         </a>
       </div>
     </section>
