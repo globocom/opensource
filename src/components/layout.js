@@ -41,7 +41,12 @@ const siteQuery = graphql`
   }
 `
 
-const Layout = ({ renderTop, children, mainTransparent = false }) => {
+const Layout = ({
+  children,
+  renderTop,
+  renderBottom,
+  mainTransparent = false,
+}) => {
   const mainClassName = mainTransparent ? styles.mainTransparent : styles.main
   return (
     <StaticQuery
@@ -54,7 +59,10 @@ const Layout = ({ renderTop, children, mainTransparent = false }) => {
             {renderTop && renderTop()}
           </div>
           <div className={mainClassName}>{children}</div>
-          <Footer />
+          <div className={styles.layoutBottom}>
+            <Footer />
+            {renderBottom && renderBottom()}
+          </div>
         </div>
       )}
     />

@@ -12,6 +12,10 @@
   overflow: hidden;
 }
 
+.layoutBottom {
+  position: relative;
+}
+
 .layoutTop {
   position: relative;
 }
