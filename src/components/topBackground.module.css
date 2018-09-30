@@ -78,10 +78,12 @@
   }
 
   .cornerTop {
-    width: 214px;
+    width: 190px;
+    height: 94px;
   }
 
   .cornerBottom {
-    width: 232px;
+    width: 170px;
+    height: 56px;
   }
 }

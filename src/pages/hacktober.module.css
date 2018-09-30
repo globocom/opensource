@@ -1,5 +1,13 @@
 @value small, mediumOnly from "../styles/breakpoints.module.css";
 
+.pageContent {
+  composes: container from '../styles/grid.module.css';
+  position: relative;
+  z-index: 1;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
 .bgCornerTop {
   background-image: url(../images/hacktober-bg-corner-top.svg);
   background-repeat: no-repeat;
@@ -44,14 +52,6 @@
   position: absolute;
   top: 100px;
   right: 0;
-}
-
-.pageContent {
-  composes: container from '../styles/grid.module.css';
-  position: relative;
-  z-index: 1;
-  padding-top: 150px;
-  padding-bottom: 150px;
 }
 
 .sectionTitle {

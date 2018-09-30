@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="10px" viewBox="0 0 20 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>commit</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Proposta-V01" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Project-Page---Desktop" transform="translate(-726.000000, -422.000000)" fill="#333333">
+            <g id="Group-10" transform="translate(599.000000, 414.000000)">
+                <g id="Group-9" transform="translate(3.000000, 0.000000)">
+                    <g id="Group-5" transform="translate(124.000000, 1.000000)">
+                        <g id="commit" transform="translate(0.000000, 7.000000)">
+                            <path d="M10.0946293,7.48429923 C8.70666455,7.48429923 7.63406245,6.35225943 7.63406245,5.03145265 C7.63406245,3.64779167 8.76971657,2.57860607 10.0946293,2.57860607 C11.4826453,2.57860607 12.5551962,3.71069697 12.5551962,5.03145265 C12.5551962,6.35225943 11.4826453,7.48429923 10.0946293,7.48429923 Z M20,2.95598673 L14.6372458,2.95598673 C13.8801601,1.25785039 12.1135757,0 10.0946293,0 C8.0757342,0 6.30914972,1.19494509 5.55206406,2.95598673 L0,2.95598673 L0,7.04406437 L5.55206406,7.04406437 C6.30914972,8.74214961 8.0757342,10 10.0946293,10 C12.1135757,10 13.8801601,8.80510601 14.6372458,7.04406437 L20,7.04406437 L20,2.95598673 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
