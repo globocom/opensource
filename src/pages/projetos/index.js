@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 
-import styles from '../components/layout.module.css'
+import styles from '../../components/layout.module.css'
 
 const ProjetosPage = () => (
   <Layout>
