@@ -76,10 +76,14 @@ const getOrganizationRepos = async () => {
             name
             description
             url
-            issues (states: OPEN) {
-              totalCount
+            object(expression: "master") {
+              ... on Commit {
+                history {
+                  totalCount
+                }
+              }
             }
-            forks {
+            issues (states: OPEN) {
               totalCount
             }
             pullRequests {

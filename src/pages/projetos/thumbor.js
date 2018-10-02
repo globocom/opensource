@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../../components/layout'
 import TopBackground from '../../components/topBackground'
 import Button from '../../components/button'
+import RepoStats from '../../components/repoStats'
 
 import styles from './project.module.css'
 import projectLogo from '../../images/logos/logo_thumbor.svg'
@@ -20,12 +21,7 @@ const ProjectPage = () => (
         <div className={styles.projectInfoTop}>
           <img className={styles.projectLogo} src={projectLogo} alt="Thumbor" />
           <div className={styles.projectRepoInfo}>
-            <div>
-              <span className={styles.projectStars}>429</span>
-              <span className={styles.projectForks}>82</span>
-              <span className={styles.projectCommits}>438</span>
-              <span className={styles.projectIssues}>13</span>
-            </div>
+            <RepoStats stars={429} forks={82} commits={438} issues={13} />
             <div className={styles.projectRepoLinks}>
               <Button
                 className={styles.projectRepoLink}
