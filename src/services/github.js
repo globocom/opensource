@@ -19,7 +19,7 @@
 //   link: authLink.concat(httpLink),
 // })
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+const GITHUB_TOKEN = process.env.GATSBY_GITHUB_TOKEN
 
 const gitHubclient = async query => {
   let resp
@@ -33,7 +33,12 @@ const gitHubclient = async query => {
       },
     })
   } catch (error) {
-    console.error('FAIL TO FETCH', error)
+    console.error('[GITHUB] Fail to fetch', error)
+  }
+
+  if (resp.status !== 200) {
+    console.error(`[GITHUB] Fail to fetch. Status: ${resp.status}`)
+    return null
   }
 
   const data = await resp.json()
@@ -49,6 +54,7 @@ const getOrganizationMembers = async () => {
           nodes {
             id
             name
+            url
             avatarUrl
           }
           totalCount

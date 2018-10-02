@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
 import TopBackground from '../components/topBackground'
+import Button from '../components/button'
 
 // import gql from 'graphql-tag'
 // import { ApolloProvider } from 'react-apollo'
@@ -8,7 +9,7 @@ import TopBackground from '../components/topBackground'
 
 import { getOrganizationMembers } from '../services/github'
 
-import styles from '../components/layout.module.css'
+import styles from './nosso-time.module.css'
 
 class NossoTimePage extends Component {
   state = {
@@ -17,18 +18,37 @@ class NossoTimePage extends Component {
 
   async componentDidMount() {
     const data = await getOrganizationMembers()
-    // this.setState({ members: data.organization.members })
-    console.log(members)
+    if (data) {
+      this.setState({ members: data.organization.members.nodes })
+    }
   }
 
   render() {
     const { members } = this.state
     return (
       <Layout renderTop={() => <TopBackground skyObject="moon" />}>
-        <h1>Nosso Time</h1>
-        {members.map(member => (
-          <span>{member.name}</span>
-        ))}
+        <section className={styles.section}>
+          <h1 className={styles.head}>Nosso Time</h1>
+          <div className={styles.members}>
+            {members.map(member => (
+              <div className={styles.member} key={member.id}>
+                <a href={member.url} className={styles.memberAnchor}>
+                  <img
+                    className={styles.memberAvatar}
+                    src={member.avatarUrl}
+                    alt={member.name}
+                    title={member.name}
+                  />
+                </a>
+              </div>
+            ))}
+          </div>
+          <Button
+            className={styles.button}
+            label="trabalhe conosco"
+            url="https://talentos.globo.com/"
+          />
+        </section>
       </Layout>
     )
   }
