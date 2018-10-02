@@ -21,13 +21,13 @@ const HacktoberPage = () => (
           Hacktober <span className={styles.sectionTitleLight}>Globo.com</span>
         </h1>
         <h2 className={styles.sectionSubTitle}>
-          Contribua e ganhe uma camisa exclusiva
+          Contribua e ganhe uma camiseta exclusiva
         </h2>
         <div className={styles.sectionSubscribe}>
-          <Button label="participe" transparent={true} />
-          <span className={styles.sectionSubscriptionInfo}>
+          <Button label="participe" url="/login" transparent={true} />
+          {/* <span className={styles.sectionSubscriptionInfo}>
             Saiba mais sobre o evento
-          </span>
+          </span> */}
         </div>
       </section>
 
@@ -36,26 +36,13 @@ const HacktoberPage = () => (
         <div className={styles.eventDescription}>
           Contribua com 2 pull requests em qualquer projeto Open Source da
           Globo.com durante o mês de outubro. Os 100 primeiros inscritos que
-          conseguirem os 2 pull requests e ao menos um MERGE, irão ganhar um
-          brinde exclusivo.
+          conseguirem os 2 pull requests e ao menos um ACEITO, ganharão uma
+          camiseta exclusiva.
         </div>
-        <div className={styles.eventDate}>1 de outubro até 31 de outubro</div>
+        <div className={styles.eventDate}>De 1 até 31 de outubro</div>
         <div className={styles.eventRepository}>
-          Pull requests podem ser feitos em qualquer projeto do repositório{' '}
-          <a
-            className={styles.eventRepositoryLink}
-            href="https://github.com/globocom"
-          >
-            https://github.com/globocom
-          </a>
+          Pull requests podem ser feitos em qualquer projeto da globo.com.
         </div>
-        <Button
-          label="ver repositório"
-          url="https://github.com/globocom"
-          transparent={true}
-          icon={githubIcon}
-          className={styles.eventRepositoryButton}
-        />
       </section>
 
       <div className={styles.astronautRocket} />
