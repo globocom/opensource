@@ -3,7 +3,7 @@ import Layout from '../../components/layout'
 import TopBackground from '../../components/topBackground'
 import Button from '../../components/button'
 
-import styles from './projects.module.css'
+import styles from './project.module.css'
 import projectLogo from '../../images/logos/logo_thumbor.svg'
 
 const ProjectPage = () => (
