@@ -2,136 +2,79 @@
 
 .section {
   composes: container from '../../styles/grid.module.css';
-  padding-top: 95px;
-  padding-bottom: 95px;
-  position: relative;
+  padding-top: 90px;
+  padding-bottom: 120px;
 }
 
-.sectionBottom {
-  composes: container from '../../styles/grid.module.css';
-  position: relative;
+.head {
+  font-weight: 300;
+  font-size: 30px;
+  letter-spacing: -1.7px;
 }
 
-.astronaut {
-  background-image: url(../../images/astronaut.svg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  width: 305px;
-  height: 326px;
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
-  z-index: 2;
+.body {
+  margin-top: 60px;
+}
+
+.button {
+  margin-top: 60px;
+}
+
+.projects {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.project {
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.projectTitle {
+  font-weight: 600;
+  font-size: 22px;
 }
 
 .projectDescription {
-  width: 370px;
-  color: rgb(102, 102, 102);
-  font-size: 16px;
   line-height: 24px;
-  letter-spacing: -0.9px;
-}
-
-.projectInfoTop {
-  display: flex;
-}
-
-.projectRepoInfo {
-  width: 330px;
-  margin-left: 290px;
-}
-
-.projectLogo {
-  width: 168px;
-  /* height: 164px; */
+  font-size: 14px;
+  letter-spacing: -0.8px;
+  color: rgb(102, 102, 102);
 }
 
 .projectLink {
   font-weight: 600;
   font-size: 14px;
-  line-height: 24px;
   letter-spacing: -0.8px;
   color: rgb(74, 144, 226);
-}
-
-.projectStatsItem {
-  background-size: 14px 17px;
-  background-repeat: no-repeat;
-  background-position: left center;
-  padding-left: 23px;
-  padding-right: 10px;
-}
-
-.projectStars {
-  composes: projectStatsItem;
-  background-image: url(../../images/repo-star.svg);
-}
-
-.projectForks {
-  composes: projectStatsItem;
-  background-image: url(../../images/repo-fork.svg);
-}
-
-.projectCommits {
-  composes: projectStatsItem;
-  background-image: url(../../images/repo-commit.svg);
-}
-
-.projectIssues {
-  composes: projectStatsItem;
-  background-image: url(../../images/repo-issue.svg);
-}
-
-.projectRepoLink {
-  margin-top: 24px;
+  text-decoration: none;
 }
 
 @media medium {
-  .section {
-    padding: 66px 30px 200px;
-  }
-
-  .astronaut {
-    right: 5%;
+  .projects {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media small {
   .section {
-    padding: 66px 30px 200px;
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
 
-  .projectLogo {
-    margin-bottom: 50px;
+  .projects {
+    margin-top: 30px;
+    grid-template-columns: 1fr;
   }
 
-  .projectInfoTop {
-    flex-flow: column;
+  .head {
+    font-size: 24px;
+    letter-spacing: -1.3px;
   }
 
-  .projectRepoInfo {
-    width: 240px;
-    margin-left: 0;
-    margin-bottom: 42px;
-  }
-
-  .projectDescription {
-    width: 243px;
-    font-size: 14px;
-    letter-spacing: -0.8px;
-  }
-
-  .projectRepoLinks {
-    margin-top: 24px;
-  }
-
-  .projectRepoLink {
-    margin-top: 12px;
-  }
-
-  .astronaut {
-    width: 187px;
-    height: 200px;
-    right: 5%;
+  .button {
+    margin-top: 30px;
   }
 }

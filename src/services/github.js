@@ -65,4 +65,36 @@ const getOrganizationMembers = async () => {
   return await gitHubclient(query)
 }
 
-export { getOrganizationMembers }
+const getOrganizationRepos = async () => {
+  const query = `
+    {
+      organization(login: "globocom") {
+        name
+        repositories(first: 100, isFork: false, orderBy: { field: STARGAZERS, direction: DESC }) {
+          nodes {
+            id
+            name
+            description
+            url
+            issues (states: OPEN) {
+              totalCount
+            }
+            forks {
+              totalCount
+            }
+            pullRequests {
+              totalCount
+            }
+            stargazers {
+              totalCount
+            }
+          }
+          totalCount
+        }
+      }
+    }
+  `
+  return await gitHubclient(query)
+}
+
+export { getOrganizationMembers, getOrganizationRepos }

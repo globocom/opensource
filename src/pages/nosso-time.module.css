@@ -16,13 +16,13 @@
   margin-top: 60px;
   display: grid;
   grid-template-columns: repeat(9, 1fr);
+  grid-gap: 10px;
 }
 
 .member {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 0;
 }
 
 .memberAnchor {
@@ -62,10 +62,6 @@
   .members {
     margin-top: 26px;
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  .member {
-    padding: 6px 0;
   }
 
   .memberAnchor {
