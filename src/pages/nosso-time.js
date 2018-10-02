@@ -2,11 +2,6 @@ import React, { Component } from 'react'
 import Layout from '../components/layout'
 import TopBackground from '../components/topBackground'
 import Button from '../components/button'
-
-// import gql from 'graphql-tag'
-// import { ApolloProvider } from 'react-apollo'
-// import { Query } from 'react-apollo'
-
 import { getOrganizationMembers } from '../services/github'
 
 import styles from './nosso-time.module.css'

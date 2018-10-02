@@ -42,9 +42,6 @@ class HacktoberPage extends Component {
               ) : (
                 <Button label="participe" url="/login" transparent={true} />
               )}
-              {/* <span className={styles.sectionSubscriptionInfo}>
-                Saiba mais sobre o evento
-              </span> */}
             </div>
           </section>
 
