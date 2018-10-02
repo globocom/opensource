@@ -52,6 +52,11 @@
   text-decoration: none;
 }
 
+.projectStats {
+  margin: 10px 0;
+  font-size: 12px;
+}
+
 @media medium {
   .projects {
     grid-template-columns: 1fr 1fr;

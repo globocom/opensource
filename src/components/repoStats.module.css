@@ -1,0 +1,27 @@
+.stats {
+  background-size: 14px 17px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 23px;
+  padding-right: 10px;
+}
+
+.stars {
+  composes: stats;
+  background-image: url(../images/repo-star.svg);
+}
+
+.forks {
+  composes: stats;
+  background-image: url(../images/repo-fork.svg);
+}
+
+.commits {
+  composes: stats;
+  background-image: url(../images/repo-commit.svg);
+}
+
+.issues {
+  composes: stats;
+  background-image: url(../images/repo-issue.svg);
+}

@@ -4,6 +4,7 @@ import TopBackground from '../../components/topBackground'
 import Button from '../../components/button'
 import FeaturedProjects from '../../components/featuredProjects'
 import featuredProjects from '../../data/featuredProjects'
+import RepoStats from '../../components/repoStats'
 
 import { getOrganizationRepos } from '../../services/github'
 
@@ -36,6 +37,15 @@ class ProjetosPage extends Component {
               {projects.map(project => (
                 <div key={project.id} className={styles.project}>
                   <div className={styles.projectTitle}>{project.name}</div>
+                  <RepoStats
+                    className={styles.projectStats}
+                    stars={project.stargazers.totalCount}
+                    forks={project.pullRequests.totalCount}
+                    commits={
+                      project.object ? project.object.history.totalCount : null
+                    }
+                    issues={project.issues.totalCount}
+                  />
                   <div className={styles.projectDescription}>
                     {project.description}
                   </div>
