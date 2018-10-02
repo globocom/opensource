@@ -15,7 +15,7 @@ const Footer = () => (
             className={styles.menuItem}
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/globocom"
+            href="https://github.com/globocom/opensource"
           >
             GITHUB
           </a>

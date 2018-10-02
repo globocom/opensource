@@ -10,7 +10,6 @@ import { getOrganizationRepos } from '../../services/github'
 
 import styles from './projects.module.css'
 import githubIcon from '../../images/logo-github.svg'
-
 class ProjetosPage extends Component {
   state = {
     projects: [],
@@ -67,4 +66,5 @@ class ProjetosPage extends Component {
     )
   }
 }
+
 export default ProjetosPage
