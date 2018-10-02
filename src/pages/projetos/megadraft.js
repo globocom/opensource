@@ -25,7 +25,12 @@ const ProjectPage = () => (
             alt="Megadraft"
           />
           <div className={styles.projectRepoInfo}>
-            <RepoStats stars={429} forks={82} commits={438} issues={13} />
+            <RepoStats
+              stars={429}
+              pullRequests={82}
+              commits={438}
+              issues={13}
+            />
             <div className={styles.projectRepoLinks}>
               <Button
                 className={styles.projectRepoLink}
