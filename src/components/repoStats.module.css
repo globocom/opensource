@@ -1,14 +1,15 @@
 .stats {
-  background-size: 14px 17px;
+  /* background-size: 14px 17px; */
   background-repeat: no-repeat;
   background-position: left center;
-  padding-left: 23px;
   padding-right: 10px;
+  padding-left: 20px;
 }
 
 .stars {
   composes: stats;
   background-image: url(../images/repo-star.svg);
+  padding-left: 23px;
 }
 
 .forks {
@@ -19,6 +20,7 @@
 .commits {
   composes: stats;
   background-image: url(../images/repo-commit.svg);
+  padding-left: 28px;
 }
 
 .issues {
