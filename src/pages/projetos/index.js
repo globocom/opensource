@@ -40,7 +40,7 @@ class ProjetosPage extends Component {
                   <RepoStats
                     className={styles.projectStats}
                     stars={project.stargazers.totalCount}
-                    forks={project.pullRequests.totalCount}
+                    pullRequests={project.pullRequests.totalCount}
                     commits={
                       project.object ? project.object.history.totalCount : null
                     }
