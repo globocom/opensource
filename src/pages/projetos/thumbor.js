@@ -21,7 +21,12 @@ const ProjectPage = () => (
         <div className={styles.projectInfoTop}>
           <img className={styles.projectLogo} src={projectLogo} alt="Thumbor" />
           <div className={styles.projectRepoInfo}>
-            <RepoStats stars={429} forks={82} commits={438} issues={13} />
+            <RepoStats
+              stars={429}
+              pullRequests={82}
+              commits={438}
+              issues={13}
+            />
             <div className={styles.projectRepoLinks}>
               <Button
                 className={styles.projectRepoLink}
