@@ -5,7 +5,6 @@ import Button from '../components/button'
 import featuredProjects from '../data/featuredProjects'
 
 import styles from './index.module.css'
-import githubIcon from '../images/logo-github.svg'
 
 const IndexPage = () => (
   <Layout
@@ -26,7 +25,7 @@ const IndexPage = () => (
             <h2 className={styles.heroSectionSubCall}>Unidos pelo código.</h2>
             <a
               className={styles.heroSectionLink}
-              href="https://github.com/globocom/opensource"
+              href="https://github.com/globocom"
             >
               Let's code
             </a>
@@ -40,10 +39,9 @@ const IndexPage = () => (
         <h2 className={styles.sectionTitle}>Nossos projetos</h2>
         <FeaturedProjects projects={featuredProjects} />
         <Button
-          url="https://github.com/globocom/opensource"
+          url="/projetos/"
           className={styles.sectionButton}
           label="ver todos"
-          icon={githubIcon}
         />
       </div>
     </section>
@@ -56,9 +54,9 @@ const IndexPage = () => (
           </div>
           <div className={styles.sectionBottomLink}>
             <Button
-              url="https://github.com/globocom/opensource"
+              url="https://talentos.globo.com"
               className={styles.sectionButton}
-              label="participe"
+              label="venha nos conhecer"
               transparent={true}
             />
           </div>

@@ -9,14 +9,14 @@ export default [
     slug: 'megadraft',
     thumb: megadraftLogo,
     description:
-      'Megradraft is a Rich Text editor built on top of Facebook’s Draft.JS featuring a nice default base of components and extensibility.',
+      "Megadraft is a Rich Text editor built on top of Facebook's Draft.JS featuring a nice default base of components and extensibility.",
   },
   {
     name: 'Tsuru',
     slug: 'tsuru',
     thumb: tsuruLogo,
     description:
-      'Open source, extensible and Doker-based Platform as a Service (PaaS).',
+      'Open source, extensible and Docker-based Platform as a Service (PaaS).',
   },
   {
     name: 'Thumbor',
@@ -29,6 +29,6 @@ export default [
     name: 'Clappr',
     slug: 'clappr',
     thumb: clapprLogo,
-    description: 'Clappr is an extensible media player for the web.',
+    description: 'An extensible media player for the web.',
   },
 ]

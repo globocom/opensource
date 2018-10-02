@@ -56,9 +56,9 @@ class ProjetosPage extends Component {
               ))}
             </div>
             <Button
-              url="https://github.com/globocom/opensource"
+              url="https://github.com/globocom"
               className={styles.button}
-              label="ver todos"
+              label="ver repositórios"
               icon={githubIcon}
             />
           </div>
