@@ -16,10 +16,10 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Globo.com - Open Source',
-        short_name: 'Globo.com Open Source',
+        short_name: 'Globocom OpenSource',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#1B3556',
+        theme_color: '#1B3556',
         display: 'minimal-ui',
         icon: 'src/images/app-icon.png',
       },
