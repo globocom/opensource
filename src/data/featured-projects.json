@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Megradraft",
+    "slug": "megadraft",
+    "image": "logos/megadraft.svg",
+    "description": "Megadraft is a Rich Text editor built on top of Facebook's Draft.JS featuring a nice default base of components and extensibility."
+  },
+  {
+    "name": "Tsuru",
+    "slug": "tsuru",
+    "image": "logos/tsuru.svg",
+    "description": "Open source, extensible and Docker-based Platform as a Service (PaaS)."
+  },
+  {
+    "name": "Thumbor",
+    "slug": "thumbor",
+    "image": "logos/thumbor.svg",
+    "description": "Thumbor is an open-source photo thumbnail service by globo.com."
+  },
+  {
+    "name": "Clapp",
+    "slug": "clappr",
+    "image": "logos/clappr.svg",
+    "description": "An extensible media player for the web."
+  }
+]

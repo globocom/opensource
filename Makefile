@@ -1,3 +1,5 @@
+.PHONY: setup start build deploy-dev deploy-prod
+
 setup:
 	yarn install
 
