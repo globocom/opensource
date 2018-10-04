@@ -11,8 +11,13 @@ class HacktoberPage extends Component {
   }
 
   async componentDidMount() {
-    const user = await getUser()
-    this.setState({ user })
+    // const user = await getUser()
+    // this.setState({ user })
+    this.setState({
+      user: {
+        Name: 'Arturo',
+      },
+    })
   }
 
   render() {
@@ -36,13 +41,24 @@ class HacktoberPage extends Component {
             <h2 className={styles.sectionSubTitle}>
               Contribua e ganhe uma camiseta exclusiva
             </h2>
-            <div className={styles.sectionSubscribe}>
-              {user ? (
-                <span>Olá {user.Name}</span>
-              ) : (
+
+            {user ? (
+              <div>
+                <p>
+                  Olá <strong>{user.Name}</strong>! Você está participando do
+                  evento. Let's hack...
+                </p>
+                {/* <Button
+                  label="verificar progresso"
+                  url="/login"
+                  transparent={true}
+                /> */}
+              </div>
+            ) : (
+              <div className={styles.sectionSubscribe}>
                 <Button label="participe" url="/login" transparent={true} />
-              )}
-            </div>
+              </div>
+            )}
           </section>
 
           <section className={styles.event}>
