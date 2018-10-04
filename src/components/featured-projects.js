@@ -1,7 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql, Link } from 'gatsby'
 
-import styles from './featuredProjects.module.css'
+import styles from './featured-projects.module.css'
 
 const featuredProjectsQuery = graphql`
   {

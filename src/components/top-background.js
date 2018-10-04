@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './topBackground.module.css'
+import styles from './top-background.module.css'
 
 const TopBackground = ({ skyObject }) => (
   <div className={styles.topBackground}>

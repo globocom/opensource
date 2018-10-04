@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
-import TopBackground from '../components/topBackground'
+import TopBackground from '../components/top-background'
 import Button from '../components/button'
-import FeaturedProjects from '../components/featuredProjects'
+import FeaturedProjects from '../components/featured-projects'
 import RepoStats from '../components/repoStats'
 
 import { getOrganizationRepos } from '../services/github'

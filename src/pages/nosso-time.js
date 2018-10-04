@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
-import TopBackground from '../components/topBackground'
+import TopBackground from '../components/top-background'
 import Button from '../components/button'
 import { getOrganizationMembers } from '../services/github'
 
