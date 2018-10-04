@@ -100,6 +100,14 @@
   line-height: 29px;
 }
 
+.projectLink {
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.8px;
+  color: rgb(74, 144, 226);
+  text-decoration: none;
+}
+
 @media mediumOnly {
   .astronautRocket {
     width: 300px;
