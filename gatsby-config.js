@@ -6,10 +6,13 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
+    'gatsby-transformer-json',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: `src/utils/typography.js`,
+        pathToConfigModule: 'src/utils/typography.js',
       },
     },
     {
@@ -22,6 +25,12 @@ module.exports = {
         theme_color: '#1B3556',
         display: 'minimal-ui',
         icon: 'src/images/app-icon.png',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: './src/data/',
       },
     },
   ],

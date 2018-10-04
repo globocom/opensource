@@ -3,7 +3,6 @@ import Layout from '../../components/layout'
 import TopBackground from '../../components/topBackground'
 import Button from '../../components/button'
 import FeaturedProjects from '../../components/featuredProjects'
-import featuredProjects from '../../data/featuredProjects'
 import RepoStats from '../../components/repoStats'
 
 import { getOrganizationRepos } from '../../services/github'
@@ -31,7 +30,7 @@ class ProjetosPage extends Component {
         <section className={styles.section}>
           <h1 className={styles.head}>Nossos Projetos</h1>
           <div className={styles.body}>
-            <FeaturedProjects projects={featuredProjects} />
+            <FeaturedProjects />
             <div className={styles.projects}>
               {projects.map(project => (
                 <div key={project.id} className={styles.project}>
