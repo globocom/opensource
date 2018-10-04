@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 import TopBackground from '../components/top-background'
 import Button from '../components/button'
 import FeaturedProjects from '../components/featured-projects'
-import RepoStats from '../components/repoStats'
+import RepoStats from '../components/repo-stats'
 
 import { getOrganizationRepos } from '../services/github'
 

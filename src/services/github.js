@@ -1,12 +1,12 @@
 const GITHUB_TOKEN = process.env.GATSBY_GITHUB_TOKEN
 
-const gitHubclient = async query => {
+const gitHubclient = async (query, variables = {}) => {
   let resp
 
   try {
     resp = await fetch('https://api.github.com/graphql', {
       method: 'POST',
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({ query, variables }),
       headers: {
         Authorization: `Bearer ${GITHUB_TOKEN}`,
       },
@@ -87,4 +87,33 @@ const getOrganizationRepos = async () => {
   return await gitHubclient(query)
 }
 
-export { getOrganizationMembers, getOrganizationRepos }
+const getRepoStats = async (owner, name) => {
+  const query = `
+    query RepositoryStats($owner: String!, $name: String!) {
+      repository(owner: $owner, name: $name) {
+        object(expression: "master") {
+          ... on Commit {
+            history {
+              totalCount
+            }
+          }
+        }
+        issues (states: OPEN) {
+          totalCount
+        }
+        pullRequests {
+          totalCount
+        }
+        stargazers {
+          totalCount
+        }
+      }
+    }
+  `
+  return await gitHubclient(query, {
+    owner,
+    name,
+  })
+}
+
+export { getOrganizationMembers, getOrganizationRepos, getRepoStats }

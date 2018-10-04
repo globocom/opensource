@@ -1,6 +1,7 @@
 [
   {
     "name": "Megradraft",
+    "owner": "globocom",
     "slug": "megadraft",
     "image": "logos/megadraft.svg",
     "repoURL": "https://github.com/globocom/megadraft",
@@ -11,6 +12,7 @@
   {
     "name": "Tsuru",
     "slug": "tsuru",
+    "owner": "tsuru",
     "image": "logos/tsuru.svg",
     "repoURL": "https://github.com/tsuru/tsuru",
     "siteURL": "http://tsuru.io",
@@ -21,6 +23,7 @@
   {
     "name": "Thumbor",
     "slug": "thumbor",
+    "owner": "thumbor",
     "image": "logos/thumbor.svg",
     "repoURL": "https://github.com/thumbor/thumbor",
     "siteURL": "http://thumbor.org",
@@ -31,6 +34,7 @@
   {
     "name": "Clapp",
     "slug": "clappr",
+    "owner": "clappr",
     "image": "logos/clappr.svg",
     "repoURL": "https://github.com/clappr/clappr",
     "siteURL": "http://clappr.github.io",

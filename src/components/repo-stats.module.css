@@ -12,7 +12,7 @@
   padding-left: 23px;
 }
 
-.forks {
+.pullRequests {
   composes: stats;
   background-image: url(../images/repo-fork.svg);
 }

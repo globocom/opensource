@@ -8,7 +8,6 @@ const getUser = async () => {
   }
 
   if (resp.status !== 200) {
-    console.error(`[OPENSOURCE] Fail to fetch. Status: ${resp.status}`)
     return null
   }
 

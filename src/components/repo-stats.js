@@ -1,12 +1,16 @@
 import React from 'react'
-import styles from './repoStats.module.css'
+import styles from './repo-stats.module.css'
 
 const RepoStats = ({ stars, pullRequests, commits, issues, className }) => (
   <div className={className}>
     <span alt="Stars" title="Stars" className={styles.stars}>
       {stars}
     </span>
-    <span alt="Pull requests" title="Pull requests" className={styles.forks}>
+    <span
+      alt="Pull requests"
+      title="Pull requests"
+      className={styles.pullRequests}
+    >
       {pullRequests}
     </span>
     {commits && (
