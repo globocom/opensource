@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-import TopBackground from '../components/topBackground'
+import TopBackground from '../components/top-background'
 import Button from '../components/button'
 import RepoStats from '../components/repoStats'
 
