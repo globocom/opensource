@@ -70,11 +70,15 @@ class HacktoberfestPage extends Component {
           <section className={styles.eventInfo}>
             <div className={styles.eventInfoLabel}>Projetos</div>
             <div className={styles.eventInfoBody}>
-              Pull requests podem ser feitos em qualquer projeto da globo.com.
+              Pull requests podem ser feitos em qualquer{' '}
+              <a className={styles.projectLink} href="/projetos/">
+                projeto
+              </a>{' '}
+              da globo.com.
             </div>
             <p className={styles.eventInfoCall}>
               <Button
-                label="ver no github"
+                label="ver issues no github"
                 url="https://github.com/search?q=label:hacktoberfest user:globocom user:tsuru user:thumbor user:clappr state:open type:issue"
                 transparent={true}
               />
