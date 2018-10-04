@@ -1,0 +1,8 @@
+- Verifica textos (OK)
+- Trocar link Nossos Projetos para interno (OK)
+- Página Nossos Projetos - Troca link VER TODOS para VER NO GITHUB (OK)
+- Hacktober
+  - Alterações no slack (OK)
+  - Trocar "irão ganhar" por "ganharão uma camiseta exclusiva" (OK)
+  - Listar os repositorios por ordem DESC de issues 
+  - Listar projetos com issues `hacktoberfest`

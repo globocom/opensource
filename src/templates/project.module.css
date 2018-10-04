@@ -1,19 +1,19 @@
-@value small, medium from "../../styles/breakpoints.module.css";
+@value small, medium from "../styles/breakpoints.module.css";
 
 .section {
-  composes: container from '../../styles/grid.module.css';
+  composes: container from '../styles/grid.module.css';
   padding-top: 95px;
   padding-bottom: 95px;
   position: relative;
 }
 
 .sectionBottom {
-  composes: container from '../../styles/grid.module.css';
+  composes: container from '../styles/grid.module.css';
   position: relative;
 }
 
 .astronaut {
-  background-image: url(../../images/astronaut.svg);
+  background-image: url(../images/astronaut.svg);
   background-size: 100%;
   background-repeat: no-repeat;
   width: 305px;
@@ -43,7 +43,6 @@
 
 .projectLogo {
   width: 168px;
-  /* height: 164px; */
 }
 
 .projectLink {

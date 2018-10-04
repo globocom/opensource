@@ -4,14 +4,14 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 import styles from './featuredProjects.module.css'
 
 const featuredProjectsQuery = graphql`
-  query {
+  {
     allFeaturedProjectsJson {
       edges {
         node {
           id
           name
           slug
-          description
+          shortDescription
           image {
             publicURL
           }
@@ -44,7 +44,7 @@ const FeaturedProjects = () => {
                   />
                 </div>
                 <p className={styles.projectDescription}>
-                  {project.description}
+                  {project.shortDescription}
                 </p>
                 <Link
                   className={styles.projectLink}
