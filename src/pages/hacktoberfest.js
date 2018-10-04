@@ -3,9 +3,9 @@ import Layout from '../components/layout'
 import Button from '../components/button'
 import { getUser } from '../services/api'
 
-import styles from './hacktober.module.css'
+import styles from './hacktoberfest.module.css'
 
-class HacktoberPage extends Component {
+class HacktoberfestPage extends Component {
   state = {
     user: null,
   }
@@ -30,7 +30,7 @@ class HacktoberPage extends Component {
         <div className={styles.pageContent}>
           <section className={styles.section}>
             <h1 className={styles.sectionTitle}>
-              Hacktober{' '}
+              Hacktoberfest{' '}
               <span className={styles.sectionTitleLight}>Globo.com</span>
             </h1>
             <h2 className={styles.sectionSubTitle}>
@@ -56,18 +56,29 @@ class HacktoberPage extends Component {
             )}
           </section>
 
-          <section className={styles.event}>
-            <div className={styles.eventCall}>Como participar</div>
-            <div className={styles.eventDescription}>
+          <section className={styles.eventInfo}>
+            <div className={styles.eventInfoLabel}>Regras</div>
+            <div className={styles.eventInfoBody}>
               Contribua com 2 pull requests em qualquer projeto Open Source da
               Globo.com durante o mês de outubro. Os 100 primeiros inscritos que
               conseguirem os 2 pull requests e ao menos um ACEITO, ganharão uma
               camiseta exclusiva.
             </div>
-            <div className={styles.eventDate}>De 1 até 31 de outubro</div>
-            <div className={styles.eventRepository}>
+            <p className={styles.eventInfoCall}>De 1 até 31 de outubro</p>
+          </section>
+
+          <section className={styles.eventInfo}>
+            <div className={styles.eventInfoLabel}>Projetos</div>
+            <div className={styles.eventInfoBody}>
               Pull requests podem ser feitos em qualquer projeto da globo.com.
             </div>
+            <p className={styles.eventInfoCall}>
+              <Button
+                label="ver no github"
+                url="https://github.com/search?q=label:hacktoberfest user:globocom user:tsuru user:thumbor user:clappr state:open type:issue"
+                transparent={true}
+              />
+            </p>
           </section>
 
           <div className={styles.astronautRocket} />
@@ -78,4 +89,4 @@ class HacktoberPage extends Component {
   }
 }
 
-export default HacktoberPage
+export default HacktoberfestPage
