@@ -1,7 +1,7 @@
-@value small, medium from "../../styles/breakpoints.module.css";
+@value small, medium from "../styles/breakpoints.module.css";
 
 .section {
-  composes: container from '../../styles/grid.module.css';
+  composes: container from '../styles/grid.module.css';
   padding-top: 90px;
   padding-bottom: 120px;
 }

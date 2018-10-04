@@ -3,24 +3,39 @@
     "name": "Megradraft",
     "slug": "megadraft",
     "image": "logos/megadraft.svg",
-    "description": "Megadraft is a Rich Text editor built on top of Facebook's Draft.JS featuring a nice default base of components and extensibility."
+    "repoURL": "https://github.com/globocom/megadraft",
+    "siteURL": "http://megadraft.io",
+    "docsURL": "http://megadraft.io/#/docs/overview",
+    "shortDescription": "Megadraft is a Rich Text editor built on top of Facebook's Draft.JS featuring a nice default base of components and extensibility."
   },
   {
     "name": "Tsuru",
     "slug": "tsuru",
     "image": "logos/tsuru.svg",
-    "description": "Open source, extensible and Docker-based Platform as a Service (PaaS)."
+    "repoURL": "https://github.com/tsuru/tsuru",
+    "siteURL": "http://tsuru.io",
+    "docsURL": "https://docs.tsuru.io",
+    "shortDescription": "Open source, extensible and Docker-based Platform as a Service (PaaS).",
+    "description": "Tsuru is an extensible and open source Platform as a Service (PaaS) that makes application deployments faster and easier. With tsuru, you don’t need to think about servers at all. As an application developer, you can: Back apps with add-on resources such as SQL and NoSQL databases Manage apps using the tsuru command-line tool Deploy apps using Git, tsuru app-deploy or using docker images directly."
   },
   {
     "name": "Thumbor",
     "slug": "thumbor",
     "image": "logos/thumbor.svg",
-    "description": "Thumbor is an open-source photo thumbnail service by globo.com."
+    "repoURL": "https://github.com/thumbor/thumbor",
+    "siteURL": "http://thumbor.org",
+    "docsURL": "https://thumbor.readthedocs.io",
+    "shortDescription": "Thumbor is an open-source photo thumbnail service by globo.com.",
+    "description": "Thumbor is a smart imaging service. It enables on-demand crop, resizing and flipping of images. It features a very smart detection of important points in the image for better cropping and resizing, using state-of-the-art face and feature detection algorithms (more on that in Detection Algorithms). Save time and money in your company with Thumbor."
   },
   {
     "name": "Clapp",
     "slug": "clappr",
     "image": "logos/clappr.svg",
-    "description": "An extensible media player for the web."
+    "repoURL": "https://github.com/clappr/clappr",
+    "siteURL": "http://clappr.github.io",
+    "docsURL": "http://clappr.github.io",
+    "shortDescription": "An extensible media player for the web.",
+    "description": "🎬 An extensible media player for the web."
   }
 ]

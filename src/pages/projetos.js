@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import Layout from '../../components/layout'
-import TopBackground from '../../components/topBackground'
-import Button from '../../components/button'
-import FeaturedProjects from '../../components/featuredProjects'
-import RepoStats from '../../components/repoStats'
+import Layout from '../components/layout'
+import TopBackground from '../components/topBackground'
+import Button from '../components/button'
+import FeaturedProjects from '../components/featuredProjects'
+import RepoStats from '../components/repoStats'
 
-import { getOrganizationRepos } from '../../services/github'
+import { getOrganizationRepos } from '../services/github'
 
-import styles from './projects.module.css'
-import githubIcon from '../../images/logo-github.svg'
+import styles from './projetos.module.css'
+import githubIcon from '../images/logo-github.svg'
+
 class ProjetosPage extends Component {
   state = {
     projects: [],
