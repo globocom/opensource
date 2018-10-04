@@ -11,13 +11,8 @@ class HacktoberPage extends Component {
   }
 
   async componentDidMount() {
-    // const user = await getUser()
-    // this.setState({ user })
-    this.setState({
-      user: {
-        Name: 'Arturo',
-      },
-    })
+    const user = await getUser()
+    this.setState({ user })
   }
 
   render() {
