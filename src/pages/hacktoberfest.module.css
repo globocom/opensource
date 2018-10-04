@@ -78,46 +78,26 @@
   align-items: center;
 }
 
-.event {
+.eventInfo {
   max-width: 535px;
   margin-top: 90px;
 }
 
-.eventCall {
-  font-weight: 300;
+.eventInfoLabel {
+  font-weight: 700;
   font-size: 30px;
   letter-spacing: -1.7px;
   margin-bottom: 65px;
 }
 
-.eventDescription {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 29px;
+.eventInfoBody {
   margin-bottom: 32px;
 }
 
-.eventDate {
-  font-weight: 400;
+.eventInfoCall {
+  font-weight: 600;
   font-size: 20px;
   line-height: 29px;
-}
-
-.eventRepository {
-  font-weight: 400;
-  font-style: italic;
-  font-size: 20px;
-  line-height: 29px;
-  margin-top: 10px;
-}
-
-.eventRepositoryLink {
-  color: rgb(74, 144, 226);
-  text-decoration: none;
-}
-
-.eventRepositoryButton {
-  margin-top: 40px;
 }
 
 @media mediumOnly {

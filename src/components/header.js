@@ -33,8 +33,8 @@ const Header = () => (
           </Link>
         </li>
         <li className={styles.menuItem}>
-          <Link getProps={isMenuItemActive} to="/hacktober/">
-            Hacktober
+          <Link getProps={isMenuItemActive} to="/hacktoberfest/">
+            Hacktoberfest
           </Link>
         </li>
       </ul>
