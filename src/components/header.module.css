@@ -85,7 +85,6 @@
   color: rgb(19, 173, 254);
 }
 
-
 @media small {
   .header {
     height: 60px;
@@ -104,14 +103,22 @@
   }
 
   .brandName {
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 0;
-    margin-left: 3px;
+    margin-left: 2px;
+  }
+
+  .brandLink {
+    flex-direction: column;
   }
 }
 
 @media xsmall {
-  .brandLink {
-    flex-direction: column;
+  .brandName {
+    font-size: 12px;
+  }
+
+  .headerContent {
+    padding: 0 18px;
   }
 }
