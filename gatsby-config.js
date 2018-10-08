@@ -2,6 +2,10 @@ module.exports = {
   siteMetadata: {
     title: 'Globo.com - Open Source',
     description: 'Globo.com - Por que ❤️ Open Source?',
+    url: 'https://opensource.globo.com',
+    logos: {
+      fb: 'logos/fb.png',
+    },
   },
   plugins: [
     'gatsby-plugin-react-helmet',

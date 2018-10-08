@@ -7,7 +7,6 @@ import Header from './header'
 import Footer from './footer'
 
 import styles from './layout.module.css'
-import siteImage from '../images/app-icon-wide.png'
 
 const MetaData = ({ siteMetadata }) => {
   return (
@@ -16,8 +15,14 @@ const MetaData = ({ siteMetadata }) => {
       <meta name="description" content={siteMetadata.description} />
       <meta name="keywords" content="opensource, community, globocom, gcom" />
       <meta name="og:type" content="website" />
-      <meta name="og:site_name" content="Globo.com Open Source" />
-      <meta name="og:image" content={siteImage} />
+      <meta name="og:site_name" content={siteMetadata.title} />
+      <meta
+        name="og:image"
+        content={`${siteMetadata.url}/${siteMetadata.logos.fb}`}
+      />
+      <meta name="og:url" content={siteMetadata.url} />
+      <meta name="og:title" content={siteMetadata.title} />
+      <meta name="og:description" content={siteMetadata.description} />
     </Helmet>
   )
 }
@@ -32,6 +37,10 @@ const siteQuery = graphql`
       siteMetadata {
         title
         description
+        url
+        logos {
+          fb
+        }
       }
     }
   }
