@@ -43,11 +43,6 @@ class HacktoberfestPage extends Component {
                   Olá <strong>{user.Name}</strong>! Você está participando do
                   evento. Let's hack...
                 </p>
-                {/* <Button
-                  label="verificar progresso"
-                  url="/login"
-                  transparent={true}
-                /> */}
               </div>
             ) : (
               <div className={styles.sectionSubscribe}>

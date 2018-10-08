@@ -27,7 +27,6 @@ class NossoTimePage extends Component {
           <div className={styles.members}>
             {members.map(member => (
               <div className={styles.member} key={member.id}>
-                {/*<a href={member.url} className={styles.memberAnchor}> */}
                 <div className={styles.memberAnchor}>
                   <img
                     className={styles.memberAvatar}
@@ -36,7 +35,6 @@ class NossoTimePage extends Component {
                     title={member.name}
                   />
                 </div>
-                {/*</a>*/}
               </div>
             ))}
           </div>
