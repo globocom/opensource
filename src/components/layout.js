@@ -14,13 +14,13 @@ const MetaData = ({ siteMetadata }) => {
       <html lang="pt" />
       <meta name="description" content={siteMetadata.description} />
       <meta name="keywords" content="opensource, community, globocom, gcom" />
-      <meta name="og:type" content="website" />
-      <meta name="og:site_name" content={siteMetadata.title} />
-      <meta name="og:url" content={siteMetadata.url} />
-      <meta name="og:title" content={siteMetadata.title} />
-      <meta name="og:description" content={siteMetadata.description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content={siteMetadata.title} />
+      <meta property="og:url" content={siteMetadata.url} />
+      <meta property="og:title" content={siteMetadata.title} />
+      <meta property="og:description" content={siteMetadata.description} />
       <meta
-        name="og:image"
+        property="og:image"
         content={`${siteMetadata.url}/${siteMetadata.logos.fb}`}
       />
       <meta property="og:image:type" content="image/png" />
