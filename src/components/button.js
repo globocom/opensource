@@ -2,7 +2,14 @@ import React from 'react'
 
 import styles from './button.module.css'
 
-const Button = ({ label, url, icon, className, transparent = false }) => {
+const Button = ({
+  label,
+  url,
+  icon,
+  className,
+  transparent = false,
+  fill = false,
+}) => {
   const classNames = [styles.button]
 
   if (className) {
@@ -11,6 +18,10 @@ const Button = ({ label, url, icon, className, transparent = false }) => {
 
   if (transparent) {
     classNames.push(styles.transparent)
+  }
+
+  if (fill) {
+    classNames.push(styles.fill)
   }
 
   return (

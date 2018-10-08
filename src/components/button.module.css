@@ -14,6 +14,7 @@
   display: inline-flex;
   align-items: center;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .buttonIcon {
@@ -30,6 +31,12 @@
 
 .transparent .buttonIcon {
   fill: white;
+}
+
+.fill {
+  color: white;
+  border-color: rgb(74, 144, 226);
+  background-color: rgb(74, 144, 226);
 }
 
 @media small {
