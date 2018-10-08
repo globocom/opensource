@@ -1,4 +1,4 @@
-.PHONY: setup start build deploy-dev deploy-prod
+.PHONY: setup start build deploy
 
 setup:
 	yarn install
@@ -9,8 +9,5 @@ start:
 build:
 	yarn build
 
-deploy-dev: build
+deploy: build
 	tsuru app-deploy public -a opensource-web
-
-deploy-prod: build
-	tsuru app-deploy public -a opensource

@@ -7,21 +7,17 @@ import Header from './header'
 import Footer from './footer'
 
 import styles from './layout.module.css'
+import siteImage from '../images/app-icon-wide.png'
 
 const MetaData = ({ siteMetadata }) => {
-  const meta = [
-    {
-      name: 'description',
-      content: siteMetadata.description,
-    },
-    {
-      name: 'keywords',
-      content: 'opensource, community, globocom, gcom',
-    },
-  ]
   return (
-    <Helmet title={siteMetadata.title} meta={meta}>
+    <Helmet title={siteMetadata.title}>
       <html lang="pt" />
+      <meta name="description" content={siteMetadata.description} />
+      <meta name="keywords" content="opensource, community, globocom, gcom" />
+      <meta name="og:type" content="website" />
+      <meta name="og:site_name" content="Globo.com Open Source" />
+      <meta name="og:image" content={siteImage} />
     </Helmet>
   )
 }

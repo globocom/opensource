@@ -5,7 +5,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-offline',
     'gatsby-transformer-json',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
@@ -27,6 +26,21 @@ module.exports = {
         icon: 'src/images/app-icon.png',
       },
     },
+    // {
+    //   resolve: 'gatsby-plugin-offline',
+    //   options: {
+    //     runtimeCaching: [
+    //       {
+    //         urlPattern: /\/callback\//,
+    //         handler: `networkOnly`,
+    //       },
+    //       {
+    //         urlPattern: /\.(?:png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
+    //         handler: `staleWhileRevalidate`,
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
