@@ -13,7 +13,7 @@ const isMenuItemActive = ({ isCurrent }) => {
 }
 
 const Header = () => (
-  <header className={styles.header} role="navigation">
+  <header className={styles.header}>
     <div className={styles.headerContent}>
       <div className={styles.brand}>
         <Link className={styles.brandLink} to="/">

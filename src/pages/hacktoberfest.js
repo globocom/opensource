@@ -51,7 +51,7 @@ class HacktoberfestPage extends Component {
               </div>
             ) : (
               <div className={styles.sectionSubscribe}>
-                <Button label="participe" url="/login" fill={true} />
+                <Button label="participe" url="/login" transparent={true} />
               </div>
             )}
           </section>
@@ -79,7 +79,7 @@ class HacktoberfestPage extends Component {
             <p className={styles.eventInfoCall}>
               <Button
                 label="ver issues no github"
-                url="https://github.com/search?q=label:hacktoberfest user:globocom user:tsuru user:thumbor user:clappr state:open type:issue"
+                url="https://github.com/search?q=label:hacktoberfest%20user:globocom%20user:tsuru%20user:thumbor%20user:clappr%20state:open%20type:issue"
                 transparent={true}
               />
             </p>
