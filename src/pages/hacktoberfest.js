@@ -46,7 +46,7 @@ class HacktoberfestPage extends Component {
               </div>
             ) : (
               <div className={styles.sectionSubscribe}>
-                <Button label="participe" url="/login" transparent={true} />
+                <Button label="participe" url="/login" fill={true} />
               </div>
             )}
           </section>
