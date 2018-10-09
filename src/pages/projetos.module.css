@@ -35,6 +35,9 @@
 .projectTitle {
   font-weight: 600;
   font-size: 22px;
+  /* Remove link default styling: */
+  color: unset;
+  text-decoration: none;
 }
 
 .projectDescription {
