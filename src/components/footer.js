@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
+import Copyright from './copyright'
 import styles from './footer.module.css'
 
 const Footer = () => (
@@ -29,7 +29,7 @@ const Footer = () => (
           </a>
         </div>
       </div>
-      <div>Globo.com 2018</div>
+      <Copyright />
     </div>
   </footer>
 )
