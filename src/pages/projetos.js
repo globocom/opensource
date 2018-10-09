@@ -33,26 +33,49 @@ class ProjetosPage extends Component {
           <div className={styles.body}>
             <FeaturedProjects />
             <div className={styles.projects}>
-              {projects.map(project => (
-                <div key={project.id} className={styles.project}>
-                  <div className={styles.projectTitle}>{project.name}</div>
-                  <RepoStats
-                    className={styles.projectStats}
-                    stars={project.stargazers.totalCount}
-                    pullRequests={project.pullRequests.totalCount}
-                    commits={
-                      project.object ? project.object.history.totalCount : null
-                    }
-                    issues={project.issues.totalCount}
-                  />
-                  <div className={styles.projectDescription}>
-                    {project.description}
+              {projects
+                .sort((a, b) => {
+                  var indexA = a.name.toUpperCase()
+                  var indexB = b.name.toUpperCase()
+                  if (indexA < indexB) {
+                    return -1
+                  }
+                  if (indexA > indexB) {
+                    return 1
+                  }
+                  return 0
+                })
+                .sort((a, b) => {
+                  if (a.issues.totalCount < b.issues.totalCount) {
+                    return -1
+                  }
+                  if (a.issues.totalCount > b.issues.totalCount) {
+                    return 1
+                  }
+                  return 0
+                })
+                .map(project => (
+                  <div key={project.id} className={styles.project}>
+                    <div className={styles.projectTitle}>{project.name}</div>
+                    <RepoStats
+                      className={styles.projectStats}
+                      stars={project.stargazers.totalCount}
+                      pullRequests={project.pullRequests.totalCount}
+                      commits={
+                        project.object
+                          ? project.object.history.totalCount
+                          : null
+                      }
+                      issues={project.issues.totalCount}
+                    />
+                    <div className={styles.projectDescription}>
+                      {project.description}
+                    </div>
+                    <a className={styles.projectLink} href={project.url}>
+                      ver detalhes
+                    </a>
                   </div>
-                  <a className={styles.projectLink} href={project.url}>
-                    ver detalhes
-                  </a>
-                </div>
-              ))}
+                ))}
             </div>
             <Button
               url="https://github.com/globocom"
