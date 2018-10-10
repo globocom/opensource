@@ -5,7 +5,7 @@ import Button from '../components/button'
 import FeaturedProjects from '../components/featured-projects'
 import RepoStats from '../components/repo-stats'
 
-import { getOrganizationRepos } from '../services/github'
+import { getOrgRepos } from '../services/github'
 
 import styles from './projetos.module.css'
 import githubIcon from '../images/logo-github.svg'
@@ -16,7 +16,7 @@ class ProjetosPage extends Component {
   }
 
   async componentDidMount() {
-    const repos = await getOrganizationRepos()
+    const repos = await getOrgRepos()
     this.setState({ repos })
   }
 

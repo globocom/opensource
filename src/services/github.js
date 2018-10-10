@@ -1,6 +1,30 @@
-import sortRepos from '../utils/sort'
-
 const GITHUB_TOKEN = process.env.GATSBY_GITHUB_TOKEN
+
+const ORGS = [
+  { login: 'globocom', stars: 30 },
+  { login: 'tsuru', stars: 30 },
+  { login: 'clappr', stars: 30 },
+  { login: 'thumbor', stars: 30 },
+  { login: 'galeb', stars: 10 },
+]
+
+const EXCLUDE_REPOS = ['tsuru', 'thumbor', 'clappr', 'megadraft']
+
+const joinSearchNodes = data => {
+  let nodes = []
+  for (let org in data) {
+    nodes = nodes.concat(data[org].nodes)
+  }
+  return nodes
+}
+
+const sortRepos = (repos, field = 'stargazers') => {
+  return repos.sort((a, b) => {
+    const totalA = a[field].totalCount
+    const totalB = b[field].totalCount
+    return totalB - totalA
+  })
+}
 
 const gitHubclient = async (query, variables = {}) => {
   let resp
@@ -26,7 +50,7 @@ const gitHubclient = async (query, variables = {}) => {
   return data.data
 }
 
-const getOrganizationMembers = async () => {
+const getOrgMembers = async () => {
   const query = `
     {
       organization(login: "globocom") {
@@ -46,42 +70,48 @@ const getOrganizationMembers = async () => {
   return await gitHubclient(query)
 }
 
-const getOrganizationRepos = async () => {
+const getOrgRepos = async () => {
+  let searchQuery = ''
+  ORGS.forEach(({ login, stars }) => {
+    searchQuery += `
+      ${login}: search(
+        first: 50,
+        query: "org:${login} stars:>${stars}",
+        type: REPOSITORY
+      ) {
+        ...SearchResultFields
+      }
+    `
+  })
+
   const query = `
     {
-      organization(login: "globocom") {
-        name
-        repositories(
-          first: 50,
-          isFork: false,
-          orderBy: {
-            field: STARGAZERS,
-            direction: DESC
-          }
-        ) {
-          nodes {
-            id
-            name
-            description
-            url
-            object(expression: "master") {
-              ... on Commit {
-                history {
-                  totalCount
-                }
+      ${searchQuery}
+    }
+
+    fragment SearchResultFields on SearchResultItemConnection {
+      nodes {
+        ... on Repository {
+          id
+          name
+          description
+          url
+          object(expression: "master") {
+            ... on Commit {
+              history {
+                totalCount
               }
             }
-            issues (states: OPEN) {
-              totalCount
-            }
-            pullRequests {
-              totalCount
-            }
-            stargazers {
-              totalCount
-            }
           }
-          totalCount
+          issues(states: OPEN) {
+            totalCount
+          }
+          pullRequests {
+            totalCount
+          }
+          stargazers {
+            totalCount
+          }
         }
       }
     }
@@ -90,7 +120,9 @@ const getOrganizationRepos = async () => {
   const data = await gitHubclient(query)
   let repos = []
   if (data) {
-    repos = sortRepos(data.organization.repositories.nodes)
+    repos = sortRepos(joinSearchNodes(data)).filter(
+      repo => !EXCLUDE_REPOS.includes(repo.name)
+    )
   }
 
   return repos
@@ -126,4 +158,4 @@ const getRepoStats = async (owner, name) => {
   })
 }
 
-export { getOrganizationMembers, getOrganizationRepos, getRepoStats }
+export { getOrgMembers, getOrgRepos, getRepoStats }
