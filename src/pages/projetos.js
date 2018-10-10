@@ -4,6 +4,7 @@ import TopBackground from '../components/top-background'
 import Button from '../components/button'
 import FeaturedProjects from '../components/featured-projects'
 import RepoStats from '../components/repo-stats'
+import sortRepos from '../components/sort-repos'
 
 import { getOrganizationRepos } from '../services/github'
 
@@ -19,7 +20,7 @@ class ProjetosPage extends Component {
     const data = await getOrganizationRepos()
     if (data) {
       this.setState({
-        projects: data.organization.repositories.nodes,
+        projects: sortRepos(data.organization.repositories.nodes),
       })
     }
   }
