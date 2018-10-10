@@ -10,6 +10,25 @@ import { getOrgRepos } from '../services/github'
 import styles from './projetos.module.css'
 import githubIcon from '../images/logo-github.svg'
 
+const Repo = ({ repo }) => (
+  <div className={styles.project}>
+    <a href={repo.url} className={styles.projectTitle}>
+      {repo.name}
+    </a>
+    <RepoStats
+      className={styles.projectStats}
+      stars={repo.stargazers.totalCount}
+      pullRequests={repo.pullRequests.totalCount}
+      commits={repo.object ? repo.object.history.totalCount : null}
+      issues={repo.issues.totalCount}
+    />
+    <div className={styles.projectDescription}>{repo.description}</div>
+    <a className={styles.projectLink} href={repo.url}>
+      ver detalhes
+    </a>
+  </div>
+)
+
 class ProjetosPage extends Component {
   state = {
     repos: [],
@@ -30,26 +49,7 @@ class ProjetosPage extends Component {
             <FeaturedProjects />
             <div className={styles.projects}>
               {repos.map(repo => (
-                <div key={repo.id} className={styles.project}>
-                  <a href={repo.url} className={styles.projectTitle}>
-                    {repo.name}
-                  </a>
-                  <RepoStats
-                    className={styles.projectStats}
-                    stars={repo.stargazers.totalCount}
-                    pullRequests={repo.pullRequests.totalCount}
-                    commits={
-                      repo.object ? repo.object.history.totalCount : null
-                    }
-                    issues={repo.issues.totalCount}
-                  />
-                  <div className={styles.projectDescription}>
-                    {repo.description}
-                  </div>
-                  <a className={styles.projectLink} href={repo.url}>
-                    ver detalhes
-                  </a>
-                </div>
+                <Repo key={`repo-${repo.id}`} repo={repo} />
               ))}
             </div>
             <Button
