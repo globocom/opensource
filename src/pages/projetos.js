@@ -48,7 +48,7 @@ class ProjetosPage extends Component {
                   <div className={styles.projectDescription}>
                     {project.description}
                   </div>
-                  <a className={styles.projectLink} href={project.url}>
+                  <a className={styles.projectLink} href={project.url} rel="noopenner noreferrer">
                     ver detalhes
                   </a>
                 </div>
