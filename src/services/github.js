@@ -1,3 +1,5 @@
+import sortRepos from '../utils/sort'
+
 const GITHUB_TOKEN = process.env.GATSBY_GITHUB_TOKEN
 
 const gitHubclient = async (query, variables = {}) => {
@@ -84,7 +86,14 @@ const getOrganizationRepos = async () => {
       }
     }
   `
-  return await gitHubclient(query)
+
+  const data = await gitHubclient(query)
+  let repos = []
+  if (data) {
+    repos = sortRepos(data.organization.repositories.nodes)
+  }
+
+  return repos
 }
 
 const getRepoStats = async (owner, name) => {
@@ -110,6 +119,7 @@ const getRepoStats = async (owner, name) => {
       }
     }
   `
+
   return await gitHubclient(query, {
     owner,
     name,

@@ -4,7 +4,6 @@ import TopBackground from '../components/top-background'
 import Button from '../components/button'
 import FeaturedProjects from '../components/featured-projects'
 import RepoStats from '../components/repo-stats'
-import sortRepos from '../utils/sort'
 
 import { getOrganizationRepos } from '../services/github'
 
@@ -13,21 +12,16 @@ import githubIcon from '../images/logo-github.svg'
 
 class ProjetosPage extends Component {
   state = {
-    projects: [],
+    repos: [],
   }
 
   async componentDidMount() {
-    const data = await getOrganizationRepos()
-    if (data) {
-      const { nodes } = data.organization.repositories
-      this.setState({
-        projects: sortRepos(nodes),
-      })
-    }
+    const repos = await getOrganizationRepos()
+    this.setState({ repos })
   }
 
   render() {
-    const { projects } = this.state
+    const { repos } = this.state
     return (
       <Layout renderTop={() => <TopBackground skyObject="rocket" />}>
         <section className={styles.section}>
@@ -35,24 +29,24 @@ class ProjetosPage extends Component {
           <div className={styles.body}>
             <FeaturedProjects />
             <div className={styles.projects}>
-              {projects.map(project => (
-                <div key={project.id} className={styles.project}>
-                  <a href={project.url} className={styles.projectTitle}>
-                    {project.name}
+              {repos.map(repo => (
+                <div key={repo.id} className={styles.project}>
+                  <a href={repo.url} className={styles.projectTitle}>
+                    {repo.name}
                   </a>
                   <RepoStats
                     className={styles.projectStats}
-                    stars={project.stargazers.totalCount}
-                    pullRequests={project.pullRequests.totalCount}
+                    stars={repo.stargazers.totalCount}
+                    pullRequests={repo.pullRequests.totalCount}
                     commits={
-                      project.object ? project.object.history.totalCount : null
+                      repo.object ? repo.object.history.totalCount : null
                     }
-                    issues={project.issues.totalCount}
+                    issues={repo.issues.totalCount}
                   />
                   <div className={styles.projectDescription}>
-                    {project.description}
+                    {repo.description}
                   </div>
-                  <a className={styles.projectLink} href={project.url}>
+                  <a className={styles.projectLink} href={repo.url}>
                     ver detalhes
                   </a>
                 </div>
