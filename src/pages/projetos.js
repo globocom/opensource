@@ -35,7 +35,9 @@ class ProjetosPage extends Component {
             <div className={styles.projects}>
               {projects.map(project => (
                 <div key={project.id} className={styles.project}>
-                  <div className={styles.projectTitle}>{project.name}</div>
+                  <a href={project.url} className={styles.projectTitle}>
+                    {project.name}
+                  </a>
                   <RepoStats
                     className={styles.projectStats}
                     stars={project.stargazers.totalCount}
