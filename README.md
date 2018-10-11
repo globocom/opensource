@@ -18,6 +18,5 @@ make start
 ## Deploy
 
 ```bash
-make deploy-dev
-make deploy-prod
+make deploy
 ```
