@@ -1,0 +1,17 @@
+.spinner {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.spinnerImg {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 5px;
+}
+
+.spinnerMsg {
+  display: block;
+  font-size: 14px;
+  letter-spacing: -0.8px;
+  color: rgb(102, 102, 102);
+}

@@ -4,7 +4,7 @@ import TopBackground from '../components/top-background'
 import Button from '../components/button'
 import FeaturedProjects from '../components/featured-projects'
 import RepoStats from '../components/repo-stats'
-
+import Spinner from '../components/spinner'
 import { getOrgRepos } from '../services/github'
 
 import styles from './projetos.module.css'
@@ -32,21 +32,23 @@ const Repo = ({ repo }) => (
 class ProjetosPage extends Component {
   state = {
     repos: [],
+    isLoading: true,
   }
 
   async componentDidMount() {
     const repos = await getOrgRepos()
-    this.setState({ repos })
+    this.setState({ repos, isLoading: false })
   }
 
   render() {
-    const { repos } = this.state
+    const { repos, isLoading } = this.state
     return (
       <Layout renderTop={() => <TopBackground skyObject="rocket" />}>
         <section className={styles.section}>
           <h1 className={styles.head}>Nossos Projetos</h1>
           <div className={styles.body}>
             <FeaturedProjects />
+            {isLoading && <Spinner message="Carregando projetos ..." />}
             <div className={styles.projects}>
               {repos.map(repo => (
                 <Repo key={`repo-${repo.id}`} repo={repo} />
