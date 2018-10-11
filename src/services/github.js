@@ -96,6 +96,7 @@ const getOrgRepos = async () => {
           name
           description
           url
+          isArchived
           object(expression: "master") {
             ... on Commit {
               history {
@@ -121,7 +122,7 @@ const getOrgRepos = async () => {
   let repos = []
   if (data) {
     repos = sortRepos(joinSearchNodes(data)).filter(
-      repo => !EXCLUDE_REPOS.includes(repo.name)
+      repo => !repo.isArchived && !EXCLUDE_REPOS.includes(repo.name)
     )
   }
 
