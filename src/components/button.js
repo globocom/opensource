@@ -7,11 +7,11 @@ const Button = ({
   url,
   icon,
   className,
+  blank = false,
   transparent = false,
   fill = false,
 }) => {
   const classNames = [styles.button]
-
   if (className) {
     classNames.push(className)
   }
@@ -24,8 +24,18 @@ const Button = ({
     classNames.push(styles.fill)
   }
 
+  const attrs = {
+    className: classNames.join(' '),
+    href: url,
+  }
+
+  if (blank) {
+    attrs.target = '_blank'
+    attrs.rel = 'noopener noreferrer'
+  }
+
   return (
-    <a className={classNames.join(' ')} href={url}>
+    <a {...attrs}>
       <span>{label}</span>
       {icon && <img className={styles.buttonIcon} src={icon} alt={label} />}
     </a>

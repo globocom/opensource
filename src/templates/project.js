@@ -77,11 +77,13 @@ export default class ProjectTemplate extends Component {
                     className={styles.projectRepoLink}
                     label="ver repositório"
                     url={repoURL}
+                    blank={true}
                   />
                   <Button
                     className={styles.projectRepoLink}
                     label="documentação"
                     url={docsURL}
+                    blank={true}
                   />
                 </div>
               </div>
@@ -89,7 +91,12 @@ export default class ProjectTemplate extends Component {
             <p className={styles.projectDescription}>
               {description || shortDescription}
             </p>
-            <a className={styles.projectLink} href={siteURL}>
+            <a
+              className={styles.projectLink}
+              href={siteURL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {siteURL}
             </a>
           </div>

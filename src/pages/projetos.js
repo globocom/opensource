@@ -23,7 +23,12 @@ const Repo = ({ repo }) => (
       issues={repo.issues.totalCount}
     />
     <div className={styles.projectDescription}>{repo.description}</div>
-    <a className={styles.projectLink} href={repo.url} target="_blank" rel="noopenner noreferrer">
+    <a
+      className={styles.projectLink}
+      href={repo.url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       ver detalhes
     </a>
   </div>

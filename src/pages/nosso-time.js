@@ -29,7 +29,7 @@ class NossoTimePage extends Component {
       <Layout renderTop={() => <TopBackground skyObject="moon" />}>
         <section className={styles.section}>
           <h1 className={styles.head}>Nosso Time</h1>
-          {isLoading && <Spinner message="Carregando membros do time ..." />}
+          {isLoading && <Spinner message="Carregando membros ..." />}
           <div className={styles.members}>
             {members.map(member => (
               <div className={styles.member} key={member.id}>
