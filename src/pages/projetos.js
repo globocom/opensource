@@ -5,27 +5,42 @@ import Button from '../components/button'
 import FeaturedProjects from '../components/featured-projects'
 import RepoStats from '../components/repo-stats'
 
-import { getOrganizationRepos } from '../services/github'
+import { getOrgRepos } from '../services/github'
 
 import styles from './projetos.module.css'
 import githubIcon from '../images/logo-github.svg'
 
+const Repo = ({ repo }) => (
+  <div className={styles.project}>
+    <a href={repo.url} className={styles.projectTitle}>
+      {repo.name}
+    </a>
+    <RepoStats
+      className={styles.projectStats}
+      stars={repo.stargazers.totalCount}
+      pullRequests={repo.pullRequests.totalCount}
+      commits={repo.object ? repo.object.history.totalCount : null}
+      issues={repo.issues.totalCount}
+    />
+    <div className={styles.projectDescription}>{repo.description}</div>
+    <a className={styles.projectLink} href={repo.url} target="_blank" rel="noopenner noreferrer">
+      ver detalhes
+    </a>
+  </div>
+)
+
 class ProjetosPage extends Component {
   state = {
-    projects: [],
+    repos: [],
   }
 
   async componentDidMount() {
-    const data = await getOrganizationRepos()
-    if (data) {
-      this.setState({
-        projects: data.organization.repositories.nodes,
-      })
-    }
+    const repos = await getOrgRepos()
+    this.setState({ repos })
   }
 
   render() {
-    const { projects } = this.state
+    const { repos } = this.state
     return (
       <Layout renderTop={() => <TopBackground skyObject="rocket" />}>
         <section className={styles.section}>
@@ -33,25 +48,8 @@ class ProjetosPage extends Component {
           <div className={styles.body}>
             <FeaturedProjects />
             <div className={styles.projects}>
-              {projects.map(project => (
-                <div key={project.id} className={styles.project}>
-                  <div className={styles.projectTitle}>{project.name}</div>
-                  <RepoStats
-                    className={styles.projectStats}
-                    stars={project.stargazers.totalCount}
-                    pullRequests={project.pullRequests.totalCount}
-                    commits={
-                      project.object ? project.object.history.totalCount : null
-                    }
-                    issues={project.issues.totalCount}
-                  />
-                  <div className={styles.projectDescription}>
-                    {project.description}
-                  </div>
-                  <a className={styles.projectLink} href={project.url} rel="noopenner noreferrer">
-                    ver detalhes
-                  </a>
-                </div>
+              {repos.map(repo => (
+                <Repo key={`repo-${repo.id}`} repo={repo} />
               ))}
             </div>
             <Button

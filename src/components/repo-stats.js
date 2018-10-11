@@ -18,7 +18,7 @@ const RepoStats = ({ stars, pullRequests, commits, issues, className }) => (
         {commits}
       </span>
     )}
-    <span alt="Issues" title="Stars" className={styles.issues}>
+    <span alt="Issues" title="Issues" className={styles.issues}>
       {issues}
     </span>
   </div>

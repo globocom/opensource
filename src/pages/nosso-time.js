@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Layout from '../components/layout'
 import TopBackground from '../components/top-background'
 import Button from '../components/button'
-import { getOrganizationMembers } from '../services/github'
+import { getOrgMembers } from '../services/github'
 
 import styles from './nosso-time.module.css'
 
@@ -12,7 +12,7 @@ class NossoTimePage extends Component {
   }
 
   async componentDidMount() {
-    const data = await getOrganizationMembers()
+    const data = await getOrgMembers()
     if (data) {
       this.setState({ members: data.organization.members.nodes })
     }
