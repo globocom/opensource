@@ -76,6 +76,7 @@ class HacktoberfestPage extends Component {
                 label="ver issues no github"
                 url="https://github.com/search?q=label:hacktoberfest%20user:globocom%20user:tsuru%20user:thumbor%20user:clappr%20state:open%20type:issue"
                 transparent={true}
+                hover_light={true}
               />
             </p>
           </section>

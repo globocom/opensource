@@ -9,6 +9,8 @@ const Button = ({
   className,
   transparent = false,
   fill = false,
+  hover_light = false,
+  hover_dark = false,
 }) => {
   const classNames = [styles.button]
 
@@ -22,6 +24,14 @@ const Button = ({
 
   if (fill) {
     classNames.push(styles.fill)
+  }
+
+  if (hover_dark) {
+    classNames.push(styles.hover_dark)
+  }
+
+  if (hover_light) {
+    classNames.push(styles.hover_light)
   }
 
   return (

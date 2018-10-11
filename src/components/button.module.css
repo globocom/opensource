@@ -46,3 +46,13 @@
     padding: 10px 12px;
   }
 }
+
+.hover_light:hover {
+  background: white;
+  color: rgb(7, 15, 26);
+}
+
+.hover_dark:hover {
+  background: rgb(7, 15, 26);
+  color: white;
+}

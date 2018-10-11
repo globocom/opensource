@@ -42,6 +42,7 @@ class NossoTimePage extends Component {
             className={styles.button}
             label="trabalhe conosco"
             url="https://talentos.globo.com/"
+            hover_dark={true}
           />
         </section>
       </Layout>
