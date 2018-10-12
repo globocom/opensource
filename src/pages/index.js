@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import FeaturedProjects from '../components/featured-projects'
 import Button from '../components/button'
+
 import styles from './index.module.css'
 
 const TopBackground = () => (
@@ -18,12 +19,7 @@ const TopBackground = () => (
       <div>
         <h1 className={styles.heroSectionCall}>Addicted Developers</h1>
         <h2 className={styles.heroSectionSubCall}>Unidos pelo código.</h2>
-        <a
-          className={styles.heroSectionLink}
-          href="https://github.com/globocom"
-        >
-          Let's code
-        </a>
+        <span className={styles.heroSectionLink}>Let's code</span>
       </div>
     </div>
   </section>
@@ -55,6 +51,7 @@ const IndexPage = () => (
               className={styles.sectionButton}
               label="venha nos conhecer"
               transparent={true}
+              blank={true}
             />
           </div>
         </div>

@@ -64,6 +64,7 @@ class ProjetosPage extends Component {
               className={styles.button}
               label="ver repositórios"
               icon={githubIcon}
+              blank={true}
             />
           </div>
         </section>

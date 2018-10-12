@@ -4,6 +4,7 @@ import Button from '../components/button'
 import { getUser } from '../services/api'
 
 import styles from './hacktoberfest.module.css'
+import githubIcon from '../images/logo-github-rev.svg'
 
 class HacktoberfestPage extends Component {
   state = {
@@ -75,7 +76,9 @@ class HacktoberfestPage extends Component {
               <Button
                 label="ver issues no github"
                 url="https://github.com/search?q=label:hacktoberfest%20user:globocom%20user:tsuru%20user:thumbor%20user:clappr%20state:open%20type:issue"
+                icon={githubIcon}
                 transparent={true}
+                blank={true}
               />
             </p>
           </section>
