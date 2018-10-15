@@ -15,7 +15,6 @@
 }
 
 .heroSectionCall {
-  font-family: 'Open Sans', serif;
   font-weight: 700;
   font-size: 48px;
 }
@@ -26,7 +25,6 @@
 }
 
 .heroSectionLink {
-  font-family: 'Open Sans', serif;
   font-weight: 600;
   font-style: italic;
   font-size: 24px;
@@ -47,7 +45,6 @@
 }
 
 .sectionTitle {
-  font-family: 'Open Sans', serif;
   font-weight: 300;
   font-size: 30px;
   letter-spacing: -1.7px;

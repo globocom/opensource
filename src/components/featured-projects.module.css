@@ -36,12 +36,16 @@
 }
 
 .projectLink {
-  font-family: 'Open Sans', serif;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: -0.8px;
   color: rgb(74, 144, 226);
   text-decoration: none;
+  transition: all 0.2s;
+}
+
+.projectLink:hover {
+  color: rgb(19, 173, 254);
 }
 
 @media small {

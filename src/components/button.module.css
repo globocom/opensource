@@ -1,7 +1,6 @@
 @value small from "../styles/breakpoints.module.css";
 
 .button {
-  font-family: 'Open Sans', serif;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.8px;
