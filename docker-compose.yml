@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  fe:
+    restart: always
+    build: ./docker/nginx
+    ports:
+      - '8080:80'
+    depends_on:
+      - web
+
+  web:
+    restart: always
+    build: ./
+    command: 'yarn develop --host 0.0.0.0'
+    volumes:
+      - ./src:/app/src
+      - ./static:/app/static
+    ports:
+      - '8000:8000'
