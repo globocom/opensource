@@ -26,7 +26,7 @@ const sortRepos = (repos, field = 'stargazers') => {
   })
 }
 
-const gitHubclient = async (query, variables = {}) => {
+const githubClient = async (query, variables = {}) => {
   let resp
 
   try {
@@ -50,12 +50,17 @@ const gitHubclient = async (query, variables = {}) => {
   return data.data
 }
 
-const getOrgMembers = async () => {
-  let query = `
+const queryMembers = cursor => {
+  let afterCursor = ''
+  if (cursor) {
+    afterCursor = `, after: "${cursor}"`
+  }
+
+  return `
     {
       organization(login: "globocom") {
         name
-        members(first: 100) {
+        members(first: 100${afterCursor}) {
           nodes {
             id
             name
@@ -71,41 +76,21 @@ const getOrgMembers = async () => {
       }
     }
   `
-  let resp = await gitHubclient(query)
-  let hasNextPage = resp.organization.members.pageInfo.hasNextPage
+}
+
+const getOrgMembers = async () => {
+  let data = await githubClient(queryMembers())
+  let members = data.organization.members
+  let { hasNextPage, endCursor } = members.pageInfo
 
   while (hasNextPage) {
-    let endCursor = resp.organization.members.pageInfo.endCursor
-    query = `
-      {
-        organization(login: "globocom") {
-          name
-          members(first: 100, after: "${endCursor}") {
-            nodes {
-              id
-              name
-              url
-              avatarUrl
-            }
-            totalCount
-            pageInfo {
-              endCursor
-              hasNextPage
-            }
-          }
-        }
-      }
-    `
-    let paginationResp = await gitHubclient(query)
-    let members = resp.organization.members.nodes
-    let paginationMembers = paginationResp.organization.members.nodes
-
-    members = members.concat(paginationMembers)
-    resp.organization.members.nodes = members
-    hasNextPage = paginationResp.organization.members.pageInfo.hasNextPage
+    data = await githubClient(queryMembers(endCursor))
+    let paginatedMembers = data.organization.members
+    members.nodes = members.nodes.concat(paginatedMembers.nodes)
+    hasNextPage = paginatedMembers.pageInfo.hasNextPage
   }
 
-  return resp
+  return data
 }
 
 const getOrgRepos = async () => {
@@ -156,7 +141,7 @@ const getOrgRepos = async () => {
     }
   `
 
-  const data = await gitHubclient(query)
+  const data = await githubClient(query)
   let repos = []
   if (data) {
     repos = sortRepos(joinSearchNodes(data)).filter(
@@ -191,7 +176,7 @@ const getRepoStats = async (owner, name) => {
     }
   `
 
-  return await gitHubclient(query, {
+  return await githubClient(query, {
     owner,
     name,
   })
