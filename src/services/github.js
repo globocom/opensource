@@ -51,7 +51,7 @@ const gitHubclient = async (query, variables = {}) => {
 }
 
 const getOrgMembers = async () => {
-  const query = `
+  let query = `
     {
       organization(login: "globocom") {
         name
@@ -63,11 +63,49 @@ const getOrgMembers = async () => {
             avatarUrl
           }
           totalCount
+          pageInfo {
+            endCursor
+            hasNextPage
+          }
         }
       }
     }
   `
-  return await gitHubclient(query)
+  let resp = await gitHubclient(query)
+  let hasNextPage = resp.organization.members.pageInfo.hasNextPage
+
+  while (hasNextPage) {
+    let endCursor = resp.organization.members.pageInfo.endCursor
+    query = `
+      {
+        organization(login: "globocom") {
+          name
+          members(first: 100, after: "${endCursor}") {
+            nodes {
+              id
+              name
+              url
+              avatarUrl
+            }
+            totalCount
+            pageInfo {
+              endCursor
+              hasNextPage
+            }
+          }
+        }
+      }
+    `
+    let paginationResp = await gitHubclient(query)
+    let members = resp.organization.members.nodes
+    let paginationMembers = paginationResp.organization.members.nodes
+
+    members = members.concat(paginationMembers)
+    resp.organization.members.nodes = members
+    hasNextPage = paginationResp.organization.members.pageInfo.hasNextPage
+  }
+
+  return resp
 }
 
 const getOrgRepos = async () => {
