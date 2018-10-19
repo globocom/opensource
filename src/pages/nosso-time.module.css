@@ -25,6 +25,10 @@
   justify-content: center;
 }
 
+.member:hover {
+  transform: scale(1.2);
+}
+
 .memberAnchor {
   width: 80px;
   height: 80px;

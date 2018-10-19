@@ -34,12 +34,18 @@ class NossoTimePage extends Component {
             {members.map(member => (
               <div className={styles.member} key={member.id}>
                 <div className={styles.memberAnchor}>
-                  <img
-                    className={styles.memberAvatar}
-                    src={member.avatarUrl}
-                    alt={member.name}
-                    title={member.name}
-                  />
+                  <a
+                    href={member.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      className={styles.memberAvatar}
+                      src={member.avatarUrl}
+                      alt={member.name}
+                      title={member.name}
+                    />
+                  </a>
                 </div>
               </div>
             ))}

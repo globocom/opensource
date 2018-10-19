@@ -20,3 +20,18 @@ make start
 ```bash
 make deploy
 ```
+
+## Setup
+
+The application uses the [Github GraphQL API](https://developer.github.com/v4/) to acess data from the Globo.com organizations and respositories. To communicate with the GraphQL server, you'll need an [OAuth token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) with the following scopes:
+
+```
+user
+read:org
+```
+
+With your token in hands, you need to set the token to the environment variable `GATSBY_GITHUB_TOKEN`.
+
+```bash
+export GATSBY_GITHUB_TOKEN=<your_token_here>
+```
