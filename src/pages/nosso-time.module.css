@@ -22,7 +22,11 @@
 .member {
   display: flex;
   align-items: center;
-  justify-content: center;
+  transition: all 0.3s;
+}
+
+.member:hover {
+  transform: scale(1.2);
 }
 
 .memberAnchor {
