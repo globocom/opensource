@@ -28,7 +28,8 @@ setup:
 ## starts development server
 start:
 	yarn develop
-# builds static files to production
+
+## builds static files to production
 build:
 	yarn build
 
