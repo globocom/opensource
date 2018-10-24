@@ -8,6 +8,8 @@ const ORGS = [
   { login: 'galeb', stars: 10 },
 ]
 
+const ORG_LOGINS = ORGS.map(org => org.login)
+
 const EXCLUDE_REPOS = ['tsuru', 'thumbor', 'clappr', 'megadraft']
 
 const joinSearchNodes = data => {
@@ -182,4 +184,60 @@ const getRepoStats = async (owner, name) => {
   })
 }
 
-export { getOrgMembers, getOrgRepos, getRepoStats }
+const getUserStats = async login => {
+  const query = `
+    query UserStats($login: String!) {
+      user(login: $login) {
+        avatarUrl
+        pullRequests(
+          first: 100,
+          states: [OPEN, MERGED],
+          orderBy: { field: CREATED_AT, direction: DESC }
+        ) {
+          nodes {
+            title
+            createdAt
+            closed
+            merged
+            mergedAt
+            state
+            repository {
+              name
+              owner {
+                login
+              }
+            }
+          }
+        }
+      }
+    }
+  `
+
+  const data = await githubClient(query, {
+    login,
+  })
+
+  if (data) {
+    const { pullRequests, ...user } = data.user
+    const stats = { ...user, merged: 0, opened: 0 }
+
+    pullRequests.nodes
+      .filter(
+        pr =>
+          pr.createdAt.startsWith('2018-10') &&
+          ORG_LOGINS.includes(pr.repository.owner.login)
+      )
+      .forEach(pr => {
+        if (pr.state === 'MERGED') {
+          stats.merged += 1
+        }
+        if (pr.state === 'OPEN') {
+          stats.opened += 1
+        }
+      })
+
+    return stats
+  }
+}
+
+export { getOrgMembers, getOrgRepos, getRepoStats, getUserStats }

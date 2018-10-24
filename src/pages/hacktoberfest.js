@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Layout from '../components/layout'
 import Button from '../components/button'
 import { getUser } from '../services/api'
+import { getUserStats } from '../services/github'
 
 import styles from './hacktoberfest.module.css'
 import githubIcon from '../images/logo-github-rev.svg'
@@ -9,15 +10,17 @@ import githubIcon from '../images/logo-github-rev.svg'
 class HacktoberfestPage extends Component {
   state = {
     user: null,
+    userStats: null,
   }
 
   async componentDidMount() {
     const user = await getUser()
-    this.setState({ user })
+    const userStats = await getUserStats(user.GithubUser)
+    this.setState({ user, userStats })
   }
 
   render() {
-    const { user } = this.state
+    const { user, userStats } = this.state
     return (
       <Layout
         mainTransparent={true}
@@ -44,6 +47,16 @@ class HacktoberfestPage extends Component {
                   Olá <strong>{user.Name}</strong>! Você está participando do
                   evento. Let's hack...
                 </p>
+                <section className={styles.eventInfo}>
+                  <div className={styles.eventInfoLabel}>
+                    Status de contribuições
+                  </div>
+                  <div className={styles.eventInfoBody}>
+                    Você possui: <strong>{userStats.merged}</strong> pull
+                    request(s) aceito(s) e <strong>{userStats.opened}</strong>{' '}
+                    em aberto.
+                  </div>
+                </section>
               </div>
             ) : (
               <div className={styles.sectionSubscribe}>
