@@ -1,4 +1,6 @@
 const GITHUB_TOKEN = process.env.GATSBY_GITHUB_TOKEN
+const OCTOBER = '10'
+const CURRENT_YEAR = (new Date()).getFullYear();
 
 const ORGS = [
   { login: 'globocom', stars: 30 },
@@ -224,7 +226,7 @@ const getUserStats = async login => {
     pullRequests.nodes
       .filter(
         pr =>
-          pr.createdAt.startsWith('2018-10') &&
+          pr.createdAt.startsWith(`${CURRENT_YEAR}-${OCTOBER}`) &&
           ORG_LOGINS.includes(pr.repository.owner.login)
       )
       .forEach(pr => {
