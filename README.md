@@ -21,6 +21,8 @@ make start
 make deploy
 ```
 
+> This website is hosted by the Tsuru.
+
 ## Setup
 
 The application uses the [Github GraphQL API](https://developer.github.com/v4/) to acess data from the Globo.com organizations and respositories. To communicate with the GraphQL server, you'll need an [OAuth token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) with the following scopes:
