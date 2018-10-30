@@ -1,11 +1,34 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Button from './button'
 
 import styles from './address-dialog.module.css'
 
-const AddressDialog = ({ open = false, onClose }) => {
-  return (
-    open && (
+class AddressDialog extends Component {
+  state = {
+    name: '',
+    email: '',
+    state: '',
+    city: '',
+    address: '',
+    postalcode: '',
+  }
+
+  handleFieldChange = fieldName => event => {
+    this.setState({ [fieldName]: event.target.value })
+  }
+
+  handleSubmit = () => {
+    const address = {
+      ...this.state,
+    }
+    console.log(address)
+  }
+
+  render() {
+    const { open = false, onClose } = this.props
+    if (!open) return null
+
+    return (
       <div className={styles.dialog}>
         <div className={open ? styles.overlayVisible : styles.overlay} />
         <div className={styles.body}>
@@ -17,48 +40,54 @@ const AddressDialog = ({ open = false, onClose }) => {
                 <input
                   className={styles.textField}
                   type="text"
-                  name="name"
                   placeholder="Nome"
+                  value={this.state.name}
+                  onChange={this.handleFieldChange('name')}
                 />
               </div>
               <div className={styles.field}>
                 <input
                   className={styles.textField}
                   type="email"
-                  name="email"
                   placeholder="E-mail"
+                  value={this.state.email}
+                  onChange={this.handleFieldChange('email')}
                 />
               </div>
               <div className={styles.field}>
                 <input
                   className={styles.textField}
                   type="text"
-                  name="state"
                   placeholder="Estado"
+                  value={this.state.state}
+                  onChange={this.handleFieldChange('state')}
                 />
               </div>
               <div className={styles.field}>
                 <input
                   className={styles.textField}
                   type="text"
-                  name="city"
                   placeholder="Cidade"
+                  value={this.state.city}
+                  onChange={this.handleFieldChange('city')}
                 />
               </div>
               <div className={styles.field}>
                 <input
                   className={styles.textField}
                   type="text"
-                  name="address"
                   placeholder="Endereço"
+                  value={this.state.address}
+                  onChange={this.handleFieldChange('address')}
                 />
               </div>
               <div className={styles.field}>
                 <input
                   className={styles.textField}
                   type="text"
-                  name="postalcode"
                   placeholder="CEP"
+                  value={this.state.postalcode}
+                  onChange={this.handleFieldChange('postalcode')}
                 />
               </div>
             </div>
@@ -68,13 +97,18 @@ const AddressDialog = ({ open = false, onClose }) => {
                 onClick={onClose}
                 className={styles.button}
               />
-              <Button label="enviar" fill={true} className={styles.button} />
+              <Button
+                label="enviar"
+                fill={true}
+                className={styles.button}
+                onClick={this.handleSubmit}
+              />
             </div>
           </div>
         </div>
       </div>
     )
-  )
+  }
 }
 
 export default AddressDialog
