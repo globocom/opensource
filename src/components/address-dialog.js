@@ -3,7 +3,27 @@ import Button from './button'
 
 import styles from './address-dialog.module.css'
 
-const Field = ({ label, type = 'text', placeholder, value, onChange }) => {
+const validateForm = (fields, formData) => {
+  let formErrors = {}
+  let isValid = true
+  fields.forEach(field => {
+    const value = formData[field.name]
+    if (field.isRequired && value.trim().length === 0) {
+      formErrors[field.name] = 'Este campo é obrigatório.'
+      isValid = false
+    }
+  })
+  return { formErrors, isValid }
+}
+
+const Field = ({
+  label,
+  type = 'text',
+  placeholder,
+  value,
+  onChange,
+  errorText,
+}) => {
   return (
     <div className={styles.field}>
       {label && <label className={styles.fieldLabel}>{label}</label>}
@@ -14,6 +34,7 @@ const Field = ({ label, type = 'text', placeholder, value, onChange }) => {
         value={value}
         onChange={onChange}
       />
+      {errorText && <div className={styles.errorText}>{errorText}</div>}
     </div>
   )
 }
@@ -26,23 +47,38 @@ class AddressDialog extends Component {
     city: '',
     address: '',
     postalcode: '',
+    formErrors: {},
   }
 
   handleFieldChange = fieldName => event => {
-    this.setState({ [fieldName]: event.target.value })
+    const formErrors = this.state.formErrors
+    delete formErrors[fieldName]
+    this.setState({ [fieldName]: event.target.value, formErrors })
   }
 
   handleSubmit = () => {
-    const address = {
-      ...this.state,
-    }
+    const { formErrors, isValid } = validateForm(
+      [
+        { name: 'name', isRequired: true },
+        { name: 'email', isRequired: true },
+        { name: 'state', isRequired: true },
+        { name: 'city', isRequired: true },
+        { name: 'address', isRequired: true },
+        { name: 'postalcode', isRequired: true },
+      ],
+      this.state
+    )
 
-    console.log(address)
+    this.setState({ formErrors })
+
+    if (isValid) {
+      console.log('FORM VALID')
+    }
   }
 
   render() {
     const { open = false, onClose } = this.props
-    if (open) return null
+    if (!open) return null
 
     return (
       <div className={styles.dialog}>
@@ -58,6 +94,7 @@ class AddressDialog extends Component {
                   placeholder="Seu nome completo"
                   value={this.state.name}
                   onChange={this.handleFieldChange('name')}
+                  errorText={this.state.formErrors.name}
                 />
                 <Field
                   type="email"
@@ -65,30 +102,35 @@ class AddressDialog extends Component {
                   placeholder="voce@example.com"
                   value={this.state.email}
                   onChange={this.handleFieldChange('email')}
+                  errorText={this.state.formErrors.email}
                 />
                 <Field
                   label="Estado"
                   placeholder="RJ"
                   value={this.state.state}
                   onChange={this.handleFieldChange('state')}
+                  errorText={this.state.formErrors.state}
                 />
                 <Field
                   label="Cidade"
                   placeholder="Rio de Janeiro"
                   value={this.state.city}
                   onChange={this.handleFieldChange('city')}
+                  errorText={this.state.formErrors.city}
                 />
                 <Field
                   label="Endereço"
                   placeholder="Avenida das américas 700 - Bloco 2 - Sala 3"
                   value={this.state.address}
                   onChange={this.handleFieldChange('address')}
+                  errorText={this.state.formErrors.address}
                 />
                 <Field
                   label="CEP"
                   placeholder="00000-000"
-                  value={this.state.address}
+                  value={this.state.postalcode}
                   onChange={this.handleFieldChange('postalcode')}
+                  errorText={this.state.formErrors.postalcode}
                 />
               </form>
             </div>
