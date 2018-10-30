@@ -100,11 +100,18 @@ class HacktoberfestPage extends Component {
               Contribua e ganhe uma camiseta exclusiva
             </h2>
             {user ? (
-              <UserData
-                user={user}
-                userStats={userStats}
-                toggleDialog={this.toggleDialog}
-              />
+              <>
+                <UserData
+                  user={user}
+                  userStats={userStats}
+                  toggleDialog={this.toggleDialog}
+                />
+                <AddressDialog
+                  open={dialogOpen}
+                  onClose={this.toggleDialog}
+                  user={user}
+                />
+              </>
             ) : (
               <div className={styles.sectionSubscribe}>
                 <Button label="participe" url="/login" fill={true} />
@@ -146,7 +153,6 @@ class HacktoberfestPage extends Component {
           <div className={styles.astronautRocket} />
         </div>
         <div className={styles.bgCornerBottom} />
-        <AddressDialog open={dialogOpen} onClose={this.toggleDialog} />
       </Layout>
     )
   }
