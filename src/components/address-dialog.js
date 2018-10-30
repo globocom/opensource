@@ -41,12 +41,12 @@ const Field = ({
 
 class AddressDialog extends Component {
   state = {
-    name: '',
-    email: '',
-    state: '',
-    city: '',
-    address: '',
-    postalcode: '',
+    name: this.props.user.Name,
+    email: this.props.user.Email,
+    state: this.props.user.State,
+    city: this.props.user.City,
+    address: this.props.user.Address,
+    postalcode: this.props.user.PostalCode,
     formErrors: {},
   }
 
