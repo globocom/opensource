@@ -6,7 +6,6 @@
   z-index: 1;
   padding-top: 150px;
   padding-bottom: 150px;
-
   font-size: 20px;
 }
 
@@ -52,7 +51,7 @@
   width: 440px;
   height: 561px;
   position: absolute;
-  top: 150px;
+  top: 200px;
   right: 0;
 }
 
@@ -133,6 +132,17 @@
   background-image: url(../images/icon-checkbox.svg);
 }
 
+.challengeCompleted {
+  margin: 50px 0;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.2px;
+}
+
+.challengeCompletedTile {
+  color: rgb(19, 173, 254);
+}
+
 @media mediumOnly {
   .astronautRocket {
     width: 300px;
@@ -142,6 +152,11 @@
 }
 
 @media small {
+  .pageContent {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
   .section,
   .event {
     max-width: 300px;
@@ -182,7 +197,7 @@
   .astronautRocket {
     width: 166px;
     height: 211px;
-    top: 245px;
+    top: 210px;
     right: -38px;
   }
 }

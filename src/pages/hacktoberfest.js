@@ -6,7 +6,52 @@ import { getUserStats } from '../services/github'
 
 import styles from './hacktoberfest.module.css'
 import githubIcon from '../images/logo-github-rev.svg'
-// import checkboxIcon from '../images/icon-checkbox.svg'
+
+const UserData = ({ user, userStats }) => {
+  const achievedOpenPRs = userStats.opened >= 2
+  const achievedMergedPRs = userStats.merged >= 1
+  const userName = user.Name ? user.Name.split(' ')[0] : user.GithubUser
+  return (
+    <div>
+      <div>
+        Olá <strong>{userName}</strong>!
+      </div>
+      <p>Você está participando do evento. Let's hack...</p>
+      <section className={styles.eventInfo}>
+        <div className={styles.eventInfoLabel}>Seu progresso</div>
+        <div className={styles.eventInfoBody}>
+          <div className={styles.progressLine}>
+            <i
+              className={
+                achievedOpenPRs ? styles.iconCheckFilled : styles.iconCheckBlank
+              }
+            />
+            enviar pelo menos 2 pull requests: {userStats.opened} enviado(s)
+          </div>
+          <div className={styles.progressLine}>
+            <i
+              className={
+                achievedMergedPRs
+                  ? styles.iconCheckFilled
+                  : styles.iconCheckBlank
+              }
+            />
+            ter pelo menos 1 pull request aceito: {userStats.merged} aceito(s)
+          </div>
+          {achievedOpenPRs &&
+            achievedMergedPRs && (
+              <div className={styles.challengeCompleted}>
+                <span className={styles.challengeCompletedTile}>
+                  Parabéns!!!
+                </span>{' '}
+                Você concluiu o desafio da Hacktoberfest 🏆 🏆 🏆
+              </div>
+            )}
+        </div>
+      </section>
+    </div>
+  )
+}
 
 class HacktoberfestPage extends Component {
   state = {
@@ -41,31 +86,8 @@ class HacktoberfestPage extends Component {
             <h2 className={styles.sectionSubTitle}>
               Contribua e ganhe uma camiseta exclusiva
             </h2>
-
             {user ? (
-              <div>
-                <div>
-                  Olá <strong>{user.Name}</strong>!
-                </div>
-                <p>Você está participando do evento. Let's hack...</p>
-                <section className={styles.eventInfo}>
-                  <div className={styles.eventInfoLabel}>Seu progresso</div>
-                  <div className={styles.eventInfoBody}>
-                    <div className={styles.progressLine}>
-                      <i className={styles.iconCheckBlank} />
-                      abrir pelo menos 2 pull requests: {userStats.opened}{' '}
-                      abertos
-                    </div>
-                    <div className={styles.progressLine}>
-                      <i className={styles.iconCheckFilled} />
-                      ter pelo menos 1 pull request aceito: {
-                        userStats.merged
-                      }{' '}
-                      aceitos
-                    </div>
-                  </div>
-                </section>
-              </div>
+              <UserData user={user} userStats={userStats} />
             ) : (
               <div className={styles.sectionSubscribe}>
                 <Button label="participe" url="/login" fill={true} />
