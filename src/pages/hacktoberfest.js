@@ -6,6 +6,7 @@ import { getUserStats } from '../services/github'
 
 import styles from './hacktoberfest.module.css'
 import githubIcon from '../images/logo-github-rev.svg'
+// import checkboxIcon from '../images/icon-checkbox.svg'
 
 class HacktoberfestPage extends Component {
   state = {
@@ -43,18 +44,25 @@ class HacktoberfestPage extends Component {
 
             {user ? (
               <div>
-                <p>
-                  Olá <strong>{user.Name}</strong>! Você está participando do
-                  evento. Let's hack...
-                </p>
+                <div>
+                  Olá <strong>{user.Name}</strong>!
+                </div>
+                <p>Você está participando do evento. Let's hack...</p>
                 <section className={styles.eventInfo}>
-                  <div className={styles.eventInfoLabel}>
-                    Status de contribuições
-                  </div>
+                  <div className={styles.eventInfoLabel}>Seu progresso</div>
                   <div className={styles.eventInfoBody}>
-                    Você possui: <strong>{userStats.merged}</strong> pull
-                    request(s) aceito(s) e <strong>{userStats.opened}</strong>{' '}
-                    em aberto.
+                    <div className={styles.progressLine}>
+                      <i className={styles.iconCheckBlank} />
+                      abrir pelo menos 2 pull requests: {userStats.opened}{' '}
+                      abertos
+                    </div>
+                    <div className={styles.progressLine}>
+                      <i className={styles.iconCheckFilled} />
+                      ter pelo menos 1 pull request aceito: {
+                        userStats.merged
+                      }{' '}
+                      aceitos
+                    </div>
                   </div>
                 </section>
               </div>

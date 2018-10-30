@@ -52,7 +52,7 @@
   width: 440px;
   height: 561px;
   position: absolute;
-  top: 100px;
+  top: 150px;
   right: 0;
 }
 
@@ -106,6 +106,31 @@
   letter-spacing: -0.8px;
   color: rgb(74, 144, 226);
   text-decoration: none;
+}
+
+.progressLine {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.iconCheck {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 10px;
+}
+
+.iconCheckBlank {
+  composes: iconCheck;
+  background-image: url(../images/icon-checkbox-blank.svg);
+}
+
+.iconCheckFilled {
+  composes: iconCheck;
+  background-image: url(../images/icon-checkbox.svg);
 }
 
 @media mediumOnly {
