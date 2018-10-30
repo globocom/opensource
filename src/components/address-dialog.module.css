@@ -78,4 +78,9 @@
   background-color: white;
   outline: none;
   -webkit-appearance: none;
+  transition: border-color 0.3s;
+}
+
+.textField:focus {
+  border-color: rgb(74, 144, 226);
 }

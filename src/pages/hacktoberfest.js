@@ -9,7 +9,7 @@ import styles from './hacktoberfest.module.css'
 import githubIcon from '../images/logo-github-rev.svg'
 
 const UserData = ({ user, userStats, toggleDialog }) => {
-  const achievedOpenPRs = userStats.opened >= 1
+  const achievedOpenPRs = userStats.opened >= 2
   const achievedMergedPRs = userStats.merged >= 1
   const userName = user.Name ? user.Name.split(' ')[0] : user.GithubUser
 
