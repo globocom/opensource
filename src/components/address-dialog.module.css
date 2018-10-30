@@ -36,13 +36,17 @@
 
 .content {
   flex: 1;
-  max-width: 540px;
-  max-height: calc(100% - 96px);
+  max-width: 600px;
+  max-height: calc(100% - 40px);
   background-color: #fff;
   color: rgb(102, 102, 102);
   text-align: left;
   border-radius: 10px;
-  overflow: auto;
+  display: flex;
+  position: relative;
+  overflow-y: auto;
+  flex-direction: column;
+  margin: 10px;
 }
 
 .head {
@@ -54,6 +58,7 @@
 
 .form {
   padding: 20px 30px;
+  overflow-y: auto;
 }
 
 .footer {
@@ -83,4 +88,11 @@
 
 .textField:focus {
   border-color: rgb(74, 144, 226);
+}
+
+.fieldLabel {
+  color: rgb(74, 144, 226);
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: inline-block;
 }
