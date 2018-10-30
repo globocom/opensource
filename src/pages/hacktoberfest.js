@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
 import Button from '../components/button'
+import AddressDialog from '../components/address-dialog'
 import { getUser } from '../services/api'
 import { getUserStats } from '../services/github'
 
 import styles from './hacktoberfest.module.css'
 import githubIcon from '../images/logo-github-rev.svg'
 
-const UserData = ({ user, userStats }) => {
-  const achievedOpenPRs = userStats.opened >= 2
+const UserData = ({ user, userStats, toggleDialog }) => {
+  const achievedOpenPRs = userStats.opened >= 1
   const achievedMergedPRs = userStats.merged >= 1
   const userName = user.Name ? user.Name.split(' ')[0] : user.GithubUser
+
   return (
     <div>
       <div>
@@ -43,8 +45,13 @@ const UserData = ({ user, userStats }) => {
               <div className={styles.challengeCompleted}>
                 <span className={styles.challengeCompletedTile}>
                   Parabéns!!!
-                </span>{' '}
-                Você concluiu o desafio da Hacktoberfest 🏆 🏆 🏆
+                </span>
+                <p>Você concluiu o desafio da Hacktoberfest 🏆</p>
+                <Button
+                  label="cadastrar endereço de envio"
+                  onClick={toggleDialog}
+                  fill={true}
+                />
               </div>
             )}
         </div>
@@ -57,6 +64,7 @@ class HacktoberfestPage extends Component {
   state = {
     user: null,
     userStats: null,
+    dialogOpen: false,
   }
 
   async componentDidMount() {
@@ -65,8 +73,13 @@ class HacktoberfestPage extends Component {
     this.setState({ user, userStats })
   }
 
+  toggleDialog = event => {
+    event.preventDefault()
+    this.setState({ dialogOpen: !this.state.dialogOpen })
+  }
+
   render() {
-    const { user, userStats } = this.state
+    const { user, userStats, dialogOpen } = this.state
     return (
       <Layout
         mainTransparent={true}
@@ -87,7 +100,11 @@ class HacktoberfestPage extends Component {
               Contribua e ganhe uma camiseta exclusiva
             </h2>
             {user ? (
-              <UserData user={user} userStats={userStats} />
+              <UserData
+                user={user}
+                userStats={userStats}
+                toggleDialog={this.toggleDialog}
+              />
             ) : (
               <div className={styles.sectionSubscribe}>
                 <Button label="participe" url="/login" fill={true} />
@@ -129,6 +146,7 @@ class HacktoberfestPage extends Component {
           <div className={styles.astronautRocket} />
         </div>
         <div className={styles.bgCornerBottom} />
+        <AddressDialog open={dialogOpen} onClose={this.toggleDialog} />
       </Layout>
     )
   }

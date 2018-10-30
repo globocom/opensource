@@ -1,0 +1,81 @@
+.dialog {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  position: fixed;
+}
+
+.overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.overlayVisible {
+  composes: overlay;
+  opacity: 1;
+  will-change: opacity;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  will-change: opacity;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.content {
+  flex: 1;
+  max-width: 540px;
+  max-height: calc(100% - 96px);
+  background-color: #fff;
+  color: rgb(102, 102, 102);
+  text-align: left;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.head {
+  padding: 20px 30px;
+  border-bottom: 1px solid #f1f1f1;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.form {
+  padding: 20px 30px;
+}
+
+.footer {
+  border-top: 1px solid #f1f1f1;
+  padding: 20px 30px;
+  text-align: right;
+}
+
+.button {
+  margin-left: 10px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.textField {
+  width: 100%;
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  outline: none;
+  -webkit-appearance: none;
+}

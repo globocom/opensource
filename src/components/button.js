@@ -10,6 +10,7 @@ const Button = ({
   blank = false,
   transparent = false,
   fill = false,
+  onClick,
 }) => {
   const classNames = [styles.button]
   if (className) {
@@ -26,12 +27,19 @@ const Button = ({
 
   const attrs = {
     className: classNames.join(' '),
-    href: url,
+  }
+
+  if (url) {
+    attrs.href = url
   }
 
   if (blank) {
     attrs.target = '_blank'
     attrs.rel = 'noopener noreferrer'
+  }
+
+  if (onClick) {
+    attrs.onClick = onClick
   }
 
   return (
