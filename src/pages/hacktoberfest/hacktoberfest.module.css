@@ -1,7 +1,7 @@
-@value small, mediumOnly from "../styles/breakpoints.module.css";
+@value small, mediumOnly from "../../styles/breakpoints.module.css";
 
 .pageContent {
-  composes: container from '../styles/grid.module.css';
+  composes: container from '../../styles/grid.module.css';
   position: relative;
   z-index: 1;
   padding-top: 150px;
@@ -10,7 +10,7 @@
 }
 
 .bgCornerTop {
-  background-image: url(../images/hacktober-bg-corner-top.svg);
+  background-image: url(../../images/hacktober-bg-corner-top.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: top center;
@@ -22,7 +22,7 @@
 }
 
 .bgCornerBottom {
-  background-image: url(../images/hacktober-bg-corner-bottom.svg);
+  background-image: url(../../images/hacktober-bg-corner-bottom.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -34,7 +34,7 @@
 }
 
 .saturn {
-  background-image: url(../images/saturn-small.svg);
+  background-image: url(../../images/saturn-small.svg);
   background-size: 100%;
   background-repeat: no-repeat;
   width: 112px;
@@ -45,7 +45,7 @@
 }
 
 .astronautRocket {
-  background-image: url(../images/astronaut-rocket.svg);
+  background-image: url(../../images/astronaut-rocket.svg);
   background-size: 100%;
   background-repeat: no-repeat;
   width: 440px;
@@ -124,12 +124,12 @@
 
 .iconCheckBlank {
   composes: iconCheck;
-  background-image: url(../images/icon-checkbox-blank.svg);
+  background-image: url(../../images/icon-checkbox-blank.svg);
 }
 
 .iconCheckFilled {
   composes: iconCheck;
-  background-image: url(../images/icon-checkbox.svg);
+  background-image: url(../../images/icon-checkbox.svg);
 }
 
 .challengeCompleted {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import TextInput from '../components/text-input'
-import Button from './button'
-import { updateUser } from '../services/api'
+import TextInput from '../../components/text-input'
+import Button from '../../components/button'
+import { updateUser } from '../../services/api'
 
 import styles from './address-dialog.module.css'
 

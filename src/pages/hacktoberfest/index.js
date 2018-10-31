@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Layout from '../components/layout'
-import Button from '../components/button'
-import AddressDialog from '../components/address-dialog'
-import { getUser } from '../services/api'
-import { getUserStats } from '../services/github'
+import Layout from '../../components/layout'
+import Button from '../../components/button'
+import AddressDialog from './address-dialog'
+import { getUser } from '../../services/api'
+import { getUserStats } from '../../services/github'
 
 import styles from './hacktoberfest.module.css'
-import githubIcon from '../images/logo-github-rev.svg'
+import githubIcon from '../../images/logo-github-rev.svg'
 
 const UserData = ({ user, userStats, toggleDialog }) => {
   const achievedOpenPRs = userStats.opened >= 2
