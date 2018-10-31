@@ -1,18 +1,4 @@
 const getUser = async () => {
-  return {
-    ID: 'arturfelipe.sousa@gmail.com',
-    Name: 'Artur Felipe Sousa',
-    Email: 'arturfelipe.sousa@gmail.com',
-    State: '',
-    City: '',
-    Address: '',
-    PostalCode: '',
-    AvatarURL: 'https://avatars0.githubusercontent.com/u/1333599?v=4',
-    GithubUser: 'arturfsousa',
-    GithubID: 1333599,
-    CreatedAt: '2018-10-24T04:02:52.412Z',
-  }
-
   let resp
 
   try {
@@ -29,4 +15,25 @@ const getUser = async () => {
   return data.result
 }
 
-export { getUser }
+const updateUser = async user => {
+  let resp
+
+  try {
+    resp = await fetch('/subscribe', {
+      method: 'POST',
+      body: JSON.stringify(user),
+      credentials: 'include',
+    })
+  } catch (error) {
+    console.error('[OPENSOURCE] Fail to post', error)
+  }
+
+  if (resp.status !== 201) {
+    return null
+  }
+
+  const data = await resp.json()
+  return data.result
+}
+
+export { getUser, updateUser }

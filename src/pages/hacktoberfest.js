@@ -74,8 +74,14 @@ class HacktoberfestPage extends Component {
   }
 
   toggleDialog = event => {
-    event.preventDefault()
+    if (event) {
+      event.preventDefault()
+    }
     this.setState({ dialogOpen: !this.state.dialogOpen })
+  }
+
+  updateUser = user => {
+    this.setState({ user })
   }
 
   render() {
@@ -108,8 +114,9 @@ class HacktoberfestPage extends Component {
                 />
                 <AddressDialog
                   open={dialogOpen}
-                  onClose={this.toggleDialog}
                   user={user}
+                  handleClose={this.toggleDialog}
+                  onSave={this.updateUser}
                 />
               </>
             ) : (

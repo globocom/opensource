@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
 import Button from './button'
+import { updateUser } from '../services/api'
 
 import styles from './address-dialog.module.css'
 
 const validateForm = (fields, formData) => {
-  let formErrors = {}
+  const formErrors = {}
+  const values = {}
   let isValid = true
+
   fields.forEach(field => {
-    const value = formData[field.name]
-    if (field.isRequired && value.trim().length === 0) {
+    values[field.name] = formData[field.name].trim()
+    if (field.isRequired && values[field.name].length === 0) {
       formErrors[field.name] = 'Este campo é obrigatório.'
       isValid = false
     }
   })
-  return { formErrors, isValid }
+
+  return { formErrors, isValid, values }
 }
 
 const Field = ({
@@ -56,8 +60,8 @@ class AddressDialog extends Component {
     this.setState({ [fieldName]: event.target.value, formErrors })
   }
 
-  handleSubmit = () => {
-    const { formErrors, isValid } = validateForm(
+  handleSubmit = async () => {
+    const { formErrors, isValid, values } = validateForm(
       [
         { name: 'name', isRequired: true },
         { name: 'email', isRequired: true },
@@ -72,12 +76,14 @@ class AddressDialog extends Component {
     this.setState({ formErrors })
 
     if (isValid) {
-      console.log('FORM VALID')
+      const user = await updateUser(values)
+      this.props.onSave(user)
+      this.props.handleClose()
     }
   }
 
   render() {
-    const { open = false, onClose } = this.props
+    const { open = false, handleClose } = this.props
     if (!open) return null
 
     return (
@@ -137,7 +143,7 @@ class AddressDialog extends Component {
             <div className={styles.footer}>
               <Button
                 label="cancelar"
-                onClick={onClose}
+                onClick={handleClose}
                 className={styles.button}
               />
               <Button
