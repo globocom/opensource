@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import TextInput from '../components/text-input'
 import Button from './button'
 import { updateUser } from '../services/api'
 
@@ -18,29 +19,6 @@ const validateForm = (fields, formData) => {
   })
 
   return { formErrors, isValid, values }
-}
-
-const Field = ({
-  label,
-  type = 'text',
-  placeholder,
-  value,
-  onChange,
-  errorText,
-}) => {
-  return (
-    <div className={styles.field}>
-      {label && <label className={styles.fieldLabel}>{label}</label>}
-      <input
-        className={styles.textField}
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-      />
-      {errorText && <div className={styles.errorText}>{errorText}</div>}
-    </div>
-  )
 }
 
 class AddressDialog extends Component {
@@ -95,14 +73,14 @@ class AddressDialog extends Component {
             <div className={styles.form}>
               <p>Preencha com o endereço de envio da camiseta.</p>
               <form>
-                <Field
+                <TextInput
                   label="Nome"
                   placeholder="Seu nome completo"
                   value={this.state.name}
                   onChange={this.handleFieldChange('name')}
                   errorText={this.state.formErrors.name}
                 />
-                <Field
+                <TextInput
                   type="email"
                   label="E-mail"
                   placeholder="voce@example.com"
@@ -110,28 +88,28 @@ class AddressDialog extends Component {
                   onChange={this.handleFieldChange('email')}
                   errorText={this.state.formErrors.email}
                 />
-                <Field
+                <TextInput
                   label="Estado"
                   placeholder="RJ"
                   value={this.state.state}
                   onChange={this.handleFieldChange('state')}
                   errorText={this.state.formErrors.state}
                 />
-                <Field
+                <TextInput
                   label="Cidade"
                   placeholder="Rio de Janeiro"
                   value={this.state.city}
                   onChange={this.handleFieldChange('city')}
                   errorText={this.state.formErrors.city}
                 />
-                <Field
+                <TextInput
                   label="Endereço"
                   placeholder="Avenida das américas 700 - Bloco 2 - Sala 3"
                   value={this.state.address}
                   onChange={this.handleFieldChange('address')}
                   errorText={this.state.formErrors.address}
                 />
-                <Field
+                <TextInput
                   label="CEP"
                   placeholder="00000-000"
                   value={this.state.postalcode}
