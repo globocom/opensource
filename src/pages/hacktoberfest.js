@@ -46,7 +46,12 @@ const UserData = ({ user, userStats, toggleDialog }) => {
                 <span className={styles.challengeCompletedTile}>
                   Parabéns!!!
                 </span>
-                <p>Você concluiu o desafio da Hacktoberfest 🏆</p>
+                <p>
+                  Você concluiu o desafio da Hacktoberfest
+                  <span role="img" aria-label="Challenge complete">
+                    🏆
+                  </span>
+                </p>
                 <Button
                   label="cadastrar endereço de envio"
                   onClick={toggleDialog}
