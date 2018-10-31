@@ -47,7 +47,7 @@ const UserData = ({ user, userStats, toggleDialog }) => {
                   Parabéns!!!
                 </span>
                 <p>
-                  Você concluiu o desafio da Hacktoberfest
+                  Você concluiu o desafio da Hacktoberfest{' '}
                   <span role="img" aria-label="Challenge complete">
                     🏆
                   </span>
