@@ -1,5 +1,4 @@
 const GITHUB_TOKEN = process.env.GATSBY_GITHUB_TOKEN
-const HACKTOBER_MONTH = '10'
 
 const ORGS = [
   { login: 'globocom', stars: 30 },
@@ -221,14 +220,21 @@ const getUserStats = async login => {
   if (data) {
     const { pullRequests, ...user } = data.user
     const stats = { ...user, merged: 0, opened: 0 }
-    const currentYear = new Date().getFullYear()
 
     pullRequests.nodes
-      .filter(
-        pr =>
-          pr.createdAt.startsWith(`${currentYear}-${HACKTOBER_MONTH}`) &&
-          ORG_LOGINS.includes(pr.repository.owner.login)
-      )
+      .filter(pr => {
+        const currentYear = new Date().getFullYear()
+        const startDate = new Date(`${currentYear}-10-01 00:00`)
+        const endDate = new Date(`${currentYear}-11-01 00:00`)
+
+        const createdAt = new Date(pr.createdAt)
+        const targetOrg = pr.repository.owner.login
+        return (
+          createdAt >= startDate &&
+          createdAt <= endDate &&
+          ORG_LOGINS.includes(targetOrg)
+        )
+      })
       .forEach(pr => {
         if (pr.state === 'MERGED') {
           stats.merged += 1
