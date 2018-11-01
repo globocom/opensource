@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TextInput from '../../components/text-input'
 import SelectInput from '../../components/select-input'
 import Button from '../../components/button'
+import { TYPE_OK, TYPE_ERROR } from '../../components/message'
 import { updateUser } from '../../services/api'
 
 import styles from './address-dialog.module.css'
@@ -71,8 +72,19 @@ class AddressDialog extends Component {
 
     if (isValid) {
       const user = await updateUser(values)
-      this.props.onSave(user)
       this.props.handleClose()
+
+      if (user) {
+        this.props.onSave(user, {
+          type: TYPE_OK,
+          text: 'Dados alterados com sucesso.',
+        })
+      } else {
+        this.props.onSave(user, {
+          type: TYPE_ERROR,
+          text: 'Houve uma falha na alteração dos seus dados. Tente novamente.',
+        })
+      }
     }
   }
 

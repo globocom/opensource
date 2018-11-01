@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Layout from '../../components/layout'
 import Button from '../../components/button'
 import AddressDialog from './address-dialog'
+import Message from '../../components/message'
 import { getUser } from '../../services/api'
 import { getUserStats } from '../../services/github'
 
@@ -70,6 +71,7 @@ class HacktoberfestPage extends Component {
     user: null,
     userStats: null,
     dialogOpen: false,
+    message: null,
   }
 
   async componentDidMount() {
@@ -85,12 +87,22 @@ class HacktoberfestPage extends Component {
     this.setState({ dialogOpen: !this.state.dialogOpen })
   }
 
-  updateUser = user => {
-    this.setState({ user })
+  updateUser = (user, message) => {
+    this.setState({ user, message })
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
+    this.interval = setTimeout(() => this.setState({ message: null }), 3000)
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.interval)
   }
 
   render() {
-    const { user, userStats, dialogOpen } = this.state
+    const { user, userStats, dialogOpen, message } = this.state
     return (
       <Layout
         mainTransparent={true}
@@ -102,6 +114,7 @@ class HacktoberfestPage extends Component {
         )}
       >
         <div className={styles.pageContent}>
+          {message && <Message type={message.type}>{message.text}</Message>}
           <section className={styles.section}>
             <h1 className={styles.sectionTitle}>
               Hacktoberfest{' '}
