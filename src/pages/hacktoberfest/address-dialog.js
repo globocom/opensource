@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TextInput from '../../components/text-input'
+import SelectInput from '../../components/select-input'
 import Button from '../../components/button'
 import { updateUser } from '../../services/api'
 
@@ -23,13 +24,27 @@ const validateForm = (fields, formData) => {
 
 class AddressDialog extends Component {
   state = {
-    name: this.props.user.Name,
-    email: this.props.user.Email,
-    state: this.props.user.State,
-    city: this.props.user.City,
-    address: this.props.user.Address,
-    postalcode: this.props.user.PostalCode,
+    name: '',
+    email: '',
+    state: '',
+    city: '',
+    address: '',
+    postalcode: '',
+    shirtsize: '',
     formErrors: {},
+  }
+
+  componentDidMount() {
+    const { user } = this.props
+    this.setState({
+      name: user.Name,
+      email: user.Email,
+      state: user.State,
+      city: user.City,
+      address: user.Address,
+      postalcode: user.PostalCode,
+      shirtsize: user.ShirtSize,
+    })
   }
 
   handleFieldChange = fieldName => event => {
@@ -47,6 +62,7 @@ class AddressDialog extends Component {
         { name: 'city', isRequired: true },
         { name: 'address', isRequired: true },
         { name: 'postalcode', isRequired: true },
+        { name: 'shirtsize', isRequired: true },
       ],
       this.state
     )
@@ -115,6 +131,24 @@ class AddressDialog extends Component {
                   value={this.state.postalcode}
                   onChange={this.handleFieldChange('postalcode')}
                   errorText={this.state.formErrors.postalcode}
+                />
+                <SelectInput
+                  label="Tamanho da camiseta"
+                  value={this.state.shirtsize}
+                  onChange={this.handleFieldChange('shirtsize')}
+                  errorText={this.state.formErrors.shirtsize}
+                  options={[
+                    { label: 'Selecione um tamanho', value: '' },
+                    { label: 'Baby look - P', value: 'BLP' },
+                    { label: 'Baby look - M', value: 'BLM' },
+                    { label: 'Baby look - G', value: 'BLG' },
+                    { label: 'Baby look - GG', value: 'BLGG' },
+                    { label: 'T-Shirt - P', value: 'TSP' },
+                    { label: 'T-Shirt - M', value: 'TSM' },
+                    { label: 'T-Shirt - G', value: 'TSG' },
+                    { label: 'T-Shirt - GG', value: 'TSGG' },
+                    { label: 'T-Shirt - GGG', value: 'TSGGG' },
+                  ]}
                 />
               </form>
             </div>
