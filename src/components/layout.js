@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
@@ -55,7 +56,6 @@ const Layout = ({
   renderBottom,
   mainTransparent = false,
 }) => {
-  const mainClassName = mainTransparent ? styles.mainTransparent : styles.main
   return (
     <StaticQuery
       query={siteQuery}
@@ -66,7 +66,14 @@ const Layout = ({
             <Header />
             {renderTop && renderTop()}
           </div>
-          <div className={mainClassName}>{children}</div>
+          <div
+            className={cx({
+              [styles.mainTransparent]: mainTransparent,
+              [styles.main]: !mainTransparent,
+            })}
+          >
+            {children}
+          </div>
           <div className={styles.layoutBottom}>
             <Footer />
             {renderBottom && renderBottom()}

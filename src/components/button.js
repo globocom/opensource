@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import cx from 'classnames'
 
 import styles from './button.module.css'
 
@@ -12,21 +14,14 @@ const Button = ({
   fill = false,
   onClick,
 }) => {
-  const classNames = [styles.button]
-  if (className) {
-    classNames.push(className)
-  }
-
-  if (transparent) {
-    classNames.push(styles.transparent)
-  }
-
-  if (fill) {
-    classNames.push(styles.fill)
-  }
+  const style = cx(styles.button, {
+    [className]: className,
+    [styles.transparent]: transparent,
+    [styles.fill]: fill,
+  })
 
   const attrs = {
-    className: classNames.join(' '),
+    className: style,
   }
 
   if (url) {
@@ -48,6 +43,16 @@ const Button = ({
       {icon && <img className={styles.buttonIcon} src={icon} alt={label} />}
     </a>
   )
+}
+
+Button.propTypes = {
+  label: PropTypes.string.isRequired,
+  url: PropTypes.string,
+  className: PropTypes.string,
+  blank: PropTypes.bool,
+  transparent: PropTypes.bool,
+  fill: PropTypes.bool,
+  onClick: PropTypes.func,
 }
 
 export default Button

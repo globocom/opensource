@@ -1,16 +1,13 @@
 import React from 'react'
+import cx from 'classnames'
 import { Link } from 'gatsby'
 
 import logo from '../images/logo.svg'
 import styles from './header.module.css'
 
-const isMenuItemActive = ({ isCurrent }) => {
-  const classNames = [styles.menuLink]
-  if (isCurrent) {
-    classNames.push(styles.menuLinkActive)
-  }
-  return { className: classNames.join(' ') }
-}
+const isMenuItemActive = ({ isCurrent }) => ({
+  className: cx(styles.menuLink, { [styles.menuLinkActive]: isCurrent }),
+})
 
 const Header = () => (
   <header className={styles.header}>

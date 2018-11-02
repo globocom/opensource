@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
 
 import styles from './message.module.css'
 
@@ -7,21 +8,14 @@ export const TYPE_OK = Symbol('OK')
 export const TYPE_ERROR = Symbol('ERROR')
 
 const Message = ({ children, type = TYPE_OK }) => {
-  const classNames = [styles.body]
-  switch (type) {
-    case TYPE_OK:
-      classNames.push(styles.ok)
-      break
-    case TYPE_ERROR:
-      classNames.push(styles.error)
-      break
-    default:
-      console.warn('Invalid message type')
-  }
+  const bodyStyle = cx(styles.body, {
+    [styles.ok]: type === TYPE_OK,
+    [styles.error]: type === TYPE_ERROR,
+  })
 
   return (
     <div className={styles.message}>
-      <div className={classNames.join(' ')}>{children}</div>
+      <div className={bodyStyle}>{children}</div>
     </div>
   )
 }
