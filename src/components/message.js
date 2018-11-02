@@ -15,6 +15,8 @@ const Message = ({ children, type = TYPE_OK }) => {
     case TYPE_ERROR:
       classNames.push(styles.error)
       break
+    default:
+      console.warn('Invalid message type')
   }
 
   return (
