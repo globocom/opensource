@@ -5,19 +5,19 @@ import cx from 'classnames'
 import styles from './button.module.css'
 
 const Button = ({
-  label,
+  children,
   url,
   icon,
   className,
   blank = false,
-  transparent = false,
-  fill = false,
+  variant = 'normal',
   onClick,
 }) => {
   const style = cx(styles.button, {
     [className]: className,
-    [styles.transparent]: transparent,
-    [styles.fill]: fill,
+    [styles.normal]: variant === 'normal',
+    [styles.transparent]: variant === 'transparent',
+    [styles.filled]: variant === 'filled',
   })
 
   const buttonProps = {}
@@ -36,19 +36,18 @@ const Button = ({
 
   return (
     <a className={style} {...buttonProps}>
-      <span>{label}</span>
-      {icon && <img className={styles.buttonIcon} src={icon} alt={label} />}
+      <span>{children}</span>
+      {icon && <img className={styles.buttonIcon} src={icon} />}
     </a>
   )
 }
 
 Button.propTypes = {
-  label: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
   url: PropTypes.string,
   className: PropTypes.string,
   blank: PropTypes.bool,
-  transparent: PropTypes.bool,
-  fill: PropTypes.bool,
+  variant: PropTypes.oneOf(['normal', 'transparend', 'filled']),
   onClick: PropTypes.func,
 }
 

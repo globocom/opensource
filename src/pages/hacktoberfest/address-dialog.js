@@ -165,17 +165,16 @@ class AddressDialog extends Component {
               </form>
             </div>
             <div className={styles.footer}>
+              <Button onClick={handleClose} className={styles.button}>
+                Cancelar
+              </Button>
               <Button
-                label="cancelar"
-                onClick={handleClose}
-                className={styles.button}
-              />
-              <Button
-                label="enviar"
-                fill={true}
+                variant="filled"
                 className={styles.button}
                 onClick={this.handleSubmit}
-              />
+              >
+                Salvar
+              </Button>
             </div>
           </div>
         </div>

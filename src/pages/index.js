@@ -31,11 +31,9 @@ const IndexPage = () => (
       <div className={styles.sectionContent}>
         <h2 className={styles.sectionTitle}>Nossos projetos</h2>
         <FeaturedProjects />
-        <Button
-          url="/projetos/"
-          className={styles.sectionButton}
-          label="ver todos"
-        />
+        <Button url="/projetos/" className={styles.sectionButton}>
+          ver todos
+        </Button>
       </div>
     </section>
     <section className={styles.sectionBottom}>
@@ -49,10 +47,11 @@ const IndexPage = () => (
             <Button
               url="https://talentos.globo.com"
               className={styles.sectionButton}
-              label="venha nos conhecer"
-              transparent={true}
+              variant="transparent"
               blank={true}
-            />
+            >
+              Venha nos conhecer
+            </Button>
           </div>
         </div>
       </div>

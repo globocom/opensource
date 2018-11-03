@@ -53,11 +53,9 @@ const UserData = ({ user, userStats, toggleDialog }) => {
                     🏆
                   </span>
                 </p>
-                <Button
-                  label="cadastrar endereço de envio"
-                  onClick={toggleDialog}
-                  fill={true}
-                />
+                <Button onClick={toggleDialog} variant="filled">
+                  Cadastrar endereço de envio
+                </Button>
               </div>
             )}
         </div>
@@ -139,7 +137,9 @@ class HacktoberfestPage extends Component {
               </>
             ) : (
               <div className={styles.sectionSubscribe}>
-                <Button label="participe" url="/login" fill={true} />
+                <Button variant="filled" url="/login">
+                  Participe
+                </Button>
               </div>
             )}
           </section>
@@ -166,12 +166,13 @@ class HacktoberfestPage extends Component {
             </div>
             <p className={styles.eventInfoCall}>
               <Button
-                label="ver issues no github"
                 url="https://github.com/search?q=label:hacktoberfest%20user:globocom%20user:tsuru%20user:thumbor%20user:clappr%20state:open%20type:issue"
                 icon={githubIcon}
-                transparent={true}
+                variant="transparent"
                 blank={true}
-              />
+              >
+                Ver issues
+              </Button>
             </p>
           </section>
 

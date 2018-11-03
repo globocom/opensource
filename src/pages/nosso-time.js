@@ -52,10 +52,11 @@ class NossoTimePage extends Component {
           </div>
           <Button
             className={styles.button}
-            label="trabalhe conosco"
             url="https://talentos.globo.com/"
             blank={true}
-          />
+          >
+            Trabalhe conosco
+          </Button>
         </section>
       </Layout>
     )

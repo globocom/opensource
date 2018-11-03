@@ -4,10 +4,9 @@
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.8px;
-  color: black;
   text-decoration: none;
   text-transform: uppercase;
-  border: 1px solid black;
+  border: 1px solid;
   border-radius: 40px;
   padding: 14px 16px;
   display: inline-flex;
@@ -22,26 +21,29 @@
   background-color: rgb(19, 173, 254);
 }
 
-.buttonIcon {
-  width: 14px;
-  height: 14px;
-  margin: 0;
-  margin-left: 5px;
+.normal {
+  color: black;
+  background-color: white;
+  border-color: black;
 }
 
 .transparent {
   color: white;
   border-color: white;
+  background-color: transparent;
 }
 
-.transparent .buttonIcon {
-  fill: white;
-}
-
-.fill {
+.filled {
   color: white;
   border-color: rgb(74, 144, 226);
   background-color: rgb(74, 144, 226);
+}
+
+.buttonIcon {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  margin-left: 5px;
 }
 
 @media small {
