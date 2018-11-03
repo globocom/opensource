@@ -8,7 +8,6 @@ import Spinner from '../components/spinner'
 import { getOrgRepos } from '../services/github'
 
 import styles from './projetos.module.css'
-import githubIcon from '../images/logo-github.svg'
 
 const Repo = ({ repo }) => (
   <div className={styles.project}>
@@ -62,7 +61,7 @@ class ProjetosPage extends Component {
             <Button
               url="https://github.com/globocom"
               className={styles.button}
-              icon={githubIcon}
+              iconName="github"
               blank={true}
             >
               Ver repositórios

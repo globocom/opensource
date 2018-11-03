@@ -7,7 +7,7 @@ import styles from './button.module.css'
 const Button = ({
   children,
   url,
-  icon,
+  iconName,
   className,
   blank = false,
   variant = 'normal',
@@ -18,6 +18,11 @@ const Button = ({
     [styles.normal]: variant === 'normal',
     [styles.transparent]: variant === 'transparent',
     [styles.filled]: variant === 'filled',
+  })
+
+  const iconStyle = cx(styles.icon, {
+    [styles[`icon_${iconName}`]]: variant === 'normal',
+    [styles[`icon_${iconName}_white`]]: variant !== 'normal',
   })
 
   const buttonProps = {}
@@ -37,7 +42,7 @@ const Button = ({
   return (
     <a className={style} {...buttonProps}>
       <span>{children}</span>
-      {icon && <img className={styles.buttonIcon} src={icon} />}
+      {iconName && <i className={iconStyle} />}
     </a>
   )
 }
@@ -45,10 +50,18 @@ const Button = ({
 Button.propTypes = {
   children: PropTypes.string.isRequired,
   url: PropTypes.string,
+  iconName: PropTypes.string,
   className: PropTypes.string,
   blank: PropTypes.bool,
   variant: PropTypes.oneOf(['normal', 'transparend', 'filled']),
   onClick: PropTypes.func,
+}
+
+Button.defaultProps = {
+  url: '',
+  iconName: '',
+  blank: false,
+  variant: 'normal',
 }
 
 export default Button

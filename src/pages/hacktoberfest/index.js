@@ -7,7 +7,6 @@ import { getUser } from '../../services/api'
 import { getUserStats } from '../../services/github'
 
 import styles from './hacktoberfest.module.css'
-import githubIcon from '../../images/logo-github-rev.svg'
 
 const UserData = ({ user, userStats, toggleDialog }) => {
   const achievedOpenPRs = userStats.opened >= 2
@@ -167,7 +166,7 @@ class HacktoberfestPage extends Component {
             <p className={styles.eventInfoCall}>
               <Button
                 url="https://github.com/search?q=label:hacktoberfest%20user:globocom%20user:tsuru%20user:thumbor%20user:clappr%20state:open%20type:issue"
-                icon={githubIcon}
+                iconName="github"
                 variant="transparent"
                 blank={true}
               >

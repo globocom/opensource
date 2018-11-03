@@ -39,11 +39,24 @@
   background-color: rgb(74, 144, 226);
 }
 
-.buttonIcon {
+.icon {
   width: 14px;
   height: 14px;
   margin: 0;
   margin-left: 5px;
+  transition: all 0.2s;
+}
+
+.icon_github {
+  background: url('../images/icons/github.svg');
+}
+
+.icon_github_white {
+  background: url('../images/icons/github-white.svg');
+}
+
+.button:hover .icon_github {
+  background: url('../images/icons/github-white.svg');
 }
 
 @media small {
