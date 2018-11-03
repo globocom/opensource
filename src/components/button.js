@@ -20,25 +20,22 @@ const Button = ({
     [styles.fill]: fill,
   })
 
-  const attrs = {
-    className: style,
-  }
-
+  const buttonProps = {}
   if (url) {
-    attrs.href = url
+    buttonProps.href = url
   }
 
   if (blank) {
-    attrs.target = '_blank'
-    attrs.rel = 'noopener noreferrer'
+    buttonProps.target = '_blank'
+    buttonProps.rel = 'noopener noreferrer'
   }
 
   if (onClick) {
-    attrs.onClick = onClick
+    buttonProps.onClick = onClick
   }
 
   return (
-    <a {...attrs}>
+    <a className={style} {...buttonProps}>
       <span>{label}</span>
       {icon && <img className={styles.buttonIcon} src={icon} alt={label} />}
     </a>

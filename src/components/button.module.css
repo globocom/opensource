@@ -16,6 +16,12 @@
   transition: all 0.2s;
 }
 
+.button:hover {
+  color: white;
+  border-color: rgb(19, 173, 254);
+  background-color: rgb(19, 173, 254);
+}
+
 .buttonIcon {
   width: 14px;
   height: 14px;
