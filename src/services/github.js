@@ -224,8 +224,8 @@ const getUserStats = async login => {
     pullRequests.nodes
       .filter(pr => {
         const currentYear = new Date().getFullYear()
-        const startDate = new Date(`${currentYear}-10-01 00:00`)
-        const endDate = new Date(`${currentYear}-11-01 00:00`)
+        const startDate = new Date(currentYear, 9, 1, 0, 0)
+        const endDate = new Date(currentYear, 10, 1, 0, 0)
 
         const createdAt = new Date(pr.createdAt)
         const targetOrg = pr.repository.owner.login
