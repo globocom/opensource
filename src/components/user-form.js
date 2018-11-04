@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Modal from '../../components/modal'
-import TextInput from '../../components/text-input'
-import SelectInput from '../../components/select-input'
-import Button from '../../components/button'
-import { TYPE_OK, TYPE_ERROR } from '../../components/message'
-import { updateUser } from '../../services/api'
+import Modal from './modal'
+import TextInput from './text-input'
+import SelectInput from './select-input'
+import Button from './button'
+import { TYPE_OK, TYPE_ERROR } from './message'
+import { updateUser } from '../services/api'
 
 import styles from './user-form.module.css'
 

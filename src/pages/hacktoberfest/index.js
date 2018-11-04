@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Layout from '../../components/layout'
 import Button from '../../components/button'
-import UserData from './user-data'
+import UserData from '../../components/user-data'
 
 import { getUser } from '../../services/api'
 import { getUserStats } from '../../services/github'

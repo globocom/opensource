@@ -31,12 +31,12 @@
 
 .unchecked {
   composes: check;
-  background-image: url(../../images/icons/checkbox.svg);
+  background-image: url(../images/icons/checkbox.svg);
 }
 
 .checked {
   composes: check;
-  background-image: url(../../images/icons/checkbox-checked.svg);
+  background-image: url(../images/icons/checkbox-checked.svg);
 }
 
 .completed {

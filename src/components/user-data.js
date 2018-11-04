@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Button from '../../components/button'
-import Message from '../../components/message'
+import Button from './button'
+import Message from './message'
 import UserForm from './user-form'
 
 import styles from './user-data.module.css'
