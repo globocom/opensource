@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import Layout from '../../components/layout'
 import Button from '../../components/button'
-import AddressDialog from './address-dialog'
+import UserForm from './user-form'
 import Message from '../../components/message'
 import { getUser } from '../../services/api'
 import { getUserStats } from '../../services/github'
 
 import styles from './hacktoberfest.module.css'
 
-const UserData = ({ user, userStats, toggleDialog }) => {
+const UserData = ({ user, userStats, toggleModal }) => {
   const achievedOpenPRs = userStats.opened >= 2
   const achievedMergedPRs = userStats.merged >= 1
   const userName = user.Name ? user.Name.split(' ')[0] : user.GithubUser
@@ -52,7 +52,7 @@ const UserData = ({ user, userStats, toggleDialog }) => {
                     🏆
                   </span>
                 </p>
-                <Button onClick={toggleDialog} variant="filled">
+                <Button onClick={toggleModal} variant="filled">
                   Cadastrar endereço de envio
                 </Button>
               </div>
@@ -67,7 +67,7 @@ class HacktoberfestPage extends Component {
   state = {
     user: null,
     userStats: null,
-    dialogOpen: false,
+    modalOpen: false,
     message: null,
   }
 
@@ -77,11 +77,11 @@ class HacktoberfestPage extends Component {
     this.setState({ user, userStats })
   }
 
-  toggleDialog = event => {
+  toggleModal = event => {
     if (event) {
       event.preventDefault()
     }
-    this.setState({ dialogOpen: !this.state.dialogOpen })
+    this.setState({ modalOpen: !this.state.modalOpen })
   }
 
   updateUser = (user, message) => {
@@ -99,7 +99,7 @@ class HacktoberfestPage extends Component {
   }
 
   render() {
-    const { user, userStats, dialogOpen, message } = this.state
+    const { user, userStats, modalOpen, message } = this.state
     return (
       <Layout
         mainTransparent={true}
@@ -125,12 +125,12 @@ class HacktoberfestPage extends Component {
                 <UserData
                   user={user}
                   userStats={userStats}
-                  toggleDialog={this.toggleDialog}
+                  toggleModal={this.toggleModal}
                 />
-                <AddressDialog
-                  open={dialogOpen}
+                <UserForm
+                  open={modalOpen}
                   user={user}
-                  handleClose={this.toggleDialog}
+                  handleClose={this.toggleModal}
                   onSave={this.updateUser}
                 />
               </>
