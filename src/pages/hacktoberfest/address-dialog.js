@@ -36,7 +36,7 @@ class AddressDialog extends Component {
   }
 
   componentDidMount() {
-    const { user } = this.props
+    const { user, open } = this.props
     this.setState({
       name: user.Name,
       email: user.Email,
@@ -46,6 +46,18 @@ class AddressDialog extends Component {
       postalcode: user.PostalCode,
       shirtsize: user.ShirtSize,
     })
+
+    if (open) {
+      this.handleOpen()
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.open && !this.props.open) {
+      this.handleClose()
+    } else if (!prevProps.open && this.props.open) {
+      this.handleOpen()
+    }
   }
 
   handleFieldChange = fieldName => event => {
@@ -86,6 +98,14 @@ class AddressDialog extends Component {
         })
       }
     }
+  }
+
+  handleOpen = () => {
+    document.documentElement.style.overflow = 'hidden'
+  }
+
+  handleClose = () => {
+    document.documentElement.style.overflow = ''
   }
 
   render() {

@@ -53,7 +53,7 @@ Button.propTypes = {
   iconName: PropTypes.string,
   className: PropTypes.string,
   blank: PropTypes.bool,
-  variant: PropTypes.oneOf(['normal', 'transparend', 'filled']),
+  variant: PropTypes.oneOf(['normal', 'transparent', 'filled']),
   onClick: PropTypes.func,
 }
 
