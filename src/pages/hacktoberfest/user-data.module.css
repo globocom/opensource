@@ -1,0 +1,51 @@
+.section {
+  max-width: 535px;
+  margin-top: 90px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: -1.7px;
+  margin-bottom: 65px;
+}
+
+.body {
+  margin-bottom: 32px;
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.check {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 10px;
+}
+
+.unchecked {
+  composes: check;
+  background-image: url(../../images/icons/checkbox.svg);
+}
+
+.checked {
+  composes: check;
+  background-image: url(../../images/icons/checkbox-checked.svg);
+}
+
+.completed {
+  margin: 50px 0;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.2px;
+}
+
+.completedTitle {
+  color: rgb(19, 173, 254);
+}

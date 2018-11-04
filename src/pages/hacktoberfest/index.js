@@ -1,74 +1,17 @@
 import React, { Component } from 'react'
 import Layout from '../../components/layout'
 import Button from '../../components/button'
-import UserForm from './user-form'
-import Message from '../../components/message'
+import UserData from './user-data'
+
 import { getUser } from '../../services/api'
 import { getUserStats } from '../../services/github'
 
 import styles from './hacktoberfest.module.css'
 
-const UserData = ({ user, userStats, toggleModal }) => {
-  const achievedOpenPRs = userStats.opened >= 2
-  const achievedMergedPRs = userStats.merged >= 1
-  const userName = user.Name ? user.Name.split(' ')[0] : user.GithubUser
-
-  return (
-    <div>
-      <div>
-        Olá <strong>{userName}</strong>!
-      </div>
-      <p>Você está participando do evento. Let's hack...</p>
-      <section className={styles.eventInfo}>
-        <div className={styles.eventInfoLabel}>Seu progresso</div>
-        <div className={styles.eventInfoBody}>
-          <div className={styles.progressLine}>
-            <i
-              className={
-                achievedOpenPRs ? styles.iconCheckFilled : styles.iconCheckBlank
-              }
-            />
-            enviar pelo menos 2 pull requests: {userStats.opened} enviado(s)
-          </div>
-          <div className={styles.progressLine}>
-            <i
-              className={
-                achievedMergedPRs
-                  ? styles.iconCheckFilled
-                  : styles.iconCheckBlank
-              }
-            />
-            ter pelo menos 1 pull request aceito: {userStats.merged} aceito(s)
-          </div>
-          {achievedOpenPRs &&
-            achievedMergedPRs && (
-              <div className={styles.challengeCompleted}>
-                <span className={styles.challengeCompletedTile}>
-                  Parabéns!!!
-                </span>
-                <p>
-                  Você concluiu o desafio da Hacktoberfest{' '}
-                  <span role="img" aria-label="Challenge complete">
-                    🏆
-                  </span>
-                </p>
-                <Button onClick={toggleModal} variant="filled">
-                  Cadastrar endereço de envio
-                </Button>
-              </div>
-            )}
-        </div>
-      </section>
-    </div>
-  )
-}
-
 class HacktoberfestPage extends Component {
   state = {
     user: null,
     userStats: null,
-    modalOpen: false,
-    message: null,
   }
 
   async componentDidMount() {
@@ -77,29 +20,8 @@ class HacktoberfestPage extends Component {
     this.setState({ user, userStats })
   }
 
-  toggleModal = event => {
-    if (event) {
-      event.preventDefault()
-    }
-    this.setState({ modalOpen: !this.state.modalOpen })
-  }
-
-  updateUser = (user, message) => {
-    this.setState({ user, message })
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    })
-    this.interval = setTimeout(() => this.setState({ message: null }), 3000)
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.interval)
-  }
-
   render() {
-    const { user, userStats, modalOpen, message } = this.state
+    const { user, userStats } = this.state
     return (
       <Layout
         mainTransparent={true}
@@ -111,7 +33,6 @@ class HacktoberfestPage extends Component {
         )}
       >
         <div className={styles.pageContent}>
-          {message && <Message type={message.type}>{message.text}</Message>}
           <section className={styles.section}>
             <h1 className={styles.sectionTitle}>
               Hacktoberfest{' '}
@@ -121,19 +42,7 @@ class HacktoberfestPage extends Component {
               Contribua e ganhe uma camiseta exclusiva
             </h2>
             {user ? (
-              <>
-                <UserData
-                  user={user}
-                  userStats={userStats}
-                  toggleModal={this.toggleModal}
-                />
-                <UserForm
-                  open={modalOpen}
-                  user={user}
-                  handleClose={this.toggleModal}
-                  onSave={this.updateUser}
-                />
-              </>
+              <UserData user={user} userStats={userStats} />
             ) : (
               <div className={styles.sectionSubscribe}>
                 <Button variant="filled" url="/login">

@@ -107,42 +107,6 @@
   text-decoration: none;
 }
 
-.progressLine {
-  display: flex;
-  align-items: center;
-  padding: 5px 0;
-}
-
-.iconCheck {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 10px;
-}
-
-.iconCheckBlank {
-  composes: iconCheck;
-  background-image: url(../../images/icon-checkbox-blank.svg);
-}
-
-.iconCheckFilled {
-  composes: iconCheck;
-  background-image: url(../../images/icon-checkbox.svg);
-}
-
-.challengeCompleted {
-  margin: 50px 0;
-  font-weight: 700;
-  font-size: 24px;
-  letter-spacing: 0.2px;
-}
-
-.challengeCompletedTile {
-  color: rgb(19, 173, 254);
-}
-
 @media mediumOnly {
   .astronautRocket {
     width: 300px;

@@ -35,12 +35,12 @@ class Modal extends Component {
     if (!open) return null
 
     return (
-      <div className={styles.dialog}>
+      <div className={styles.modal}>
         <div className={open ? styles.overlayVisible : styles.overlay} />
-        <div className={styles.body}>
+        <div className={styles.container}>
           <div className={styles.content}>
             {title && <div className={styles.head}>{title}</div>}
-            <div className={styles.form}>{children}</div>
+            <div className={styles.body}>{children}</div>
             {footer && <div className={styles.footer}>{footer}</div>}
           </div>
         </div>

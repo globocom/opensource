@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Modal from '../../components/modal'
 import TextInput from '../../components/text-input'
 import SelectInput from '../../components/select-input'
@@ -55,7 +56,7 @@ class UserForm extends Component {
     this.setState({ [fieldName]: event.target.value, formErrors })
   }
 
-  handleSubmit = async () => {
+  handleSubmit = async event => {
     const { formErrors, isValid, values } = validateForm(
       [
         { name: 'name', isRequired: true },
@@ -73,7 +74,7 @@ class UserForm extends Component {
 
     if (isValid) {
       const user = await updateUser(values)
-      this.props.handleClose()
+      this.props.onClose(event)
 
       if (user) {
         this.props.onSave(user, {
@@ -90,16 +91,16 @@ class UserForm extends Component {
   }
 
   render() {
-    const { open, handleClose } = this.props
+    const { open, onClose } = this.props
 
     return (
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={onClose}
         title="Endereço"
         footer={
           <>
-            <Button onClick={handleClose} className={styles.button}>
+            <Button onClick={onClose} className={styles.button}>
               Cancelar
             </Button>
             <Button
@@ -179,6 +180,13 @@ class UserForm extends Component {
       </Modal>
     )
   }
+}
+
+UserForm.propTypes = {
+  user: PropTypes.object.isRequired,
+  open: PropTypes.bool,
+  onClose: PropTypes.func.isRequired,
+  onSave: PropTypes.func.isRequired,
 }
 
 export default UserForm
