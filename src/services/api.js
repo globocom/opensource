@@ -2,7 +2,9 @@ const getUser = async () => {
   let resp
 
   try {
-    resp = await fetch('/user')
+    resp = await fetch('/user', {
+      credentials: 'include',
+    })
   } catch (error) {
     console.error('[OPENSOURCE] Fail to fetch', error)
   }
