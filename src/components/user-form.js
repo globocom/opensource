@@ -146,7 +146,7 @@ class UserForm extends Component {
           />
           <TextInput
             label="Endereço"
-            placeholder="Avenida das américas 700 - Bloco 2 - Sala 3"
+            placeholder="Avenida de Exemplo N 999 - Bloco 1"
             value={this.state.address}
             onChange={this.handleFieldChange('address')}
             errorText={this.state.formErrors.address}
