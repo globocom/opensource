@@ -27,6 +27,14 @@ const Footer = () => (
           >
             TALENTOS
           </a>
+          <a
+            className={styles.menuItem}
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://blog.globo.com"
+          >
+            BLOG
+          </a>
         </div>
       </div>
       <Copyright />
