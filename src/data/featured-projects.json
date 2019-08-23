@@ -32,7 +32,7 @@
     "description": "Thumbor is a smart imaging service. It enables on-demand crop, resizing and flipping of images. It features a very smart detection of important points in the image for better cropping and resizing, using state-of-the-art face and feature detection algorithms (more on that in Detection Algorithms). Save time and money in your company with Thumbor."
   },
   {
-    "name": "Clapp",
+    "name": "Clappr",
     "slug": "clappr",
     "owner": "clappr",
     "image": "logos/clappr.svg",
@@ -41,5 +41,16 @@
     "docsURL": "http://clappr.github.io",
     "shortDescription": "An extensible media player for the web.",
     "description": "🎬 An extensible media player for the web."
+  },
+  {
+    "name": "huskyCI",
+    "slug": "huskyci",
+    "owner": "globocom",
+    "image": "logos/huskici.svg",
+    "repoURL": "https://github.com/globocom/huskyCI",
+    "siteURL": "https://github.com/globocom/huskyCI",
+    "docsURL": "https://github.com/globocom/huskyCI/wiki",
+    "shortDescription": "Performing security tests inside your CI.",
+    "description": "huskyCI is an open-source tool that performs security tests inside CI pipelines of multiple projects and centralizes all results into a database for further analysis and metrics."
   }
 ]
