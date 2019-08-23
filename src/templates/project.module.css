@@ -24,6 +24,10 @@
   z-index: 2;
 }
 
+.project {
+  position: relative;
+}
+
 .projectDescription {
   width: 370px;
   color: rgb(102, 102, 102);
@@ -38,7 +42,9 @@
 
 .projectRepoInfo {
   width: 330px;
-  margin-left: 290px;
+  position: absolute;
+  top: 0;
+  left: 460px;
 }
 
 .projectLogo {
@@ -81,6 +87,9 @@
   }
 
   .projectRepoInfo {
+    position: relative;
+    top: 0;
+    left: 0;
     width: 240px;
     margin-left: 0;
     margin-bottom: 42px;

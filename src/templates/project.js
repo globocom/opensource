@@ -58,7 +58,7 @@ export default class ProjectTemplate extends Component {
         )}
       >
         <section className={styles.section}>
-          <div>
+          <div className={styles.project}>
             <div className={styles.projectInfoTop}>
               <img
                 className={styles.projectLogo}
