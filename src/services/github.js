@@ -52,47 +52,56 @@ const githubClient = async (query, variables = {}) => {
   return data.data
 }
 
-const queryMembers = cursor => {
-  let afterCursor = ''
-  if (cursor) {
-    afterCursor = `, after: "${cursor}"`
-  }
-
-  return `
+const getOrgMembers = async () => {
+  const query = `
     {
       organization(login: "globocom") {
         name
-        members(first: 100${afterCursor}) {
+        teams(first: 100) {
+          totalCount
           nodes {
             id
             name
-            url
-            avatarUrl
-          }
-          totalCount
-          pageInfo {
-            endCursor
-            hasNextPage
+            members(first: 100) {
+              totalCount
+              nodes {
+                id
+                name
+                login
+                url
+                avatarUrl
+              }
+              totalCount
+              pageInfo {
+                endCursor
+                hasNextPage
+              }
+            }
           }
         }
       }
     }
   `
-}
 
-const getOrgMembers = async () => {
-  let data = await githubClient(queryMembers())
-  let members = data.organization.members
-  let { hasNextPage, endCursor } = members.pageInfo
-
-  while (hasNextPage) {
-    data = await githubClient(queryMembers(endCursor))
-    let paginatedMembers = data.organization.members
-    members.nodes = members.nodes.concat(paginatedMembers.nodes)
-    hasNextPage = paginatedMembers.pageInfo.hasNextPage
+  let data = await githubClient(query)
+  let members = {}
+  try {
+    data.organization.teams.nodes.forEach(team => {
+      team.members.nodes.forEach(member => {
+        members[member.id] = member
+      })
+    })
+  } catch (error) {
+    console.error(`[GITHUB][CLIENT] Failed get members ${error}`)
   }
 
-  return data
+  const sortByLogin = (m1, m2) => {
+    const l1 = m1.login.toLowerCase()
+    const l2 = m2.login.toLowerCase()
+    return l1 === l2 ? 0 : l1 > l2 ? 1 : -1
+  }
+
+  return Object.values(members).sort(sortByLogin)
 }
 
 const getOrgRepos = async () => {

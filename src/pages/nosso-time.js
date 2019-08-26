@@ -14,13 +14,11 @@ class NossoTimePage extends Component {
   }
 
   async componentDidMount() {
-    const data = await getOrgMembers()
-    if (data) {
-      this.setState({
-        members: data.organization.members.nodes,
-        isLoading: false,
-      })
-    }
+    const members = await getOrgMembers()
+    this.setState({
+      members,
+      isLoading: false,
+    })
   }
 
   render() {
@@ -42,8 +40,8 @@ class NossoTimePage extends Component {
                     <img
                       className={styles.memberAvatar}
                       src={member.avatarUrl}
-                      alt={member.name}
-                      title={member.name}
+                      alt={member.name || member.login}
+                      title={member.name || member.login}
                     />
                   </a>
                 </div>
