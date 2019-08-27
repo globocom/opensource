@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import FeaturedProjects from '../components/featured-projects'
 import Button from '../components/button'
 

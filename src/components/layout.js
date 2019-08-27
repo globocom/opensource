@@ -6,7 +6,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
 import Footer from './footer'
 import SEO from './SEO'
-import styles from './layout.module.css'
+import styles from './Layout.module.css'
 
 const siteQuery = graphql`
   query SiteQuery {
