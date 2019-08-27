@@ -1,67 +1,42 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 import Footer from './footer'
-
+import SEO from './SEO'
 import styles from './layout.module.css'
 
-const MetaData = ({ siteMetadata }) => {
-  return (
-    <Helmet title={siteMetadata.title}>
-      <html lang="pt" />
-      <meta name="description" content={siteMetadata.description} />
-      <meta name="keywords" content="opensource, community, globocom, gcom" />
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content={siteMetadata.title} />
-      <meta property="og:url" content={siteMetadata.url} />
-      <meta property="og:title" content={siteMetadata.title} />
-      <meta property="og:description" content={siteMetadata.description} />
-      <meta
-        property="og:image"
-        content={`${siteMetadata.url}/${siteMetadata.logos.fb}`}
-      />
-      <meta property="og:image:type" content="image/png" />
-      <meta property="og:image:width" content="1208" />
-      <meta property="og:image:height" content="638" />
-    </Helmet>
-  )
-}
-
-MetaData.propTypes = {
-  siteMetadata: PropTypes.object.isRequired,
-}
-
 const siteQuery = graphql`
-  query SiteTitleQuery {
+  query SiteQuery {
     site {
       siteMetadata {
         title
         description
         url
         logos {
-          fb
+          facebook {
+            type
+            url
+            width
+            height
+          }
         }
       }
     }
   }
 `
 
-const Layout = ({
-  children,
-  renderTop,
-  renderBottom,
-  mainTransparent = false,
-}) => {
+const Layout = props => {
+  const { children, renderTop, renderBottom, mainTransparent } = props
+
   return (
     <StaticQuery
       query={siteQuery}
       render={data => (
         <div className={styles.layout}>
-          <MetaData siteMetadata={data.site.siteMetadata} />
+          <SEO {...data.site.siteMetadata} />
           <div className={styles.layoutTop}>
             <Header />
             {renderTop && renderTop()}
@@ -86,6 +61,13 @@ const Layout = ({
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  renderTop: PropTypes.func,
+  renderBottom: PropTypes.func,
+  mainTransparent: PropTypes.bool,
+}
+
+Layout.defaultProps = {
+  mainTransparent: false,
 }
 
 export default Layout

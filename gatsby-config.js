@@ -4,7 +4,12 @@ module.exports = {
     description: 'Globo.com - Por que ❤️ Open Source?',
     url: 'https://opensource.globo.com',
     logos: {
-      fb: 'logos/fb.png',
+      facebook: {
+        type: 'image/png',
+        url: 'logos/fb.png',
+        width: 1208,
+        height: 638,
+      },
     },
   },
   plugins: [
