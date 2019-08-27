@@ -3,7 +3,6 @@ import Typography from 'typography'
 const openSourceTheme = {
   baseFontSize: '16px',
   baseLineHeight: 1.5,
-  bodyFontFamily: ['Open Sans', 'serif'],
   bodyWeight: '400',
   bodyFontFamily: ['Open Sans', 'serif'],
   headerFontFamily: ['Open Sans', 'serif'],
