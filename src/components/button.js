@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-import styles from './button.module.css'
+import styles from './Button.module.css'
 
 const Button = ({
   children,

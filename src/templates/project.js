@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import TopBackground from '../components/top-background'
-import Button from '../components/button'
-import RepoStats from '../components/repo-stats'
+import TopBackground from '../components/TopBackground'
+import Button from '../components/Button'
+import RepoStats from '../components/RepoStats'
 
 import { getRepoStats } from '../services/github'
 
@@ -23,7 +23,6 @@ export default class ProjectTemplate extends Component {
     const { owner, slug } = this.props.data.featuredProjectsJson
     const stats = await getRepoStats(owner, slug)
     if (stats) {
-      console.log(owner, slug, stats)
       const { repository } = stats
       this.setState({
         stats: {

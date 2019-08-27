@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import Layout from '../components/Layout'
-import TopBackground from '../components/top-background'
-import Button from '../components/button'
-import FeaturedProjects from '../components/featured-projects'
-import RepoStats from '../components/repo-stats'
-import Spinner from '../components/spinner'
+import TopBackground from '../components/TopBackground'
+import Button from '../components/Button'
+import FeaturedProjects from '../components/FeaturedProjects'
+import RepoStats from '../components/RepoStats'
+import Spinner from '../components/Spinner'
+
 import { getOrgRepos } from '../services/github'
 
 import styles from './projetos.module.css'

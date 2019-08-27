@@ -1,9 +1,9 @@
 import React from 'react'
 import { StaticQuery, graphql, Link } from 'gatsby'
 
-import styles from './featured-projects.module.css'
+import styles from './FeaturedProjects.module.css'
 
-const featuredProjectsQuery = graphql`
+const featProjectsQuery = graphql`
   {
     allFeaturedProjectsJson {
       edges {
@@ -29,7 +29,7 @@ const getImageSrc = image => (image ? image.publicURL : null)
 const FeaturedProjects = () => {
   return (
     <StaticQuery
-      query={featuredProjectsQuery}
+      query={featProjectsQuery}
       render={data => {
         const projects = transformData(data)
         return (

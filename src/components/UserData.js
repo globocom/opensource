@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Button from './button'
-import Message from './message'
-import UserForm from './user-form'
+import Button from './Button'
+import Message from './Message'
+import UserForm from './UserForm'
 
-import styles from './user-data.module.css'
+import styles from './UserData.module.css'
 
 const Check = ({ checked }) => {
   return <i className={checked ? styles.checked : styles.unchecked} />

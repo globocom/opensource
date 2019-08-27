@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Modal from './modal'
-import TextInput from './text-input'
-import SelectInput from './select-input'
-import Button from './button'
-import { TYPE_OK, TYPE_ERROR } from './message'
+import Modal from './Modal'
+import TextInput from './TextInput'
+import SelectInput from './SelectInput'
+import Button from './Button'
+import { TYPE_OK, TYPE_ERROR } from './Message'
+
 import { updateUser } from '../services/api'
 
-import styles from './user-form.module.css'
+import styles from './UserForm.module.css'
 
 const validateForm = (fields, formData) => {
   const formErrors = {}

@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from './repo-stats.module.css'
+
+import styles from './RepoStats.module.css'
 
 const RepoStats = ({ stars, pullRequests, commits, issues, className }) => (
   <div className={className}>

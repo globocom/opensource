@@ -1,7 +1,7 @@
 import React from 'react'
 import spinner from '../images/spinner.svg'
 
-import styles from './spinner.module.css'
+import styles from './Spinner.module.css'
 
 const Spinner = ({ message }) => (
   <div className={styles.spinner}>

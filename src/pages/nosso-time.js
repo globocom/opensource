@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Layout from '../components/Layout'
-import TopBackground from '../components/top-background'
-import Button from '../components/button'
-import Spinner from '../components/spinner'
+import TopBackground from '../components/TopBackground'
+import Button from '../components/Button'
+import Spinner from '../components/Spinner'
 import { getOrgMembers } from '../services/github'
 
 import styles from './nosso-time.module.css'

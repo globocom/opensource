@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-import styles from './message.module.css'
+import styles from './Message.module.css'
 
 export const TYPE_OK = Symbol('OK')
 export const TYPE_ERROR = Symbol('ERROR')

@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import FeaturedProjects from '../components/featured-projects'
-import Button from '../components/button'
+import FeaturedProjects from '../components/FeaturedProjects'
+import Button from '../components/Button'
 
 import styles from './index.module.css'
 

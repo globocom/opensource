@@ -3,7 +3,7 @@ import cx from 'classnames'
 import { Link } from 'gatsby'
 
 import logo from '../images/logo.svg'
-import styles from './header.module.css'
+import styles from './Header.module.css'
 
 const isMenuItemActive = ({ isCurrent }) => ({
   className: cx(styles.menuLink, { [styles.menuLinkActive]: isCurrent }),

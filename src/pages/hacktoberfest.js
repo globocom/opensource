@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Layout from '../../components/Layout'
-import Button from '../../components/button'
-import UserData from '../../components/user-data'
+import Layout from '../components/Layout'
+import Button from '../components/Button'
+import UserData from '../components/UserData'
 
-import { getUser } from '../../services/api'
-import { getUserStats } from '../../services/github'
+import { getUser } from '../services/api'
+import { getUserStats } from '../services/github'
 
 import styles from './hacktoberfest.module.css'
 
