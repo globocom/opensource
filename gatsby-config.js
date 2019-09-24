@@ -1,65 +1,44 @@
 module.exports = {
   siteMetadata: {
-    title: 'Globo.com - Open Source',
-    description: 'Globo.com - Por que ❤️ Open Source?',
-    url: 'https://opensource.globo.com',
+    title: "Globo.com - Open Source",
+    description: "Globo.com - Por que ❤️ Open Source?",
+    url: "https://opensource.globo.com",
     logos: {
       facebook: {
-        type: 'image/png',
-        url: 'logos/fb.png',
+        type: "image/png",
+        url: "logos/fb.png",
         width: 1208,
         height: 638,
       },
     },
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-transformer-json',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    "gatsby-plugin-react-helmet",
+    "gatsby-transformer-json",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
-      resolve: 'gatsby-plugin-typography',
+      resolve: "gatsby-plugin-manifest",
       options: {
-        pathToConfigModule: 'src/utils/typography.js',
+        name: "Globo.com - Open Source",
+        short_name: "Globocom OpenSource",
+        start_url: "/",
+        background_color: "#1B3556",
+        theme_color: "#1B3556",
+        display: "minimal-ui",
+        icon: "src/images/app-icon.png",
       },
     },
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'Globo.com - Open Source',
-        short_name: 'Globocom OpenSource',
-        start_url: '/',
-        background_color: '#1B3556',
-        theme_color: '#1B3556',
-        display: 'minimal-ui',
-        icon: 'src/images/app-icon.png',
-      },
-    },
-    // {
-    //   resolve: 'gatsby-plugin-offline',
-    //   options: {
-    //     runtimeCaching: [
-    //       {
-    //         urlPattern: /\/callback\//,
-    //         handler: `networkOnly`,
-    //       },
-    //       {
-    //         urlPattern: /\.(?:png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
-    //         handler: `staleWhileRevalidate`,
-    //       },
-    //     ],
-    //   },
-    // },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: './src/data/',
+        path: "./data/",
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: 'UA-35544505-1',
+        trackingId: "UA-35544505-1",
       },
     },
   ],
