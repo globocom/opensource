@@ -1,21 +1,21 @@
-import React, { Component } from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import TopBackground from '../components/TopBackground'
-import Button from '../components/Button'
-import RepoStats from '../components/RepoStats'
+import React, { Component } from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
+import TopBackground from "../components/TopBackground"
+import Button from "../components/Button"
+import RepoStats from "../components/RepoStats"
 
-import { getRepoStats } from '../services/github'
+import { getRepoStats } from "../services/github"
 
-import styles from './project.module.css'
+import styles from "./project.module.css"
 
 export default class ProjectTemplate extends Component {
   state = {
     stats: {
-      stars: '---',
-      pullRequests: '---',
-      commits: '---',
-      issues: '---',
+      stars: "---",
+      pullRequests: "---",
+      commits: "---",
+      issues: "---",
     },
   }
 

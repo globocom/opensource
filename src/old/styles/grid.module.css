@@ -6,7 +6,6 @@
   margin: 0 auto;
 }
 
-
 @media screen and (max-width: maxWidth) {
   .container {
     padding: 0 24px;

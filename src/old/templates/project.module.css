@@ -1,14 +1,14 @@
 @value small, medium from "../styles/breakpoints.module.css";
 
 .section {
-  composes: container from '../styles/grid.module.css';
+  composes: container from "../styles/grid.module.css";
   padding-top: 95px;
   padding-bottom: 95px;
   position: relative;
 }
 
 .sectionBottom {
-  composes: container from '../styles/grid.module.css';
+  composes: container from "../styles/grid.module.css";
   position: relative;
 }
 
