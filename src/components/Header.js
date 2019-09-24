@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import media from "styled-media-query"
 import { Link } from "gatsby"
 
@@ -13,6 +13,12 @@ const HeaderWrapper = styled.header`
   ${media.greaterThan("large")`
     height: 7.625rem;
   `}
+
+  ${props =>
+    props.dark &&
+    css`
+      background-color: #000000;
+    `}
 `
 
 const HeaderContainer = styled(Container)`
@@ -44,12 +50,13 @@ const MenuBurguer = styled.button`
   svg {
     width: 24px;
     height: 24px;
-    fill: #000000;
+    fill: ${props => (props.dark ? "#ffffff" : "#000000")};
   }
 `
 
 const Brand = styled.div`
   font-weight: 300;
+  letter-spacing: -0.025rem;
   display: flex;
   justify-content: center;
   flex: 1;
@@ -61,12 +68,16 @@ const Brand = styled.div`
   a {
     display: flex;
     align-items: center;
+    color: ${props => (props.dark ? "#ffffff" : "#000000")};
 
     svg {
-      fill: #000000;
-      width: 75px;
-      height: 18px;
-      margin-right: 0.625rem;
+      fill: ${props => (props.dark ? "#ffffff" : "#000000")};
+      width: 80px;
+    }
+
+    span {
+      margin-bottom: 0.125rem;
+      margin-left: 0.5rem;
     }
   }
 `
@@ -83,6 +94,7 @@ const Menu = styled.nav`
     justify-content: flex-end;
 
     li {
+      color: ${props => (props.dark ? "#ffffff" : "#000000")};
       margin-left: 2.5rem;
     }
 
@@ -98,6 +110,7 @@ const Menu = styled.nav`
 
 const MenuLink = styled(Link)`
   transition: color 0.3s;
+  color: inherit;
 
   &.is-active {
     /* font-weight: 800; */
@@ -105,16 +118,16 @@ const MenuLink = styled(Link)`
   }
 `
 
-const Header = () => (
-  <HeaderWrapper>
+const Header = ({ dark = false }) => (
+  <HeaderWrapper dark={dark}>
     <HeaderContainer>
-      <MenuBurguer>
+      <MenuBurguer dark={dark}>
         <svg width="24" height="24" viewBox="0 0 24 24">
           <title>Menu</title>
           <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
         </svg>
       </MenuBurguer>
-      <Brand>
+      <Brand dark={dark}>
         <Link to="/" alt="Globo.com OpenSource">
           <svg width="112" height="28" viewBox="0 0 112 28">
             <path
@@ -125,7 +138,7 @@ const Header = () => (
           <span>Open Source</span>
         </Link>
       </Brand>
-      <Menu>
+      <Menu dark={dark}>
         <ul>
           <li>
             <MenuLink activeClassName="is-active" to="/projetos/">

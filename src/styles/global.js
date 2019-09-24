@@ -54,12 +54,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
-    line-height: 1.25;
-    letter-spacing: 0.025rem;
     color: #000000;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     box-sizing: border-box;
+    /* -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
   }
 
   a {

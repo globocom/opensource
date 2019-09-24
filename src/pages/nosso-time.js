@@ -8,7 +8,7 @@ const Title = styled.h1`
   color: green;
 `
 
-const Index = () => (
+const Team = () => (
   <Layout>
     <Container>
       <Title>Nosso Time</Title>
@@ -16,4 +16,4 @@ const Index = () => (
   </Layout>
 )
 
-export default Index
+export default Team

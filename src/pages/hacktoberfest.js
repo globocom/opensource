@@ -8,12 +8,12 @@ const Title = styled.h1`
   color: green;
 `
 
-const Index = () => (
-  <Layout>
+const Hacktoberfest = () => (
+  <Layout dark={true}>
     <Container>
       <Title>Hacktoberfest</Title>
     </Container>
   </Layout>
 )
 
-export default Index
+export default Hacktoberfest
