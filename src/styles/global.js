@@ -57,6 +57,9 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.25;
     letter-spacing: 0.025rem;
     color: #000000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
   }
 
   a {
