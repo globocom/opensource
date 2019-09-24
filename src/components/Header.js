@@ -85,32 +85,64 @@ const Brand = styled.div`
 const Menu = styled.nav`
   flex: 1;
   display: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: normal;
   letter-spacing: normal;
+
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  background-color: ${props => (props.dark ? "#000000" : "#ffffff")};
+  padding-top: 3rem;
+  overflow-y: auto;
+
+  ${media.greaterThan("large")`
+    display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    padding-top: 0;
+    font-size: 1.25rem;
+  `}
 
   ul {
     display: flex;
     justify-content: flex-end;
+    flex-direction: column;
+
+    ${media.greaterThan("large")`
+      flex-direction: row;
+    `}
 
     li {
       color: ${props => (props.dark ? "#ffffff" : "#000000")};
-      margin-left: 2.5rem;
+
+      ${media.greaterThan("large")`
+        color: ${props => (props.dark ? "#ffffff" : "#000000")};
+        margin-left: 2.5rem;
+      `}
     }
 
     a:hover {
       color: #59b8fd;
     }
   }
-
-  ${media.greaterThan("large")`
-    display: block;
-  `}
 `
 
 const MenuLink = styled(Link)`
   transition: color 0.3s;
   color: inherit;
+  display: block;
+  padding: 1rem 1.5rem;
+
+  ${media.greaterThan("large")`
+    padding: 0;
+  `}
 
   &.is-active {
     /* font-weight: 800; */
