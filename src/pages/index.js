@@ -1,5 +1,19 @@
-import React from 'react'
+import React from "react"
+import styled from "styled-components"
 
-const Index = () => <h1>Hello Open Source</h1>
+import Layout from "../components/Layout"
+import { Container } from "../styles/grid"
+
+const Title = styled.h1`
+  color: green;
+`
+
+const Index = () => (
+  <Layout>
+    <Container>
+      <Title>Hello Open Source</Title>
+    </Container>
+  </Layout>
+)
 
 export default Index

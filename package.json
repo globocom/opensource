@@ -37,13 +37,17 @@
     "gatsby-plugin-google-analytics": "^2.1.17",
     "gatsby-plugin-manifest": "^2.2.18",
     "gatsby-plugin-react-helmet": "^3.1.8",
+    "gatsby-plugin-react-svg": "^2.1.2",
     "gatsby-plugin-sharp": "^2.2.25",
+    "gatsby-plugin-styled-components": "^3.1.6",
     "gatsby-source-filesystem": "^2.1.26",
     "gatsby-transformer-json": "^2.2.9",
     "gatsby-transformer-sharp": "^2.2.16",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.4.0",
+    "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
     "husky": "^3.0.4",
