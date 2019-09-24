@@ -4,7 +4,7 @@ import media from "styled-media-query"
 export const Container = styled.div`
   padding: 0 1.5rem;
 
-  ${media.greaterThan("medium")`
+  ${media.greaterThan("large")`
     padding: 0;
     margin: 0 auto;
     max-width: 75rem;
