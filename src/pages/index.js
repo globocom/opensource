@@ -9,7 +9,7 @@ const Title = styled.h1`
 `
 
 const Index = () => (
-  <Layout>
+  <Layout dark={true}>
     <Container>
       <Title>Hello Open Source</Title>
     </Container>
