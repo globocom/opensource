@@ -51,13 +51,21 @@ const GlobalStyle = createGlobalStyle`
 
   /* Website */
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
+
+  html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     color: #000000;
-    box-sizing: border-box;
-    /* -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; */
+  }
+
+  *, *::before, *::after {
+    box-sizing: inherit;
   }
 
   a {
