@@ -8,12 +8,14 @@ const Title = styled.h1`
   color: green;
 `
 
-const Index = () => (
-  <Layout dark={true}>
-    <Container>
-      <Title>Hello Open Source</Title>
-    </Container>
-  </Layout>
-)
+function Index() {
+  return (
+    <Layout darkHeader={true} darkFooter={false}>
+      <Container>
+        <Title>Home</Title>
+      </Container>
+    </Layout>
+  )
+}
 
 export default Index

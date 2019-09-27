@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react"
+import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import media from "styled-media-query"
 import { Link } from "gatsby"
@@ -143,15 +144,10 @@ const Menu = styled.nav`
         margin-left: 2.5rem;
       `}
     }
-
-    a:hover {
-      color: #59b8fd;
-    }
   }
 `
 
 const MenuLink = styled(Link)`
-  transition: color 0.3s;
   color: inherit;
   display: block;
   padding: 1rem 1.5rem;
@@ -172,7 +168,7 @@ const MenuLinkHome = styled(MenuLink)`
   `}
 `
 
-const Header = ({ dark = false }) => {
+function Header({ dark }) {
   const node = useRef()
   const [open, setOpen] = useState(false)
   const activeClassName = "is-active"
@@ -242,6 +238,10 @@ const Header = ({ dark = false }) => {
       </HeaderContainer>
     </HeaderWrapper>
   )
+}
+
+Header.propTypes = {
+  dark: PropTypes.bool,
 }
 
 export default Header
