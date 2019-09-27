@@ -8,12 +8,14 @@ const Title = styled.h1`
   color: green;
 `
 
-const Team = () => (
-  <Layout>
-    <Container>
-      <Title>Nosso Time</Title>
-    </Container>
-  </Layout>
-)
+function Team() {
+  return (
+    <Layout>
+      <Container>
+        <Title>Team</Title>
+      </Container>
+    </Layout>
+  )
+}
 
 export default Team

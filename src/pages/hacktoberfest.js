@@ -8,12 +8,14 @@ const Title = styled.h1`
   color: green;
 `
 
-const Hacktoberfest = () => (
-  <Layout dark={true}>
-    <Container>
-      <Title>Hacktoberfest</Title>
-    </Container>
-  </Layout>
-)
+function Hacktoberfest() {
+  return (
+    <Layout darkHeader={true} darkFooter={true}>
+      <Container>
+        <Title>Hacktoberfest</Title>
+      </Container>
+    </Layout>
+  )
+}
 
 export default Hacktoberfest

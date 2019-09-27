@@ -8,12 +8,14 @@ const Title = styled.h1`
   color: green;
 `
 
-const Projects = () => (
-  <Layout>
-    <Container>
-      <Title>Projetos</Title>
-    </Container>
-  </Layout>
-)
+function Projects() {
+  return (
+    <Layout>
+      <Container>
+        <Title>Projects</Title>
+      </Container>
+    </Layout>
+  )
+}
 
 export default Projects
