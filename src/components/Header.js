@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import styled, { css } from "styled-components"
 import media from "styled-media-query"
 import { Link } from "gatsby"
@@ -173,17 +173,32 @@ const MenuLinkHome = styled(MenuLink)`
 `
 
 const Header = ({ dark = false }) => {
+  const node = useRef()
   const [open, setOpen] = useState(false)
-  const activeClassName = activeClassName
+  const activeClassName = "is-active"
 
-  const handleMenuToggle = () => {
-    setOpen(!open)
+  const handleMenuOpen = () => {
+    setOpen(true)
   }
+
+  const handleMenuCloseOutside = event => {
+    if (node.current.contains(event.target)) {
+      return
+    }
+    setOpen(false)
+  }
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleMenuCloseOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleMenuCloseOutside)
+    }
+  }, [])
 
   return (
     <HeaderWrapper dark={dark}>
       <HeaderContainer>
-        <MenuBurguer dark={dark} onClick={handleMenuToggle}>
+        <MenuBurguer dark={dark} onClick={handleMenuOpen}>
           <svg width="24" height="24" viewBox="0 0 24 24">
             <title>Menu</title>
             <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
@@ -200,7 +215,7 @@ const Header = ({ dark = false }) => {
             <span>Open Source</span>
           </Link>
         </Brand>
-        <Menu dark={dark} open={open}>
+        <Menu dark={dark} open={open} ref={node}>
           <ul>
             <li>
               <MenuLinkHome activeClassName={activeClassName} to="/">
