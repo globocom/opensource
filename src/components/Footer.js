@@ -7,11 +7,8 @@ import { Container } from "../styles/grid"
 
 const FooterWrapper = styled.footer`
   height: 7rem;
-  background-color: #ffffff;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  bottom: 0;
+  background-color: ${props => (props.dark ? "#000000" : "#ffffff")};
+  color: ${props => (props.dark ? "#ffffff" : "#000000")};
 
   ${media.greaterThan("large")`
     height: 6.25rem;
@@ -19,6 +16,7 @@ const FooterWrapper = styled.footer`
 `
 
 const FooterContainer = styled(Container)`
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -43,13 +41,22 @@ const FooterLinks = styled.nav`
     `}
   }
 
+  li {
+    color: ${props => (props.dark ? "#ffffff" : "#000000")};
+  }
+
   li + li {
     margin-left: 2.125rem;
+
+    ${media.greaterThan("large")`
+      margin-left: 2.5rem;
+    `}
   }
 `
 
 const FooterLinkWrapper = styled.a`
   font-weight: bold;
+  color: inherit;
 `
 
 const FooterRights = styled.div`
@@ -73,7 +80,7 @@ function Footer({ dark }) {
   return (
     <FooterWrapper dark={dark}>
       <FooterContainer>
-        <FooterLinks>
+        <FooterLinks dark={dark}>
           <ul>
             <li>
               <FooterLink href="https://github.com/globocom/opensource">
