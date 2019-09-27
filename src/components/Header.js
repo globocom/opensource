@@ -90,11 +90,11 @@ const Menu = styled.nav`
   line-height: normal;
   letter-spacing: normal;
   position: fixed;
-  top: 3.75rem;
+  top: 0;
   left: 0;
-  width: 280px;
+  width: 260px;
   height: 100%;
-  background-color: ${props => (props.dark ? "#000000" : "#ffffff")};
+  background-color: #000000;
   padding-top: 3rem;
   overflow-y: auto;
   z-index: 1200;
@@ -121,6 +121,9 @@ const Menu = styled.nav`
     background-color: transparent;
     padding-top: 0;
     z-index: unset;
+    visibility: visible;
+    pointer-events: unset;
+    transform: none;
   `}
 
   ul {
@@ -133,7 +136,7 @@ const Menu = styled.nav`
     `}
 
     li {
-      color: ${props => (props.dark ? "#ffffff" : "#000000")};
+      color: #ffffff;
 
       ${media.greaterThan("large")`
         color: ${props => (props.dark ? "#ffffff" : "#000000")};
@@ -163,8 +166,15 @@ const MenuLink = styled(Link)`
   }
 `
 
+const MenuLinkHome = styled(MenuLink)`
+  ${media.greaterThan("large")`
+    display: none;
+  `}
+`
+
 const Header = ({ dark = false }) => {
   const [open, setOpen] = useState(false)
+  const activeClassName = activeClassName
 
   const handleMenuToggle = () => {
     setOpen(!open)
@@ -193,17 +203,22 @@ const Header = ({ dark = false }) => {
         <Menu dark={dark} open={open}>
           <ul>
             <li>
-              <MenuLink activeClassName="is-active" to="/projetos/">
+              <MenuLinkHome activeClassName={activeClassName} to="/">
+                Home
+              </MenuLinkHome>
+            </li>
+            <li>
+              <MenuLink activeClassName={activeClassName} to="/projetos/">
                 Projetos
               </MenuLink>
             </li>
             <li>
-              <MenuLink activeClassName="is-active" to="/nosso-time/">
+              <MenuLink activeClassName={activeClassName} to="/nosso-time/">
                 Nosso time
               </MenuLink>
             </li>
             <li>
-              <MenuLink activeClassName="is-active" to="/hacktoberfest/">
+              <MenuLink activeClassName={activeClassName} to="/hacktoberfest/">
                 Hacktoberfest
               </MenuLink>
             </li>
