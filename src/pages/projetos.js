@@ -21,6 +21,8 @@ const Repo = ({ repo }) => (
       pullRequests={repo.pullRequests.totalCount}
       commits={repo.object ? repo.object.history.totalCount : null}
       issues={repo.issues.totalCount}
+      languageName={repo.primaryLanguage.name}
+      languageColor={repo.primaryLanguage.color}
     />
     <div className={styles.projectDescription}>{repo.description}</div>
     <a
