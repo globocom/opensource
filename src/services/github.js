@@ -131,6 +131,10 @@ const getOrgRepos = async () => {
           description
           url
           isArchived
+          primaryLanguage {
+            name
+            color
+          }
           object(expression: "master") {
             ... on Commit {
               history {

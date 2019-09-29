@@ -27,3 +27,17 @@
   composes: stats;
   background-image: url(../images/repo-issue.svg);
 }
+
+.language{
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.languageName {
+  margin: 0px 5px;
+}
