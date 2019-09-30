@@ -66,7 +66,7 @@ const HeroText = styled.div`
 
 function Index() {
   const data = useStaticQuery(graphql`
-    query GetFeaturedProjects {
+    query GetFeaturedProjectsHome {
       allFeaturedProjectsJson {
         edges {
           node {
@@ -103,7 +103,12 @@ function Index() {
       <Container>
         <ProjectList hasShowAll={true}>
           {projects.map((project, i) => (
-            <Project key={project.id} isFirst={i === 0} {...project} />
+            <Project
+              key={project.id}
+              isFirst={i === 0}
+              isFeatured={true}
+              {...project}
+            />
           ))}
         </ProjectList>
       </Container>
