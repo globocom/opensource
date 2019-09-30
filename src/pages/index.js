@@ -16,31 +16,21 @@ const HeroWrapper = styled.div`
   color: #fff;
   background-color: #000;
   padding-top: 2.3rem;
-  height: 43rem;
+  height: 688px;
   background-image: url(${bgImageTopSm});
-  background-size: contain;
   background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: bottom;
+  background-size: contain;
+  background-position: bottom center;
 
   ${media.greaterThan("medium")`
-    height: 62rem;
-    background-size: cover;
-    background-color: transparent;
     background-image: url(${bgImageTopLg});
-    background-position-x: -175px;
-    background-position-y: -124px;
+    background-size: cover;
+    background-position: left;
+    height: 608px;
   `}
 
   ${media.greaterThan("large")`
-    height: 60rem;
-    background-position-x: center;
-    background-position-y: -130px;
-  `}
-
-  ${media.greaterThan("huge")`
-    height: 95rem;
-    background-position-y: -200px;
+    height: 880px;
   `}
 
   h1 {
