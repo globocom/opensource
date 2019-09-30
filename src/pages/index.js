@@ -14,21 +14,29 @@ const HeroWrapper = styled.div`
   padding-top: 2.3rem;
   height: 43rem;
   background-image: url(${bgImageTopSm});
+  background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: bottom;
 
   ${media.greaterThan("medium")`
     height: 62rem;
-    background-image: url(${bgImageTopLg});
     background-size: cover;
-    background-position-y: top;
+    background-color: transparent;
+    background-image: url(${bgImageTopLg});
     background-position-x: -175px;
+    background-position-y: -124px;
   `}
 
   ${media.greaterThan("large")`
+    height: 60rem;
     background-position-x: center;
-    background-position-y: -135px;
+    background-position-y: -130px;
+  `}
+
+  ${media.greaterThan("huge")`
+    height: 95rem;
+    background-position-y: -200px;
   `}
 
   h1 {
@@ -54,8 +62,11 @@ const HeroWrapper = styled.div`
 const HeroText = styled.div`
   ${media.greaterThan("medium")`
     width: 26.75rem;
-    padding-top: 120px;
-    padding-left: 28px;
+    padding-top: 66px;
+  `}
+
+  ${media.greaterThan("large")`
+    padding-top: 130px;
   `}
 `
 
