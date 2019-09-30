@@ -11,6 +11,12 @@ const ProjectListWrapper = styled.section`
 
   ${media.greaterThan("medium")`
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+  `}
+
+  ${media.greaterThan("large")`
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 40px;
   `}
