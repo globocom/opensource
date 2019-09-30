@@ -9,11 +9,18 @@ const ProjectListWrapper = styled.section`
   flex-direction: column;
 `
 
+const ProjectListButton = styled.div`
+  text-align: center;
+  margin: 2.5rem;
+`
+
 function ProjectList({ children, hasShowAll }) {
   return (
     <ProjectListWrapper>
       {children}
-      {hasShowAll && <ButtonLink href="/projects/">Ver todos</ButtonLink>}
+      <ProjectListButton>
+        {hasShowAll && <ButtonLink href="/projetos/">Ver todos</ButtonLink>}
+      </ProjectListButton>
     </ProjectListWrapper>
   )
 }
