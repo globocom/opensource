@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import media from "styled-media-query"
 
 const ButtonWrapper = styled.button`
@@ -8,7 +8,6 @@ const ButtonWrapper = styled.button`
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  color: #000;
   border-radius: 36px;
   border: 2px solid #000;
   transition: all 0.3s;
@@ -19,6 +18,19 @@ const ButtonWrapper = styled.button`
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
 
+  ${props =>
+    props.dark
+      ? css`
+          color: #fff;
+          border-color: #fff;
+          background-color: transparent;
+        `
+      : css`
+          color: #000;
+          border-color: #000;
+          background-color: #fff;
+        `}
+
   &:hover {
     ${media.greaterThan("large")`
       border-color: #59b8fd;
@@ -28,12 +40,17 @@ const ButtonWrapper = styled.button`
   }
 `
 
-function Button({ children }) {
-  return <ButtonWrapper>{children}</ButtonWrapper>
+function Button({ children, dark }) {
+  return <ButtonWrapper dark={dark}>{children}</ButtonWrapper>
 }
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
+  dark: PropTypes.bool,
+}
+
+Button.defaultProps = {
+  dark: false,
 }
 
 export default Button

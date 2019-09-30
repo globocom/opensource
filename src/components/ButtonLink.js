@@ -8,12 +8,17 @@ const ButtonLinkWrapper = styled(ButtonWrapper).attrs({
   as: "a",
 })``
 
-function ButtonLink({ children, href }) {
-  return <ButtonLinkWrapper href={href}>{children}</ButtonLinkWrapper>
+function ButtonLink({ children, href, dark }) {
+  return (
+    <ButtonLinkWrapper href={href} dark={dark}>
+      {children}
+    </ButtonLinkWrapper>
+  )
 }
 
 ButtonLink.propTypes = {
   children: PropTypes.node.isRequired,
+  dark: PropTypes.bool,
   href: PropTypes.string,
 }
 

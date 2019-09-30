@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import ProjectList from "../components/ProjectList"
 import Project from "../components/Project"
+import HacktoberfestCall from "../components/HacktoberfestCall"
 import { Container } from "../styles/grid"
 
 import bgImageTopSm from "../images/astrunaut-front-sm.jpg"
@@ -116,6 +117,7 @@ function Index() {
           ))}
         </ProjectList>
       </Container>
+      <HacktoberfestCall />
     </Layout>
   )
 }
