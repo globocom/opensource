@@ -23,6 +23,12 @@ const REPOSITORY_COUNT_ICONS = {
 const ProjectWrapper = styled.div`
   display: flex;
   flex-direction: column;
+
+  ${props =>
+    !props.isFeatured &&
+    css`
+      margin-bottom: 1.7rem;
+    `}
 `
 
 const ProjectDetails = styled.div`
@@ -42,6 +48,11 @@ const ProjectDetails = styled.div`
     visibility: visible;
     display: unset;
   `}
+`
+
+const ProjectName = styled.h2`
+  font-size: 1.2rem;
+  font-weight: bold;
 `
 
 const ProjectDescription = styled.p`
@@ -132,7 +143,6 @@ function RepositoryCounter({ name, count }) {
 
 function Project(props) {
   const {
-    isFirst,
     name,
     owner,
     slug,
@@ -142,6 +152,9 @@ function Project(props) {
     docsURL,
     shortDescription,
     description,
+    isFirst,
+    isFeatured,
+    repoNumbers,
   } = props
 
   const [open, setOpen] = useState(isFirst)
@@ -153,6 +166,16 @@ function Project(props) {
 
   useEffect(() => {
     async function fetchRepoCounter() {
+      if (repoNumbers) {
+        setRepoCounters({
+          stars: repoNumbers.stars,
+          prs: repoNumbers.prs,
+          commits: repoNumbers.commits,
+          issues: repoNumbers.issues,
+        })
+        return
+      }
+
       const stats = await getRepoStats(owner, slug)
       if (!stats) return
 
@@ -165,10 +188,10 @@ function Project(props) {
       })
     }
     fetchRepoCounter()
-  }, [owner, slug])
+  }, [owner, slug, repoNumbers])
 
   return (
-    <ProjectWrapper>
+    <ProjectWrapper isFeatured={isFeatured}>
       {image ? (
         <Nav onClick={handleToggleOpen}>
           <ImageWrapper>
@@ -177,9 +200,9 @@ function Project(props) {
           <NavButton open={open} />
         </Nav>
       ) : (
-        <h2>{name}</h2>
+        <ProjectName>{name}</ProjectName>
       )}
-      <ProjectDetails open={open}>
+      <ProjectDetails open={!isFeatured ? true : open}>
         <RepositoryInfo>
           <RepositoryCounter
             name="stars"
@@ -217,7 +240,7 @@ function Project(props) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Repositório
+              {isFeatured ? "Repositório" : "Ver repositório"}
             </ProjectLink>
           )}
           {docsURL && (
@@ -237,6 +260,7 @@ function Project(props) {
 
 Project.propTypes = {
   isFirst: PropTypes.bool.isRequired,
+  isFeatured: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.object,
   repoURL: PropTypes.string.isRequired,
@@ -244,10 +268,12 @@ Project.propTypes = {
   docsURL: PropTypes.string,
   shortDescription: PropTypes.string,
   description: PropTypes.string,
+  repoNumbers: PropTypes.object,
 }
 
 Project.defaultProps = {
   isFirst: false,
+  isFeatured: false,
 }
 
 export default Project

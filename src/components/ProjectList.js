@@ -33,9 +33,11 @@ function ProjectList({ children, hasShowAll }) {
   return (
     <ProjectListWrapper>
       {children}
-      <ProjectListButton>
-        {hasShowAll && <ButtonLink href="/projetos/">Ver todos</ButtonLink>}
-      </ProjectListButton>
+      {hasShowAll && (
+        <ProjectListButton>
+          <ButtonLink href="/projetos/">Ver todos</ButtonLink>
+        </ProjectListButton>
+      )}
     </ProjectListWrapper>
   )
 }
