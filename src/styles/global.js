@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import media from "styled-media-query"
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -75,7 +76,9 @@ const GlobalStyle = createGlobalStyle`
     transition: color 0.3s;
 
     &:hover {
-      color: #59b8fd;
+      ${media.greaterThan("large")`
+        color: #59b8fd;
+      `}
     }
   }
 `

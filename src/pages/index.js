@@ -1,8 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 import media from "styled-media-query"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/Layout"
+import ProjectList from "../components/ProjectList"
+import Project from "../components/Project"
 import { Container } from "../styles/grid"
 
 import bgImageTopSm from "../images/astrunaut-front-sm.jpg"
@@ -71,6 +74,30 @@ const HeroText = styled.div`
 `
 
 function Index() {
+  const data = useStaticQuery(graphql`
+    query GetFeaturedProjects {
+      allFeaturedProjectsJson {
+        edges {
+          node {
+            id
+            name
+            slug
+            repoURL
+            siteURL
+            docsURL
+            description
+            shortDescription
+            image {
+              publicURL
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const projects = data.allFeaturedProjectsJson.edges.map(edge => edge.node)
+
   return (
     <Layout darkHeader={true} darkFooter={false} noPadding={true}>
       <HeroWrapper>
@@ -81,6 +108,13 @@ function Index() {
           </HeroText>
         </Container>
       </HeroWrapper>
+      <Container>
+        <ProjectList hasShowAll={true}>
+          {projects.map((project, i) => (
+            <Project key={project.id} isFirst={i === 0} {...project} />
+          ))}
+        </ProjectList>
+      </Container>
     </Layout>
   )
 }
