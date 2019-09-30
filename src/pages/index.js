@@ -82,6 +82,7 @@ function Index() {
             id
             name
             slug
+            owner
             repoURL
             siteURL
             docsURL
