@@ -14,19 +14,11 @@ const HacktoberfestCallWrapper = styled.div`
   margin-top: 1rem;
   padding: 2rem 0;
 
-  p {
-    margin: 0 0 32px 0;
-  }
-
-  strong {
-    font-weight: 700;
-  }
-
   svg {
     width: 258px;
     height: 60px;
 
-    ${media.greaterThan("large")`
+    ${media.greaterThan("medium")`
       width: 423px;
       height: 98px;
     `}
@@ -35,22 +27,49 @@ const HacktoberfestCallWrapper = styled.div`
 
 const CallTitle = styled.div`
   margin: 2rem 0 32px 0;
-`
 
-const CallContent = styled.div`
-  ${media.greaterThan("large")`
-    font-size: 1.75rem;
+  ${media.greaterThan("medium")`
+    margin-bottom: 48px;
   `}
 `
 
+const CallH1 = styled.div`
+  margin-bottom: 32px;
+
+  ${media.greaterThan("medium")`
+    font-size: 1.75rem;
+    margin-bottom: 48px;
+  `}
+
+  strong {
+    font-weight: 700;
+  }
+`
+
+const CallH2 = styled.div`
+  margin-bottom: 32px;
+
+  ${media.greaterThan("medium")`
+    font-size: 1.25rem;
+    margin-bottom: 48px;
+  `}
+`
+
+const CallContent = styled.div``
+
 const CallContainer = styled(Container)`
-  ${media.greaterThan("large")`
+  ${media.greaterThan("medium")`
     display: flex;
     justify-content: space-between;
+    align-items: center;
   `}
 
   img {
     width: 100%;
+
+    ${media.greaterThan("medium")`
+      width: 45%;
+    `}
 
     ${media.greaterThan("large")`
       width: unset;
@@ -59,8 +78,7 @@ const CallContainer = styled(Container)`
 `
 
 const ActionButtons = styled.div`
-  text-align: center;
-  margin-top: 1rem;
+  margin: 1.5rem 0;
 `
 
 function HacktoberfestCall() {
@@ -82,21 +100,18 @@ function HacktoberfestCall() {
               </svg>
             </Link>
           </CallTitle>
-          <p>
+          <CallH1>
             <strong>1 a 31 de outubro</strong>
             <br /> na Globo.com
-          </p>
-          <p>
-            Contribua e ganhe uma camiseta
-            <br /> exclusiva.
-          </p>
+          </CallH1>
+          <CallH2>Contribua e ganhe uma camiseta exclusiva.</CallH2>
+          <ActionButtons>
+            <ButtonLink href="/hacktoberfest" dark={true}>
+              Participar
+            </ButtonLink>
+          </ActionButtons>
         </CallContent>
         <img src={hacktoberFestImg} alt="Hacktoberfest Art" />
-        <ActionButtons>
-          <ButtonLink href="/hacktoberfest" dark={true}>
-            Participar
-          </ButtonLink>
-        </ActionButtons>
       </CallContainer>
     </HacktoberfestCallWrapper>
   )
