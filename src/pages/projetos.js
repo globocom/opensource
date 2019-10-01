@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
+import Seo from "../components/Seo"
 import Layout from "../components/Layout"
 import ProjectList from "../components/ProjectList"
 import Project from "../components/Project"
@@ -71,6 +72,10 @@ function Projects() {
 
   return (
     <Layout>
+      <Seo
+        title="Projetos"
+        description="Veja alguns dos projetos Open Source da Globo.com"
+      />
       <Container>
         <ProjectList>
           {featuredProjects.map((project, i) => (

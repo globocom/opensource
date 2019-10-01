@@ -3,6 +3,7 @@ import styled from "styled-components"
 import media from "styled-media-query"
 import { useStaticQuery, graphql } from "gatsby"
 
+import Seo from "../components/Seo"
 import Layout from "../components/Layout"
 import ProjectList from "../components/ProjectList"
 import Project from "../components/Project"
@@ -107,6 +108,7 @@ function Index() {
 
   return (
     <Layout darkHeader={true} darkFooter={false} noPadding={true}>
+      <Seo />
       <HeroWrapper>
         <Container>
           <HeroText>

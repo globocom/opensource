@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import media from "styled-media-query"
 
+import Seo from "../components/Seo"
 import Layout from "../components/Layout"
 import HacktoberCall from "../components/HacktoberCall"
 import ButtonLink from "../components/ButtonLink"
@@ -94,6 +95,10 @@ function Hacktoberfest() {
       darkBody={true}
       noPadding={true}
     >
+      <Seo
+        title="Hacktoberfest"
+        description="De 1 a 31 de outubro, contribua com qualquer projeto da Globo.com no github e ganhe uma camiseta exclusiva."
+      />
       <HacktoberCall user={user} />
       <Container>
         <Rules>

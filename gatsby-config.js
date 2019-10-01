@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Globo.com - Open Source",
     description: "Globo.com - Por que ❤️ Open Source?",
+    author: "Globo.com",
     url: "https://opensource.globo.com",
     logos: {
       facebook: {
