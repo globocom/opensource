@@ -42,6 +42,10 @@ class UserData extends Component {
     const { user, userStats } = this.props
     const { modalOpen, message } = this.state
 
+    const isStaff = ['arturfsousa', 'guilhermebr', 'marcelometal'].includes(
+      user.GithubUser
+    )
+
     const achievedOpenPRs = userStats.opened >= 2
     const achievedMergedPRs = userStats.merged >= 1
     const challengeComplete = achievedOpenPRs && achievedMergedPRs
@@ -71,7 +75,7 @@ class UserData extends Component {
               <Check checked={achievedMergedPRs} />
               ter pelo menos 1 pull request aceito: {userStats.merged} aceito(s)
             </div>
-            {challengeComplete && (
+            {(challengeComplete || isStaff) && (
               <div className={styles.completed}>
                 <span className={styles.completedTitle}>Parabéns!!!</span>
                 <p>
