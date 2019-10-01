@@ -7,6 +7,10 @@ import HacktoberCall from "../components/HacktoberCall"
 import ButtonLink from "../components/ButtonLink"
 import { Container } from "../styles/grid"
 
+import { getIssuesUrl } from "../services/github"
+
+const issuesUrl = getIssuesUrl()
+
 const Rules = styled.section`
   display: flex;
   flex-direction: column;
@@ -162,7 +166,9 @@ function Hacktoberfest() {
             Pull requests podem ser feitos em qualquer <strong>projeto</strong>{" "}
             da Globo.com
           </ProjectsText>
-          <ButtonLink dark={true}>Ver issues</ButtonLink>
+          <ButtonLink dark={true} href={issuesUrl} blank={true}>
+            Ver issues
+          </ButtonLink>
         </Container>
       </Projects>
     </Layout>
