@@ -64,6 +64,14 @@ const HeroText = styled.div`
   `}
 `
 
+const ProjectsContainer = styled(Container)`
+  margin-bottom: 1rem;
+
+  ${media.greaterThan("medium")`
+    margin-bottom: 2.5rem;
+  `}
+`
+
 function Index() {
   const data = useStaticQuery(graphql`
     query GetFeaturedProjectsHome {
@@ -100,7 +108,7 @@ function Index() {
           </HeroText>
         </Container>
       </HeroWrapper>
-      <Container>
+      <ProjectsContainer>
         <ProjectList hasShowAll={true}>
           {projects.map((project, i) => (
             <Project
@@ -111,7 +119,7 @@ function Index() {
             />
           ))}
         </ProjectList>
-      </Container>
+      </ProjectsContainer>
       <HacktoberCall />
     </Layout>
   )

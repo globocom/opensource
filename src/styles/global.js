@@ -52,6 +52,7 @@ const GlobalStyle = createGlobalStyle`
 
   /* Website */
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Bigelow+Rules&display=swap');
   @import url('https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css');
 
   html {
