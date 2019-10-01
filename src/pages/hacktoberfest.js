@@ -56,7 +56,7 @@ class HacktoberfestPage extends Component {
             <div className={styles.eventInfoLabel}>Regras</div>
             <div className={styles.eventInfoBody}>
               Contribua com 2 pull requests em qualquer projeto Open Source da
-              Globo.com durante o mês de outubro. Os 100 primeiros inscritos que
+              Globo.com durante o mês de outubro. Os 200 primeiros inscritos que
               conseguirem os 2 pull requests e ao menos um ACEITO, ganharão uma
               camiseta exclusiva a ser entregue dentro do território brasileiro.
             </div>
