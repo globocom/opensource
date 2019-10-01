@@ -66,6 +66,10 @@ const ProjectWebSite = styled.a`
   padding: 1.5rem 0;
   color: #59b8fd;
   font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 const ProjectLinks = styled.div`

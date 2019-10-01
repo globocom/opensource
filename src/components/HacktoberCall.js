@@ -32,10 +32,12 @@ const Title = styled.div`
 
 const EventHeader1 = styled.div`
   margin-bottom: 32px;
+  line-height: 1.4rem;
 
   ${media.greaterThan("medium")`
     font-size: 1.75rem;
     margin-bottom: 48px;
+    line-height: 2.3rem;
   `}
 
   strong {
