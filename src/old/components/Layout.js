@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import cx from 'classnames'
-import { StaticQuery, graphql } from 'gatsby'
+import React from "react"
+import PropTypes from "prop-types"
+import cx from "classnames"
+import { StaticQuery, graphql } from "gatsby"
 
-import Header from './Header'
-import Footer from './Footer'
-import SEO from './SEO'
-import styles from './Layout.module.css'
+import Header from "./Header"
+import Footer from "./Footer"
+import SEO from "./SEO"
+import styles from "./Layout.module.css"
 
 const siteQuery = graphql`
   query SiteQuery {
@@ -15,8 +15,8 @@ const siteQuery = graphql`
         title
         description
         url
-        logos {
-          facebook {
+        images {
+          opengraph {
             type
             url
             width
