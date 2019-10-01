@@ -8,8 +8,8 @@ module.exports = {
       opengraph: {
         type: "image/png",
         url: "images/opengraph.png",
-        width: 1208,
-        height: 638,
+        width: 1200,
+        height: 630,
       },
     },
   },
