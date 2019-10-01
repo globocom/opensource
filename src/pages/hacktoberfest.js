@@ -65,6 +65,10 @@ const Projects = styled.section`
 const ProjectsTitle = styled.div`
   font-family: "Bigelow Rules", cursive;
   font-size: 2.25rem;
+
+  ${media.greaterThan("medium")`
+    font-size: 4rem;
+  `}
 `
 
 const ProjectsText = styled.div`
