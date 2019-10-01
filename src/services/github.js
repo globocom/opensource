@@ -1,16 +1,16 @@
 const GITHUB_TOKEN = process.env.GATSBY_GITHUB_TOKEN
 
 const ORGS = [
-  { login: 'globocom', stars: 30 },
-  { login: 'tsuru', stars: 30 },
-  { login: 'clappr', stars: 30 },
-  { login: 'thumbor', stars: 30 },
-  { login: 'galeb', stars: 10 },
+  { login: "globocom", stars: 30 },
+  { login: "tsuru", stars: 30 },
+  { login: "clappr", stars: 30 },
+  { login: "thumbor", stars: 30 },
+  { login: "galeb", stars: 10 },
 ]
 
 const ORG_LOGINS = ORGS.map(org => org.login)
 
-const EXCLUDE_REPOS = ['tsuru', 'thumbor', 'clappr', 'megadraft']
+const EXCLUDE_REPOS = ["tsuru", "thumbor", "clappr", "megadraft"]
 
 const joinSearchNodes = data => {
   let nodes = []
@@ -20,7 +20,7 @@ const joinSearchNodes = data => {
   return nodes
 }
 
-const sortRepos = (repos, field = 'stargazers') => {
+const sortRepos = (repos, field = "stargazers") => {
   return repos.sort((a, b) => {
     const totalA = a[field].totalCount
     const totalB = b[field].totalCount
@@ -32,15 +32,15 @@ const githubClient = async (query, variables = {}) => {
   let resp
 
   try {
-    resp = await fetch('https://api.github.com/graphql', {
-      method: 'POST',
+    resp = await fetch("https://api.github.com/graphql", {
+      method: "POST",
       body: JSON.stringify({ query, variables }),
       headers: {
         Authorization: `Bearer ${GITHUB_TOKEN}`,
       },
     })
   } catch (error) {
-    console.error('[GITHUB] Fail to fetch', error)
+    console.error("[GITHUB] Fail to fetch", error)
   }
 
   if (resp.status !== 200) {
@@ -105,7 +105,7 @@ const getOrgMembers = async () => {
 }
 
 const getOrgRepos = async () => {
-  let searchQuery = ''
+  let searchQuery = ""
   ORGS.forEach(({ login, stars }) => {
     searchQuery += `
       ${login}: search(
@@ -249,11 +249,11 @@ const getUserStats = async login => {
         )
       })
       .forEach(pr => {
-        if (pr.state === 'MERGED') {
+        if (pr.state === "MERGED") {
           stats.merged += 1
           stats.opened += 1
         }
-        if (pr.state === 'OPEN') {
+        if (pr.state === "OPEN") {
           stats.opened += 1
         }
       })
@@ -262,4 +262,16 @@ const getUserStats = async login => {
   }
 }
 
-export { getOrgMembers, getOrgRepos, getRepoStats, getUserStats }
+const getIssuesUrl = () => {
+  const url = new URL("https://github.com/search")
+  const query = ["label:hacktoberfest", "state:open", "type:issue"]
+
+  ORG_LOGINS.forEach(login => {
+    query.push(`user:${login}`)
+  })
+  url.searchParams.append("q", query.join(" "))
+
+  return url.toString()
+}
+
+export { getOrgMembers, getOrgRepos, getRepoStats, getUserStats, getIssuesUrl }
