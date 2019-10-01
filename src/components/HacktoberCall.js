@@ -1,8 +1,11 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
 import media from "styled-media-query"
 
+import Button from "./Button"
 import ButtonLink from "./ButtonLink"
+import UserProgress from "./UserProgress"
 import { Container } from "../styles/grid"
 
 import hacktoberFestImg from "../images/hacktoberfest-lg.png"
@@ -83,7 +86,7 @@ const ActionButtons = styled.div`
   `}
 `
 
-function HacktoberfestCall() {
+function HacktoberCall({ user, isCallOnly }) {
   return (
     <HacktoberCallWrapper>
       <CallContainer>
@@ -95,9 +98,15 @@ function HacktoberfestCall() {
           </EventHeader1>
           <EventHeader2>Contribua e ganhe uma camiseta exclusiva.</EventHeader2>
           <ActionButtons>
-            <ButtonLink href="/hacktoberfest" dark={true}>
-              Participar
-            </ButtonLink>
+            {isCallOnly ? (
+              <ButtonLink href="/hacktoberfest" dark={true}>
+                Participar
+              </ButtonLink>
+            ) : user ? (
+              <UserProgress user={user} />
+            ) : (
+              <Button dark={true}>Participar</Button>
+            )}
           </ActionButtons>
         </div>
         <img src={hacktoberFestImg} alt="Hacktoberfest Art" />
@@ -106,4 +115,14 @@ function HacktoberfestCall() {
   )
 }
 
-export default HacktoberfestCall
+HacktoberCall.propTypes = {
+  user: PropTypes.object,
+  isCallOnly: PropTypes.bool,
+  onSignIn: PropTypes.func,
+}
+
+HacktoberCall.defaultProps = {
+  isCallOnly: false,
+}
+
+export default HacktoberCall
