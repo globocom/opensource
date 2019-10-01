@@ -7,21 +7,15 @@ import { Container } from "../styles/grid"
 
 import hacktoberFestImg from "../images/hacktoberfest-lg.png"
 
-const HacktoberfestCallWrapper = styled.div`
+const HacktoberCallWrapper = styled.section`
   background-color: #000;
   color: #fff;
   margin-top: 1rem;
   padding: 2rem 0;
 
-  svg {
-    width: 258px;
-    height: 60px;
-
-    ${media.greaterThan("medium")`
-      width: 423px;
-      height: 98px;
-    `}
-  }
+  ${media.greaterThan("medium")`
+    margin-top: 2.5rem;
+  `}
 `
 
 const CallTitle = styled.div`
@@ -30,6 +24,21 @@ const CallTitle = styled.div`
   ${media.greaterThan("medium")`
     margin-bottom: 48px;
   `}
+
+  svg {
+    width: 258px;
+    height: 60px;
+
+    ${media.greaterThan("medium")`
+      width: 335px;
+      height: 78px;
+    `}
+
+    ${media.greaterThan("large")`
+      width: 423px;
+      height: 98px;
+    `}
+  }
 `
 
 const CallH1 = styled.div`
@@ -54,13 +63,15 @@ const CallH2 = styled.div`
   `}
 `
 
-const CallContent = styled.div``
-
 const CallContainer = styled(Container)`
   ${media.greaterThan("medium")`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+  `}
+
+  ${media.greaterThan("large")`
+    justify-content: space-between;
   `}
 
   img {
@@ -82,9 +93,9 @@ const ActionButtons = styled.div`
 
 function HacktoberfestCall() {
   return (
-    <HacktoberfestCallWrapper>
+    <HacktoberCallWrapper>
       <CallContainer>
-        <CallContent>
+        <div>
           <CallTitle>
             <svg
               fill="none"
@@ -107,10 +118,10 @@ function HacktoberfestCall() {
               Participar
             </ButtonLink>
           </ActionButtons>
-        </CallContent>
+        </div>
         <img src={hacktoberFestImg} alt="Hacktoberfest Art" />
       </CallContainer>
-    </HacktoberfestCallWrapper>
+    </HacktoberCallWrapper>
   )
 }
 

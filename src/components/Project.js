@@ -51,8 +51,9 @@ const ProjectDetails = styled.div`
 `
 
 const ProjectName = styled.h2`
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
+  margin-bottom: 1.5rem;
 `
 
 const ProjectDescription = styled.p`
@@ -94,8 +95,15 @@ const Nav = styled.div`
 const NavButton = styled.i`
   width: 24px;
   height: 24px;
-  background-image: url(${props =>
-    props.open ? iconExpandLess : iconExpandMore});
+
+  ${props =>
+    props.open
+      ? css`
+          background-image: url(${iconExpandLess});
+        `
+      : css`
+          background-image: url(${iconExpandMore});
+        `}
 
   ${media.greaterThan("medium")`
     display: none;
@@ -107,14 +115,14 @@ const ImageWrapper = styled.div`
   flex: 1;
 `
 
-const RepositoryInfo = styled.div`
+const RepoInfo = styled.div`
   padding: 1.5rem 0 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 35px;
 `
 
-const RepositoryCounterWrapper = styled.div`
+const RepoCounterWrapper = styled.div`
   color: #757575;
   display: flex;
   align-items: center;
@@ -122,7 +130,7 @@ const RepositoryCounterWrapper = styled.div`
   flex-direction: column;
 `
 
-const RepositoryCounterIcon = styled.i`
+const RepoCounterIcon = styled.i`
   width: 30px;
   height: 20px;
   display: inline-block;
@@ -132,13 +140,18 @@ const RepositoryCounterIcon = styled.i`
   margin-bottom: 10px;
 `
 
-function RepositoryCounter({ name, count }) {
+function RepoCounter({ name, count }) {
   return (
-    <RepositoryCounterWrapper>
-      <RepositoryCounterIcon name={name} />
-      <span>{count || "00000"}</span>
-    </RepositoryCounterWrapper>
+    <RepoCounterWrapper>
+      <RepoCounterIcon name={name} />
+      <span>{count === undefined ? "00000" : count}</span>
+    </RepoCounterWrapper>
   )
+}
+
+RepoCounter.propTypes = {
+  name: PropTypes.string.isRequired,
+  count: PropTypes.number,
 }
 
 function Project(props) {
@@ -203,24 +216,12 @@ function Project(props) {
         <ProjectName>{name}</ProjectName>
       )}
       <ProjectDetails open={!isFeatured ? true : open}>
-        <RepositoryInfo>
-          <RepositoryCounter
-            name="stars"
-            count={repoCounters.stars}
-          ></RepositoryCounter>
-          <RepositoryCounter
-            name="commits"
-            count={repoCounters.commits}
-          ></RepositoryCounter>
-          <RepositoryCounter
-            name="prs"
-            count={repoCounters.prs}
-          ></RepositoryCounter>
-          <RepositoryCounter
-            name="issues"
-            count={repoCounters.issues}
-          ></RepositoryCounter>
-        </RepositoryInfo>
+        <RepoInfo>
+          <RepoCounter name="stars" count={repoCounters.stars} />
+          <RepoCounter name="commits" count={repoCounters.commits} />
+          <RepoCounter name="prs" count={repoCounters.prs} />
+          <RepoCounter name="issues" count={repoCounters.issues} />
+        </RepoInfo>
         <ProjectDescription>
           {shortDescription || description}
         </ProjectDescription>

@@ -9,7 +9,7 @@ import { Container } from "../styles/grid"
 
 import { getOrgRepos } from "../services/github"
 
-const ProjectsDivider = styled.div`
+const Divider = styled.div`
   height: 1px;
   width: 100%;
   background-color: #ddd;
@@ -49,7 +49,6 @@ function Projects() {
   useEffect(() => {
     async function getProject() {
       const repositories = await getOrgRepos()
-      console.log(repositories[0])
       setProjects(
         repositories.map(repo => {
           return {
@@ -84,7 +83,7 @@ function Projects() {
           ))}
         </ProjectList>
       </Container>
-      <ProjectsDivider />
+      <Divider />
       <Container>
         <ProjectList>
           {projects.map((project, i) => (
