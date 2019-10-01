@@ -8,6 +8,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 
 const Main = styled.main`
+  background-color: ${props => (props.dark ? "#000" : "transparent")};
   padding: ${props => (props.noPadding ? "0" : "2rem 0")};
   min-height: calc(100vh - 3.75rem - 7rem);
 
@@ -16,12 +17,14 @@ const Main = styled.main`
   `}
 `
 
-function Layout({ children, darkHeader, darkFooter, noPadding }) {
+function Layout({ children, darkHeader, darkFooter, darkBody, noPadding }) {
   return (
     <React.Fragment>
       <GlobalStyle />
       <Header dark={darkHeader} />
-      <Main noPadding={noPadding}>{children}</Main>
+      <Main dark={darkBody} noPadding={noPadding}>
+        {children}
+      </Main>
       <Footer dark={darkFooter} />
     </React.Fragment>
   )
@@ -37,6 +40,7 @@ Layout.propTypes = {
 Layout.defaultProps = {
   darkHeader: false,
   darkFooter: false,
+  darkBody: false,
   noPadding: false,
 }
 
