@@ -12,6 +12,15 @@ function Seo({ lang, title, description, keywords, meta }) {
           title
           description
           author
+          url
+          images {
+            opengraph {
+              type
+              url
+              width
+              height
+            }
+          }
         }
       }
     }
@@ -23,6 +32,11 @@ function Seo({ lang, title, description, keywords, meta }) {
     : siteMetadata.title
 
   const metaDescription = description || siteMetadata.description
+
+  const {
+    images: { opengraph: metaImg },
+  } = siteMetadata
+
   const metaTags = [
     {
       name: `description`,
@@ -43,6 +57,22 @@ function Seo({ lang, title, description, keywords, meta }) {
     {
       property: `og:description`,
       content: metaDescription,
+    },
+    {
+      property: `og:image`,
+      content: `${siteMetadata.url}/${metaImg.url}`,
+    },
+    {
+      property: `og:image:type`,
+      content: metaImg.type,
+    },
+    {
+      property: `og:image:width`,
+      content: metaImg.width,
+    },
+    {
+      property: `og:image:height`,
+      content: metaImg.height,
     },
     {
       name: `twitter:card`,

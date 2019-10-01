@@ -4,10 +4,10 @@ module.exports = {
     description: "Globo.com - Por que ❤️ Open Source?",
     author: "Globo.com",
     url: "https://opensource.globo.com",
-    logos: {
-      facebook: {
+    images: {
+      opengraph: {
         type: "image/png",
-        url: "logos/fb.png",
+        url: "images/opengraph.png",
         width: 1208,
         height: 638,
       },
