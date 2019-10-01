@@ -31,6 +31,13 @@ const HeroWrapper = styled.div`
 
   ${media.greaterThan("large")`
     height: 880px;
+    background-color: transparent;
+    background-position: center;
+  `}
+
+  ${media.greaterThan("1680px")`
+    height: 1580px;
+    background-position-y: -150px;
   `}
 
   h1 {
