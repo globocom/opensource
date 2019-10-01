@@ -12,13 +12,11 @@ const ProjectListWrapper = styled.section`
   ${media.greaterThan("medium")`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 40px;
+    grid-gap: 2rem 3rem;
   `}
 
   ${media.greaterThan("large")`
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 40px;
   `}
 `
 
