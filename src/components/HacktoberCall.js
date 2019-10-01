@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import media from "styled-media-query"
 
-import Button from "./Button"
 import ButtonLink from "./ButtonLink"
 import UserProgress from "./UserProgress"
 import { Container } from "../styles/grid"
@@ -105,7 +104,9 @@ function HacktoberCall({ user, isCallOnly }) {
             ) : user ? (
               <UserProgress user={user} />
             ) : (
-              <Button dark={true}>Participar</Button>
+              <ButtonLink href="/login" dark={true}>
+                Participar
+              </ButtonLink>
             )}
           </ActionButtons>
         </div>
