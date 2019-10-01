@@ -1,20 +1,27 @@
 import React from "react"
 import styled from "styled-components"
+import media from "styled-media-query"
 
 import Layout from "../components/Layout"
 import HacktoberCall from "../components/HacktoberCall"
+import ButtonLink from "../components/ButtonLink"
 import { Container } from "../styles/grid"
 
 const Rules = styled.section`
   display: flex;
   flex-direction: column;
   color: #cfd3d4;
+
+  ${media.greaterThan("medium")`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  `}
 `
 
 const Rule = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: baseline;
   flex-direction: column;
   margin-bottom: 6rem;
 `
@@ -34,6 +41,30 @@ const RuleIcon = styled.div`
 const RuleText = styled.div`
   text-align: center;
   line-height: 1.75rem;
+
+  strong {
+    font-weight: 700;
+  }
+`
+
+const Projects = styled.section`
+  border-top: 1px solid #59b8fd;
+  border-bottom: 1px solid #59b8fd;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  color: #fff;
+  text-align: center;
+`
+
+const ProjectsTitle = styled.div`
+  font-family: "Bigelow Rules", cursive;
+  font-size: 2.25rem;
+`
+
+const ProjectsText = styled.div`
+  text-align: center;
+  line-height: 1.75rem;
+  padding: 2.5rem 0;
 
   strong {
     font-weight: 700;
@@ -124,6 +155,16 @@ function Hacktoberfest() {
           </Rule>
         </Rules>
       </Container>
+      <Projects>
+        <Container>
+          <ProjectsTitle>Projetos</ProjectsTitle>
+          <ProjectsText>
+            Pull requests podem ser feitos em qualquer <strong>projeto</strong>{" "}
+            da Globo.com
+          </ProjectsText>
+          <ButtonLink dark={true}>Ver issues</ButtonLink>
+        </Container>
+      </Projects>
     </Layout>
   )
 }
