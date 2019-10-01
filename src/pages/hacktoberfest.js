@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import media from "styled-media-query"
 
@@ -7,6 +7,7 @@ import HacktoberCall from "../components/HacktoberCall"
 import ButtonLink from "../components/ButtonLink"
 import { Container } from "../styles/grid"
 
+import { getUser } from "../services/api"
 import { getIssuesUrl } from "../services/github"
 
 const issuesUrl = getIssuesUrl()
@@ -76,6 +77,16 @@ const ProjectsText = styled.div`
 `
 
 function Hacktoberfest() {
+  const [user, setUser] = useState()
+
+  useEffect(() => {
+    async function fetchUser() {
+      const user = await getUser()
+      setUser(user)
+    }
+    fetchUser()
+  }, [])
+
   return (
     <Layout
       darkHeader={true}
@@ -83,7 +94,7 @@ function Hacktoberfest() {
       darkBody={true}
       noPadding={true}
     >
-      <HacktoberCall />
+      <HacktoberCall user={user} />
       <Container>
         <Rules>
           <Rule>

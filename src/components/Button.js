@@ -17,6 +17,8 @@ const ButtonWrapper = styled.button`
   outline: 0;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
+  font-size: inherit;
+  font-family: inherit;
 
   ${props =>
     props.dark

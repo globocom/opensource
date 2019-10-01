@@ -169,7 +169,7 @@ const getOrgRepos = async () => {
 
 const getRepoStats = async (owner, name) => {
   const query = `
-    query RepositoryStats($owner: String!, $name: String!) {
+    query GetRepositoryStats($owner: String!, $name: String!) {
       repository(owner: $owner, name: $name) {
         object(expression: "master") {
           ... on Commit {
@@ -197,9 +197,9 @@ const getRepoStats = async (owner, name) => {
   })
 }
 
-const getUserStats = async login => {
+const getUserProgress = async login => {
   const query = `
-    query UserStats($login: String!) {
+    query GetUserProgress($login: String!) {
       user(login: $login) {
         avatarUrl
         pullRequests(
@@ -274,4 +274,10 @@ const getIssuesUrl = () => {
   return url.toString()
 }
 
-export { getOrgMembers, getOrgRepos, getRepoStats, getUserStats, getIssuesUrl }
+export {
+  getOrgMembers,
+  getOrgRepos,
+  getRepoStats,
+  getUserProgress,
+  getIssuesUrl,
+}

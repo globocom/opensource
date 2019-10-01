@@ -120,7 +120,7 @@ function Index() {
           ))}
         </ProjectList>
       </ProjectsContainer>
-      <HacktoberCall />
+      <HacktoberCall isCallOnly={true} />
     </Layout>
   )
 }
