@@ -47,6 +47,10 @@ function Seo({ lang, title, description, keywords, meta }) {
       content: keywords.join(`, `),
     },
     {
+      name: `author`,
+      content: siteMetadata.author,
+    },
+    {
       property: `og:type`,
       content: `website`,
     },
