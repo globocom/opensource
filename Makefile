@@ -23,15 +23,15 @@ help:
 
 ## installs project dependencies
 setup:
-	yarn install
+	./package-manager.sh install
 
 ## starts development server
 start:
-	yarn develop
+	./package-manager.sh develop
 
 ## builds static files to production
 build:
-	yarn build
+	./package-manager.sh build
 
 ## deploys the app
 deploy: build
