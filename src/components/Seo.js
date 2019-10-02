@@ -90,6 +90,10 @@ function Seo({ lang, title, description, keywords, meta }) {
       name: `twitter:description`,
       content: metaDescription,
     },
+    {
+      name: `twitter:image`,
+      content: `${siteMetadata.url}/${metaImg.url}`,
+    },
   ].concat(meta)
 
   return <Helmet htmlAttributes={{ lang }} title={metaTitle} meta={metaTags} />
