@@ -1,11 +1,12 @@
 const GITHUB_TOKEN = process.env.GATSBY_GITHUB_TOKEN
 
 const ORGS = [
-  { login: "globocom", stars: 30 },
-  { login: "tsuru", stars: 30 },
   { login: "clappr", stars: 30 },
-  { login: "thumbor", stars: 30 },
+  { login: "fastlane-queue", stars: 10 },
   { login: "galeb", stars: 10 },
+  { login: "globocom", stars: 30 },
+  { login: "thumbor", stars: 30 },
+  { login: "tsuru", stars: 30 },
 ]
 
 const ORG_LOGINS = ORGS.map(org => org.login)
@@ -104,11 +105,13 @@ const getOrgMembers = async () => {
   return Object.values(members).sort(sortByLogin)
 }
 
+const stripDash = str => str.replace(/\-/g, "")
+
 const getOrgRepos = async () => {
   let searchQuery = ""
   ORGS.forEach(({ login, stars }) => {
     searchQuery += `
-      ${login}: search(
+      ${stripDash(login)}: search(
         first: 50,
         query: "org:${login} stars:>${stars}",
         type: REPOSITORY
