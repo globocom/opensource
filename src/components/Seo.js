@@ -76,11 +76,11 @@ function Seo({ lang, title, description, keywords, meta }) {
     },
     {
       name: `twitter:card`,
-      content: `summary`,
+      content: `summary_large_image`,
     },
     {
-      name: `twitter:creator`,
-      content: siteMetadata.author,
+      name: `twitter:site`,
+      content: `@globocom`,
     },
     {
       name: `twitter:title`,
