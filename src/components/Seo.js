@@ -55,10 +55,6 @@ function Seo({ lang, title, description, keywords, meta }) {
       content: `website`,
     },
     {
-      property: `og:url`,
-      content: siteMetadata.url,
-    },
-    {
       property: `og:title`,
       content: metaTitle,
     },
