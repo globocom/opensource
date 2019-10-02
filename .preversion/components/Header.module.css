@@ -1,0 +1,123 @@
+@value small, xsmall from "../styles/breakpoints.module.css";
+
+.header {
+  height: 120px;
+  position: relative;
+  z-index: 1;
+}
+
+.headerContent {
+  composes: container from "../styles/grid.module.css";
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brandLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brandLogo {
+  margin: 0;
+  height: 20px;
+}
+
+.brandName {
+  margin-left: 8px;
+  margin-bottom: 2px;
+  color: white;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: -0.4px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+  margin: 0;
+}
+
+.menuItem {
+  margin: 0;
+  margin-left: 40px;
+}
+
+.menuItem:first-child {
+  margin-left: 0;
+}
+
+.menuLink {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menuLink,
+.menuLink:active,
+.menuLink:visited {
+  color: rgb(162, 193, 236);
+}
+
+.menuLink:hover {
+  color: rgb(19, 173, 254);
+}
+
+.menuLinkActive,
+.menuLinkActive:active,
+.menuLinkActive:visited {
+  color: rgb(19, 173, 254);
+}
+
+.menuLinkActive:hover {
+  color: rgb(19, 173, 254);
+}
+
+@media small {
+  .header {
+    height: 60px;
+  }
+
+  .menuItem {
+    margin-left: 8px;
+  }
+
+  .menuLink {
+    font-size: 10px;
+  }
+
+  .brandLogo {
+    height: 12px;
+  }
+
+  .brandName {
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-left: 2px;
+  }
+
+  .brandLink {
+    flex-direction: column;
+  }
+}
+
+@media xsmall {
+  .brandName {
+    font-size: 12px;
+  }
+
+  .headerContent {
+    padding: 0 18px;
+  }
+}

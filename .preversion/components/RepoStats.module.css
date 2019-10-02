@@ -1,0 +1,43 @@
+.stats {
+  /* background-size: 14px 17px; */
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-right: 10px;
+  padding-left: 20px;
+}
+
+.stars {
+  composes: stats;
+  background-image: url(../images/repo-star.svg);
+  padding-left: 23px;
+}
+
+.pullRequests {
+  composes: stats;
+  background-image: url(../images/repo-fork.svg);
+}
+
+.commits {
+  composes: stats;
+  background-image: url(../images/repo-commit.svg);
+  padding-left: 28px;
+}
+
+.issues {
+  composes: stats;
+  background-image: url(../images/repo-issue.svg);
+}
+
+.language {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.languageName {
+  margin: 0px 5px;
+}

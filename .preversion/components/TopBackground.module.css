@@ -1,0 +1,89 @@
+@value small from "../styles/breakpoints.module.css";
+
+.topBackground {
+  height: 320px;
+}
+
+.topBackgroundContent {
+  composes: container from "../styles/grid.module.css";
+  height: 100%;
+  position: relative;
+}
+
+.cornerTop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url(../images/landing-bg-corner-top.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top center;
+  width: 480px;
+  height: 238px;
+}
+
+.cornerBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url(../images/landing-bg-corner-bottom.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom center;
+  width: 507px;
+  height: 167px;
+}
+
+.rocket {
+  background-image: url(../images/rocket.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 110px;
+  height: 128px;
+  position: absolute;
+  top: 1%;
+  left: 20%;
+  transform: rotate(270deg);
+}
+
+.moon {
+  background-image: url(../images/moon.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 110px;
+  height: 110px;
+  position: absolute;
+  bottom: 25%;
+  right: 20%;
+  transform: rotate(270deg);
+}
+
+@media small {
+  .rocket {
+    width: 50px;
+    height: 58px;
+    top: 5%;
+    left: 32%;
+  }
+
+  .moon {
+    width: 53px;
+    height: 53px;
+    bottom: 20%;
+    right: 12%;
+  }
+
+  .topBackground {
+    height: 132px;
+  }
+
+  .cornerTop {
+    width: 190px;
+    height: 94px;
+  }
+
+  .cornerBottom {
+    width: 170px;
+    height: 56px;
+  }
+}
