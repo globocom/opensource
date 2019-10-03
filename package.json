@@ -25,7 +25,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "jest"
   },
   "husky": {
     "hooks": {
