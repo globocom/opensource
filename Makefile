@@ -1,3 +1,7 @@
+NPM ?= $(shell which npm)
+YARN ?= $(shell which yarn)
+PKG_MANAGER ?= $(if $(YARN),$(YARN),$(NPM))
+
 .SILENT:
 .DEFAULT_GOAL=help
 
@@ -23,15 +27,15 @@ help:
 
 ## installs project dependencies
 setup:
-	yarn install
+	@${PKG_MANAGER} install
 
 ## starts development server
 start:
-	yarn develop
+	@${PKG_MANAGER} run develop
 
 ## builds static files to production
 build:
-	yarn build
+	@${PKG_MANAGER} run build
 
 ## deploys the app
 deploy: build
