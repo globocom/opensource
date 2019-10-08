@@ -111,7 +111,7 @@ function Index() {
       <Seo />
       <HeroWrapper>
         <Container>
-          <HeroText>
+          <HeroText data-testid="hero-text">
             <h1>Addicted Developers</h1>
             <span>unidos pelo código_</span>
           </HeroText>
