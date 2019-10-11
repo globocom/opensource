@@ -64,13 +64,14 @@ async function updateUser(user) {
 
 function mapUser(userData, progressData) {
   const userName = userData.Name ? userData.Name : userData.GithubUser
-
   const { merged = 0, opened = 0 } = progressData || {}
   const achievements = {
     opened: opened >= 2,
     merged: merged >= 1,
+    firsts: true,
   }
-  const hasCompleted = achievements.opened && achievements.merged
+  const hasCompleted =
+    achievements.opened && achievements.merged && achievements.firsts
 
   const user = {
     name: userName,
