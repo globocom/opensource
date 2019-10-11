@@ -68,7 +68,7 @@ function mapUser(userData, progressData) {
   const achievements = {
     opened: opened >= 2,
     merged: merged >= 1,
-    firsts: true,
+    firsts: false,
   }
   const hasCompleted =
     achievements.opened && achievements.merged && achievements.firsts
