@@ -42,13 +42,18 @@ const ButtonWrapper = styled.button`
   }
 `
 
-function Button({ children, dark }) {
-  return <ButtonWrapper dark={dark}>{children}</ButtonWrapper>
+function Button({ children, dark, onClick }) {
+  return (
+    <ButtonWrapper dark={dark} onClick={onClick}>
+      {children}
+    </ButtonWrapper>
+  )
 }
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   dark: PropTypes.bool,
+  onClick: PropTypes.func,
 }
 
 Button.defaultProps = {
