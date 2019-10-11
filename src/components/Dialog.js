@@ -45,26 +45,28 @@ const Content = styled.div`
 
 export const DialogTitle = styled.div`
   padding: 30px;
-  /* border-bottom: 1px solid #000; */
   font-weight: 700;
   font-size: 1.5rem;
   color: #000;
 `
 
 export const DialogBody = styled.div`
-  padding: 20px 30px 50px;
+  padding: 20px 30px;
   overflow-y: auto;
   color: #000;
 `
 
 export const DialogFooter = styled.div`
-  border-top: 1px solid #f1f1f1;
   padding: 20px 30px;
   text-align: right;
 
   * + * {
     margin-left: 20px;
   }
+`
+
+export const DialogText = styled.p`
+  margin-bottom: 2rem;
 `
 
 function Dialog({ children, open, onClose }) {
