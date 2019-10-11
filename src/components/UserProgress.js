@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 
+import Button from "./Button"
+
 const UserProgressWrapper = styled.div`
   color: #cfd3d4;
   line-height: 1.75rem;
@@ -23,7 +25,6 @@ const Greeting = styled.div`
 `
 
 const Progress = styled.div`
-  padding: 2rem 0;
   text-align: center;
 `
 
@@ -34,7 +35,7 @@ const ProgressBody = styled.div`
 
 const ProgressLine = styled.div`
   flex: 1;
-  border-top: 3px solid white;
+  border-top: 3px solid #cfd3d4;
 
   ${props =>
     !props.completed
@@ -56,23 +57,24 @@ const ProgressItem = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border-width: 3px;
   border-style: solid;
 
   ${props =>
     !props.completed
       ? css`
+          border-width: 3px;
           color: #cfd3d4;
           border-color: #cfd3d4;
         `
       : css`
+          border-width: 5px;
           color: #59b8fd;
           border-color: #59b8fd;
         `}
 `
 
 const ProgressStatus = styled.div`
-  margin-top: 30px;
+  margin: 30px 0;
   font-size: 0.875rem;
 `
 
@@ -104,7 +106,7 @@ function UserProgress({ user }) {
   const { hacktober } = user
   const { progress } = hacktober
   const { achievements } = hacktober.progress
-  console.log(user)
+
   return (
     <UserProgressWrapper>
       <Greeting>
@@ -180,12 +182,25 @@ function UserProgress({ user }) {
           </ProgressItem>
         </ProgressBody>
         <ProgressStatus>
-          <i>
-            <strong>{progress.opened} pull request(s)</strong> enviado(s)
-            {progress.opened > 1 && "s"} e{" "}
-            <strong>{progress.merged} aceito(s)</strong>
-          </i>
+          {!progress.hasCompleted ? (
+            <i>
+              Você tem{" "}
+              <strong>{progress.opened} pull request(s) enviado(s)</strong> e{" "}
+              <strong>{progress.merged} aceito(s)</strong>
+            </i>
+          ) : (
+            <i>
+              <strong>Parabéns!!!</strong> Você concluiu o desafio da
+              Hacktoberfest{" "}
+              <span role="img" aria-label="Challenge complete">
+                🏆
+              </span>
+              . Clique no botão abaixo para informar o endereço de envio e o
+              tamanho da sua camiseta:
+            </i>
+          )}
         </ProgressStatus>
+        {progress.hasCompleted && <Button>Informar dados de entrega</Button>}
       </Progress>
     </UserProgressWrapper>
   )
