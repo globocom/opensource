@@ -101,7 +101,7 @@ function HacktoberCall({ user, isCallOnly }) {
           <ActionButtons>
             {isCallOnly ? (
               <ButtonLink href="/hacktoberfest" dark={true}>
-                Participar
+                Saiba mais
               </ButtonLink>
             ) : user ? (
               <UserProgress user={user} />

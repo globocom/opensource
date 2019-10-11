@@ -105,7 +105,7 @@ const getOrgMembers = async () => {
   return Object.values(members).sort(sortByLogin)
 }
 
-const stripDash = str => str.replace(/\-/g, "")
+const stripDash = str => str.replace(/-/g, "")
 
 const getOrgRepos = async () => {
   let searchQuery = ""
