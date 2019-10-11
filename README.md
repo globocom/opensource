@@ -44,3 +44,7 @@ or by creating a `.env.development` file with your env vars:
 // .env.development
 GATSBY_GITHUB_TOKEN=<your_token_here>
 ```
+
+## License
+
+This project is licensed under the MIT License - read [LICENSE.md](LICENSE) file for details.
