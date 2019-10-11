@@ -3,7 +3,13 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 
 import Button from "./Button"
-import Dialog, { DialogTitle, DialogBody, DialogFooter } from "./Dialog"
+import TextInput from "./TextInput"
+import Dialog, {
+  DialogTitle,
+  DialogBody,
+  DialogFooter,
+  DialogText,
+} from "./Dialog"
 
 const UserProgressWrapper = styled.div`
   color: #cfd3d4;
@@ -127,7 +133,34 @@ function UserProgress({ user }) {
       >
         <DialogTitle id="shipping-data-title">Dados para entrega</DialogTitle>
         <DialogBody>
-          <p id="shipping-data-description">Meu form</p>
+          <DialogText id="shipping-data-description">
+            Informe os dados para entrega da sua camiseta:
+          </DialogText>
+          <form>
+            <TextInput
+              label="Nome"
+              type="text"
+              placeholder="Seu nome completo"
+            />
+            <TextInput
+              label="E-mail"
+              type="email"
+              placeholder="voce@example.com"
+              errorText="Oieee"
+            />
+            <TextInput label="Estado" type="text" placeholder="Ex.: RJ" />
+            <TextInput
+              label="Cidade"
+              type="text"
+              placeholder="Ex.: Rio de Janeiro"
+            />
+            <TextInput
+              label="Endereço"
+              type="text"
+              placeholder="Ex.: Avenida Exemplo N 999 - Bloco 1"
+            />
+            <TextInput label="CEP" type="text" placeholder="00000-000" />
+          </form>
         </DialogBody>
         <DialogFooter>
           <Button onClick={handleClose}>Cancelar</Button>
