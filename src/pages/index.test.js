@@ -64,6 +64,10 @@ describe("IndexPage", () => {
 
     expect(useStaticQuery).toHaveBeenCalledTimes(2)
     expect(github.getRepoStats).toHaveBeenCalledTimes(1)
+
+    // Header is in dark mode
+    expect(getByTestId("header")).toHaveStyle("background-color: #000")
+
     expect(getByTestId("hero-text")).toHaveTextContent(
       "Addicted Developersunidos pelo código_"
     )

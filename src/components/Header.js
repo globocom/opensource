@@ -192,7 +192,7 @@ function Header({ dark }) {
   }, [])
 
   return (
-    <HeaderWrapper dark={dark}>
+    <HeaderWrapper dark={dark} data-testid="header">
       <HeaderContainer>
         <MenuBurguer dark={dark} onClick={handleMenuOpen}>
           <svg width="24" height="24" viewBox="0 0 24 24">
