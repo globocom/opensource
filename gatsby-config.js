@@ -20,14 +20,6 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /logo\-globo\.svg$/,
-        },
-      },
-    },
-    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: "Globo.com - Open Source",
