@@ -16,7 +16,7 @@ const Divider = styled.div`
   margin: 1rem 0 2rem;
 `
 
-function Projects() {
+function ProjectsPage() {
   const data = useStaticQuery(graphql`
     query GetFeaturedProjects {
       allFeaturedProjectsJson {
@@ -99,4 +99,4 @@ function Projects() {
   )
 }
 
-export default Projects
+export default ProjectsPage

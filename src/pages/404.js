@@ -32,7 +32,7 @@ const NotFoundMessage = styled.section`
   }
 `
 
-function PageNotFound() {
+function NotFoundPage() {
   return (
     <Layout>
       <Container>
@@ -45,4 +45,4 @@ function PageNotFound() {
   )
 }
 
-export default PageNotFound
+export default NotFoundPage

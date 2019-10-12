@@ -3,15 +3,15 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import media from "styled-media-query"
 
-import iconExpandLess from "../images/icons/expand-less.svg"
-import iconExpandMore from "../images/icons/expand-more.svg"
+import iconExpandLess from "../../images/icons/expand-less.svg"
+import iconExpandMore from "../../images/icons/expand-more.svg"
 
-import iconStars from "../images/icons/stars.svg"
-import iconCommits from "../images/icons/commits.svg"
-import iconPrs from "../images/icons/prs.svg"
-import iconIssues from "../images/icons/issues.svg"
+import iconStars from "../../images/icons/stars.svg"
+import iconCommits from "../../images/icons/commits.svg"
+import iconPrs from "../../images/icons/prs.svg"
+import iconIssues from "../../images/icons/issues.svg"
 
-import { getRepoStats } from "../services/github"
+import { getRepoStats } from "../../services/github"
 
 const REPOSITORY_COUNT_ICONS = {
   stars: iconStars,

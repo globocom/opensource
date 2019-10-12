@@ -2,7 +2,7 @@ import React from "react"
 import * as Gatsby from "gatsby"
 import { render } from "@testing-library/react"
 import * as github from "../services/github"
-import Index from "./index"
+import IndexPage from "./index"
 
 jest.mock("../services/github")
 
@@ -60,7 +60,7 @@ describe("IndexPage", () => {
         },
       }))
 
-    const { getByTestId } = render(<Index />)
+    const { getByTestId } = render(<IndexPage />)
 
     expect(useStaticQuery).toHaveBeenCalledTimes(2)
     expect(github.getRepoStats).toHaveBeenCalledTimes(1)

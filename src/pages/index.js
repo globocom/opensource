@@ -79,7 +79,7 @@ const ProjectsContainer = styled(Container)`
   `}
 `
 
-function Index() {
+function IndexPage() {
   const data = useStaticQuery(graphql`
     query GetFeaturedProjectsHome {
       allFeaturedProjectsJson {
@@ -133,4 +133,4 @@ function Index() {
   )
 }
 
-export default Index
+export default IndexPage

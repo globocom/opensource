@@ -84,7 +84,7 @@ const ProjectsText = styled.div`
   }
 `
 
-function Hacktoberfest() {
+function HacktoberFestPage() {
   const [user, setUser] = useState()
 
   useEffect(() => {
@@ -157,4 +157,4 @@ function Hacktoberfest() {
   )
 }
 
-export default Hacktoberfest
+export default HacktoberFestPage

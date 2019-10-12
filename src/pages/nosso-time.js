@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout, { Container } from "../components/Layout"
 
-function Team() {
+function TeamPage() {
   return (
     <Layout>
       <Container>Nosso Time</Container>
@@ -10,4 +10,4 @@ function Team() {
   )
 }
 
-export default Team
+export default TeamPage
