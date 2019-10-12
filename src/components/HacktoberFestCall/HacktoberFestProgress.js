@@ -2,20 +2,20 @@ import React, { Fragment, useState } from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 
-import Button from "./Button"
-import TextInput from "./TextInput"
+import Button from "../Button"
+import TextInput from "../TextInput"
 import Dialog, {
   DialogTitle,
   DialogBody,
   DialogFooter,
   DialogText,
-} from "./Dialog"
+} from "../Dialog"
 
-import PullRequestIcon from "../icons/PullRequest"
-import MergedIcon from "../icons/Merged"
-import TShirtIcon from "../icons/TShirt"
+import PullRequestIcon from "../../icons/PullRequest"
+import MergedIcon from "../../icons/Merged"
+import TShirtIcon from "../../icons/TShirt"
 
-const UserProgressWrapper = styled.div`
+const HacktoberFestProgressWrapper = styled.div`
   color: #cfd3d4;
   line-height: 1.75rem;
   text-align: left;
@@ -123,7 +123,7 @@ const AchievementPRs = styled(Achievement)`
   }
 `
 
-function UserProgress({ user }) {
+function HacktoberFestProgress({ user }) {
   const { hacktoberfest } = user
   const { progress } = hacktoberfest
   const { achievements } = hacktoberfest.progress
@@ -183,7 +183,7 @@ function UserProgress({ user }) {
           <Button>Salvar</Button>
         </DialogFooter>
       </Dialog>
-      <UserProgressWrapper>
+      <HacktoberFestProgressWrapper>
         <Greeting>
           Olá <strong>@{user.githubUser}</strong>!<br />
           Você está participando da{" "}
@@ -238,13 +238,13 @@ function UserProgress({ user }) {
             )}
           </ProgressStatus>
         </Progress>
-      </UserProgressWrapper>
+      </HacktoberFestProgressWrapper>
     </Fragment>
   )
 }
 
-UserProgress.propTypes = {
+HacktoberFestProgress.propTypes = {
   user: PropTypes.object.isRequired,
 }
 
-export default UserProgress
+export default HacktoberFestProgress

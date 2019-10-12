@@ -4,7 +4,7 @@ import media from "styled-media-query"
 
 import Seo from "../components/Seo"
 import Layout from "../components/Layout"
-import HacktoberCall from "../components/HacktoberCall"
+import HacktoberFestCall from "../components/HacktoberFestCall"
 import ButtonLink from "../components/ButtonLink"
 import { Container } from "../styles/grid"
 
@@ -107,7 +107,7 @@ function Hacktoberfest() {
         title="Hacktoberfest"
         description="De 1 a 31 de outubro, contribua com qualquer projeto da Globo.com no github e ganhe uma camiseta exclusiva."
       />
-      <HacktoberCall user={user} />
+      <HacktoberFestCall user={user} />
       <Container>
         <Rules>
           <Rule>

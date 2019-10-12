@@ -3,13 +3,13 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import media from "styled-media-query"
 
-import ButtonLink from "./ButtonLink"
-import UserProgress from "./UserProgress"
-import { Container } from "../styles/grid"
+import ButtonLink from "../ButtonLink"
+import HacktoberFestProgress from "./HacktoberFestProgress"
+import { Container } from "../../styles/grid"
 
-import hacktoberFestImg from "../images/hacktoberfest-lg.png"
+import hacktoberFestImg from "../../images/hacktoberfest-lg.png"
 
-const HacktoberCallWrapper = styled.section`
+const HacktoberFestCallWrapper = styled.section`
   background-color: #000;
   color: #fff;
   padding: 2rem 0;
@@ -87,9 +87,9 @@ const ActionButtons = styled.div`
   `}
 `
 
-function HacktoberCall({ user, isCallOnly }) {
+function HacktoberFestCall({ user, isCallOnly }) {
   return (
-    <HacktoberCallWrapper>
+    <HacktoberFestCallWrapper>
       <CallContainer>
         <div>
           <Title>Hacktoberfest</Title>
@@ -104,7 +104,7 @@ function HacktoberCall({ user, isCallOnly }) {
                 Saiba mais
               </ButtonLink>
             ) : user ? (
-              <UserProgress user={user} />
+              <HacktoberFestProgress user={user} />
             ) : (
               <ButtonLink href="/login" dark={true}>
                 Participar
@@ -114,18 +114,18 @@ function HacktoberCall({ user, isCallOnly }) {
         </div>
         <img src={hacktoberFestImg} alt="Hacktoberfest Art" />
       </CallContainer>
-    </HacktoberCallWrapper>
+    </HacktoberFestCallWrapper>
   )
 }
 
-HacktoberCall.propTypes = {
+HacktoberFestCall.propTypes = {
   user: PropTypes.object,
   isCallOnly: PropTypes.bool,
   onSignIn: PropTypes.func,
 }
 
-HacktoberCall.defaultProps = {
+HacktoberFestCall.defaultProps = {
   isCallOnly: false,
 }
 
-export default HacktoberCall
+export default HacktoberFestCall

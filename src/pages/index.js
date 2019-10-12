@@ -7,7 +7,7 @@ import Seo from "../components/Seo"
 import Layout from "../components/Layout"
 import ProjectList from "../components/ProjectList"
 import Project from "../components/Project"
-import HacktoberCall from "../components/HacktoberCall"
+import HacktoberFestCall from "../components/HacktoberFestCall"
 import { Container } from "../styles/grid"
 
 import bgImageTopSm from "../images/astrunaut-front-sm.jpg"
@@ -129,7 +129,7 @@ function Index() {
           ))}
         </ProjectList>
       </ProjectsContainer>
-      <HacktoberCall isCallOnly={true} />
+      <HacktoberFestCall isCallOnly={true} />
     </Layout>
   )
 }
