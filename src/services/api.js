@@ -1,6 +1,4 @@
-import { getUserProgress } from "./github"
-
-async function fetchUser() {
+async function getUser() {
   let resp
   try {
     resp = await fetch("/user", {
@@ -15,30 +13,16 @@ async function fetchUser() {
     return null
   }
 
-  let data
+  let user
   try {
-    data = await resp.json()
+    const data = await resp.json()
+    user = data.result
   } catch (error) {
     console.error(`[API_ERROR] Invalid response format`, error)
     return null
   }
 
-  return data.result
-}
-
-async function getUser() {
-  let progress
-  const user = await fetchUser()
-
-  if (!user) return null
-
-  try {
-    progress = await getUserProgress(user.GithubUser)
-  } catch (error) {
-    console.error(`[API_ERROR] Failed to get user progress`, error)
-  }
-
-  return mapUser(user, progress)
+  return user
 }
 
 async function updateUser(user) {
@@ -60,41 +44,6 @@ async function updateUser(user) {
 
   const data = await resp.json()
   return data.result
-}
-
-function mapUser(userData, progressData) {
-  const userName = userData.Name ? userData.Name : userData.GithubUser
-  const { merged = 0, opened = 0 } = progressData || {}
-  const achievements = {
-    opened: opened >= 2,
-    merged: merged >= 1,
-    firsts: false,
-  }
-  const hasCompleted =
-    achievements.opened && achievements.merged && achievements.firsts
-
-  const user = {
-    name: userName,
-    login: userData.GithubUser,
-    email: userData.Email,
-    hacktober: {
-      progress: {
-        opened,
-        merged,
-        achievements,
-        hasCompleted,
-      },
-      shirtsize: userData.shirtsize,
-      sendAddress: {
-        state: userData.State,
-        city: userData.City,
-        address: userData.Address,
-        postalcode: userData.PostalCode,
-      },
-    },
-  }
-
-  return user
 }
 
 export { getUser, updateUser }

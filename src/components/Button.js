@@ -10,7 +10,6 @@ const ButtonWrapper = styled.button`
   cursor: pointer;
   border-radius: 36px;
   border: 2px solid #000;
-  transition: all 0.3s;
   padding: 1rem 2.3rem;
   font-weight: 600;
   white-space: nowrap;
@@ -19,6 +18,7 @@ const ButtonWrapper = styled.button`
   -webkit-tap-highlight-color: transparent;
   font-size: inherit;
   font-family: inherit;
+  transition: all 0.5s ease 0s;
 
   ${props =>
     props.dark

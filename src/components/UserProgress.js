@@ -19,16 +19,14 @@ const UserProgressWrapper = styled.div`
   strong {
     font-weight: 700;
   }
-
-  i {
-    font-family: Hack, monospace;
-    display: block;
-    margin-top: 1rem;
-  }
 `
 
 const Greeting = styled.div`
   margin-bottom: 54px;
+
+  strong {
+    color: #59b8fd;
+  }
 `
 
 const Progress = styled.div`
@@ -82,7 +80,19 @@ const ProgressItem = styled.div`
 
 const ProgressStatus = styled.div`
   margin: 30px 0;
+`
+
+const ProgressStatusText = styled.div`
+  font-family: Hack, monospace;
   font-size: 0.875rem;
+
+  strong {
+    color: #59b8fd;
+  }
+`
+
+const ProgressStatusActions = styled.div`
+  margin-top: 30px;
 `
 
 const Rule = styled.div`
@@ -110,9 +120,11 @@ const RuleOne = styled(Rule)`
 `
 
 function UserProgress({ user }) {
-  const { hacktober } = user
-  const { progress } = hacktober
-  const { achievements } = hacktober.progress
+  const { hacktoberfest } = user
+  const { progress } = hacktoberfest
+  const { achievements } = hacktoberfest.progress
+  const completed =
+    achievements.opened && achievements.merged && achievements.firsts
 
   const [open, setOpen] = useState(false)
 
@@ -169,8 +181,10 @@ function UserProgress({ user }) {
       </Dialog>
       <UserProgressWrapper>
         <Greeting>
-          Olá <strong>{user.name}</strong>!<br />
-          Você está participando do evento deste ano. Acompanhe seu progresso:
+          Olá <strong>@{user.githubUser}</strong>!<br />
+          Você está participando da{" "}
+          <strong>Hacktoberfest {hacktoberfest.edition}</strong>. Acompanhe seu
+          progresso:
         </Greeting>
         <Progress>
           <ProgressBody>
@@ -241,29 +255,31 @@ function UserProgress({ user }) {
             </ProgressItem>
           </ProgressBody>
           <ProgressStatus>
-            {!progress.hasCompleted ? (
-              <i>
+            {!completed ? (
+              <ProgressStatusText>
                 Você tem{" "}
                 <strong>{progress.opened} pull request(s) enviado(s)</strong> e{" "}
                 <strong>{progress.merged} aceito(s)</strong>
-              </i>
+              </ProgressStatusText>
             ) : (
-              <i>
-                <strong>Parabéns!!!</strong> Você concluiu o desafio da
+              <ProgressStatusText>
+                <strong>Parabéns!</strong> Você concluiu o desafio da
                 Hacktoberfest{" "}
                 <span role="img" aria-label="Challenge complete">
-                  🏆
+                  💪🏆
                 </span>
                 . Clique no botão abaixo para informar o endereço de envio e o
                 tamanho da sua camiseta:
-              </i>
+              </ProgressStatusText>
+            )}
+            {completed && (
+              <ProgressStatusActions>
+                <Button dark={true} onClick={handleOpen}>
+                  Informar dados para entrega
+                </Button>
+              </ProgressStatusActions>
             )}
           </ProgressStatus>
-          {progress.hasCompleted && (
-            <Button dark={true} onClick={handleOpen}>
-              Informar dados para entrega
-            </Button>
-          )}
         </Progress>
       </UserProgressWrapper>
     </Fragment>
