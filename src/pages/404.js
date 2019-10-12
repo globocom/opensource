@@ -2,8 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import media from "styled-media-query"
 
-import Layout from "../components/Layout"
-import { Container } from "../styles/grid"
+import Layout, { Container } from "../components/Layout"
 
 const NotFoundMessage = styled.section`
   margin-top: 6rem;

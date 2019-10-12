@@ -3,10 +3,9 @@ import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Seo from "../components/Seo"
-import Layout from "../components/Layout"
+import Layout, { Container } from "../components/Layout"
 import ProjectList from "../components/ProjectList"
 import Project from "../components/Project"
-import { Container } from "../styles/grid"
 
 import { getOrgRepos } from "../services/github"
 

@@ -1,7 +1,6 @@
 import React from "react"
 
-import Layout from "../components/Layout"
-import { Container } from "../styles/grid"
+import Layout, { Container } from "../components/Layout"
 
 function Team() {
   return (

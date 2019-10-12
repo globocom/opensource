@@ -4,7 +4,7 @@ import styled, { css } from "styled-components"
 import media from "styled-media-query"
 import { Link } from "gatsby"
 
-import { Container } from "../styles/grid"
+import Container from "./Container"
 
 const HeaderWrapper = styled.header`
   height: 3.75rem;

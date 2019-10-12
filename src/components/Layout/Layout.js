@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import media from "styled-media-query"
 
-import GlobalStyle from "../styles/global"
+import GlobalStyle from "./GlobalStyle"
 import Header from "./Header"
 import Footer from "./Footer"
 

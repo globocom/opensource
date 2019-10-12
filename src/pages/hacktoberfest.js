@@ -3,10 +3,9 @@ import styled from "styled-components"
 import media from "styled-media-query"
 
 import Seo from "../components/Seo"
-import Layout from "../components/Layout"
+import Layout, { Container } from "../components/Layout"
 import HacktoberFestCall from "../components/HacktoberFestCall"
 import ButtonLink from "../components/ButtonLink"
-import { Container } from "../styles/grid"
 
 import PullRequestIcon from "../icons/PullRequest"
 import MergedIcon from "../icons/Merged"

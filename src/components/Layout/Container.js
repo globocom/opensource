@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import media from "styled-media-query"
 
-export const Container = styled.div`
+const Container = styled.div`
   padding: 0 1.5rem;
 
   ${media.greaterThan("large")`
@@ -10,3 +10,5 @@ export const Container = styled.div`
     max-width: 75rem;
   `}
 `
+
+export default Container

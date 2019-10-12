@@ -4,11 +4,10 @@ import media from "styled-media-query"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Seo from "../components/Seo"
-import Layout from "../components/Layout"
+import Layout, { Container } from "../components/Layout"
 import ProjectList from "../components/ProjectList"
 import Project from "../components/Project"
 import HacktoberFestCall from "../components/HacktoberFestCall"
-import { Container } from "../styles/grid"
 
 import bgImageTopSm from "../images/astrunaut-front-sm.jpg"
 import bgImageTopLg from "../images/astrunaut-front-lg.jpg"

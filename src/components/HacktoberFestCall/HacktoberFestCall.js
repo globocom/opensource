@@ -5,7 +5,7 @@ import media from "styled-media-query"
 
 import ButtonLink from "../ButtonLink"
 import HacktoberFestProgress from "./HacktoberFestProgress"
-import { Container } from "../../styles/grid"
+import { Container } from "../Layout"
 
 import hacktoberFestImg from "../../images/hacktoberfest-lg.png"
 

@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import media from "styled-media-query"
 
-import { Container } from "../styles/grid"
+import Container from "./Container"
 
 const FooterWrapper = styled.footer`
   height: 7rem;
