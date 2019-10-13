@@ -6,6 +6,7 @@ import Seo from "../components/Seo"
 import Layout, { Container } from "../components/Layout"
 import ProjectList from "../components/ProjectList"
 import Project from "../components/Project"
+import Loading from "../components/Loading"
 
 import { getOrgRepos } from "../services/github"
 
@@ -14,6 +15,13 @@ const Divider = styled.div`
   width: 100%;
   background-color: #ddd;
   margin: 1rem 0 2rem;
+`
+
+const ProjectsLoading = styled.div`
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  height: 400px;
 `
 
 function ProjectsPage() {
@@ -45,9 +53,12 @@ function ProjectsPage() {
   )
 
   const [projects, setProjects] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     async function getProject() {
+      setIsLoading(true)
+
       const repositories = await getOrgRepos()
       setProjects(
         repositories.map(repo => {
@@ -65,7 +76,10 @@ function ProjectsPage() {
           }
         })
       )
+
+      setIsLoading(false)
     }
+
     getProject()
   }, [])
 
@@ -89,11 +103,17 @@ function ProjectsPage() {
       </Container>
       <Divider />
       <Container>
-        <ProjectList>
-          {projects.map((project, i) => (
-            <Project key={project.id} isFirst={i === 0} {...project} />
-          ))}
-        </ProjectList>
+        {isLoading ? (
+          <ProjectsLoading>
+            <Loading>carregando projetos</Loading>
+          </ProjectsLoading>
+        ) : (
+          <ProjectList>
+            {projects.map((project, i) => (
+              <Project key={project.id} isFirst={i === 0} {...project} />
+            ))}
+          </ProjectList>
+        )}
       </Container>
     </Layout>
   )

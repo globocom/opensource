@@ -162,7 +162,6 @@ function HacktoberFestProgress({ user }) {
               label="E-mail"
               type="email"
               placeholder="voce@example.com"
-              errorText="Oieee"
             />
             <TextInput label="Estado" type="text" placeholder="Ex.: RJ" />
             <TextInput

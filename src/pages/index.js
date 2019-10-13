@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import media from "styled-media-query"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -11,6 +11,14 @@ import HacktoberFestCall from "../components/HacktoberFestCall"
 
 import bgImageTopSm from "../images/astrunaut-front-sm.jpg"
 import bgImageTopLg from "../images/astrunaut-front-lg.jpg"
+
+const blink = keyframes`
+  0% {opacity: 0;}
+  25% {opacity: .25;}
+  50% {opacity: .5;}
+  75% {opacity: .75;}
+  100% {opacity: 1;}
+`
 
 const HeroWrapper = styled.div`
   color: #fff;
@@ -57,6 +65,10 @@ const HeroWrapper = styled.div`
     ${media.greaterThan("medium")`
       font-size: 1.75rem;
     `}
+  }
+
+  i {
+    animation: ${blink} 1s linear infinite;
   }
 `
 
@@ -112,7 +124,9 @@ function IndexPage() {
         <Container>
           <HeroText data-testid="hero-text">
             <h1>Addicted Developers</h1>
-            <span>unidos pelo código_</span>
+            <span>
+              unidos pelo código<i>_</i>
+            </span>
           </HeroText>
         </Container>
       </HeroWrapper>
