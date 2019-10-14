@@ -1,28 +1,28 @@
 async function getUser() {
-  // let resp
-  // try {
-  //   resp = await fetch("/user", {
-  //     credentials: "include",
-  //   })
-  // } catch (error) {
-  //   console.error(`[API_ERROR] Failed to fetch user`, error)
-  //   return null
-  // }
+  let resp
+  try {
+    resp = await fetch("/user", {
+      credentials: "include",
+    })
+  } catch (error) {
+    console.error(`[API_ERROR] Failed to fetch user`, error)
+    return null
+  }
 
-  // if (resp.status !== 200) {
-  //   return null
-  // }
+  if (resp.status !== 200) {
+    return null
+  }
 
-  // let user
-  // try {
-  //   const data = await resp.json()
-  //   user = data.result
-  // } catch (error) {
-  //   console.error(`[API_ERROR] Invalid response format`, error)
-  //   return null
-  // }
+  let user
+  try {
+    const data = await resp.json()
+    user = data.result
+  } catch (error) {
+    console.error(`[API_ERROR] Invalid response format`, error)
+    return null
+  }
 
-  return null
+  return user
 }
 
 async function updateUser(user) {
