@@ -172,8 +172,8 @@ function Hacktoberfest() {
               </svg>
             </RuleIcon>
             <RuleText>
-              Os <strong>200 primeiros inscritos</strong> que conseguirem
-              <br /> os 2 pull requests e ao menos um ACEITO
+              Os <strong>200 primeiros inscritos</strong>,
+              <br /> que completarem os requisitos mínimos,
               <br /> ganharão uma camiseta exclusiva a ser
               <br /> entregue dentro do território brasileiro.
             </RuleText>
