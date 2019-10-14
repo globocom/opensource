@@ -22,32 +22,7 @@ async function getUser() {
   //   return null
   // }
 
-  const user = {
-    id: "f2e49b66-f584-4189-ad66-f2f73989a707",
-    name: "Artur Felipe Sousa",
-    email: "arturfelipe.sousa@gmail.com",
-    avatarURL: "https://avatars0.githubusercontent.com/u/1333599?v=4",
-    githubUser: "arturfsousa",
-    githubID: "1333599",
-    // edition: 2019,
-    // totalMergeRequests: 1,
-    // totalMergeRequestsMerged: 1,
-    hacktoberfest: {
-      edition: 2019,
-      progress: {
-        opened: 1,
-        merged: 1,
-        achievements: {
-          opened: true,
-          merged: true,
-          firsts: false,
-          completed: false,
-        },
-      },
-    },
-  }
-
-  return user
+  return null
 }
 
 async function updateUser(user) {
