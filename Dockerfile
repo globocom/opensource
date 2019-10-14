@@ -12,9 +12,10 @@ RUN apk update && \
     apk add python && \
     rm -rf /var/cache/apk/*
 
-COPY package.json yarn.lock .env.development gatsby-browser.js gatsby-config.js gatsby-node.js gatsby-ssr.js /app/
+COPY package.json yarn.lock .env.development gatsby-*.js /app/
 COPY static /app/static
 COPY src /app/src
+COPY data /app/data
 
 RUN yarn install
 
