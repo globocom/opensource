@@ -4,7 +4,11 @@ RUN mkdir /app
 WORKDIR /app
 
 RUN apk update && \
-    apk add --update --repository http://dl-3.alpinelinux.org/alpine/edge/testing vips-tools vips-dev fftw-dev gcc g++ make libc6-compat util-linux && \
+    apk add --update fftw-dev gcc g++ make libc6-compat util-linux && \
+    apk add \
+    --no-cache \
+    --repository https://alpine.global.ssl.fastly.net/alpine/edge/community \
+    vips-dev vips-tools && \
     apk add python && \
     rm -rf /var/cache/apk/*
 
