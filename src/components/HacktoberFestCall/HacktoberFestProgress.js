@@ -15,6 +15,9 @@ import PullRequestIcon from "../../icons/PullRequest"
 import MergedIcon from "../../icons/Merged"
 import TShirtIcon from "../../icons/TShirt"
 
+import * as Yup from "yup"
+import { withFormik } from "formik"
+
 const HacktoberFestProgressWrapper = styled.div`
   color: #cfd3d4;
   line-height: 1.75rem;
@@ -123,7 +126,14 @@ const AchievementPRs = styled(Achievement)`
   }
 `
 
-function HacktoberFestProgress({ user }) {
+function HacktoberFestProgress({
+  user,
+  values,
+  touched,
+  errors,
+  setFieldValue,
+  handleSubmit,
+}) {
   const { hacktoberfest } = user
   const { progress } = hacktoberfest
   const { achievements } = hacktoberfest.progress
@@ -157,29 +167,48 @@ function HacktoberFestProgress({ user }) {
               label="Nome"
               type="text"
               placeholder="Seu nome completo"
+              value={values.name}
+              onChange={text => setFieldValue("name", text)}
+              errorText={touched.name ? errors.name : ""}
             />
             <TextInput
               label="E-mail"
               type="email"
               placeholder="voce@example.com"
+              value={values.email}
+              onChange={text => setFieldValue("email", text)}
+              errorText={touched.email ? errors.email : ""}
             />
             <TextInput label="Estado" type="text" placeholder="Ex.: RJ" />
             <TextInput
               label="Cidade"
               type="text"
               placeholder="Ex.: Rio de Janeiro"
+              value={values.city}
+              onChange={text => setFieldValue("city", text)}
+              errorText={touched.city ? errors.city : ""}
             />
             <TextInput
               label="Endereço"
               type="text"
               placeholder="Ex.: Avenida Exemplo N 999 - Bloco 1"
+              value={values.address}
+              onChange={text => setFieldValue("address", text)}
+              errorText={touched.address ? errors.address : ""}
             />
-            <TextInput label="CEP" type="text" placeholder="00000-000" />
+            <TextInput
+              label="CEP"
+              type="text"
+              placeholder="00000-000"
+              value={values.postcode}
+              onChange={text => setFieldValue("postcode", text)}
+              errorText={touched.postcode ? errors.postcode : ""}
+            />
           </form>
         </DialogBody>
         <DialogFooter>
           <Button onClick={handleClose}>Cancelar</Button>
-          <Button>Salvar</Button>
+          <Button onClick={handleSubmit}>Salvar</Button>
         </DialogFooter>
       </Dialog>
       <HacktoberFestProgressWrapper>
@@ -246,4 +275,31 @@ HacktoberFestProgress.propTypes = {
   user: PropTypes.object.isRequired,
 }
 
-export default HacktoberFestProgress
+export default withFormik({
+  mapPropsToValues: () => ({
+    name: "",
+    email: "",
+    city: "",
+    address: "",
+    postcode: "",
+  }),
+  validationSchema: Yup.object().shape({
+    name: Yup.string().required("Preenchimento obrigatório."),
+    email: Yup.string()
+      .email("Email Inválido.")
+      .required("Preenchimento obrigatório."),
+    city: Yup.string().required("Preenchimento obrigatório."),
+    address: Yup.string().required("Preenchimento obrigatório."),
+    postcode: Yup.string()
+      .required("Preenchimento obrigatório.")
+      .min(8, "Cep deve possuir 8 dígitos"),
+  }),
+  handleSubmit: async (values, { setSubmitting }) => {
+    try {
+      // Comunicação com API
+    } catch (e) {
+      throw new Error(e)
+    }
+    setSubmitting(false)
+  },
+})(HacktoberFestProgress)
