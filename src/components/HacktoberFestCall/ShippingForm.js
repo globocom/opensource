@@ -14,7 +14,7 @@ import Dialog, {
 
 import { updateUser } from "../../services/api"
 
-function HacktoberFestUserForm({
+function ShippingForm({
   open,
   handleClose,
   values,
@@ -153,5 +153,5 @@ export default withFormik({
     setSubmitting(false)
   },
 
-  displayName: "HacktoberFestUserForm",
-})(HacktoberFestUserForm)
+  displayName: "ShippingForm",
+})(ShippingForm)

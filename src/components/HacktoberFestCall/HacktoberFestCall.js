@@ -4,7 +4,7 @@ import styled from "styled-components"
 import media from "styled-media-query"
 
 import ButtonLink from "../ButtonLink"
-import HacktoberFestProgress from "./HacktoberFestProgress"
+import UserProgress from "./UserProgress"
 import { Container } from "../Layout"
 
 import hacktoberFestImg from "../../images/hacktoberfest-lg.png"
@@ -104,7 +104,7 @@ function HacktoberFestCall({ user, isCallOnly }) {
                 Saiba mais
               </ButtonLink>
             ) : user ? (
-              <HacktoberFestProgress user={user} />
+              <UserProgress user={user} />
             ) : (
               <ButtonLink href="/login" dark={true}>
                 Participar

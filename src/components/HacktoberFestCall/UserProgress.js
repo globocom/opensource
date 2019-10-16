@@ -8,9 +8,9 @@ import PullRequestIcon from "../../icons/PullRequest"
 import MergedIcon from "../../icons/Merged"
 import TShirtIcon from "../../icons/TShirt"
 
-import HacktoberFestUserForm from "./HacktoberFestUserForm"
+import ShippingForm from "./ShippingForm"
 
-const HacktoberFestProgressWrapper = styled.div`
+const UserProgressWrapper = styled.div`
   color: #cfd3d4;
   line-height: 1.75rem;
   text-align: left;
@@ -118,7 +118,7 @@ const AchievementPRs = styled(Achievement)`
   }
 `
 
-function HacktoberFestProgress({ user }) {
+function UserProgress({ user }) {
   const { hacktoberfest } = user
   const { progress } = hacktoberfest
   const { achievements } = hacktoberfest.progress
@@ -137,12 +137,8 @@ function HacktoberFestProgress({ user }) {
 
   return (
     <Fragment>
-      <HacktoberFestUserForm
-        user={user}
-        open={open}
-        handleClose={handleClose}
-      />
-      <HacktoberFestProgressWrapper>
+      <ShippingForm user={user} open={open} handleClose={handleClose} />
+      <UserProgressWrapper>
         <Greeting>
           Olá <strong>@{user.githubUser}</strong>!<br />
           Você está participando da{" "}
@@ -197,13 +193,13 @@ function HacktoberFestProgress({ user }) {
             )}
           </ProgressStatus>
         </Progress>
-      </HacktoberFestProgressWrapper>
+      </UserProgressWrapper>
     </Fragment>
   )
 }
 
-HacktoberFestProgress.propTypes = {
+UserProgress.propTypes = {
   user: PropTypes.object.isRequired,
 }
 
-export default HacktoberFestProgress
+export default UserProgress
