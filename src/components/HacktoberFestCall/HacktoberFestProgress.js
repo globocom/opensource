@@ -3,20 +3,12 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 
 import Button from "../Button"
-import TextInput from "../TextInput"
-import Dialog, {
-  DialogTitle,
-  DialogBody,
-  DialogFooter,
-  DialogText,
-} from "../Dialog"
 
 import PullRequestIcon from "../../icons/PullRequest"
 import MergedIcon from "../../icons/Merged"
 import TShirtIcon from "../../icons/TShirt"
 
-import * as Yup from "yup"
-import { withFormik } from "formik"
+import HacktoberFestUserForm from "./HacktoberFestUserForm"
 
 const HacktoberFestProgressWrapper = styled.div`
   color: #cfd3d4;
@@ -126,14 +118,7 @@ const AchievementPRs = styled(Achievement)`
   }
 `
 
-function HacktoberFestProgress({
-  user,
-  values,
-  touched,
-  errors,
-  setFieldValue,
-  handleSubmit,
-}) {
+function HacktoberFestProgress({ user }) {
   const { hacktoberfest } = user
   const { progress } = hacktoberfest
   const { achievements } = hacktoberfest.progress
@@ -152,65 +137,11 @@ function HacktoberFestProgress({
 
   return (
     <Fragment>
-      <Dialog
+      <HacktoberFestUserForm
+        user={user}
         open={open}
-        aria-labelledby="shipping-data-title"
-        aria-describedby="shipping-data-description"
-      >
-        <DialogTitle id="shipping-data-title">Dados para entrega</DialogTitle>
-        <DialogBody>
-          <DialogText id="shipping-data-description">
-            Informe os dados para entrega da sua camiseta:
-          </DialogText>
-          <form>
-            <TextInput
-              label="Nome"
-              type="text"
-              placeholder="Seu nome completo"
-              value={values.name}
-              onChange={text => setFieldValue("name", text)}
-              errorText={touched.name ? errors.name : ""}
-            />
-            <TextInput
-              label="E-mail"
-              type="email"
-              placeholder="voce@example.com"
-              value={values.email}
-              onChange={text => setFieldValue("email", text)}
-              errorText={touched.email ? errors.email : ""}
-            />
-            <TextInput label="Estado" type="text" placeholder="Ex.: RJ" />
-            <TextInput
-              label="Cidade"
-              type="text"
-              placeholder="Ex.: Rio de Janeiro"
-              value={values.city}
-              onChange={text => setFieldValue("city", text)}
-              errorText={touched.city ? errors.city : ""}
-            />
-            <TextInput
-              label="Endereço"
-              type="text"
-              placeholder="Ex.: Avenida Exemplo N 999 - Bloco 1"
-              value={values.address}
-              onChange={text => setFieldValue("address", text)}
-              errorText={touched.address ? errors.address : ""}
-            />
-            <TextInput
-              label="CEP"
-              type="text"
-              placeholder="00000-000"
-              value={values.postcode}
-              onChange={text => setFieldValue("postcode", text)}
-              errorText={touched.postcode ? errors.postcode : ""}
-            />
-          </form>
-        </DialogBody>
-        <DialogFooter>
-          <Button onClick={handleClose}>Cancelar</Button>
-          <Button onClick={handleSubmit}>Salvar</Button>
-        </DialogFooter>
-      </Dialog>
+        handleClose={handleClose}
+      />
       <HacktoberFestProgressWrapper>
         <Greeting>
           Olá <strong>@{user.githubUser}</strong>!<br />
@@ -275,31 +206,4 @@ HacktoberFestProgress.propTypes = {
   user: PropTypes.object.isRequired,
 }
 
-export default withFormik({
-  mapPropsToValues: () => ({
-    name: "",
-    email: "",
-    city: "",
-    address: "",
-    postcode: "",
-  }),
-  validationSchema: Yup.object().shape({
-    name: Yup.string().required("Preenchimento obrigatório."),
-    email: Yup.string()
-      .email("Email Inválido.")
-      .required("Preenchimento obrigatório."),
-    city: Yup.string().required("Preenchimento obrigatório."),
-    address: Yup.string().required("Preenchimento obrigatório."),
-    postcode: Yup.string()
-      .required("Preenchimento obrigatório.")
-      .min(8, "Cep deve possuir 8 dígitos"),
-  }),
-  handleSubmit: async (values, { setSubmitting }) => {
-    try {
-      // Comunicação com API
-    } catch (e) {
-      throw new Error(e)
-    }
-    setSubmitting(false)
-  },
-})(HacktoberFestProgress)
+export default HacktoberFestProgress
