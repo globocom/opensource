@@ -34,6 +34,7 @@
     }
   },
   "dependencies": {
+    "formik": "^1.5.8",
     "gatsby": "^2.15.21",
     "gatsby-plugin-google-analytics": "^2.1.17",
     "gatsby-plugin-manifest": "^2.2.18",
@@ -47,7 +48,8 @@
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "styled-components": "^4.4.0",
-    "styled-media-query": "^2.1.2"
+    "styled-media-query": "^2.1.2",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.1.1",
