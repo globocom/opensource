@@ -3,14 +3,16 @@ import React from "react"
 import * as Yup from "yup"
 import { withFormik } from "formik"
 
-import Button from "../Button"
-import TextInput from "../TextInput"
 import Dialog, {
   DialogTitle,
   DialogBody,
   DialogFooter,
   DialogText,
 } from "../Dialog"
+
+import Button from "../Button"
+import TextInput from "../TextInput"
+import SelectInput from "../SelectInput"
 
 import { updateUser } from "../../services/api"
 
@@ -36,6 +38,25 @@ function ShippingForm({
           Informe os dados para entrega da sua camiseta:
         </DialogText>
         <form onSubmit={handleSubmit}>
+          <SelectInput
+            label="Tamanho da camiseta"
+            name="shirtsize"
+            value={values.shirtsize}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errorText={touched.shirtsize ? errors.shirtsize : ""}
+          >
+            <option value="">Selecione um tamanho</option>
+            <option value="BLP">Baby look - P</option>
+            <option value="BLM">Baby look - M</option>
+            <option value="BLG">Baby look - G</option>
+            <option value="BLGG">Baby look - GG</option>
+            <option value="TSP">T-Shirt - P</option>
+            <option value="TSM">T-Shirt - M</option>
+            <option value="TSG">T-Shirt - G</option>
+            <option value="TSGG">T-Shirt - GG</option>
+            <option value="TSGGG">T-Shirt - GG</option>
+          </SelectInput>
           <TextInput
             label="Nome"
             type="text"
@@ -95,16 +116,6 @@ function ShippingForm({
             onChange={handleChange}
             onBlur={handleBlur}
             errorText={touched.postalcode ? errors.postalcode : ""}
-          />
-          <TextInput
-            label="Tamanho da camiseta"
-            type="text"
-            placeholder=""
-            name="shirtsize"
-            value={values.shirtsize}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            errorText={touched.shirtsize ? errors.shirtsize : ""}
           />
         </form>
       </DialogBody>
