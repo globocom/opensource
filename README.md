@@ -2,7 +2,7 @@
 
 Globo.com open source website [https://opensource.globo.com](http://opensource.globo.com).
 
-Made with ❤️to the open source community.
+Made with ❤️ to the open source community.
 
 ## Development
 
@@ -25,7 +25,7 @@ make deploy
 
 ## Setup
 
-The application uses the [Github GraphQL API v4](https://developer.github.com/v4/) to acess data from the Globo.com organizations and respositories. To communicate with the GraphQL server, you'll need an [OAuth token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) with the following scopes:
+The application uses the [Github GraphQL API v4](https://developer.github.com/v4/) to acess data from the [Globo.com](globo.com) organizations and respositories. To communicate with the GraphQL server, you'll need an [OAuth token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) with the following scopes:
 
 ```txt
 user
