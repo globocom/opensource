@@ -2,7 +2,7 @@
 
 Globo.com open source website [https://opensource.globo.com](http://opensource.globo.com).
 
-Made with ❤️to the open source community.
+Made with ❤️ to the open source community.
 
 ## Development
 
@@ -11,14 +11,14 @@ You need to have `nodejs` and `yarn` installed. Check the `package.json` `engine
 Use the following commands to setup and run the application:
 
 ```bash
-make setup
-make start
+$ make setup
+$ make start
 ```
 
 ## Deploy
 
 ```bash
-make deploy
+$ make deploy
 ```
 
 > This website is hosted by [Tsuru](https://tsuru.io/).
@@ -35,7 +35,7 @@ read:org
 With your token in hands, you will need to set the token to the environment variable `GATSBY_GITHUB_TOKEN`.
 
 ```bash
-export GATSBY_GITHUB_TOKEN=<your_token_here>
+$ export GATSBY_GITHUB_TOKEN=<your_token_here>
 ```
 
 or by creating a `.env.development` file with your env vars:
