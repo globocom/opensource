@@ -122,8 +122,15 @@ function UserProgress({ user }) {
   const { hacktoberfest } = user
   const { progress } = hacktoberfest
   const { achievements } = hacktoberfest.progress
+
+  // Used for testing
+  const isStaff = ["arturfsousa", "guilhermebr", "marcelometal"].includes(
+    user.githubUser
+  )
+
   const completed =
-    achievements.opened && achievements.merged && achievements.firsts
+    isStaff ||
+    (achievements.opened && achievements.merged && achievements.firsts)
 
   const [open, setOpen] = useState(false)
 

@@ -39,6 +39,8 @@ function ShippingForm({
         setShowMessage(false)
       }, 6000)
     }
+    // https://github.com/facebook/create-react-app/issues/6880
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status])
 
   return (
