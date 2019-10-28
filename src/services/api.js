@@ -5,7 +5,7 @@ async function getUser() {
       credentials: "include",
     })
   } catch (error) {
-    console.error(`[API_ERROR] Failed to fetch user`, error)
+    console.error(`[API_ERROR] Fail to fetch user`, error)
     return null
   }
 
@@ -35,7 +35,7 @@ async function updateUser(user) {
       credentials: "include",
     })
   } catch (error) {
-    console.error("[OPENSOURCE] Fail to post", error)
+    console.error("[OPENSOURCE] Fail to save user data", error)
   }
 
   if (resp.status !== 201) {
@@ -46,4 +46,18 @@ async function updateUser(user) {
   return data.result
 }
 
-export { getUser, updateUser }
+async function getCoders() {
+  let resp
+  try {
+    resp = await fetch("/status")
+  } catch (error) {
+    console.error("[OPENSOURCE] Fail to fetch coders", error)
+  }
+  if (resp.status !== 200) {
+    return null
+  }
+  const data = await resp.json()
+  return data.result
+}
+
+export { getUser, updateUser, getCoders }

@@ -28,7 +28,7 @@ function ShippingForm({
   handleSubmit,
   status,
 }) {
-  const [showMessage, setShowMessage] = useState("showMessage", false)
+  const [showMessage, setShowMessage] = useState(false)
 
   useEffect(() => {
     if (status && status.completed) {
