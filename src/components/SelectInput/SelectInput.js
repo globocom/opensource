@@ -30,7 +30,7 @@ const Select = styled.select`
   ${props =>
     props.hasError &&
     css`
-      border-color: red;
+      border-color: #d32f2f;
     `}
 
   &:focus,
@@ -60,7 +60,7 @@ const SelectIcon = styled.i`
 const ErrorText = styled.span`
   font-size: 12px;
   margin: 10px 5px 0;
-  color: red;
+  color: #d32f2f;
   display: inline-block;
 `
 

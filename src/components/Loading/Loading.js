@@ -29,7 +29,7 @@ function Loading({ children }) {
   )
 }
 
-PropTypes.propTypes = {
+Loading.propTypes = {
   children: PropTypes.node,
 }
 
