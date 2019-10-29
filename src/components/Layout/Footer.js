@@ -97,7 +97,7 @@ function Footer({ dark }) {
             </li>
           </ul>
         </FooterLinks>
-        <FooterRights>Globo.com {currentYear}</FooterRights>
+        <FooterRights>&copy; {currentYear} globo.com</FooterRights>
       </FooterContainer>
     </FooterWrapper>
   )
