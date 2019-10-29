@@ -81,7 +81,7 @@ function ShippingForm({
               <option value="TSM">T-Shirt - M</option>
               <option value="TSG">T-Shirt - G</option>
               <option value="TSGG">T-Shirt - GG</option>
-              <option value="TSGGG">T-Shirt - GG</option>
+              <option value="TSGGG">T-Shirt - GGG</option>
             </SelectInput>
             <TextInput
               label="Nome"
