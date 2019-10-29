@@ -217,11 +217,11 @@ function Header({ dark }) {
                 Projetos
               </MenuLink>
             </li>
-            {/* <li>
-              <MenuLink activeClassName={activeClassName} to="/nosso-time/">
-                Nosso time
+            <li>
+              <MenuLink activeClassName={activeClassName} to="/coders/">
+                Coders
               </MenuLink>
-            </li> */}
+            </li>
             <li>
               <MenuLink activeClassName={activeClassName} to="/hacktoberfest/">
                 Hacktoberfest
