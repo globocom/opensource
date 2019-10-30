@@ -55,7 +55,7 @@ const CoderDetails = styled.div`
 `
 
 const CoderText = styled.div`
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   z-index: 2;
   position: absolute;
   bottom: 0;
