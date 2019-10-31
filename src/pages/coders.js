@@ -119,7 +119,7 @@ function CodersPage() {
   useEffect(() => {
     async function fetchCoders() {
       const coders = await getCoders()
-      setCoders(coders)
+      setCoders(coders || [])
     }
     fetchCoders()
   }, [])

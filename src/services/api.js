@@ -38,6 +38,7 @@ async function updateUser(user) {
     })
   } catch (error) {
     console.error("[OPENSOURCE] Fail to save user data", error)
+    return null
   }
 
   if (resp.status !== 201) {
@@ -50,14 +51,18 @@ async function updateUser(user) {
 
 async function getCoders() {
   let resp
+
   try {
     resp = await fetch(`${apiUrl}/status`)
   } catch (error) {
     console.error("[OPENSOURCE] Fail to fetch coders", error)
+    return null
   }
+
   if (resp.status !== 200) {
     return null
   }
+
   const data = await resp.json()
   return data.result
 }
