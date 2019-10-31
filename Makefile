@@ -31,7 +31,7 @@ setup:
 
 ## start development server
 start:
-	@${PKG_MANAGER} run develop
+	@${PKG_MANAGER} run start
 
 ## build static files to production
 build:
