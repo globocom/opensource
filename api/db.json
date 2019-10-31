@@ -1,0 +1,936 @@
+{
+  "user": {
+    "success": true,
+    "status": 200,
+    "type": "ok",
+    "result": {
+      "id": "my-id",
+      "name": "Artur",
+      "email": "meuemail@gmail.com",
+      "state": "RJ",
+      "city": "Rio de Janeiro",
+      "address": "Meu endereço",
+      "postalCode": "12345678",
+      "shirtSize": "TSGG",
+      "avatarURL": "https://avatars0.githubusercontent.com/u/1333599?v=4",
+      "githubUser": "arturfsousa",
+      "githubID": "120391203",
+      "edition": 2019,
+      "approved": true,
+      "completed": true,
+      "completed_at": "2019-10-29T11:33:53.708817532-03:00",
+      "totalMergeRequests": 2,
+      "totalMergeRequestsMerged": 2,
+      "hacktoberfest": {
+        "edition": 2019,
+        "progress": {
+          "opened": 2,
+          "merged": 2,
+          "achievements": {
+            "opened": true,
+            "merged": true,
+            "firsts": true,
+            "completed": true
+          }
+        }
+      },
+      "shirtsize": "TSGG"
+    }
+  },
+  "status": {
+    "success": true,
+    "status": 200,
+    "type": "ok",
+    "result": [
+      {
+        "githubID": "11424945",
+        "githubUser": "joserenatosilva",
+        "avatar": "https://avatars0.githubusercontent.com/u/11424945?v=4",
+        "total_pull_requests": 15,
+        "approved": true
+      },
+      {
+        "githubID": "8943477",
+        "githubUser": "rafaveira3",
+        "avatar": "https://avatars0.githubusercontent.com/u/8943477?v=4",
+        "total_pull_requests": 15,
+        "approved": true
+      },
+      {
+        "githubID": "11041",
+        "githubUser": "cezarsa",
+        "avatar": "https://avatars1.githubusercontent.com/u/11041?v=4",
+        "total_pull_requests": 12,
+        "approved": true
+      },
+      {
+        "githubID": "1398357",
+        "githubUser": "juliolustosa",
+        "avatar": "https://avatars0.githubusercontent.com/u/1398357?v=4",
+        "total_pull_requests": 11,
+        "approved": true
+      },
+      {
+        "githubID": "31575324",
+        "githubUser": "arthurcgc",
+        "avatar": "https://avatars3.githubusercontent.com/u/31575324?v=4",
+        "total_pull_requests": 9,
+        "approved": true
+      },
+      {
+        "githubID": "34755896",
+        "githubUser": "viniciusbds",
+        "avatar": "https://avatars3.githubusercontent.com/u/34755896?v=4",
+        "total_pull_requests": 9,
+        "approved": true
+      },
+      {
+        "githubID": "7503687",
+        "githubUser": "nettoclaudio",
+        "avatar": "https://avatars0.githubusercontent.com/u/7503687?v=4",
+        "total_pull_requests": 8,
+        "approved": true
+      },
+      {
+        "githubID": "56852949",
+        "githubUser": "bgbombas",
+        "avatar": "https://avatars1.githubusercontent.com/u/56852949?v=4",
+        "total_pull_requests": 8,
+        "approved": false
+      },
+      {
+        "githubID": "55638",
+        "githubUser": "morpheu",
+        "avatar": "https://avatars0.githubusercontent.com/u/55638?v=4",
+        "total_pull_requests": 5,
+        "approved": true
+      },
+      {
+        "githubID": "665903",
+        "githubUser": "marcelometal",
+        "avatar": "https://avatars1.githubusercontent.com/u/665903?v=4",
+        "total_pull_requests": 5,
+        "approved": true
+      },
+      {
+        "githubID": "25726888",
+        "githubUser": "Rickecr",
+        "avatar": "https://avatars2.githubusercontent.com/u/25726888?v=4",
+        "total_pull_requests": 5,
+        "approved": true
+      },
+      {
+        "githubID": "18303",
+        "githubUser": "pedrokiefer",
+        "avatar": "https://avatars1.githubusercontent.com/u/18303?v=4",
+        "total_pull_requests": 4,
+        "approved": true
+      },
+      {
+        "githubID": "18516908",
+        "githubUser": "Perkles",
+        "avatar": "https://avatars0.githubusercontent.com/u/18516908?v=4",
+        "total_pull_requests": 4,
+        "approved": true
+      },
+      {
+        "githubID": "6402131",
+        "githubUser": "bernardolins",
+        "avatar": "https://avatars1.githubusercontent.com/u/6402131?v=4",
+        "total_pull_requests": 4,
+        "approved": true
+      },
+      {
+        "githubID": "331817",
+        "githubUser": "guilhermebr",
+        "avatar": "https://avatars1.githubusercontent.com/u/331817?v=4",
+        "total_pull_requests": 4,
+        "approved": true
+      },
+      {
+        "githubID": "354110",
+        "githubUser": "hermancaldara",
+        "avatar": "https://avatars0.githubusercontent.com/u/354110?v=4",
+        "total_pull_requests": 4,
+        "approved": true
+      },
+      {
+        "githubID": "30700596",
+        "githubUser": "hericlesme",
+        "avatar": "https://avatars2.githubusercontent.com/u/30700596?v=4",
+        "total_pull_requests": 4,
+        "approved": true
+      },
+      {
+        "githubID": "271259",
+        "githubUser": "heliocorreia",
+        "avatar": "https://avatars2.githubusercontent.com/u/271259?v=4",
+        "total_pull_requests": 4,
+        "approved": true
+      },
+      {
+        "githubID": "25057248",
+        "githubUser": "Koalapvh13",
+        "avatar": "https://avatars1.githubusercontent.com/u/25057248?v=4",
+        "total_pull_requests": 4,
+        "approved": true
+      },
+      {
+        "githubID": "10122339",
+        "githubUser": "icarodgl",
+        "avatar": "https://avatars0.githubusercontent.com/u/10122339?v=4",
+        "total_pull_requests": 4,
+        "approved": true
+      },
+      {
+        "githubID": "44512806",
+        "githubUser": "sabrinabs",
+        "avatar": "https://avatars0.githubusercontent.com/u/44512806?v=4",
+        "total_pull_requests": 4,
+        "approved": false
+      },
+      {
+        "githubID": "7620947",
+        "githubUser": "rodrigo-brito",
+        "avatar": "https://avatars0.githubusercontent.com/u/7620947?v=4",
+        "total_pull_requests": 3,
+        "approved": true
+      },
+      {
+        "githubID": "4116980",
+        "githubUser": "brunoocasali",
+        "avatar": "https://avatars1.githubusercontent.com/u/4116980?v=4",
+        "total_pull_requests": 3,
+        "approved": true
+      },
+      {
+        "githubID": "6751242",
+        "githubUser": "MarcosEllys",
+        "avatar": "https://avatars3.githubusercontent.com/u/6751242?v=4",
+        "total_pull_requests": 3,
+        "approved": true
+      },
+      {
+        "githubID": "23871115",
+        "githubUser": "allanassis",
+        "avatar": "https://avatars0.githubusercontent.com/u/23871115?v=4",
+        "total_pull_requests": 3,
+        "approved": true
+      },
+      {
+        "githubID": "6810985",
+        "githubUser": "wdtamagi",
+        "avatar": "https://avatars1.githubusercontent.com/u/6810985?v=4",
+        "total_pull_requests": 3,
+        "approved": true
+      },
+      {
+        "githubID": "43251314",
+        "githubUser": "AyrtonCossuol",
+        "avatar": "https://avatars2.githubusercontent.com/u/43251314?v=4",
+        "total_pull_requests": 3,
+        "approved": true
+      },
+      {
+        "githubID": "11907615",
+        "githubUser": "xpecex",
+        "avatar": "https://avatars3.githubusercontent.com/u/11907615?v=4",
+        "total_pull_requests": 3,
+        "approved": true
+      },
+      {
+        "githubID": "33502846",
+        "githubUser": "jessescn",
+        "avatar": "https://avatars1.githubusercontent.com/u/33502846?v=4",
+        "total_pull_requests": 3,
+        "approved": true
+      },
+      {
+        "githubID": "15738138",
+        "githubUser": "rafaelrubbioli",
+        "avatar": "https://avatars3.githubusercontent.com/u/15738138?v=4",
+        "total_pull_requests": 3,
+        "approved": true
+      },
+      {
+        "githubID": "24421664",
+        "githubUser": "GMVargass",
+        "avatar": "https://avatars0.githubusercontent.com/u/24421664?v=4",
+        "total_pull_requests": 3,
+        "approved": true
+      },
+      {
+        "githubID": "19228139",
+        "githubUser": "Paulophmp",
+        "avatar": "https://avatars3.githubusercontent.com/u/19228139?v=4",
+        "total_pull_requests": 3,
+        "approved": true
+      },
+      {
+        "githubID": "38760797",
+        "githubUser": "luanabm",
+        "avatar": "https://avatars0.githubusercontent.com/u/38760797?v=4",
+        "total_pull_requests": 3,
+        "approved": true
+      },
+      {
+        "githubID": "8585270",
+        "githubUser": "Natan7",
+        "avatar": "https://avatars3.githubusercontent.com/u/8585270?v=4",
+        "total_pull_requests": 3,
+        "approved": false
+      },
+      {
+        "githubID": "21161579",
+        "githubUser": "luiz-mai",
+        "avatar": "https://avatars3.githubusercontent.com/u/21161579?v=4",
+        "total_pull_requests": 3,
+        "approved": false
+      },
+      {
+        "githubID": "13488025",
+        "githubUser": "jadsonluan",
+        "avatar": "https://avatars2.githubusercontent.com/u/13488025?v=4",
+        "total_pull_requests": 3,
+        "approved": false
+      },
+      {
+        "githubID": "29151666",
+        "githubUser": "DavidMoura07",
+        "avatar": "https://avatars2.githubusercontent.com/u/29151666?v=4",
+        "total_pull_requests": 3,
+        "approved": false
+      },
+      {
+        "githubID": "39952041",
+        "githubUser": "IgorSilveira7",
+        "avatar": "https://avatars3.githubusercontent.com/u/39952041?v=4",
+        "total_pull_requests": 3,
+        "approved": false
+      },
+      {
+        "githubID": "860741",
+        "githubUser": "izontm",
+        "avatar": "https://avatars1.githubusercontent.com/u/860741?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "25023177",
+        "githubUser": "cristiandean",
+        "avatar": "https://avatars0.githubusercontent.com/u/25023177?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "12359941",
+        "githubUser": "ivanch",
+        "avatar": "https://avatars0.githubusercontent.com/u/12359941?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "18710260",
+        "githubUser": "aguimaraesduarte",
+        "avatar": "https://avatars0.githubusercontent.com/u/18710260?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "1333599",
+        "githubUser": "arturfsousa",
+        "avatar": "https://avatars0.githubusercontent.com/u/1333599?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "9121359",
+        "githubUser": "lubien",
+        "avatar": "https://avatars3.githubusercontent.com/u/9121359?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "86251",
+        "githubUser": "ggarnier",
+        "avatar": "https://avatars3.githubusercontent.com/u/86251?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "22118060",
+        "githubUser": "LeonardoFurtado",
+        "avatar": "https://avatars3.githubusercontent.com/u/22118060?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "3018196",
+        "githubUser": "markosystem",
+        "avatar": "https://avatars0.githubusercontent.com/u/3018196?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "26371672",
+        "githubUser": "BruunoMM",
+        "avatar": "https://avatars2.githubusercontent.com/u/26371672?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "40367872",
+        "githubUser": "Krlier",
+        "avatar": "https://avatars0.githubusercontent.com/u/40367872?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "9597125",
+        "githubUser": "davidpvilaca",
+        "avatar": "https://avatars3.githubusercontent.com/u/9597125?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "12446314",
+        "githubUser": "alvesgabriel",
+        "avatar": "https://avatars3.githubusercontent.com/u/12446314?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "16190825",
+        "githubUser": "beescuit",
+        "avatar": "https://avatars1.githubusercontent.com/u/16190825?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "39417",
+        "githubUser": "thiagobfiorenza",
+        "avatar": "https://avatars2.githubusercontent.com/u/39417?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "13144804",
+        "githubUser": "alexandreyy",
+        "avatar": "https://avatars1.githubusercontent.com/u/13144804?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "12671634",
+        "githubUser": "eulercamposbarros",
+        "avatar": "https://avatars2.githubusercontent.com/u/12671634?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "663286",
+        "githubUser": "edgarberlinck",
+        "avatar": "https://avatars1.githubusercontent.com/u/663286?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "6757777",
+        "githubUser": "CoderSquirrel",
+        "avatar": "https://avatars1.githubusercontent.com/u/6757777?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "32949153",
+        "githubUser": "felipe-sbatista",
+        "avatar": "https://avatars3.githubusercontent.com/u/32949153?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "19511732",
+        "githubUser": "LiliGuimaraes",
+        "avatar": "https://avatars3.githubusercontent.com/u/19511732?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "11020807",
+        "githubUser": "endersonmenezes",
+        "avatar": "https://avatars2.githubusercontent.com/u/11020807?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "1298871",
+        "githubUser": "tclemos",
+        "avatar": "https://avatars3.githubusercontent.com/u/1298871?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "15807921",
+        "githubUser": "ThiagoWhispher",
+        "avatar": "https://avatars0.githubusercontent.com/u/15807921?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "5731176",
+        "githubUser": "TiagoDanin",
+        "avatar": "https://avatars3.githubusercontent.com/u/5731176?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "25423500",
+        "githubUser": "phakiller",
+        "avatar": "https://avatars1.githubusercontent.com/u/25423500?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "1598854",
+        "githubUser": "rafaelsq",
+        "avatar": "https://avatars1.githubusercontent.com/u/1598854?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "40927839",
+        "githubUser": "lucasferreiralimax",
+        "avatar": "https://avatars2.githubusercontent.com/u/40927839?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "26823840",
+        "githubUser": "victormazevedo",
+        "avatar": "https://avatars0.githubusercontent.com/u/26823840?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "26108090",
+        "githubUser": "wdsrocha",
+        "avatar": "https://avatars3.githubusercontent.com/u/26108090?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "33805207",
+        "githubUser": "IsraelSampaio",
+        "avatar": "https://avatars0.githubusercontent.com/u/33805207?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "10249593",
+        "githubUser": "rrrahal",
+        "avatar": "https://avatars2.githubusercontent.com/u/10249593?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "31492173",
+        "githubUser": "n8eloy",
+        "avatar": "https://avatars0.githubusercontent.com/u/31492173?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "5223675",
+        "githubUser": "cadu-goncalves",
+        "avatar": "https://avatars3.githubusercontent.com/u/5223675?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "23244625",
+        "githubUser": "vitor-fernandes",
+        "avatar": "https://avatars0.githubusercontent.com/u/23244625?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "9432058",
+        "githubUser": "marcjal",
+        "avatar": "https://avatars2.githubusercontent.com/u/9432058?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "25045483",
+        "githubUser": "garrettmasters",
+        "avatar": "https://avatars3.githubusercontent.com/u/25045483?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "40031432",
+        "githubUser": "JoseDavi",
+        "avatar": "https://avatars1.githubusercontent.com/u/40031432?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "32279982",
+        "githubUser": "ingridpacheco",
+        "avatar": "https://avatars0.githubusercontent.com/u/32279982?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "34948516",
+        "githubUser": "LuanaGP",
+        "avatar": "https://avatars3.githubusercontent.com/u/34948516?v=4",
+        "total_pull_requests": 2,
+        "approved": true
+      },
+      {
+        "githubID": "36035548",
+        "githubUser": "emanuel-gomes",
+        "avatar": "https://avatars2.githubusercontent.com/u/36035548?v=4",
+        "total_pull_requests": 2,
+        "approved": false
+      },
+      {
+        "githubID": "44042977",
+        "githubUser": "murilomattioli",
+        "avatar": "https://avatars3.githubusercontent.com/u/44042977?v=4",
+        "total_pull_requests": 2,
+        "approved": false
+      },
+      {
+        "githubID": "31544944",
+        "githubUser": "DinoSaulo",
+        "avatar": "https://avatars3.githubusercontent.com/u/31544944?v=4",
+        "total_pull_requests": 2,
+        "approved": false
+      },
+      {
+        "githubID": "12217036",
+        "githubUser": "grmano",
+        "avatar": "https://avatars3.githubusercontent.com/u/12217036?v=4",
+        "total_pull_requests": 2,
+        "approved": false
+      },
+      {
+        "githubID": "29764688",
+        "githubUser": "All3yp",
+        "avatar": "https://avatars1.githubusercontent.com/u/29764688?v=4",
+        "total_pull_requests": 2,
+        "approved": false
+      },
+      {
+        "githubID": "23052132",
+        "githubUser": "IvanArjona",
+        "avatar": "https://avatars2.githubusercontent.com/u/23052132?v=4",
+        "total_pull_requests": 2,
+        "approved": false
+      },
+      {
+        "githubID": "50667733",
+        "githubUser": "saaddalida",
+        "avatar": "https://avatars0.githubusercontent.com/u/50667733?v=4",
+        "total_pull_requests": 2,
+        "approved": false
+      },
+      {
+        "githubID": "43557983",
+        "githubUser": "Andre-rsfc",
+        "avatar": "https://avatars2.githubusercontent.com/u/43557983?v=4",
+        "total_pull_requests": 2,
+        "approved": false
+      },
+      {
+        "githubID": "25347174",
+        "githubUser": "bujiii",
+        "avatar": "https://avatars3.githubusercontent.com/u/25347174?v=4",
+        "total_pull_requests": 2,
+        "approved": false
+      },
+      {
+        "githubID": "40612788",
+        "githubUser": "davig-sousa",
+        "avatar": "https://avatars0.githubusercontent.com/u/40612788?v=4",
+        "total_pull_requests": 2,
+        "approved": false
+      },
+      {
+        "githubID": "25506431",
+        "githubUser": "amintasvrp",
+        "avatar": "https://avatars3.githubusercontent.com/u/25506431?v=4",
+        "total_pull_requests": 2,
+        "approved": false
+      },
+      {
+        "githubID": "30505330",
+        "githubUser": "JohnVict0r",
+        "avatar": "https://avatars3.githubusercontent.com/u/30505330?v=4",
+        "total_pull_requests": 2,
+        "approved": false
+      },
+      {
+        "githubID": "33194050",
+        "githubUser": "himanshu1root",
+        "avatar": "https://avatars1.githubusercontent.com/u/33194050?v=4",
+        "total_pull_requests": 2,
+        "approved": false
+      },
+      {
+        "githubID": "6394262",
+        "githubUser": "luccamendonca",
+        "avatar": "https://avatars2.githubusercontent.com/u/6394262?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "7342697",
+        "githubUser": "brenol",
+        "avatar": "https://avatars0.githubusercontent.com/u/7342697?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "342161",
+        "githubUser": "mateuspontes",
+        "avatar": "https://avatars0.githubusercontent.com/u/342161?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "29216027",
+        "githubUser": "marceloFA",
+        "avatar": "https://avatars0.githubusercontent.com/u/29216027?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "20195874",
+        "githubUser": "danilogila",
+        "avatar": "https://avatars1.githubusercontent.com/u/20195874?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "516453",
+        "githubUser": "renatoaquino",
+        "avatar": "https://avatars3.githubusercontent.com/u/516453?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "27583162",
+        "githubUser": "luanraithz",
+        "avatar": "https://avatars2.githubusercontent.com/u/27583162?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "18344707",
+        "githubUser": "BadduCoder",
+        "avatar": "https://avatars1.githubusercontent.com/u/18344707?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "17203172",
+        "githubUser": "0x15F9",
+        "avatar": "https://avatars2.githubusercontent.com/u/17203172?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "17353066",
+        "githubUser": "Marcuspo",
+        "avatar": "https://avatars2.githubusercontent.com/u/17353066?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "32495998",
+        "githubUser": "treviza153",
+        "avatar": "https://avatars2.githubusercontent.com/u/32495998?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "38537062",
+        "githubUser": "g-thome",
+        "avatar": "https://avatars0.githubusercontent.com/u/38537062?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "43054051",
+        "githubUser": "tacoelho",
+        "avatar": "https://avatars0.githubusercontent.com/u/43054051?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "22209724",
+        "githubUser": "LucianoHanna",
+        "avatar": "https://avatars1.githubusercontent.com/u/22209724?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "44869983",
+        "githubUser": "limadiego",
+        "avatar": "https://avatars2.githubusercontent.com/u/44869983?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "20875849",
+        "githubUser": "samisafatli",
+        "avatar": "https://avatars2.githubusercontent.com/u/20875849?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "7906420",
+        "githubUser": "vanessasoutoc",
+        "avatar": "https://avatars1.githubusercontent.com/u/7906420?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "17277588",
+        "githubUser": "lucassoares",
+        "avatar": "https://avatars2.githubusercontent.com/u/17277588?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "12648924",
+        "githubUser": "mthbernardes",
+        "avatar": "https://avatars0.githubusercontent.com/u/12648924?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "17506057",
+        "githubUser": "LuAnderson",
+        "avatar": "https://avatars0.githubusercontent.com/u/17506057?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "10149871",
+        "githubUser": "matgomes",
+        "avatar": "https://avatars1.githubusercontent.com/u/10149871?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "7130956",
+        "githubUser": "douglas-neves",
+        "avatar": "https://avatars3.githubusercontent.com/u/7130956?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "13686332",
+        "githubUser": "gabrielreisn",
+        "avatar": "https://avatars1.githubusercontent.com/u/13686332?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "3740437",
+        "githubUser": "tiao",
+        "avatar": "https://avatars2.githubusercontent.com/u/3740437?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "3136012",
+        "githubUser": "GuyKh",
+        "avatar": "https://avatars3.githubusercontent.com/u/3136012?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "36860521",
+        "githubUser": "i-mora",
+        "avatar": "https://avatars1.githubusercontent.com/u/36860521?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "17456370",
+        "githubUser": "rohit223",
+        "avatar": "https://avatars3.githubusercontent.com/u/17456370?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "13261860",
+        "githubUser": "osmarpetry",
+        "avatar": "https://avatars1.githubusercontent.com/u/13261860?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "39953508",
+        "githubUser": "sachinshingade",
+        "avatar": "https://avatars1.githubusercontent.com/u/39953508?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "24602363",
+        "githubUser": "luko0610",
+        "avatar": "https://avatars3.githubusercontent.com/u/24602363?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "11477078",
+        "githubUser": "theajr",
+        "avatar": "https://avatars0.githubusercontent.com/u/11477078?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "34301187",
+        "githubUser": "AyushBherwani1998",
+        "avatar": "https://avatars2.githubusercontent.com/u/34301187?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "46511803",
+        "githubUser": "RishabMangal",
+        "avatar": "https://avatars2.githubusercontent.com/u/46511803?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "16398237",
+        "githubUser": "parthendo",
+        "avatar": "https://avatars2.githubusercontent.com/u/16398237?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "42267022",
+        "githubUser": "hv-ojha",
+        "avatar": "https://avatars3.githubusercontent.com/u/42267022?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      },
+      {
+        "githubID": "14948182",
+        "githubUser": "v0idpwn",
+        "avatar": "https://avatars3.githubusercontent.com/u/14948182?v=4",
+        "total_pull_requests": 1,
+        "approved": false
+      }
+    ]
+  }
+}

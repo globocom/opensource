@@ -1,7 +1,9 @@
+const apiUrl = process.env.GATSBY_API_URL
+
 async function getUser() {
   let resp
   try {
-    resp = await fetch("/user", {
+    resp = await fetch(`${apiUrl}/user`, {
       credentials: "include",
     })
   } catch (error) {
@@ -29,7 +31,7 @@ async function updateUser(user) {
   let resp
 
   try {
-    resp = await fetch("/subscribe", {
+    resp = await fetch(`${apiUrl}/subscribe`, {
       method: "POST",
       body: JSON.stringify(user),
       credentials: "include",
@@ -49,7 +51,7 @@ async function updateUser(user) {
 async function getCoders() {
   let resp
   try {
-    resp = await fetch("/status")
+    resp = await fetch(`${apiUrl}/status`)
   } catch (error) {
     console.error("[OPENSOURCE] Fail to fetch coders", error)
   }
