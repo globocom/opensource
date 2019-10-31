@@ -11,7 +11,7 @@ COLOR_YELLOW = \033[33m
 
 PROJECT_NAME = `basename $(PWD)`
 
-## prints this help
+## print help
 help:
 	printf "${COLOR_YELLOW}\n${PROJECT_NAME}\n\n${COLOR_RESET}"
 	awk '/^[a-zA-Z\-\_0-9\.%]+:/ { \
@@ -25,31 +25,35 @@ help:
 	{ lastLine = $$0 }' $(MAKEFILE_LIST)
 	printf "\n"
 
-## installs project dependencies
+## install project dependencies
 setup:
 	@${PKG_MANAGER} install
 
-## starts development server
+## start development server
 start:
 	@${PKG_MANAGER} run develop
 
-## builds static files to production
+## build static files to production
 build:
 	@${PKG_MANAGER} run build
 
-## deploys the app
+## deploy to production
 deploy: build
 	tsuru app-deploy public -a opensource-web
 
+## clean docker-compose images
 docker-clean:
-	docker-compose --project-name opensource rm -f
+	docker-compose --project-name ${PROJECT_NAME} rm -f
 
+## start development with docker-compose
 docker-start: docker-clean
-	docker-compose --project-name opensource up -d --remove-orphans
+	docker-compose --project-name ${PROJECT_NAME} up -d --remove-orphans
 
+## build docker-compose images
 docker-build: docker-clean
-	docker-compose --project-name opensource pull
-	docker-compose --project-name opensource build
+	docker-compose --project-name ${PROJECT_NAME} pull
+	docker-compose --project-name ${PROJECT_NAME} build
 
+## stop docker-compose
 docker-stop: docker-clean
-	docker-compose --project-name opensource stop
+	docker-compose --project-name ${PROJECT_NAME} stop
