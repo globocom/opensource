@@ -89,6 +89,7 @@ function Coder({ githubUser, avatar, approved, totalContributions }) {
     <CoderRoot
       approved={approved}
       onMouseOver={handleShowDetails}
+      onFocus={handleShowDetails}
       onMouseLeave={handleHideDetails}
     >
       <img
