@@ -1,5 +1,0 @@
-@value xsmall: screen and (max-width: 320px);
-@value small: screen and (max-width: 639px);
-@value mediumOnly: screen and (min-width: 640px) and (max-width: 1023px);
-@value medium: screen and (max-width: 1023px);
-@value large: screen and (min-width: 1024px);
