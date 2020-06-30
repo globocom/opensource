@@ -2,7 +2,7 @@
 
 Globo.com open source website [https://opensource.globo.com](http://opensource.globo.com).
 
-Made with ❤️to the open source community.
+Made with ❤️to the open source community❤️.
 
 ## Development
 
