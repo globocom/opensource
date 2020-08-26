@@ -209,7 +209,7 @@ function Project(props) {
 
   return (
     <ProjectWrapper isFeatured={isFeatured}>
-      {image ? (
+      {image.publicURL ? (
         <Nav onClick={handleToggleOpen}>
           <ImageWrapper>
             <img src={image.publicURL} alt={name} />

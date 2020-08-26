@@ -49,6 +49,24 @@ async function updateUser(user) {
   return data.result
 }
 
+async function getEdition() {
+  let resp
+
+  try {
+    resp = await fetch(`${apiUrl}/edition`)
+  } catch (error) {
+    console.error("[OPENSOURCE] Fail to fetch edition", error)
+    return null
+  }
+
+  if (resp.status !== 200) {
+    return null
+  }
+
+  const data = await resp.json()
+  return data.result
+}
+
 async function getCoders() {
   let resp
 
@@ -67,4 +85,4 @@ async function getCoders() {
   return data.result
 }
 
-export { getUser, updateUser, getCoders }
+export { getUser, updateUser, getCoders, getEdition }

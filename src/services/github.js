@@ -11,7 +11,7 @@ const ORGS = [
 
 const ORG_LOGINS = ORGS.map(org => org.login)
 
-const EXCLUDE_REPOS = ["tsuru", "thumbor", "clappr", "megadraft"]
+const EXCLUDE_REPOS = []
 
 const joinSearchNodes = data => {
   let nodes = []

@@ -8,6 +8,7 @@ import ProjectList from "../components/ProjectList"
 import Project from "../components/Project"
 import Loading from "../components/Loading"
 
+import { getEdition } from "../services/api"
 import { getOrgRepos } from "../services/github"
 
 const Divider = styled.div`
@@ -24,57 +25,44 @@ const ProjectsLoading = styled.div`
   height: 400px;
 `
 
+const cache = {}
+
 function ProjectsPage() {
-  const data = useStaticQuery(graphql`
-    query GetFeaturedProjects {
-      allFeaturedProjectsJson {
-        edges {
-          node {
-            id
-            name
-            slug
-            owner
-            repoURL
-            siteURL
-            docsURL
-            description
-            shortDescription
-            image {
-              publicURL
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const featuredProjects = data.allFeaturedProjectsJson.edges.map(
-    edge => edge.node
-  )
-
   const [projects, setProjects] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     async function getProject() {
       setIsLoading(true)
-
+      const { projects } = (await getEdition()) || {}
       const repositories = await getOrgRepos()
+
+      repositories.forEach(repo => (cache[repo.url] = repo))
       setProjects(
-        repositories.map(repo => {
-          return {
-            id: repo.id,
-            name: repo.name,
-            description: repo.description,
-            repoURL: repo.url,
-            repoNumbers: {
-              stars: repo.stargazers.totalCount,
-              prs: repo.pullRequests.totalCount,
-              issues: repo.issues.totalCount,
-              commits: repo.object.history.totalCount,
-            },
-          }
-        })
+        projects
+          .filter(project => cache[project.repositoryUrl])
+          .map(project => {
+            const repo = cache[project.repositoryUrl]
+
+            return {
+              id: project.id,
+              name: project.name,
+              shortDescription: project.description,
+              featured: project.featured,
+              repoURL: project.repositoryUrl,
+              siteURL: project.website,
+              docsURL: project.website,
+              image: {
+                publicURL: project.imageUrl,
+              },
+              repoNumbers: {
+                stars: repo.stargazers.totalCount,
+                prs: repo.pullRequests.totalCount,
+                issues: repo.issues.totalCount,
+                commits: repo.object.history.totalCount,
+              },
+            }
+          })
       )
 
       setIsLoading(false)
@@ -91,14 +79,17 @@ function ProjectsPage() {
       />
       <Container>
         <ProjectList>
-          {featuredProjects.map((project, i) => (
-            <Project
-              key={project.id}
-              isFirst={i === 0}
-              isFeatured={true}
-              {...project}
-            />
-          ))}
+          {projects
+            .filter(project => project.featured)
+            .filter(Boolean)
+            .map((project, i) => (
+              <Project
+                key={i}
+                isFirst={i === 0}
+                isFeatured={true}
+                {...project}
+              />
+            ))}
         </ProjectList>
       </Container>
       <Divider />
@@ -109,9 +100,12 @@ function ProjectsPage() {
           </ProjectsLoading>
         ) : (
           <ProjectList>
-            {projects.map((project, i) => (
-              <Project key={project.id} isFirst={i === 0} {...project} />
-            ))}
+            {projects
+              .filter(project => !project.featured)
+              .filter(Boolean)
+              .map((project, i) => (
+                <Project key={project.id} isFirst={i === 0} {...project} />
+              ))}
           </ProjectList>
         )}
       </Container>
