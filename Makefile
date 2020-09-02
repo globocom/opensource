@@ -41,6 +41,10 @@ build:
 deploy: build
 	tsuru app-deploy public -a opensource-web
 
+## deploy to development
+deploy-dev: build
+	tsuru app-deploy public -a dev-opensource-web
+
 ## clean docker-compose images
 docker-clean:
 	docker-compose --project-name ${PROJECT_NAME} rm -f
