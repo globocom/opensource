@@ -33,16 +33,26 @@ setup:
 start:
 	@${PKG_MANAGER} run start
 
+## SETUP DEV
+setup-dev:
+	export NODE_ENV=development
+	echo "DEV SETUP DONE"
+
 ## build static files to production
 build:
 	@${PKG_MANAGER} run build
 
+
+build-dev:
+	@${PKG_MANAGER} run build:dev
+	
+
 ## deploy to production
-deploy: build
+deploy:	build
 	tsuru app-deploy public -a opensource-web
 
 ## deploy to development
-deploy-dev: build
+deploy-dev:	build-dev
 	tsuru app-deploy public -a dev-opensource-web
 
 ## clean docker-compose images

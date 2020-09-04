@@ -22,6 +22,7 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "build:dev": "env-cmd -f .env.development gatsby build",
     "develop": "gatsby develop",
     "start": "run-p start:api develop",
     "start:api": "nodemon ./api/server.js",
@@ -59,6 +60,7 @@
     "babel-jest": "^24.9.0",
     "babel-preset-gatsby": "^0.2.25",
     "body-parser": "^1.19.0",
+    "env-cmd": "^10.1.0",
     "husky": "^3.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
