@@ -129,7 +129,7 @@ function CodersPage() {
     <Layout>
       <Seo
         title="Coders"
-        description="Conheça alguns dos contribuidores Open Source de projetos da Globo.com"
+        description="Conheça alguns dos contribuidores Open Source de projetos da Globo"
       />
       <Container>
         <Coders>

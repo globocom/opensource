@@ -75,7 +75,7 @@ function ProjectsPage() {
     <Layout>
       <Seo
         title="Projetos"
-        description="Veja alguns dos projetos Open Source da Globo.com"
+        description="Veja alguns dos projetos Open Source da Globo"
       />
       <Container>
         <ProjectList>

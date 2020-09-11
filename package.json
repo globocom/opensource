@@ -1,8 +1,8 @@
 {
   "name": "globocom-opensource",
-  "description": "Globo.com Open Source community website",
+  "description": "Globo Open Source community website",
   "version": "0.1.0",
-  "author": "globo.com",
+  "author": "globo",
   "keywords": [
     "opensource",
     "community",

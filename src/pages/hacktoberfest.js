@@ -104,7 +104,7 @@ function HacktoberFestPage() {
     >
       <Seo
         title="Hacktoberfest"
-        description="De 1 a 31 de outubro, contribua com qualquer projeto da Globo.com no github e ganhe uma camiseta exclusiva."
+        description="De 1 a 31 de outubro, contribua com qualquer projeto da Globo no github e ganhe uma camiseta exclusiva."
       />
       <HacktoberFestCall user={user} />
       <Container>
@@ -117,7 +117,7 @@ function HacktoberFestPage() {
             <RuleText>
               Contribua com <strong>dois pull requests</strong>
               <br /> em qualquer projeto Open Source
-              <br /> da Globo.com durante o<br /> mês de outubro.
+              <br /> da Globo durante o<br /> mês de outubro.
             </RuleText>
           </Rule>
           <Rule>
@@ -147,7 +147,7 @@ function HacktoberFestPage() {
           <ProjectsTitle>Projetos</ProjectsTitle>
           <ProjectsText>
             Pull requests podem ser feitos em qualquer <strong>projeto</strong>{" "}
-            da Globo.com
+            da Globo
           </ProjectsText>
           <ButtonLink dark={true} href={issuesUrl} blank={true}>
             Ver issues
