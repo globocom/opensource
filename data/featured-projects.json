@@ -28,7 +28,7 @@
     "repoURL": "https://github.com/thumbor/thumbor",
     "siteURL": "http://thumbor.org",
     "docsURL": "https://thumbor.readthedocs.io",
-    "shortDescription": "Thumbor is an open-source photo thumbnail service by globo.com.",
+    "shortDescription": "Thumbor is an open-source photo thumbnail service by globo.",
     "description": "Thumbor is a smart imaging service. It enables on-demand crop, resizing and flipping of images. It features a very smart detection of important points in the image for better cropping and resizing, using state-of-the-art face and feature detection algorithms (more on that in Detection Algorithms). Save time and money in your company with Thumbor."
   },
   {

@@ -95,7 +95,7 @@ function HacktoberFestCall({ user, isCallOnly }) {
           <Title>Hacktoberfest</Title>
           <EventHeader1>
             <strong>1 a 31 de outubro</strong>
-            <br /> na Globo.com
+            <br /> na Globo
           </EventHeader1>
           <EventHeader2>Contribua e ganhe uma camiseta exclusiva.</EventHeader2>
           <ActionButtons>

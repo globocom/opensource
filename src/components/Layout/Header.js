@@ -200,7 +200,7 @@ function Header({ dark }) {
           <MenuBurguerIcon />
         </MenuBurguer>
         <Brand dark={dark}>
-          <Link to="/" alt="Globo.com OpenSource">
+          <Link to="/" alt="Globo OpenSource">
             <GloboComIcon />
             <span>Open Source</span>
           </Link>

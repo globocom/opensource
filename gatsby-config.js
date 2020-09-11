@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "Globo.com - Open Source",
-    description: "Globo.com - Por que ❤️ Open Source?",
-    author: "Globo.com",
+    title: "Globo - Open Source",
+    description: "Globo - Por que ❤️ Open Source?",
+    author: "Globo",
     url: "https://opensource.globo.com",
     images: {
       opengraph: {
@@ -22,8 +22,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Globo.com - Open Source",
-        short_name: "Globocom OpenSource",
+        name: "Globo - Open Source",
+        short_name: "Globo OpenSource",
         start_url: "/",
         background_color: "#1B3556",
         theme_color: "#1B3556",

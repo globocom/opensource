@@ -44,9 +44,9 @@ describe("IndexPage", () => {
       .mockImplementationOnce(() => ({
         site: {
           siteMetadata: {
-            title: "Globo.com - Open Source",
-            description: "Globo.com - Por que ❤️ Open Source?",
-            author: "Globo.com",
+            title: "Globo - Open Source",
+            description: "Globo - Por que ❤️ Open Source?",
+            author: "Globo",
             url: "https://opensource.globo.com",
             images: {
               opengraph: {
