@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import { useStaticQuery, graphql } from "gatsby"
 
 import Seo from "../components/Seo"
 import Layout, { Container } from "../components/Layout"
@@ -8,8 +7,7 @@ import ProjectList from "../components/ProjectList"
 import Project from "../components/Project"
 import Loading from "../components/Loading"
 
-import { getEdition } from "../services/api"
-import { getOrgRepos } from "../services/github"
+import { getProjects } from "../services/api"
 
 const Divider = styled.div`
   height: 1px;
@@ -25,50 +23,18 @@ const ProjectsLoading = styled.div`
   height: 400px;
 `
 
-const cache = {}
-
 function ProjectsPage() {
   const [projects, setProjects] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    async function getProject() {
-      setIsLoading(true)
-      const { projects } = (await getEdition()) || {}
-      const repositories = await getOrgRepos()
-
-      repositories.forEach(repo => (cache[repo.url] = repo))
-      setProjects(
-        projects
-          .filter(project => cache[project.repositoryUrl])
-          .map(project => {
-            const repo = cache[project.repositoryUrl]
-
-            return {
-              id: project.id,
-              name: project.name,
-              shortDescription: project.description,
-              featured: project.featured,
-              repoURL: project.repositoryUrl,
-              siteURL: project.website,
-              docsURL: project.website,
-              image: {
-                publicURL: project.imageUrl,
-              },
-              repoNumbers: {
-                stars: repo.stargazers.totalCount,
-                prs: repo.pullRequests.totalCount,
-                issues: repo.issues.totalCount,
-                commits: repo.object.history.totalCount,
-              },
-            }
-          })
-      )
-
-      setIsLoading(false)
-    }
-
-    getProject()
+      async function fetchProjects() {
+          getProjects().then(projects => {
+            setProjects(projects)
+            setIsLoading(false)
+        })
+      }
+      fetchProjects()
   }, [])
 
   return (

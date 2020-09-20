@@ -1,6 +1,6 @@
 [
   {
-    "name": "Megradraft",
+    "name": "Megadraft",
     "owner": "globocom",
     "slug": "megadraft",
     "image": "logos/megadraft.svg",
@@ -46,7 +46,7 @@
     "name": "huskyCI",
     "slug": "huskyci",
     "owner": "globocom",
-    "image": "logos/huskici.svg",
+    "image": "logos/husky.png",
     "repoURL": "https://github.com/globocom/huskyCI",
     "siteURL": "https://github.com/globocom/huskyCI",
     "docsURL": "https://github.com/globocom/huskyCI/wiki",

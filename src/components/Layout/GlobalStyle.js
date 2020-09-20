@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 import media from "styled-media-query"
+import Colors from "../../constants/colors"
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -78,7 +79,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover {
       ${media.greaterThan("large")`
-        color: #59b8fd;
+        color: ${Colors.PRIMARY_COLOR};
       `}
     }
   }

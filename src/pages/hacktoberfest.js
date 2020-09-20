@@ -14,7 +14,11 @@ import TShirtIcon from "../icons/TShirt"
 import { getUser } from "../services/api"
 import { getIssuesUrl } from "../services/github"
 
+import BGImage from "../images/2020/background.png"
+
 const issuesUrl = getIssuesUrl()
+
+const BGColor = "#201c24"
 
 const Rules = styled.section`
   display: flex;
@@ -57,8 +61,6 @@ const RuleText = styled.div`
 `
 
 const Projects = styled.section`
-  border-top: 1px solid #59b8fd;
-  border-bottom: 1px solid #59b8fd;
   padding-top: 5rem;
   padding-bottom: 5rem;
   color: #fff;
@@ -66,7 +68,7 @@ const Projects = styled.section`
 `
 
 const ProjectsTitle = styled.div`
-  font-family: "Bigelow Rules", cursive;
+  font-weight: bolder;
   font-size: 2.25rem;
 
   ${media.greaterThan("medium")`
@@ -99,8 +101,9 @@ function HacktoberFestPage() {
     <Layout
       darkHeader={true}
       darkFooter={true}
-      darkBody={true}
+      backgroundImage={BGImage}
       noPadding={true}
+      backgroundColor={BGColor}
     >
       <Seo
         title="Hacktoberfest"
@@ -134,7 +137,7 @@ function HacktoberFestPage() {
               <TShirtIcon />
             </RuleIcon>
             <RuleText>
-              Os <strong>200 primeiros inscritos</strong>,
+              Os <strong>100 primeiros inscritos</strong>,
               <br /> que completarem os requisitos mínimos,
               <br /> ganharão uma camiseta exclusiva a ser
               <br /> entregue dentro do território brasileiro.

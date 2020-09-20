@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
+import Colors from "./../../constants/colors"
 
 const Root = styled.div`
   margin-bottom: 20px;
@@ -32,7 +33,7 @@ const Input = styled.input`
 
   &:focus,
   &:hover {
-    border-color: #59b8fd;
+    border-color: ${Colors.PRIMARY_COLOR};
   }
 `
 

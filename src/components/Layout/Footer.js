@@ -7,7 +7,7 @@ import Container from "./Container"
 
 const FooterWrapper = styled.footer`
   height: 7rem;
-  background-color: ${props => (props.dark ? "#000000" : "#ffffff")};
+  background-color: ${props => (props.dark ? "unset" : "")};
   color: ${props => (props.dark ? "#ffffff" : "#000000")};
 
   ${media.greaterThan("large")`

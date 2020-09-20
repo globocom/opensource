@@ -7,6 +7,7 @@ import { Link } from "gatsby"
 import Container from "./Container"
 import MenuBurguerIcon from "../../icons/MenuBurguer"
 import GloboComIcon from "../../icons/GloboCom"
+import Colors from "./../../constants/colors"
 
 const HeaderWrapper = styled.header`
   height: 3.75rem;
@@ -20,7 +21,7 @@ const HeaderWrapper = styled.header`
   ${props =>
     props.dark &&
     css`
-      background-color: #000000;
+      background-color: unset;
     `}
 `
 
@@ -160,7 +161,7 @@ const MenuLink = styled(Link)`
 
   &.is-active {
     /* font-weight: 800; */
-    color: #59b8fd;
+    color: ${Colors.PRIMARY_COLOR};
   }
 `
 

@@ -7,6 +7,7 @@ import Button from "../Button"
 import PullRequestIcon from "../../icons/PullRequest"
 import MergedIcon from "../../icons/Merged"
 import TShirtIcon from "../../icons/TShirt"
+import Colors from "./../../constants/colors"
 
 import ShippingForm from "./ShippingForm"
 
@@ -24,7 +25,7 @@ const Greeting = styled.div`
   margin-bottom: 54px;
 
   strong {
-    color: #59b8fd;
+    color: ${Colors.PRIMARY_COLOR};
   }
 `
 
@@ -48,8 +49,8 @@ const ProgressLine = styled.div`
           border-color: #cfd3d4;
         `
       : css`
-          color: #59b8fd;
-          border-color: #59b8fd;
+          color: ${Colors.PRIMARY_COLOR};
+          border-color: ${Colors.PRIMARY_COLOR};
         `}
 `
 
@@ -72,8 +73,8 @@ const ProgressItem = styled.div`
         `
       : css`
           border-width: 5px;
-          color: #59b8fd;
-          border-color: #59b8fd;
+          color: ${Colors.PRIMARY_COLOR};
+          border-color: ${Colors.PRIMARY_COLOR};
         `}
 `
 
@@ -86,7 +87,7 @@ const ProgressStatusText = styled.div`
   font-size: 0.875rem;
 
   strong {
-    color: #59b8fd;
+    color: ${Colors.PRIMARY_COLOR};
   }
 `
 

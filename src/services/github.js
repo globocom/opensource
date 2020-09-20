@@ -53,57 +53,6 @@ const githubClient = async (query, variables = {}) => {
   return data.data
 }
 
-const getOrgMembers = async () => {
-  const query = `
-    {
-      organization(login: "globocom") {
-        name
-        teams(first: 100) {
-          totalCount
-          nodes {
-            id
-            name
-            members(first: 100) {
-              totalCount
-              nodes {
-                id
-                name
-                login
-                url
-                avatarUrl
-              }
-              totalCount
-              pageInfo {
-                endCursor
-                hasNextPage
-              }
-            }
-          }
-        }
-      }
-    }
-  `
-
-  let data = await githubClient(query)
-  let members = {}
-  try {
-    data.organization.teams.nodes.forEach(team => {
-      team.members.nodes.forEach(member => {
-        members[member.id] = member
-      })
-    })
-  } catch (error) {
-    console.error(`[GITHUB][CLIENT] Failed get members ${error}`)
-  }
-
-  const sortByLogin = (m1, m2) => {
-    const l1 = m1.login.toLowerCase()
-    const l2 = m2.login.toLowerCase()
-    return l1 === l2 ? 0 : l1 > l2 ? 1 : -1
-  }
-
-  return Object.values(members).sort(sortByLogin)
-}
 
 const stripDash = str => str.replace(/-/g, "")
 
@@ -170,35 +119,6 @@ const getOrgRepos = async () => {
   return repos
 }
 
-const getRepoStats = async (owner, name) => {
-  const query = `
-    query GetRepositoryStats($owner: String!, $name: String!) {
-      repository(owner: $owner, name: $name) {
-        object(expression: "master") {
-          ... on Commit {
-            history {
-              totalCount
-            }
-          }
-        }
-        issues (states: OPEN) {
-          totalCount
-        }
-        pullRequests {
-          totalCount
-        }
-        stargazers {
-          totalCount
-        }
-      }
-    }
-  `
-
-  return await githubClient(query, {
-    owner,
-    name,
-  })
-}
 
 const getUserProgress = async login => {
   const query = `
@@ -278,9 +198,6 @@ const getIssuesUrl = () => {
 }
 
 export {
-  getOrgMembers,
-  getOrgRepos,
-  getRepoStats,
   getUserProgress,
   getIssuesUrl,
 }

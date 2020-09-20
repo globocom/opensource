@@ -2,6 +2,7 @@ import React from "react"
 import styled, { css } from "styled-components"
 
 import ArrowDownIcon from "../../icons/ArrowDown"
+import Colors from "./../../constants/colors"
 
 const Root = styled.div`
   margin-bottom: 20px;
@@ -35,7 +36,7 @@ const Select = styled.select`
 
   &:focus,
   &:hover {
-    border-color: #59b8fd;
+    border-color: ${Colors.PRIMARY_COLOR};
   }
 `
 

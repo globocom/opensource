@@ -45,7 +45,7 @@ build:
 
 build-dev:
 	@${PKG_MANAGER} run build:dev
-	
+
 
 ## deploy to production
 deploy:	build
@@ -53,7 +53,7 @@ deploy:	build
 
 ## deploy to development
 deploy-dev:	build-dev
-	tsuru app-deploy public -a dev-opensource-web
+	tsuru app-deploy public -a opensource-web-dev
 
 ## clean docker-compose images
 docker-clean:
