@@ -54,6 +54,8 @@ const ProjectName = styled.h2`
   font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
+  text-align: center;
+  color: rgb(237 24 70);
 `
 
 const ProjectDescription = styled.p`
