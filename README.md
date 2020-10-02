@@ -2,7 +2,7 @@
 
 Globo open source website [https://opensource.globo.com](http://opensource.globo.com).
 
-Made with ❤️to the open source community.
+Made with ❤️ to the open source community.
 
 ## Development
 
@@ -48,3 +48,5 @@ GATSBY_GITHUB_TOKEN=<your_token_here>
 ## License
 
 This project is licensed under the MIT License - read [LICENSE.md](LICENSE) file for details.
+
+*This article can also be read in [Brazilian Portuguese](README-pt-BR.md).*
