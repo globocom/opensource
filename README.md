@@ -43,7 +43,10 @@ or by creating a `.env.development` file with your env vars:
 ```ini
 // .env.development
 GATSBY_GITHUB_TOKEN=<your_token_here>
+GATSBY_API_URL=<api_url_here>
 ```
+
+or you could just run `make setup-dev` and replace `.env.development` entries with your env vars values.
 
 ## License
 

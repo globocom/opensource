@@ -28,6 +28,7 @@ help:
 ## install project dependencies
 setup:
 	@${PKG_MANAGER} install
+	make setup-dev
 
 ## start development server
 start:
@@ -36,6 +37,7 @@ start:
 ## SETUP DEV
 setup-dev:
 	export NODE_ENV=development
+	cp .env.example .env.development
 	echo "DEV SETUP DONE"
 
 ## build static files to production
