@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import media from "styled-media-query"
@@ -6,18 +6,18 @@ import media from "styled-media-query"
 import ButtonLink from "../ButtonLink"
 import UserProgress from "./UserProgress"
 import { Container } from "../Layout"
+import { ButtonWrapper } from "../Button"
 
 import hacktoberFestImg from "../../images/2020/astronauta.png"
 import hacktoberFestCall from "../../images/2020/logo-desktop.png"
-import hacktoberFestCallOnly from '../../images/2020/hacktober-callonly.png'
-import BigBracketImage from "../../images/2020/big-bracket.svg";
-import year from '../../images/2020/year.png'
+import hacktoberFestCallOnly from "../../images/2020/hacktober-callonly.png"
+import BigBracketImage from "../../images/2020/big-bracket.svg"
+import year from "../../images/2020/year.png"
 
 const HacktoberFestCallWrapper = styled.section`
   margin-bottom: 20px;
   color: #fff;
 `
-
 
 const EventHeader1 = styled.div`
   margin-bottom: 16px;
@@ -31,7 +31,6 @@ const EventHeader1 = styled.div`
     margin-bottom: 32px;
     text-align: unset;
   `}
-
 
   strong {
     font-weight: 700;
@@ -55,11 +54,10 @@ const EventHeader2 = styled.div`
     text-align: unset;
     margin-bottom: 32px;
   `}
-
 `
 
 const CallContainer = styled(Container)`
-  flex-direction: ${props => props.isCallOnly ? "column-reverse" : "column"};
+  flex-direction: ${props => (props.isCallOnly ? "column-reverse" : "column")};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,13 +72,13 @@ const CallContainer = styled(Container)`
 
   img {
     width: calc(100vw - 8vw);
-    &.astronaut{
-        ${media.greaterThan("medium")`
+    &.astronaut {
+      ${media.greaterThan("medium")`
           width: 60%;
       `}
     }
 
-    &.call{
+    &.call {
       ${media.greaterThan("medium")`
         width: 100%;
       `}
@@ -93,7 +91,7 @@ const YearContainer = styled.div`
   justify-content: center;
   margin: 20px 0px;
   img {
-    width: calc(100vw -  50vw);
+    width: calc(100vw - 50vw);
     ${media.greaterThan("large")`
       width: 100%;
     `}
@@ -104,7 +102,7 @@ const BigBracketContainer = styled.div`
   display: flex;
   justify-content: center;
   img {
-    width: calc(100vw -  5vw);
+    width: calc(100vw - 5vw);
     ${media.greaterThan("large")`
       max-width: 1300px;
       width: 100%;
@@ -120,12 +118,37 @@ const ActionButtons = styled.div`
   `}
 `
 
+const ButtonRules = styled(ButtonWrapper).attrs({
+  as: "a",
+})`
+  background-color: #201c24;
+  border-color: #fff;
+  margin-left: 1rem;
+
+  &:hover {
+    ${media.greaterThan("large")`
+      border-color: #CCC;
+      background-color: #141315;
+      color: #fff;
+    `}
+  }
+`
+
 function HacktoberFestCall({ user, isCallOnly }) {
   return (
     <HacktoberFestCallWrapper isCallOnly={isCallOnly}>
-      {isCallOnly && <BigBracketContainer> <img src={BigBracketImage} alt="Big Bracket"/> </BigBracketContainer>}
+      {isCallOnly && (
+        <BigBracketContainer>
+          {" "}
+          <img src={BigBracketImage} alt="Big Bracket" />{" "}
+        </BigBracketContainer>
+      )}
       <CallContainer isCallOnly={isCallOnly}>
-        <img className="astronaut" src={hacktoberFestImg} alt="Hacktoberfest Art" />
+        <img
+          className="astronaut"
+          src={hacktoberFestImg}
+          alt="Hacktoberfest Art"
+        />
         <div
           style={{
             display: "flex",
@@ -134,8 +157,17 @@ function HacktoberFestCall({ user, isCallOnly }) {
             flexDirection: "column",
           }}
         >
-          <img className="call" src={isCallOnly? hacktoberFestCallOnly : hacktoberFestCall} alt="Hacktoberfest Art" />
-          {isCallOnly && <YearContainer> <img src={year} alt="Hacktoberfest Art" /> </YearContainer> }
+          <img
+            className="call"
+            src={isCallOnly ? hacktoberFestCallOnly : hacktoberFestCall}
+            alt="Hacktoberfest Art"
+          />
+          {isCallOnly && (
+            <YearContainer>
+              {" "}
+              <img src={year} alt="Hacktoberfest Art" />{" "}
+            </YearContainer>
+          )}
           <div className="info">
             <EventHeader1>
               <strong>1 a 31 de outubro </strong>
@@ -152,9 +184,17 @@ function HacktoberFestCall({ user, isCallOnly }) {
               ) : user ? (
                 <UserProgress user={user} />
               ) : (
-                <ButtonLink href="/login" dark={true}>
-                  Participar
-                </ButtonLink>
+                <Fragment>
+                  <ButtonLink href="/login" dark={true}>
+                    Participar
+                  </ButtonLink>
+                  <ButtonRules
+                    href="/rules"
+                    anchorProps={{ style: { background: "black" } }}
+                  >
+                    Regras &amp; Valores
+                  </ButtonRules>
+                </Fragment>
               )}
             </ActionButtons>
           </div>
