@@ -70,7 +70,7 @@ const ProjectName = styled.h2`
   font-weight: bold;
   margin-bottom: ${props => props.home ? "0px" : "1.5rem"};
   color: ${props => props.home ? "#fff": "#000"}
-
+  text-align: center;
 `
 
 const ProjectDescription = styled.p`
