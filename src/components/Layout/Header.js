@@ -89,7 +89,7 @@ const Brand = styled.div`
 `
 
 const Menu = styled.nav`
-  flex: 1;
+  flex: 2;
   font-size: 1rem;
   line-height: normal;
   letter-spacing: normal;
@@ -221,6 +221,11 @@ function Header({ dark }) {
             <li>
               <MenuLink activeClassName={activeClassName} to="/coders/">
                 Coders
+              </MenuLink>
+            </li>
+            <li>
+              <MenuLink activeClassName={activeClassName} to="/rules/">
+                Regras &amp; Valores
               </MenuLink>
             </li>
             <li>
