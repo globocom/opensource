@@ -70,3 +70,6 @@ yarn-error.log
 
 .env.development
 .env.production
+
+# System Files
+Thumbs.db
