@@ -9,16 +9,14 @@ import ProjectList from "../components/ProjectList"
 import Project from "../components/Project"
 import HacktoberFestCall from "../components/HacktoberFestCall"
 
-import Colors from './../constants/colors'
+import Colors from "./../constants/colors"
 
-import ByTheCodeImage from '../images/2020/together-by-the-code.png'
+import ByTheCodeImage from "../images/2020/together-by-the-code.png"
 import BGImage from "../images/2020/background.png"
 import GirlImage from "../images/2020/girl.png"
 
-import get from 'lodash/get'
-import { getProjects } from './../services/api'
-
-
+import get from "lodash/get"
+import { getProjects } from "./../services/api"
 
 const blink = keyframes`
   0% {opacity: 0;}
@@ -99,7 +97,6 @@ const HeroText = styled.div`
       margin-top: -20%;
     `}
   }
-
 `
 
 const ProjectsContainer = styled(Container)`
@@ -113,59 +110,68 @@ const ProjectsContainer = styled(Container)`
 function IndexPage() {
   const [projects, setProjects] = useState([])
   const data = useStaticQuery(graphql`
-  query GetFeaturedProjectsHome {
-    allFeaturedProjectsJson {
-      edges {
-        node {
-          id
-          name
-          slug
-          owner
-          repoURL
-          siteURL
-          docsURL
-          description
-          shortDescription
-          image {
-            publicURL
+    query GetFeaturedProjectsHome {
+      allFeaturedProjectsJson {
+        edges {
+          node {
+            id
+            name
+            slug
+            owner
+            repoURL
+            siteURL
+            docsURL
+            description
+            shortDescription
+            image {
+              publicURL
+            }
           }
         }
       }
     }
-  }
-`)
+  `)
   const featured = data.allFeaturedProjectsJson.edges.map(edge => edge.node)
 
   useEffect(() => {
     async function populateProjects() {
-        const getByName = (name) => featured.filter(k => k.name === name)[0]
-        getProjects().then(projects => {
-          projects = projects.filter(p => p.featured).map(p => ({...p, image: { publicURL: get(getByName(p.name), 'image.publicURL') }}))
-          setProjects(projects)
+      const getByName = name => featured.filter(k => k.name === name)[0]
+      getProjects().then(projects => {
+        projects = projects
+          .filter(p => p.featured)
+          .map(p => ({
+            ...p,
+            image: { publicURL: get(getByName(p.name), "image.publicURL") },
+          }))
+        setProjects(projects)
       })
     }
     populateProjects()
-   } , [])
-   
+  }, [])
 
   return (
-    <Layout backgroundImage={BGImage} darkHeader={true} darkFooter={true} noPadding={true}>
+    <Layout
+      backgroundImage={BGImage}
+      darkHeader={true}
+      darkFooter={true}
+      noPadding={true}
+    >
       <Seo />
-        <Container>
-          <HeroWrapper>
-            <div className="girl">
-              <img src={GirlImage} alt="Index Banner"/>
+      <Container>
+        <HeroWrapper>
+          <div className="girl">
+            <img src={GirlImage} alt="Index Banner" />
+          </div>
+          <HeroText data-testid="hero-text">
+            <div style={{ flex: 2 }}>
+              <h1>Addicted Developers</h1>
             </div>
-            <HeroText data-testid="hero-text">
-              <div style={{flex: 2}}>
-                <h1>Addicted Developers</h1>
-              </div>
-              <div style={{flex: 2}}>
-                  <img width="100%" src={ByTheCodeImage} alt="By the code"/>
-              </div>
-            </HeroText>
-            </HeroWrapper>
-        </Container>
+            <div style={{ flex: 2 }}>
+              <img width="100%" src={ByTheCodeImage} alt="By the code" />
+            </div>
+          </HeroText>
+        </HeroWrapper>
+      </Container>
       <ProjectsContainer>
         <ProjectList hasShowAll={true}>
           {projects.map((project, i) => (
