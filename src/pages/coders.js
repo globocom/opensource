@@ -101,8 +101,10 @@ function Coder({ githubUser, avatar, approved, totalContributions }) {
         <CoderDetails>
           <CoderText>
             <CoderName>
-              <a href={`https://github.com/${githubUser}`} target="_blank">@{githubUser}</a>
-              </CoderName>
+              <a href={`https://github.com/${githubUser}`}
+                target="_blank"
+                style="text-decoration:none">@{githubUser}</a>
+            </CoderName>
             {totalContributions} contribuições
             {approved && (
               <CoderApproved>
