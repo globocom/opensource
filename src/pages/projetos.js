@@ -28,13 +28,13 @@ function ProjectsPage() {
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-      async function fetchProjects() {
-          getProjects().then(projects => {
-            setProjects(projects)
-            setIsLoading(false)
-        })
-      }
-      fetchProjects()
+    async function fetchProjects() {
+      getProjects().then(projects => {
+        setProjects(projects)
+        setIsLoading(false)
+      })
+    }
+    fetchProjects()
   }, [])
 
   return (

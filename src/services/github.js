@@ -53,7 +53,6 @@ const githubClient = async (query, variables = {}) => {
   return data.data
 }
 
-
 const stripDash = str => str.replace(/-/g, "")
 
 const getOrgRepos = async () => {
@@ -118,7 +117,6 @@ const getOrgRepos = async () => {
 
   return repos
 }
-
 
 const getUserProgress = async login => {
   const query = `
@@ -197,7 +195,4 @@ const getIssuesUrl = () => {
   return url.toString()
 }
 
-export {
-  getUserProgress,
-  getIssuesUrl,
-}
+export { getUserProgress, getIssuesUrl }

@@ -1,6 +1,5 @@
-import get from 'lodash/get'
+import get from "lodash/get"
 const apiUrl = process.env.GATSBY_API_URL
-
 
 async function getUser() {
   let resp
@@ -88,32 +87,37 @@ async function getCoders() {
 }
 
 async function getProjects() {
-    const { projects = [] } = (await getEdition()) || []
-    const data = projects.map((project, index) => {
-          let base = {
-            id: index,
-            name: project.name,
-            shortDescription: project.description,
-            featured: project.featured,
-            repoURL: project.repositoryUrl,
-            siteURL: project.website,
-            docsURL: project.documentationUrl,
-            image: {
-              publicURL: project.imageUrl
-            }
-          }
-          if(project.featured){
-              base.repoNumbers = {
-                stars: get(project,'stats.repository.stars.totalCount', 0),
-                prs: get(project,'stats.repository.pullRequests.totalCount', 0),
-                issues: get(project,'stats.repository.issues.totalCount', 0),
-                commits: get(project,'stats.repository.object.commit.history.totalCount', 0)
-              }
-          }
-          return base
-    }) || [];
+  const { projects = [] } = (await getEdition()) || []
+  const data =
+    projects.map((project, index) => {
+      let base = {
+        id: index,
+        name: project.name,
+        shortDescription: project.description,
+        featured: project.featured,
+        repoURL: project.repositoryUrl,
+        siteURL: project.website,
+        docsURL: project.documentationUrl,
+        image: {
+          publicURL: project.imageUrl,
+        },
+      }
+      if (project.featured) {
+        base.repoNumbers = {
+          stars: get(project, "stats.repository.stars.totalCount", 0),
+          prs: get(project, "stats.repository.pullRequests.totalCount", 0),
+          issues: get(project, "stats.repository.issues.totalCount", 0),
+          commits: get(
+            project,
+            "stats.repository.object.commit.history.totalCount",
+            0
+          ),
+        }
+      }
+      return base
+    }) || []
 
-    return data;
+  return data
 }
 
-export { getUser, updateUser, getCoders, getEdition, getProjects}
+export { getUser, updateUser, getCoders, getEdition, getProjects }
