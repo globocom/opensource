@@ -3320,7 +3320,7 @@ commander@^2.11.0, commander@^2.20.0, commander@~2.20.3:
 
 commander@^4.0.0:
   version "4.1.1"
-  resolved "https://artifactory.globoi.com/artifactory/api/npm/npm-repos/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
   integrity sha1-n9YCvZNilOnp70aj9NaWQESxgGg=
 
 commander@~2.8.1:
@@ -4615,7 +4615,7 @@ entities@^2.0.0:
 
 env-cmd@^10.1.0:
   version "10.1.0"
-  resolved "https://artifactory.globoi.com/artifactory/api/npm/npm-repos/env-cmd/-/env-cmd-10.1.0.tgz#c7f5d3b550c9519f137fdac4dd8fb6866a8c8c4b"
+  resolved "https://registry.yarnpkg.com/env-cmd/-/env-cmd-10.1.0.tgz#c7f5d3b550c9519f137fdac4dd8fb6866a8c8c4b"
   integrity sha1-x/XTtVDJUZ8Tf9rE3Y+2hmqMjEs=
   dependencies:
     commander "^4.0.0"
