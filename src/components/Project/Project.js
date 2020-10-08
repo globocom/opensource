@@ -61,10 +61,16 @@ const ProjectDetails = styled.div`
 `
 
 const ProjectName = styled.h2`
-  font-size: 1.4rem;
+  flex: 1;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: ${props => props.home ? "0px" : "1.5rem"};
-  color: ${props => props.home ? "#fff": "#000"}
+  color: ${props => props.home ? "#fff" : "#000"};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${media.greaterThan("medium")`
+    height: 80px;
+  `}
 `
 
 const ProjectDescription = styled.p`
