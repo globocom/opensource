@@ -26,7 +26,6 @@ const REPOSITORY_COUNT_ICONS = {
 const ProjectWrapper = styled.div`
   display: flex;
   flex-direction: column;
-
   ${props =>
     !props.isFeatured &&
     css`
@@ -36,16 +35,13 @@ const ProjectWrapper = styled.div`
 `
 
 const ProjectDetails = styled.div`
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-
   ${props => !props.isFeatured && `
     align-items: flex-start;
   `}
-
   transition: visibility 225ms;
   ${props =>
     !props.open
@@ -56,7 +52,6 @@ const ProjectDetails = styled.div`
       : css`
           visibility: visible;
         `}
-
   ${media.greaterThan("medium")`
     visibility: visible;
     ${props => props.isFeatured && `
@@ -70,7 +65,6 @@ const ProjectName = styled.h2`
   font-weight: bold;
   margin-bottom: ${props => props.home ? "0px" : "1.5rem"};
   color: ${props => props.home ? "#fff": "#000"}
-
 `
 
 const ProjectDescription = styled.p`
@@ -86,7 +80,6 @@ const ProjectWebSite = styled.a`
   text-align:center;
   color: ${Colors.PRIMARY_COLOR};
   font-weight: bold;
-
   &:hover {
     text-decoration: underline;
   }
@@ -97,7 +90,6 @@ const ProjectLinks = styled.div`
   display: flex;
   align-items: center;
   justify-content:space-around;
-
   ${props => !props.isFeatured && `
     width: 100%;
     justify-content: space-between;
@@ -116,7 +108,6 @@ const Nav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   ${media.greaterThan("medium")`
     padding: 1.5rem 0;
     height: 80px;
@@ -126,7 +117,6 @@ const Nav = styled.div`
 const NavButton = styled.i`
   width: 24px;
   height: 24px;
-
   ${props =>
     props.open
       ? css`
@@ -135,7 +125,6 @@ const NavButton = styled.i`
       : css`
           background-image: url(${iconExpandMore});
         `}
-
   ${media.greaterThan("medium")`
     display: none;
   `}
@@ -193,7 +182,7 @@ const BracketWrapper = (props) => {
 
 function RepoCounter({ name, count, home }) {
   const Icon = REPOSITORY_COUNT_ICONS[name](home)
-  
+
   return (
     <RepoCounterWrapper>
       <RepoCounterIcon>
@@ -235,17 +224,17 @@ function Project(props) {
 
   return (
     <ProjectWrapper isFeatured={isFeatured}>
-      {image.publicURL ? (
-        <Nav onClick={handleToggleOpen}>
+      <Nav onClick={handleToggleOpen}>
+        {image.publicURL ? (
           <ImageWrapper>
-            <img style={{maxWidth: 218}} src={image.publicURL} alt={name} />
+            <img style={{ maxWidth: 218 }} src={image.publicURL} alt={name} />
           </ImageWrapper>
-          <NavButton open={open} />
-        </Nav>
-      ) : (
-        <ProjectName>{name}</ProjectName>
-      )}
-      {repoNumbers && 
+        ) : (
+          <ProjectName>{name}</ProjectName>
+        )}
+        <NavButton open={open} />
+      </Nav>
+      {repoNumbers &&
           <RepoInfo home={home}>
             <BracketWrapper home={home} style={{width: "100%", "justify-content": "space-around"}}>
               <RepoCounter name="stars" count={repoCounters.stars} home={home}/>
@@ -258,7 +247,7 @@ function Project(props) {
 
       <ProjectDetails isFeatured={isFeatured} home={home} open={!isFeatured ? true : open}>
 
-        {(shortDescription || description) && 
+        {(shortDescription || description) &&
           <ProjectDescription isFeatured={isFeatured} home={home}>
             {shortDescription || description}
           </ProjectDescription>
