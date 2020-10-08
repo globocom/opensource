@@ -230,7 +230,7 @@ function Project(props) {
             <img style={{ maxWidth: 218 }} src={image.publicURL} alt={name} />
           </ImageWrapper>
         ) : (
-          <ProjectName>{name}</ProjectName>
+          <ProjectName home={home}>{name}</ProjectName>
         )}
         <NavButton open={open} />
       </Nav>
