@@ -101,9 +101,11 @@ function Coder({ githubUser, avatar, approved, totalContributions }) {
         <CoderDetails>
           <CoderText>
             <CoderName>
-              <a href={`https://github.com/${githubUser}`}
+              <a 
+                href={`https://github.com/${githubUser}`}
                 target="_blank"
-                style="text-decoration:none">@{githubUser}</a>
+                style={{text-decoration:none}}
+                rel = "noopener noreferrer">@{githubUser}</a>
             </CoderName>
             {totalContributions} contribuições
             {approved && (
