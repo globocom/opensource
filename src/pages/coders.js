@@ -31,8 +31,8 @@ const CoderRoot = styled.div`
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2);
 
     ${props =>
-     props.approved &&
-     css`
+      props.approved &&
+      css`
         width: 100%;
         height: 100%;
       `}
