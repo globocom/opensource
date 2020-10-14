@@ -11,24 +11,6 @@ const ORGS = [
 
 const ORG_LOGINS = ORGS.map(org => org.login)
 
-const EXCLUDE_REPOS = []
-
-const joinSearchNodes = data => {
-  let nodes = []
-  for (let org in data) {
-    nodes = nodes.concat(data[org].nodes)
-  }
-  return nodes
-}
-
-const sortRepos = (repos, field = "stargazers") => {
-  return repos.sort((a, b) => {
-    const totalA = a[field].totalCount
-    const totalB = b[field].totalCount
-    return totalB - totalA
-  })
-}
-
 const githubClient = async (query, variables = {}) => {
   let resp
 
@@ -51,71 +33,6 @@ const githubClient = async (query, variables = {}) => {
 
   const data = await resp.json()
   return data.data
-}
-
-const stripDash = str => str.replace(/-/g, "")
-
-const getOrgRepos = async () => {
-  let searchQuery = ""
-  ORGS.forEach(({ login, stars }) => {
-    searchQuery += `
-      ${stripDash(login)}: search(
-        first: 50,
-        query: "org:${login} stars:>${stars}",
-        type: REPOSITORY
-      ) {
-        ...SearchResultFields
-      }
-    `
-  })
-
-  const query = `
-    {
-      ${searchQuery}
-    }
-
-    fragment SearchResultFields on SearchResultItemConnection {
-      nodes {
-        ... on Repository {
-          id
-          name
-          description
-          url
-          isArchived
-          primaryLanguage {
-            name
-            color
-          }
-          object(expression: "master") {
-            ... on Commit {
-              history {
-                totalCount
-              }
-            }
-          }
-          issues(states: OPEN) {
-            totalCount
-          }
-          pullRequests {
-            totalCount
-          }
-          stargazers {
-            totalCount
-          }
-        }
-      }
-    }
-  `
-
-  const data = await githubClient(query)
-  let repos = []
-  if (data) {
-    repos = sortRepos(joinSearchNodes(data)).filter(
-      repo => !repo.isArchived && !EXCLUDE_REPOS.includes(repo.name)
-    )
-  }
-
-  return repos
 }
 
 const getUserProgress = async login => {
