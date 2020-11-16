@@ -1,5 +1,6 @@
 import get from "lodash/get"
-const apiUrl = process.env.GATSBY_API_URL
+
+const apiUrl = process.env.GATSBY_API_URL || "http://localhost:3000"
 
 async function getUser() {
   let resp
