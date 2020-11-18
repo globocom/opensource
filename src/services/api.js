@@ -88,9 +88,9 @@ async function getCoders() {
 }
 
 async function getProjects() {
-  const { projects = [] } = (await getEdition()) || []
+  const { projects } = (await getEdition()) || []
   const data =
-    projects.map((project, index) => {
+    (projects || []).map((project, index) => {
       let base = {
         id: index,
         name: project.name,
