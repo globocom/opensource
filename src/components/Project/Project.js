@@ -13,19 +13,19 @@ import iconIssues from "../../images/icons/issues"
 
 import Colors from "../../constants/colors"
 
-import BracketImage from "../../images/2020/open-bracket.svg"
+
+import BracketImage from "../../images/2020/open-bracket.svg";
 
 const REPOSITORY_COUNT_ICONS = {
-  stars: home => () => starsIcon(home),
-  commits: home => () => iconCommits(home),
-  prs: home => () => iconPrs(home),
-  issues: home => () => iconIssues(home),
+  stars: (home) => () => starsIcon(home),
+  commits: (home) => () => iconCommits(home),
+  prs: (home) => () => iconPrs(home),
+  issues: (home) => () => iconIssues(home),
 }
 
 const ProjectWrapper = styled.div`
   display: flex;
   flex-direction: column;
-
   ${props =>
     !props.isFeatured &&
     css`
@@ -39,13 +39,9 @@ const ProjectDetails = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-
-  ${props =>
-    !props.isFeatured &&
-    `
+  ${props => !props.isFeatured && `
     align-items: flex-start;
   `}
-
   transition: visibility 225ms;
   ${props =>
     !props.open
@@ -56,38 +52,40 @@ const ProjectDetails = styled.div`
       : css`
           visibility: visible;
         `}
-
   ${media.greaterThan("medium")`
     visibility: visible;
-    ${props =>
-      props.isFeatured &&
-      `
+    ${props => props.isFeatured && `
       display: inherit;
     `}
   `}
 `
 
 const ProjectName = styled.h2`
-  font-size: 1.4rem;
+  flex: 1;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: ${props => (props.home ? "0px" : "1.5rem")};
-  color: ${props => (props.home ? "#fff" : "#000")};
+  color: ${props => props.home ? "#fff" : "#000"};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${media.greaterThan("medium")`
+    height: 80px;
+  `}
 `
 
 const ProjectDescription = styled.p`
   padding: 1.5rem 0;
   line-height: 1.25;
-  color: ${props => (props.home ? "#fff" : "#000")};
+  color: ${props => props.home ? "#fff" : "#000"};
   letter-spacing: 0.4px;
-  text-align: ${props => (!props.isFeatured ? "left" : "center")};
+  text-align: ${props => !props.isFeatured ? 'left' : 'center'};
 `
 
 const ProjectWebSite = styled.a`
-  display: block;
-  text-align: center;
+  display:block;
+  text-align:center;
   color: ${Colors.PRIMARY_COLOR};
   font-weight: bold;
-
   &:hover {
     text-decoration: underline;
   }
@@ -97,11 +95,8 @@ const ProjectLinks = styled.div`
   padding: 1.5rem 0;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-
-  ${props =>
-    !props.isFeatured &&
-    `
+  justify-content:space-around;
+  ${props => !props.isFeatured && `
     width: 100%;
     justify-content: space-between;
   `}
@@ -109,8 +104,8 @@ const ProjectLinks = styled.div`
 
 const ProjectLink = styled.a`
   font-weight: bold;
-  color: ${props => (props.home ? "#fff" : "#000")};
-  padding: ${props => (props.home ? "0px 10px" : "0px")};
+  color: ${props => props.home ? "#fff" : "#000"};
+  padding: ${props => props.home ? "0px 10px" : "0px"};
 `
 
 const Nav = styled.div`
@@ -119,7 +114,6 @@ const Nav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   ${media.greaterThan("medium")`
     padding: 1.5rem 0;
     height: 80px;
@@ -129,7 +123,6 @@ const Nav = styled.div`
 const NavButton = styled.i`
   width: 24px;
   height: 24px;
-
   ${props =>
     props.open
       ? css`
@@ -138,7 +131,6 @@ const NavButton = styled.i`
       : css`
           background-image: url(${iconExpandMore});
         `}
-
   ${media.greaterThan("medium")`
     display: none;
   `}
@@ -154,7 +146,7 @@ const RepoInfo = styled.div`
   display: flex;
   justify-content: space-between;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: ${props => (props.home ? "0px" : "35px")};
+  grid-gap: ${props => props.home ? '0px':'35px'};
 `
 
 const RepoCounterWrapper = styled.div`
@@ -175,23 +167,21 @@ const RepoCounterIcon = styled.i`
 `
 
 const Bracket = styled.img`
-  transform: scaleX(${props => (props.inverted ? -1 : 1)});
-  width: ${props => (props.width ? props.width : "26px")};
+    transform: scaleX(${props => props.inverted ? -1 : 1});
+    width: ${props => props.width ? props.width : "26px"}
 `
 
 const StyledBracketWrapper = styled.div`
-  display: flex;
-  align-items: center;
-`
+    display: flex;
+    align-items:center;
+`;
 
-const BracketWrapper = props => {
+const BracketWrapper = (props) => {
   return (
-    <StyledBracketWrapper style={{ ...props.style }}>
-      {props.home && <Bracket src={BracketImage} width={props.width} />}
-      {props.children}
-      {props.home && (
-        <Bracket src={BracketImage} width={props.width} inverted />
-      )}
+    <StyledBracketWrapper style={{...props.style}}>
+      {props.home && <Bracket src={BracketImage} width={props.width}/>}
+        {props.children}
+      {props.home && <Bracket src={BracketImage} width={props.width} inverted/>}
     </StyledBracketWrapper>
   )
 }
@@ -202,11 +192,9 @@ function RepoCounter({ name, count, home }) {
   return (
     <RepoCounterWrapper>
       <RepoCounterIcon>
-        <Icon />
+        <Icon/>
       </RepoCounterIcon>
-      <span style={{ color: home ? "#fff" : "unset" }}>
-        {count === undefined ? "00000" : count}
-      </span>
+      <span style={{color: home ? "#fff": "unset"}}>{count === undefined ? "00000" : count}</span>
     </RepoCounterWrapper>
   )
 }
@@ -228,60 +216,48 @@ function Project(props) {
     isFirst,
     isFeatured,
     repoNumbers,
-    home,
+    home
   } = props
 
   const [open, setOpen] = useState(isFirst)
-  const repoCounters = repoNumbers
+  const repoCounters = repoNumbers;
 
   function handleToggleOpen() {
     setOpen(!open)
   }
 
+
+
   return (
     <ProjectWrapper isFeatured={isFeatured}>
-      {image.publicURL ? (
-        <Nav onClick={handleToggleOpen}>
+      <Nav onClick={handleToggleOpen}>
+        {image.publicURL ? (
           <ImageWrapper>
             <img style={{ maxWidth: 218 }} src={image.publicURL} alt={name} />
           </ImageWrapper>
-          <NavButton open={open} />
-        </Nav>
-      ) : (
-        <ProjectName>{name}</ProjectName>
-      )}
-      {repoNumbers && (
-        <RepoInfo home={home}>
-          <BracketWrapper
-            home={home}
-            style={{ width: "100%", "justify-content": "space-around" }}
-          >
-            <RepoCounter name="stars" count={repoCounters.stars} home={home} />
-            <RepoCounter
-              name="commits"
-              count={repoCounters.commits}
-              home={home}
-            />
-            <RepoCounter name="prs" count={repoCounters.prs} home={home} />
-            <RepoCounter
-              name="issues"
-              count={repoCounters.issues}
-              home={home}
-            />
-          </BracketWrapper>
-        </RepoInfo>
-      )}
+        ) : (
+          <ProjectName home={home}>{name}</ProjectName>
+        )}
+        <NavButton open={open} />
+      </Nav>
+      {repoNumbers &&
+          <RepoInfo home={home}>
+            <BracketWrapper home={home} style={{width: "100%", "justify-content": "space-around"}}>
+              <RepoCounter name="stars" count={repoCounters.stars} home={home}/>
+              <RepoCounter name="commits" count={repoCounters.commits} home={home}/>
+              <RepoCounter name="prs" count={repoCounters.prs} home={home}/>
+              <RepoCounter name="issues" count={repoCounters.issues} home={home}/>
+            </BracketWrapper>
+          </RepoInfo>
+        }
 
-      <ProjectDetails
-        isFeatured={isFeatured}
-        home={home}
-        open={!isFeatured ? true : open}
-      >
-        {(shortDescription || description) && (
+      <ProjectDetails isFeatured={isFeatured} home={home} open={!isFeatured ? true : open}>
+
+        {(shortDescription || description) &&
           <ProjectDescription isFeatured={isFeatured} home={home}>
             {shortDescription || description}
           </ProjectDescription>
-        )}
+        }
 
         {siteURL && (
           <ProjectWebSite
@@ -334,7 +310,7 @@ Project.propTypes = {
   shortDescription: PropTypes.string,
   description: PropTypes.string,
   repoNumbers: PropTypes.object,
-  home: PropTypes.bool,
+  home: PropTypes.bool
 }
 
 Project.defaultProps = {
