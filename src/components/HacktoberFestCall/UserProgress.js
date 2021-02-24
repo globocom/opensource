@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
+import Pluralize from "react-pluralize"
 
 import Button from "../Button"
 
@@ -176,11 +177,30 @@ function UserProgress({ user }) {
           </ProgressBody>
           <ProgressStatus>
             {!completed ? (
-              <ProgressStatusText>
-                Você tem{" "}
-                <strong>{progress.opened} pull request(s) enviado(s)</strong> e{" "}
-                <strong>{progress.merged} aceito(s)</strong>
-              </ProgressStatusText>
+              achievements.opened ? (
+                <ProgressStatusText>
+                  Você tem{" "}
+                  <strong>
+                    <Pluralize
+                      singular="pull request enviado"
+                      plural="pull requests enviados"
+                      count={progress.opened}
+                    />
+                  </strong>{" "}
+                  e{" "}
+                  <strong>
+                    <Pluralize
+                      singular="aceito"
+                      zero="nenhum aceito"
+                      count={progress.merged}
+                    />
+                  </strong>
+                </ProgressStatusText>
+              ) : (
+                <ProgressStatusText>
+                  Você ainda não enviou nenhum pull request!
+                </ProgressStatusText>
+              )
             ) : (
               <ProgressStatusText>
                 <strong>Parabéns!</strong> Você concluiu o desafio da

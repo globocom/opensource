@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
+import Pluralize from "react-pluralize"
 
 import Seo from "../components/Seo"
 import Layout, { Container } from "../components/Layout"
@@ -101,7 +102,12 @@ function Coder({ githubUser, avatar, approved, totalContributions }) {
         <CoderDetails>
           <CoderText>
             <CoderName>@{githubUser}</CoderName>
-            {totalContributions} contribuições
+            <Pluralize
+              singular="contribuição"
+              plural="contribuições"
+              showCount={true}
+              count={totalContributions}
+            />
             {approved && (
               <CoderApproved>
                 <MergedIcon width="8" height="8" /> desafio completo
