@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 import media from "styled-media-query"
-import Colors from "../../constants/colors"
+import Colors from "@constants/colors"
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/

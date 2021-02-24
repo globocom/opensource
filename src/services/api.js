@@ -87,6 +87,18 @@ async function getCoders() {
   return data.result
 }
 
+async function haveOpenEdition(){
+  try{
+    //const resp  = await fetch(`${apiUrl}/haveOpenEdition`)
+    //const data = await resp.json()
+    return true;
+  }catch(error){
+    return false;
+  }
+
+  return false;
+}
+
 async function getProjects() {
   const { projects } = (await getEdition()) || []
   const data =
@@ -117,8 +129,7 @@ async function getProjects() {
       }
       return base
     }) || []
-
   return data
 }
 
-export { getUser, updateUser, getCoders, getEdition, getProjects }
+export { getUser, updateUser, getCoders, getEdition, getProjects, haveOpenEdition }

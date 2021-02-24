@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-import { ButtonWrapper } from "../Button"
+import { ButtonWrapper } from "@components/Button"
 
 const ButtonLinkWrapper = styled(ButtonWrapper).attrs({
   as: "a",

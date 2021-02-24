@@ -8,14 +8,14 @@ import Dialog, {
   DialogBody,
   DialogFooter,
   DialogText,
-} from "../Dialog"
+} from "@components/Dialog"
 
-import Button from "../Button"
-import TextInput from "../TextInput"
-import SelectInput from "../SelectInput"
-import Message from "../Message"
+import Button from "@components/Button"
+import TextInput from "@components/TextInput"
+import SelectInput from "@components/SelectInput"
+import Message from "@components/Message"
 
-import { updateUser } from "../../services/api"
+import { updateUser } from "@services/api"
 
 function ShippingForm({
   open,

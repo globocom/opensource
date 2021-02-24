@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import media from "styled-media-query"
-import Colors from "./../../constants/colors"
+import Colors from "@constants/colors"
 
 const ButtonWrapper = styled.button`
   height: 56px;

@@ -3,16 +3,16 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import media from "styled-media-query"
 
-import ButtonLink from "../ButtonLink"
+import ButtonLink from "@components/ButtonLink"
 import UserProgress from "./UserProgress"
-import { Container } from "../Layout"
-import { ButtonWrapper } from "../Button"
+import { Container } from "@components/Layout"
+import { ButtonWrapper } from "@components/Button"
 
-import hacktoberFestImg from "../../images/2020/astronauta.png"
-import hacktoberFestCall from "../../images/2020/logo-desktop.png"
-import hacktoberFestCallOnly from "../../images/2020/hacktober-callonly.png"
-import BigBracketImage from "../../images/2020/big-bracket.svg"
-import year from "../../images/2020/year.png"
+import hacktoberFestImg from "@images/2020/astronauta.png"
+import hacktoberFestCall from "@images/2020/logo-desktop.png"
+import hacktoberFestCallOnly from "@images/2020/hacktober-callonly.png"
+import BigBracketImage from "@images/2020/big-bracket.svg"
+import year from "@images/2020/year.png"
 
 const HacktoberFestCallWrapper = styled.section`
   margin-bottom: 20px;
@@ -21,7 +21,7 @@ const HacktoberFestCallWrapper = styled.section`
 
 const EventHeader1 = styled.div`
   margin-bottom: 16px;
-  line-height: 1.4rem;
+  line-height: 1.4rem;s
   width: 100%;
   text-align: center;
 

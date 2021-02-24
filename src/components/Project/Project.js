@@ -3,17 +3,17 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import media from "styled-media-query"
 
-import iconExpandLess from "../../images/icons/expand-less.svg"
-import iconExpandMore from "../../images/icons/expand-more.svg"
+import iconExpandLess from "@images/icons/expand-less.svg"
+import iconExpandMore from "@images/icons/expand-more.svg"
 
-import starsIcon from "../../images/icons/stars"
-import iconCommits from "../../images/icons/commits"
-import iconPrs from "../../images/icons/prs"
-import iconIssues from "../../images/icons/issues"
+import starsIcon from "@images/icons/stars"
+import iconCommits from "@images/icons/commits"
+import iconPrs from "@images/icons/prs"
+import iconIssues from "@images/icons/issues"
 
-import Colors from "../../constants/colors"
+import Colors from "@constants/colors"
 
-import BracketImage from "../../images/2020/open-bracket.svg"
+import BracketImage from "@images/2020/open-bracket.svg"
 
 const REPOSITORY_COUNT_ICONS = {
   stars: home => () => starsIcon(home),

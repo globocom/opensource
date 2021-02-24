@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import Colors from "./../../constants/colors"
+import Colors from "@constants/colors"
 
 const Root = styled.div`
   margin-bottom: 20px;

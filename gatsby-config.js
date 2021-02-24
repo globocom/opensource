@@ -18,7 +18,22 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-transformer-json",
     "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-alias-imports",
+      options: {
+        alias: {
+          "@components": "src/components",
+          "@constants": "src/constants",
+          "@icons": "src/icons",
+          "@images": "src/images",
+          "@pages": "src/pages",
+          "@services": "src/services"
+        },
+        extensions: [
+          "js"
+        ]
+      }
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {

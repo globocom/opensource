@@ -2,19 +2,19 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import media from "styled-media-query"
 
-import Seo from "../components/Seo"
-import Layout, { Container } from "../components/Layout"
-import HacktoberFestCall from "../components/HacktoberFestCall"
-import ButtonLink from "../components/ButtonLink"
+import Seo from "@components/Seo"
+import Layout, { Container } from "@components/Layout"
+import HacktoberFestCall from "@components/HacktoberFestCall"
+import ButtonLink from "@components/ButtonLink"
 
-import PullRequestIcon from "../icons/PullRequest"
-import MergedIcon from "../icons/Merged"
-import TShirtIcon from "../icons/TShirt"
+import PullRequestIcon from "@icons/PullRequest"
+import MergedIcon from "@icons/Merged"
+import TShirtIcon from "@icons/TShirt"
 
-import { getUser } from "../services/api"
-import { getIssuesUrl } from "../services/github"
+import { getUser } from "@services/api"
+import { getIssuesUrl } from "@services/github"
 
-import BGImage from "../images/2020/background.png"
+import BGImage from "@images/2020/background.png"
 
 const issuesUrl = getIssuesUrl()
 

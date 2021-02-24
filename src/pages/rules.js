@@ -2,13 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import media from "styled-media-query"
 
-import Seo from "../components/Seo"
-import Layout, { Container } from "../components/Layout"
-import ButtonLink from "../components/ButtonLink"
+import Seo from "@components/Seo"
+import Layout, { Container } from "@components/Layout"
+import ButtonLink from "@components/ButtonLink"
 
-import { getIssuesUrl } from "../services/github"
+import { getIssuesUrl } from "@services/github"
 
-import BGImage from "../images/2020/background.png"
+import BGImage from "@images/2020/background.png"
 
 const issuesUrl = getIssuesUrl()
 

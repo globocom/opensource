@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 
-import Seo from "../components/Seo"
-import Layout, { Container } from "../components/Layout"
-import ProjectList from "../components/ProjectList"
-import Project from "../components/Project"
-import Loading from "../components/Loading"
+import Seo from "@components/Seo"
+import Layout, { Container } from "@components/Layout"
+import ProjectList from "@components/ProjectList"
+import Project from "@components/Project"
+import Loading from "@components/Loading"
 
-import { getProjects } from "../services/api"
+import { getProjects } from "@services/api"
 
 const Divider = styled.div`
   height: 1px;

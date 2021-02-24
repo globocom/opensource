@@ -3,12 +3,12 @@ import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import Pluralize from "react-pluralize"
 
-import Button from "../Button"
+import Button from "@components/Button"
 
-import PullRequestIcon from "../../icons/PullRequest"
-import MergedIcon from "../../icons/Merged"
-import TShirtIcon from "../../icons/TShirt"
-import Colors from "./../../constants/colors"
+import PullRequestIcon from "@icons/PullRequest"
+import MergedIcon from "@icons/Merged"
+import TShirtIcon from "@icons/TShirt"
+import Colors from "@constants/colors"
 
 import ShippingForm from "./ShippingForm"
 

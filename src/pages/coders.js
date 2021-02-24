@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
 import Pluralize from "react-pluralize"
 
-import Seo from "../components/Seo"
-import Layout, { Container } from "../components/Layout"
-import MergedIcon from "../icons/Merged"
+import Seo from "@components/Seo"
+import Layout, { Container } from "@components/Layout"
+import MergedIcon from "@icons/Merged"
 
-import { getCoders } from "../services/api"
+import { getCoders } from "@services/api"
 
 const Coders = styled.section`
   display: flex;

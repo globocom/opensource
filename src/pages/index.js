@@ -3,20 +3,19 @@ import styled, { keyframes } from "styled-components"
 import media from "styled-media-query"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Seo from "../components/Seo"
-import Layout, { Container } from "../components/Layout"
-import ProjectList from "../components/ProjectList"
-import Project from "../components/Project"
-import HacktoberFestCall from "../components/HacktoberFestCall"
+import Seo from "@components/Seo"
+import Layout, { Container } from "@components/Layout"
+import ProjectList from "@components/ProjectList"
+import Project from "@components/Project"
+import HacktoberFestCall from "@components/HacktoberFestCall"
+import Colors from '@constants/colors'
 
-import Colors from "./../constants/colors"
-
-import ByTheCodeImage from "../images/2020/together-by-the-code.png"
-import BGImage from "../images/2020/background.png"
-import GirlImage from "../images/2020/girl.png"
+import ByTheCodeImage from "@images/2020/together-by-the-code.png"
+import BGImage from "@images/2020/background.png"
+import GirlImage from "@images/2020/girl.png"
 
 import get from "lodash/get"
-import { getProjects } from "./../services/api"
+import { getProjects } from "@services/api"
 
 const blink = keyframes`
   0% {opacity: 0;}
@@ -132,7 +131,6 @@ function IndexPage() {
     }
   `)
   const featured = data.allFeaturedProjectsJson.edges.map(edge => edge.node)
-
   useEffect(() => {
     async function populateProjects() {
       const getByName = name => featured.filter(k => k.name === name)[0]
@@ -146,6 +144,7 @@ function IndexPage() {
         setProjects(projects)
       })
     }
+
     populateProjects()
   }, [])
 
