@@ -8,6 +8,8 @@ import UserProgress from "./UserProgress"
 import { Container } from "@components/Layout"
 import { ButtonWrapper } from "@components/Button"
 
+import { getEdition } from "@services/api"
+
 import hacktoberFestImg from "@images/2020/astronauta.png"
 import hacktoberFestCall from "@images/2020/logo-desktop.png"
 import hacktoberFestCallOnly from "@images/2020/hacktober-callonly.png"
@@ -21,7 +23,7 @@ const HacktoberFestCallWrapper = styled.section`
 
 const EventHeader1 = styled.div`
   margin-bottom: 16px;
-  line-height: 1.4rem;s
+  line-height: 1.4rem;
   width: 100%;
   text-align: center;
 
@@ -135,6 +137,18 @@ const ButtonRules = styled(ButtonWrapper).attrs({
 `
 
 function HacktoberFestCall({ user, isCallOnly }) {
+  let [currentEdition, setCurrentEdition] = React.useState(null)
+
+  React.useEffect(() => {
+    const loadEdition = async () => {
+      const response = await getEdition()
+      if (response) {
+        setCurrentEdition(response.edition)
+      }
+    }
+    loadEdition()
+  }, [])
+
   return (
     <HacktoberFestCallWrapper isCallOnly={isCallOnly}>
       {isCallOnly && (
@@ -181,7 +195,7 @@ function HacktoberFestCall({ user, isCallOnly }) {
                 <ButtonLink href="/hacktoberfest/" dark={true}>
                   Saiba mais
                 </ButtonLink>
-              ) : user ? (
+              ) : user && user.edition === currentEdition ? (
                 <UserProgress user={user} />
               ) : (
                 <Fragment>
