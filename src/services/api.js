@@ -29,12 +29,34 @@ async function getUser() {
   return user
 }
 
-async function updateUser(user) {
+async function updateNameAndEmail(user) {
   let resp
 
   try {
     resp = await fetch(`${apiUrl}/subscribe`, {
       method: "POST",
+      body: JSON.stringify(user),
+      credentials: "include",
+    })
+  } catch (error) {
+    console.error("[OPENSOURCE] Fail to save user data", error)
+    return null
+  }
+
+  if (resp.status !== 201) {
+    return null
+  }
+
+  const data = await resp.json()
+  return data.result
+}
+
+async function updateUser(user) {
+  let resp
+
+  try {
+    resp = await fetch(`${apiUrl}/user`, {
+      method: "PUT",
       body: JSON.stringify(user),
       credentials: "include",
     })
@@ -87,16 +109,16 @@ async function getCoders() {
   return data.result
 }
 
-async function haveOpenEdition(){
-  try{
+async function haveOpenEdition() {
+  try {
     //const resp  = await fetch(`${apiUrl}/haveOpenEdition`)
     //const data = await resp.json()
-    return true;
-  }catch(error){
-    return false;
+    return true
+  } catch (error) {
+    return false
   }
 
-  return false;
+  return false
 }
 
 async function getProjects() {
@@ -132,4 +154,12 @@ async function getProjects() {
   return data
 }
 
-export { getUser, updateUser, getCoders, getEdition, getProjects, haveOpenEdition }
+export {
+  getUser,
+  updateUser,
+  getCoders,
+  getEdition,
+  getProjects,
+  haveOpenEdition,
+  updateNameAndEmail,
+}

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react"
+import React, { Fragment, useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import Pluralize from "react-pluralize"
@@ -11,6 +11,7 @@ import TShirtIcon from "@icons/TShirt"
 import Colors from "@constants/colors"
 
 import ShippingForm from "./ShippingForm"
+import EmailConfirmationForm from "./EmailConfirmationForm"
 
 const UserProgressWrapper = styled.div`
   color: #cfd3d4;
@@ -135,6 +136,7 @@ function UserProgress({ user }) {
     (achievements.opened && achievements.merged && achievements.firsts)
 
   const [open, setOpen] = useState(false)
+  const [openEmailConfirmation, setOpenEmailConfirmation] = useState(false)
 
   function handleOpen() {
     setOpen(true)
@@ -142,11 +144,22 @@ function UserProgress({ user }) {
 
   function handleClose() {
     setOpen(false)
+    setOpenEmailConfirmation(false)
   }
+
+  useEffect(() => {
+    console.log(user.email)
+    setOpenEmailConfirmation(user.email ? false : true)
+  }, [user])
 
   return (
     <Fragment>
       <ShippingForm user={user} open={open} handleClose={handleClose} />
+      <EmailConfirmationForm
+        user={user}
+        open={openEmailConfirmation}
+        handleClose={handleClose}
+      />
       <UserProgressWrapper>
         <Greeting>
           Olá <strong>@{user.githubUser}</strong>!<br />
