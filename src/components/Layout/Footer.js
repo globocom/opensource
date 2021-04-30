@@ -91,7 +91,7 @@ function Footer({ dark }) {
               <FooterLink href="https://blog.globo.com">Blog</FooterLink>
             </li>
             <li>
-              <FooterLink href="https://talentos.globo.com">
+              <FooterLink href="https://www.vempraglobo.com.br/">
                 Trabalhe conosco
               </FooterLink>
             </li>
