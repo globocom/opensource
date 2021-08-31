@@ -8,7 +8,7 @@ import Layout, { Container } from "@components/Layout"
 import ProjectList from "@components/ProjectList"
 import Project from "@components/Project"
 import HacktoberFestCall from "@components/HacktoberFestCall"
-import Colors from '@constants/colors'
+import Colors from "@constants/colors"
 
 import ByTheCodeImage from "@images/2020/together-by-the-code.png"
 import BGImage from "@images/2020/background.png"
@@ -133,14 +133,7 @@ function IndexPage() {
   const featured = data.allFeaturedProjectsJson.edges.map(edge => edge.node)
   useEffect(() => {
     async function populateProjects() {
-      const getByName = name => featured.filter(k => k.name === name)[0]
       getProjects().then(projects => {
-        projects = projects
-          .filter(p => p.featured)
-          .map(p => ({
-            ...p,
-            image: { publicURL: get(getByName(p.name), "image.publicURL") },
-          }))
         setProjects(projects)
       })
     }

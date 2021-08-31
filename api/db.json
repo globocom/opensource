@@ -5,14 +5,23 @@
     "type": "ok",
     "result": {
       "edition": 2020,
-      "id": "872485b5-ff40-4448-9658-be866a387080",
-      "projects": [
+      "id": "872485b5-ff40-4448-9658-be866a387080"
+    }
+  },
+  "projects": {
+    "success": true,
+    "status": 200,
+    "type": "ok",
+    "result": {
+      "items": [
         {
           "name": "Tsuru",
           "website": "https://tsuru.io",
           "repositoryUrl": "https://github.com/tsuru/tsuru",
           "featured": true,
-          "imageUrl": "https://opensource.globo.com/static/tsuru-fdf5f936a5e54ffce0ab468ee776797a.svg",
+          "imageUrl": {
+            "thumborUrl": "https://github.com/globocom/opensource/raw/master/static/images/opengraph.png"
+          },
           "documentationUrl": "https://docs.tsuru.io/stable/",
           "description": "Open source, extensible and Docker-based Platform as a Service (PaaS).",
           "stats": {
@@ -41,7 +50,9 @@
           "website": "http://thumbor.org/",
           "repositoryUrl": "https://github.com/thumbor/thumbor",
           "featured": true,
-          "imageUrl": "https://opensource.globo.com/static/thumbor-32811b5c29202699eab45a3c8b459b80.svg",
+          "imageUrl": {
+            "thumborUrl": "https://github.com/globocom/opensource/raw/master/static/images/opengraph.png"
+          },
           "documentationUrl": "https://thumbor.readthedocs.io/en/latest/index.html",
           "description": "Thumbor is an open-source photo thumbnail service by globo.com.",
           "stats": {
@@ -70,7 +81,9 @@
           "website": "http://clappr.io/",
           "repositoryUrl": "https://github.com/clappr/clappr",
           "featured": true,
-          "imageUrl": "https://opensource.globo.com/static/clappr-d30b8ccac20aa7f41c8642fcf6031e2e.svg",
+          "imageUrl": {
+            "thumborUrl": "https://github.com/globocom/opensource/raw/master/static/images/opengraph.png"
+          },
           "documentationUrl": "https://clappr.github.io/",
           "description": "An extensible media player for the web.",
           "stats": {
@@ -99,7 +112,9 @@
           "website": "https://huskyci.opensource.globo.com/",
           "repositoryUrl": "https://github.com/globocom/huskyCI",
           "featured": true,
-          "imageUrl": "https://opensource.globo.com/static/huskici-79ad4c8ec6669c1469abb7d059e3786a.svg",
+          "imageUrl": {
+            "thumborUrl": "https://github.com/globocom/opensource/raw/master/static/images/opengraph.png"
+          },
           "documentationUrl": "https://huskyci.opensource.globo.com/docs/quickstart/overview",
           "description": "Performing security tests inside your CI.",
           "stats": {
@@ -128,7 +143,9 @@
           "website": "http://megadraft.io/",
           "repositoryUrl": "https://github.com/globocom/megadraft",
           "featured": true,
-          "imageUrl": "https://opensource.globo.com/static/megadraft-f0be51efa0afd965dc252addc1cd46ff.svg",
+          "imageUrl": {
+            "thumborUrl": "https://github.com/globocom/opensource/raw/master/static/images/opengraph.png"
+          },
           "documentationUrl": "http://megadraft.io/#/docs/overview",
           "description": "Megadraft is a Rich Text editor built on top of Facebook's Draft.JS featuring a nice default base of components and extensibility.",
           "stats": {
@@ -165,7 +182,9 @@
           "website": "",
           "repositoryUrl": "https://github.com/globocom/secDevLabs",
           "featured": true,
-          "imageUrl": "https://raw.githubusercontent.com/globocom/secDevLabs/master/images/secDevLabs-logo.png",
+          "imageUrl": {
+            "thumborUrl": "https://github.com/globocom/opensource/raw/master/static/images/opengraph.png"
+          },
           "documentationUrl": "https://github.com/globocom/secDevLabs/blob/master/README.md",
           "description": "A laboratory for learning secure web and mobile development in a practical manner.",
           "stats": {

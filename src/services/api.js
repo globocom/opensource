@@ -87,22 +87,40 @@ async function getCoders() {
   return data.result
 }
 
-async function haveOpenEdition(){
-  try{
+async function haveOpenEdition() {
+  try {
     //const resp  = await fetch(`${apiUrl}/haveOpenEdition`)
     //const data = await resp.json()
-    return true;
-  }catch(error){
-    return false;
+    return true
+  } catch (error) {
+    return false
   }
 
-  return false;
+  return false
 }
 
 async function getProjects() {
-  const { projects } = (await getEdition()) || []
+  let resp
+
+  try {
+    resp = await fetch(`${apiUrl}/projects`)
+  } catch (error) {
+    console.error("[OPENSOURCE] Fail to fetch projects", error)
+    return null
+  }
+
+  if (resp.status !== 200) {
+    return null
+  }
+
+  const projects = await resp.json()
   const data =
-    (projects || []).map((project, index) => {
+    (projects.result.items || []).map((project, index) => {
+      const imageUrl =
+        typeof project.imageUrl == "object"
+          ? project.imageUrl.thumborUrl
+          : project.imageUrl
+
       let base = {
         id: index,
         name: project.name,
@@ -112,7 +130,7 @@ async function getProjects() {
         siteURL: project.website,
         docsURL: project.documentationUrl,
         image: {
-          publicURL: project.imageUrl,
+          publicURL: imageUrl,
         },
       }
       if (project.featured) {
@@ -132,4 +150,11 @@ async function getProjects() {
   return data
 }
 
-export { getUser, updateUser, getCoders, getEdition, getProjects, haveOpenEdition }
+export {
+  getUser,
+  updateUser,
+  getCoders,
+  getEdition,
+  getProjects,
+  haveOpenEdition,
+}

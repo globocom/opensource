@@ -229,7 +229,6 @@ function Project(props) {
   } = props
 
   const [open, setOpen] = useState(isFirst)
-  const repoCounters = repoNumbers
 
   function handleToggleOpen() {
     setOpen(!open)
@@ -253,18 +252,14 @@ function Project(props) {
             home={home}
             style={{ width: "100%", "justify-content": "space-around" }}
           >
-            <RepoCounter name="stars" count={repoCounters.stars} home={home} />
+            <RepoCounter name="stars" count={repoNumbers.stars} home={home} />
             <RepoCounter
               name="commits"
-              count={repoCounters.commits}
+              count={repoNumbers.commits}
               home={home}
             />
-            <RepoCounter name="prs" count={repoCounters.prs} home={home} />
-            <RepoCounter
-              name="issues"
-              count={repoCounters.issues}
-              home={home}
-            />
+            <RepoCounter name="prs" count={repoNumbers.prs} home={home} />
+            <RepoCounter name="issues" count={repoNumbers.issues} home={home} />
           </BracketWrapper>
         </RepoInfo>
       )}
